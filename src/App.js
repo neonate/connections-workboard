@@ -85,12 +85,8 @@ function App() {
     try {
       const puzzleData = await fetchRealPuzzle(date);
       
-      // Only cache real API responses, not sample data
-      if (puzzleData && !puzzleData.isSampleData) {
-        cachePuzzle(date, puzzleData);
-      } else {
-        console.log('Not caching sample data or invalid response');
-      }
+      // Cache the fetched data for future use
+      cachePuzzle(date, puzzleData);
       
       return puzzleData;
     } catch (error) {
@@ -304,37 +300,9 @@ function App() {
       }
       
       // If we get here, both direct fetch and CORS proxies failed
-      // Provide fallback sample data so users can test hint mode
-      console.log('All fetch methods failed, providing fallback sample data...');
-      
-      // Clear any cached data for this date since it's not real
-      try {
-        const cacheKey = `puzzle_${date}`;
-        if (localStorage.getItem(cacheKey)) {
-          localStorage.removeItem(cacheKey);
-          console.log(`Cleared invalid cached data for ${date}`);
-        }
-      } catch (error) {
-        console.error('Error clearing invalid cache:', error);
-      }
-      
-      // Return sample data for testing hint mode
-      const samplePuzzle = {
-        words: ['BENT', 'FACULTY', 'FLAIR', 'GIFT', 'PLAYWRIGHT', 'SWORD', 'WRAP', 'WREATH', 'DEAN', 'GABLE', 'GARLAND', 'TEMPLE', 'HAY', 'JACKPOT', 'ROAD', 'ROOF'],
-        date: date,
-        categories: [
-          { name: 'Aptitude', words: ['BENT', 'FACULTY', 'FLAIR', 'GIFT'], color: 'yellow' },
-          { name: 'Silent "W"', words: ['PLAYWRIGHT', 'SWORD', 'WRAP', 'WREATH'], color: 'green' },
-          { name: 'Legends of Classic Hollywood', words: ['DEAN', 'GABLE', 'GARLAND', 'TEMPLE'], color: 'blue' },
-          { name: 'Hit the ___', words: ['HAY', 'JACKPOT', 'ROAD', 'ROOF'], color: 'purple' }
-        ],
-        note: 'This is sample data. For real puzzles, the app will fetch from word.tips using the correct URL (today vs yesterday).',
-        isSampleData: true // Flag to identify this as sample data
-      };
-      
-      // Don't cache sample data - only cache real API responses
-      console.log('Returning sample puzzle data for testing (not cached):', samplePuzzle);
-      return samplePuzzle;
+      // All methods failed - throw error instead of providing fake data
+      console.log('All fetch methods failed for word.tips');
+      throw new Error(`Failed to fetch puzzle data from word.tips. All fetch methods (direct + ${corsProxies.length} proxies) failed.`);
       
     } catch (error) {
       console.error('Failed to fetch real puzzle:', error);
