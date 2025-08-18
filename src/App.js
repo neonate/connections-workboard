@@ -86,8 +86,14 @@ function App() {
       const day = dateObj.getDate();
       const year = dateObj.getFullYear();
       
-      const mashableUrl = `https://mashable.com/article/nyt-connections-hint-answer-today-${monthName}-${day}-${year}`;
-      console.log(`Fetching from Mashable: ${mashableUrl}`);
+      // Try multiple URL patterns that Mashable might use
+      const urlPatterns = [
+        `https://mashable.com/article/nyt-connections-hint-answer-today-${monthName}-${day}-${year}`,
+        `https://mashable.com/article/nyt-connections-answers-${monthName}-${day}-${year}`,
+        `https://mashable.com/article/nyt-connections-today-${monthName}-${day}-${year}`,
+        `https://mashable.com/article/nyt-connections-${monthName}-${day}-${year}`,
+        `https://mashable.com/article/nyt-connections-hint-answer-${monthName}-${day}-${year}`
+      ];
       
       // Anti-bot measures
       const headers = {
@@ -104,26 +110,58 @@ function App() {
         'Cache-Control': 'max-age=0'
       };
       
-      // Random delay to avoid being blocked
-      const delay = Math.random() * 2000 + 1000; // 1-3 seconds
-      console.log(`Waiting ${Math.round(delay)}ms before fetch...`);
-      await new Promise(resolve => setTimeout(resolve, delay));
+      let lastError;
       
-      const response = await fetch(mashableUrl, {
-        method: 'GET',
-        headers,
-        credentials: 'omit',
-        mode: 'cors'
-      });
-      
-      if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`);
+      // Try each URL pattern until one works
+      for (let i = 0; i < urlPatterns.length; i++) {
+        const url = urlPatterns[i];
+        console.log(`Trying URL pattern ${i + 1}: ${url}`);
+        
+        try {
+          // Random delay to avoid being blocked
+          const delay = Math.random() * 2000 + 1000; // 1-3 seconds
+          console.log(`Waiting ${Math.round(delay)}ms before fetch...`);
+          await new Promise(resolve => setTimeout(resolve, delay));
+          
+          const response = await fetch(url, {
+            method: 'GET',
+            headers,
+            credentials: 'omit',
+            mode: 'cors',
+            redirect: 'follow' // Follow redirects
+          });
+          
+          console.log(`Response status: ${response.status}, URL: ${response.url}`);
+          
+          if (response.ok) {
+            const html = await response.text();
+            console.log(`Successfully fetched HTML from ${response.url} (${html.length} characters)`);
+            
+            // Check if we got redirected to a different page
+            if (response.url !== url) {
+              console.log(`Redirected from ${url} to ${response.url}`);
+            }
+            
+            return parsePuzzleWordsFromHTML(html, date);
+          } else if (response.status === 404) {
+            console.log(`404 for ${url}, trying next pattern...`);
+            lastError = new Error(`Page not found: ${url}`);
+            continue;
+          } else {
+            console.log(`HTTP ${response.status} for ${url}, trying next pattern...`);
+            lastError = new Error(`HTTP ${response.status}: ${response.statusText}`);
+            continue;
+          }
+          
+        } catch (error) {
+          console.log(`Error with ${url}:`, error.message);
+          lastError = error;
+          continue;
+        }
       }
       
-      const html = await response.text();
-      console.log(`Successfully fetched HTML from Mashable (${html.length} characters)`);
-      
-      return parsePuzzleWordsFromHTML(html, date);
+      // If we get here, none of the URL patterns worked
+      throw new Error(`All URL patterns failed. Last error: ${lastError?.message}`);
       
     } catch (error) {
       console.error('Failed to fetch real puzzle:', error);
