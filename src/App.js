@@ -71,31 +71,43 @@ function App() {
     }
   }, [selectedDate, fetchPuzzleForDate]);
 
-  // Real puzzle fetching function with anti-bot measures
+  // Fetch puzzle from external source (Mashable)
   const fetchRealPuzzle = async (date) => {
-    // Anti-bot measures
-    const headers = {
-      'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
-      'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
-      'Accept-Language': 'en-US,en;q=0.5',
-      'Accept-Encoding': 'gzip, deflate, br',
-      'DNT': '1',
-      'Connection': 'keep-alive',
-      'Upgrade-Insecure-Requests': '1',
-      'Sec-Fetch-Dest': 'document',
-      'Sec-Fetch-Mode': 'navigate',
-      'Sec-Fetch-Site': 'none',
-      'Cache-Control': 'max-age=0'
-    };
-
-    // Add realistic delays and randomization
-    const baseDelay = 2000 + Math.random() * 3000; // 2-5 seconds
-    await new Promise(resolve => setTimeout(resolve, baseDelay));
-
     try {
-      // Use Mashable URL pattern for NYT Connections puzzles
-      const mashableUrl = `https://mashable.com/article/nyt-connections-answers-${date}`;
+      console.log(`Fetching real puzzle for date: ${date}`);
+      
+      // Convert numeric date to Mashable URL format (e.g., "2025-07-02" -> "july-2-2025")
+      const dateObj = new Date(date);
+      const monthNames = [
+        'january', 'february', 'march', 'april', 'may', 'june',
+        'july', 'august', 'september', 'october', 'november', 'december'
+      ];
+      const monthName = monthNames[dateObj.getMonth()];
+      const day = dateObj.getDate();
+      const year = dateObj.getFullYear();
+      
+      const mashableUrl = `https://mashable.com/article/nyt-connections-hint-answer-today-${monthName}-${day}-${year}`;
       console.log(`Fetching from Mashable: ${mashableUrl}`);
+      
+      // Anti-bot measures
+      const headers = {
+        'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+        'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+        'Accept-Language': 'en-US,en;q=0.5',
+        'Accept-Encoding': 'gzip, deflate, br',
+        'DNT': '1',
+        'Connection': 'keep-alive',
+        'Upgrade-Insecure-Requests': '1',
+        'Sec-Fetch-Dest': 'document',
+        'Sec-Fetch-Mode': 'navigate',
+        'Sec-Fetch-Site': 'none',
+        'Cache-Control': 'max-age=0'
+      };
+      
+      // Random delay to avoid being blocked
+      const delay = Math.random() * 2000 + 1000; // 1-3 seconds
+      console.log(`Waiting ${Math.round(delay)}ms before fetch...`);
+      await new Promise(resolve => setTimeout(resolve, delay));
       
       const response = await fetch(mashableUrl, {
         method: 'GET',
@@ -103,24 +115,18 @@ function App() {
         credentials: 'omit',
         mode: 'cors'
       });
-
+      
       if (!response.ok) {
-        throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+        throw new Error(`HTTP error! status: ${response.status}`);
       }
-
+      
       const html = await response.text();
-      console.log('Successfully fetched from Mashable');
+      console.log(`Successfully fetched HTML from Mashable (${html.length} characters)`);
       
-      // Parse the HTML to extract puzzle words
-      const puzzleData = parsePuzzleWordsFromHTML(html, date);
+      return parsePuzzleWordsFromHTML(html, date);
       
-      if (!puzzleData || !puzzleData.words || puzzleData.words.length !== 16) {
-        throw new Error('Failed to parse puzzle words from Mashable HTML');
-      }
-      
-      return puzzleData;
     } catch (error) {
-      console.error('Mashable puzzle fetch failed:', error);
+      console.error('Failed to fetch real puzzle:', error);
       throw error;
     }
   };
@@ -130,8 +136,52 @@ function App() {
     try {
       console.log('Parsing Mashable HTML for NYT Connections puzzle words...');
       
-      // Look for the specific patterns used in Mashable NYT Connections articles
-      const wordPatterns = [
+      const foundWords = new Set();
+      
+      // Pattern 1: Newer format (July 2025 style) - * Category: WORD1, WORD2, WORD3, WORD4
+      const newerFormatPattern = /\*\s*([^:]+):\s*([A-Z]{3,20}),\s*([A-Z]{3,20}),\s*([A-Z]{3,20}),\s*([A-Z]{3,20})/gi;
+      let newerMatch;
+      
+      while ((newerMatch = newerFormatPattern.exec(html)) !== null) {
+        const category = newerMatch[1];
+        const words = [newerMatch[2], newerMatch[3], newerMatch[4], newerMatch[5]];
+        
+        console.log(`Found newer format category "${category}" with words:`, words);
+        
+        words.forEach(word => {
+          if (word && word.length >= 3 && word.length <= 20) {
+            foundWords.add(word.trim());
+          }
+        });
+      }
+      
+      // Pattern 2: Older format (January 2024 style) - * Color - **CATEGORY - WORD1, WORD2, WORD3, WORD4**
+      const olderFormatPattern = /\*\s*([A-Za-z]+)\s*-\s*\*\*([^*]+)\*\*\s*-\s*([A-Z]{3,20}),\s*([A-Z]{3,20}),\s*([A-Z]{3,20}),\s*([A-Z]{3,20})/gi;
+      let olderMatch;
+      
+      while ((olderMatch = olderFormatPattern.exec(html)) !== null) {
+        const color = olderMatch[1];
+        const category = olderMatch[2];
+        const words = [olderMatch[3], olderMatch[4], olderMatch[5], olderMatch[6]];
+        
+        console.log(`Found older format category "${category}" (${color}) with words:`, words);
+        
+        words.forEach(word => {
+          if (word && word.length >= 3 && word.length <= 20) {
+            foundWords.add(word.trim());
+          }
+        });
+      }
+      
+      // If we found words in either format, use those
+      if (foundWords.size >= 16) {
+        const words = Array.from(foundWords).slice(0, 16);
+        console.log('Successfully parsed puzzle words from Mashable format:', words);
+        return { words, date };
+      }
+      
+      // Fallback: try other patterns if the main formats didn't work
+      const fallbackPatterns = [
         // Look for words in the solution section (usually in bold or strong tags)
         /<strong[^>]*>([A-Z]{3,20})<\/strong>/gi,
         /<b[^>]*>([A-Z]{3,20})<\/b>/gi,
@@ -141,41 +191,11 @@ function App() {
         /<p[^>]*>([^<]*?([A-Z]{3,20})[^<]*?)<\/p>/gi,
         // Look for words in headings that might contain puzzle information
         /<h[1-6][^>]*>([^<]*?([A-Z]{3,20})[^<]*?)<\/h[1-6]>/gi,
-        // Look for the specific category format used in Mashable articles
-        /\*\s*([^:]+):\s*([A-Z]{3,20}),\s*([A-Z]{3,20}),\s*([A-Z]{3,20}),\s*([A-Z]{3,20})/gi,
         // Look for words that appear in all caps (likely puzzle words)
         /\b([A-Z]{3,20})\b/g
       ];
       
-      const foundWords = new Set();
-      
-      // First, try to find the specific solution section format
-      const solutionPattern = /\*\s*([^:]+):\s*([A-Z]{3,20}),\s*([A-Z]{3,20}),\s*([A-Z]{3,20}),\s*([A-Z]{3,20})/gi;
-      let solutionMatch;
-      
-      while ((solutionMatch = solutionPattern.exec(html)) !== null) {
-        // Extract the 4 words from each category
-        const category = solutionMatch[1];
-        const words = [solutionMatch[2], solutionMatch[3], solutionMatch[4], solutionMatch[5]];
-        
-        console.log(`Found category "${category}" with words:`, words);
-        
-        words.forEach(word => {
-          if (word && word.length >= 3 && word.length <= 20) {
-            foundWords.add(word.trim());
-          }
-        });
-      }
-      
-      // If we found words in the solution format, use those
-      if (foundWords.size >= 16) {
-        const words = Array.from(foundWords).slice(0, 16);
-        console.log('Successfully parsed puzzle words from solution format:', words);
-        return { words, date };
-      }
-      
-      // Fallback: try other patterns if solution format didn't work
-      for (const pattern of wordPatterns) {
+      for (const pattern of fallbackPatterns) {
         let match;
         while ((match = pattern.exec(html)) !== null) {
           let word = match[1] || match[2] || match[0];
@@ -194,7 +214,7 @@ function App() {
       
       if (foundWords.size >= 16) {
         const words = Array.from(foundWords).slice(0, 16);
-        console.log('Parsed words from Mashable HTML:', words);
+        console.log('Parsed words from Mashable HTML fallback patterns:', words);
         return { words, date };
       }
       
