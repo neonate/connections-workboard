@@ -127,6 +127,14 @@ function App() {
       const wordTipsUrl = `https://word.tips/connections-hints-today/`;
       console.log(`Fetching from word.tips: ${wordTipsUrl}`);
       
+      // CORS proxy options to try if direct fetch fails
+      const corsProxies = [
+        'https://cors-anywhere.herokuapp.com/',
+        'https://api.allorigins.win/raw?url=',
+        'https://corsproxy.io/?',
+        'https://thingproxy.freeboard.io/fetch/'
+      ];
+      
       // Anti-bot measures
       const headers = {
         'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
@@ -142,32 +150,93 @@ function App() {
         'Cache-Control': 'max-age=0'
       };
       
-      // Random delay to avoid being blocked
-      const delay = Math.random() * 2000 + 1000; // 1-3 seconds
-      console.log(`Waiting ${Math.round(delay)}ms before fetch...`);
-      await new Promise(resolve => setTimeout(resolve, delay));
+      let lastError;
       
-      const response = await fetch(wordTipsUrl, {
-        method: 'GET',
-        headers,
-        credentials: 'omit',
-        mode: 'cors',
-        redirect: 'follow'
-      });
-      
-      console.log(`Response status: ${response.status}, URL: ${response.url}`);
-      
-      if (response.ok) {
-        const html = await response.text();
-        console.log(`Successfully fetched HTML from word.tips (${html.length} characters)`);
+      // First try direct fetch
+      try {
+        console.log('Trying direct fetch from word.tips...');
         
-        // Set the successful fetch URL for display
-        setFetchUrl(response.url);
+        // Random delay to avoid being blocked
+        const delay = Math.random() * 2000 + 1000; // 1-3 seconds
+        console.log(`Waiting ${Math.round(delay)}ms before fetch...`);
+        await new Promise(resolve => setTimeout(resolve, delay));
         
-        return parsePuzzleWordsFromHTML(html, date);
-      } else {
-        throw new Error(`HTTP error! status: ${response.status}`);
+        const response = await fetch(wordTipsUrl, {
+          method: 'GET',
+          headers,
+          credentials: 'omit',
+          mode: 'cors',
+          redirect: 'follow'
+        });
+        
+        console.log(`Response status: ${response.status}, URL: ${response.url}`);
+        
+        if (response.ok) {
+          const html = await response.text();
+          console.log(`Successfully fetched HTML from word.tips (${html.length} characters)`);
+          
+          // Set the successful fetch URL for display
+          setFetchUrl(response.url);
+          
+          return parsePuzzleWordsFromHTML(html, date);
+        } else {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        
+      } catch (error) {
+        console.log(`Direct fetch failed:`, error.message);
+        lastError = error;
       }
+      
+      // If direct fetch failed, try CORS proxies
+      console.log('Direct fetch failed, trying CORS proxies...');
+      
+      for (let proxyIndex = 0; proxyIndex < corsProxies.length; proxyIndex++) {
+        const proxy = corsProxies[proxyIndex];
+        console.log(`Trying CORS proxy ${proxyIndex + 1}: ${proxy}`);
+        
+        try {
+          // Random delay to avoid being blocked
+          const delay = Math.random() * 2000 + 1000; // 1-3 seconds
+          console.log(`Waiting ${Math.round(delay)}ms before proxy fetch...`);
+          await new Promise(resolve => setTimeout(resolve, delay));
+          
+          const proxyUrl = proxy + wordTipsUrl;
+          console.log(`Trying proxy URL: ${proxyUrl}`);
+          
+          const response = await fetch(proxyUrl, {
+            method: 'GET',
+            headers: {
+              ...headers,
+              'Origin': 'https://word.tips' // Some proxies need this
+            },
+            credentials: 'omit',
+            mode: 'cors'
+          });
+          
+          console.log(`Proxy response status: ${response.status}`);
+          
+          if (response.ok) {
+            const html = await response.text();
+            console.log(`Successfully fetched HTML via proxy (${html.length} characters)`);
+            
+            // Set the successful fetch URL for display (original URL, not proxy URL)
+            setFetchUrl(wordTipsUrl);
+            
+            return parsePuzzleWordsFromHTML(html, date);
+          } else {
+            console.log(`Proxy returned ${response.status}, trying next...`);
+            continue;
+          }
+          
+        } catch (error) {
+          console.log(`Proxy ${proxyIndex + 1} failed:`, error.message);
+          continue;
+        }
+      }
+      
+      // If we get here, both direct fetch and CORS proxies failed
+      throw new Error(`All fetch methods failed. Last error: ${lastError?.message}`);
       
     } catch (error) {
       console.error('Failed to fetch real puzzle:', error);
