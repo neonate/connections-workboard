@@ -6,6 +6,7 @@ function App() {
   const [groups, setGroups] = useState([[], [], [], []]);
   const [inputText, setInputText] = useState('');
   const [dragOverGroup, setDragOverGroup] = useState(null);
+  const [hasStartedGame, setHasStartedGame] = useState(false);
 
   const handleSubmit = () => {
     if (!inputText.trim()) return;
@@ -24,6 +25,7 @@ function App() {
     
     setWords(wordList);
     setGroups([[], [], [], []]); // Reset groups
+    setHasStartedGame(true); // Mark that the game has started
   };
 
   const handleDragStart = (e, word) => {
@@ -81,11 +83,15 @@ function App() {
     setWords([]);
     setGroups([[], [], [], []]);
     setInputText('');
+    setHasStartedGame(false); // Reset the game state
   };
 
   const isGroupFull = (groupIndex) => {
     return groups[groupIndex].length >= 4;
   };
+
+  // Show input screen only if game hasn't started OR if explicitly reset
+  const shouldShowInput = !hasStartedGame;
 
   return (
     <div className="App">
@@ -94,7 +100,7 @@ function App() {
         <p>Paste 16 puzzle words to get started</p>
       </header>
       <main className="App-main">
-        {words.length === 0 ? (
+        {shouldShowInput ? (
           <div className="input-section">
             <textarea 
               value={inputText}
@@ -158,9 +164,6 @@ function App() {
                       </div>
                     ))}
                   </div>
-                  {isGroupFull(groupIndex) && (
-                    <div className="group-full-message">Group is full!</div>
-                  )}
                 </div>
               ))}
             </div>
