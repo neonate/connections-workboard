@@ -86,13 +86,21 @@ function App() {
       const day = dateObj.getDate();
       const year = dateObj.getFullYear();
       
+      console.log(`Date conversion debug:`);
+      console.log(`  Input date: ${date}`);
+      console.log(`  Date object: ${dateObj}`);
+      console.log(`  Month index: ${dateObj.getMonth()}`);
+      console.log(`  Month name: ${monthName}`);
+      console.log(`  Day: ${day}`);
+      console.log(`  Year: ${year}`);
+      
       // Try multiple URL patterns that Mashable might use
       const urlPatterns = [
         `https://mashable.com/article/nyt-connections-hint-answer-today-${monthName}-${day}-${year}`,
+        `https://mashable.com/article/nyt-connections-hint-answer-${monthName}-${day}-${year}`,
         `https://mashable.com/article/nyt-connections-answers-${monthName}-${day}-${year}`,
         `https://mashable.com/article/nyt-connections-today-${monthName}-${day}-${year}`,
-        `https://mashable.com/article/nyt-connections-${monthName}-${day}-${year}`,
-        `https://mashable.com/article/nyt-connections-hint-answer-${monthName}-${day}-${year}`
+        `https://mashable.com/article/nyt-connections-${monthName}-${day}-${year}`
       ];
       
       // Anti-bot measures
