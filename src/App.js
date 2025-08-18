@@ -77,22 +77,23 @@ function App() {
       console.log(`Fetching real puzzle for date: ${date}`);
       
       // Convert numeric date to Mashable URL format (e.g., "2025-07-02" -> "july-2-2025")
-      const dateObj = new Date(date);
+      // Parse date as local time to avoid timezone conversion issues
+      const [yearStr, monthStr, dayStr] = date.split('-');
+      const monthIndex = parseInt(monthStr) - 1; // Month is 0-indexed in JavaScript
+      const day = parseInt(dayStr);
+      const year = parseInt(yearStr);
+      
       const monthNames = [
         'january', 'february', 'march', 'april', 'may', 'june',
         'july', 'august', 'september', 'october', 'november', 'december'
       ];
-      const monthName = monthNames[dateObj.getMonth()];
-      const day = dateObj.getDate();
-      const year = dateObj.getFullYear();
+      const monthName = monthNames[monthIndex];
       
       console.log(`Date conversion debug:`);
       console.log(`  Input date: ${date}`);
-      console.log(`  Date object: ${dateObj}`);
-      console.log(`  Month index: ${dateObj.getMonth()}`);
+      console.log(`  Parsed components: year=${year}, month=${monthStr} (index=${monthIndex}), day=${dayStr}`);
       console.log(`  Month name: ${monthName}`);
-      console.log(`  Day: ${day}`);
-      console.log(`  Year: ${year}`);
+      console.log(`  Final URL date: ${monthName}-${day}-${year}`);
       
       // Try multiple URL patterns that Mashable might use
       const urlPatterns = [
