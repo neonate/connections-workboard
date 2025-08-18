@@ -23,7 +23,7 @@ function App() {
       const puzzleData = await simulatePuzzleFetch(date);
       console.log('Received puzzle data:', puzzleData);
       
-      if (puzzleData && puzzleData.words) {
+      if (puzzleData && puzzleData.words && puzzleData.words.length === 16) {
         // Randomize the word order to prevent giving away answers
         const randomizedWords = shuffleArray([...puzzleData.words]);
         console.log('About to set words to:', randomizedWords);
@@ -36,10 +36,24 @@ function App() {
         setInputText(''); // Clear manual input since we fetched automatically
         
         console.log('State update calls completed');
+      } else {
+        // Invalid puzzle data received
+        const errorMsg = `Invalid puzzle data received for ${date}. Expected 16 words, got ${puzzleData?.words?.length || 0}`;
+        console.error(errorMsg);
+        setFetchError(errorMsg);
+        // Don't start the game, keep user on input screen
+        setWords([]);
+        setGroups([[], [], [], []]);
+        setHasStartedGame(false);
       }
     } catch (error) {
-      setFetchError(`Failed to fetch puzzle for ${date}: ${error.message}`);
+      const errorMsg = `Failed to fetch puzzle for ${date}: ${error.message}`;
       console.error('Puzzle fetch error:', error);
+      setFetchError(errorMsg);
+      // Don't start the game, keep user on input screen
+      setWords([]);
+      setGroups([[], [], [], []]);
+      setHasStartedGame(false);
     } finally {
       setIsLoading(false);
     }
@@ -62,6 +76,16 @@ function App() {
     console.log('Simulating fetch for date:', date);
     // Simulate network delay with realistic timing
     await new Promise(resolve => setTimeout(resolve, 1000 + Math.random() * 2000));
+    
+    // Test error handling - simulate a failure for a specific date
+    if (date === '2024-01-29') {
+      throw new Error('Simulated network failure for testing error handling');
+    }
+    
+    // Test invalid data handling - simulate corrupted data for another date
+    if (date === '2024-01-30') {
+      return { words: ['INVALID', 'DATA'], date: date }; // Only 2 words instead of 16
+    }
     
     // Normalize the date to ensure consistent format
     const normalizedDate = date.split('T')[0]; // Remove time component if present
@@ -214,11 +238,16 @@ function App() {
       // This would need to be implemented based on the actual page structure
       const words = parsePuzzleWordsFromHTML(html);
       
+      // Validate the parsed words
+      if (!words || !Array.isArray(words) || words.length !== 16) {
+        throw new Error(`Failed to parse puzzle words. Expected 16 words, got ${words?.length || 0}`);
+      }
+      
       return { words, date };
     } catch (error) {
       console.error('Real puzzle fetch failed:', error);
-      // Fall back to sample data for now
-      return simulatePuzzleFetch(date);
+      // Don't fall back to sample data - let the error bubble up
+      throw error;
     }
   };
 
