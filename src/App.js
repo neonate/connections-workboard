@@ -41,6 +41,7 @@ function App() {
 
   // Auto-fetch puzzle when date changes
   useEffect(() => {
+    console.log('useEffect triggered with selectedDate:', selectedDate);
     if (selectedDate) {
       console.log('Selected date:', selectedDate);
       console.log('Selected date type:', typeof selectedDate);
@@ -90,6 +91,11 @@ function App() {
     
     console.log('Available sample puzzles:', Object.keys(samplePuzzles));
     console.log('Looking for puzzle with normalized date:', normalizedDate);
+    
+    // Test the lookup logic
+    console.log('Testing lookup for 2024-01-27:', samplePuzzles['2024-01-27']);
+    console.log('Testing lookup for normalized date:', samplePuzzles[normalizedDate]);
+    console.log('Direct comparison 2024-01-27 === normalizedDate:', '2024-01-27' === normalizedDate);
     
     // Return puzzle for selected date or generate a unique one based on the date
     if (samplePuzzles[normalizedDate]) {
@@ -332,7 +338,13 @@ function App() {
                 type="date"
                 id="puzzle-date"
                 value={selectedDate}
-                onChange={(e) => setSelectedDate(e.target.value)}
+                onChange={(e) => {
+                  console.log('Date picker onChange triggered');
+                  console.log('Event target value:', e.target.value);
+                  console.log('Previous selectedDate:', selectedDate);
+                  setSelectedDate(e.target.value);
+                  console.log('setSelectedDate called with:', e.target.value);
+                }}
                 max={today}
                 className="date-picker"
                 disabled={isLoading}
@@ -342,6 +354,9 @@ function App() {
                   <span>Fetching...</span>
                 </div>
               )}
+              <div style={{fontSize: '12px', color: '#666', marginTop: '5px'}}>
+                Current selectedDate: {selectedDate || 'none'}
+              </div>
             </div>
             
             {fetchError && (
