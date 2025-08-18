@@ -86,7 +86,7 @@ function App() {
         date: '2024-01-26'
       },
       '2024-01-27': {
-        words: ['LION', 'TIGER', 'BEAR', 'WOLF', 'PENNY', 'NICKEL', 'DIME', 'QUARTER', 'NORTH', 'SOUTH', 'EAST', 'WEST', 'MORNING', 'NOON', 'EVENING', 'NIGHT'],
+        words: ['BRAIN', 'COURAGE', 'HEART', 'HOME', 'GUARD', 'MIND', 'TEND', 'WATCH', 'ACHE', 'BURN', 'SMART', 'STING', 'ANSWER', 'TWO', 'WRIST', 'WRONG'],
         date: '2024-01-27'
       },
       '2024-01-28': {
