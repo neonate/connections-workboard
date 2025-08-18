@@ -9,7 +9,8 @@ function App() {
   const [hasStartedGame, setHasStartedGame] = useState(false);
   const [selectedDate, setSelectedDate] = useState('');
   const [isLoading, setIsLoading] = useState(false);
-  const [fetchError, setFetchError] = useState('');
+  const [fetchError, setFetchError] = useState(null);
+  const [fetchUrl, setFetchUrl] = useState(''); // Track the successful fetch URL
 
   // Memoize the fetch function to fix useEffect dependency warning
   const fetchPuzzleForDate = useCallback(async (date) => {
@@ -159,6 +160,9 @@ function App() {
               console.log(`Redirected from ${url} to ${response.url}`);
             }
             
+            // Set the successful fetch URL for display
+            setFetchUrl(response.url);
+            
             return parsePuzzleWordsFromHTML(html, date);
           } else if (response.status === 404) {
             console.log(`404 for ${url}, trying next pattern...`);
@@ -211,6 +215,10 @@ function App() {
             if (response.ok) {
               const html = await response.text();
               console.log(`Successfully fetched HTML via proxy (${html.length} characters)`);
+              
+              // Set the successful fetch URL for display (original URL, not proxy URL)
+              setFetchUrl(url);
+              
               return parsePuzzleWordsFromHTML(html, date);
             } else {
               console.log(`Proxy returned ${response.status}, trying next...`);
@@ -565,20 +573,27 @@ function App() {
           </div>
         ) : (
           <div className="board-section">
-            <div className="board-header">
-              <h2>Create Four Groups of Four!</h2>
-              <div className="board-info">
-                {selectedDate && (
-                  <span className="puzzle-date-info">
-                    Puzzle Date: {new Date(selectedDate).toLocaleDateString()}
-                    <br />
-                    <small>Raw: {selectedDate}</small>
-                  </span>
-                )}
-                <button className="reset-btn" onClick={resetBoard}>
-                  Reset Board
-                </button>
+            <div className="board-info">
+              <h2>NYT Connections Working Board</h2>
+              {fetchUrl && (
+                <div className="fetch-url-info">
+                  <span>Fetched from: </span>
+                  <a 
+                    href={fetchUrl} 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="fetch-link"
+                  >
+                    {fetchUrl}
+                  </a>
+                </div>
+              )}
+              <div className="puzzle-date-info">
+                <span>Puzzle Date: {selectedDate}</span>
               </div>
+              <button className="reset-btn" onClick={resetBoard}>
+                Reset Board
+              </button>
             </div>
             
             {/* Word Grid */}
