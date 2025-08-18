@@ -15,52 +15,78 @@ function App() {
   const [hintMode, setHintMode] = useState(false); // Enable hint mode to show correct/incorrect groups
   // Store the puzzle categories for hint mode
   const [puzzleCategories, setPuzzleCategories] = useState([]);
+  
+  // Cache management functions
+  const getCachedPuzzle = (date) => {
+    try {
+      const cached = localStorage.getItem(`puzzle_${date}`);
+      if (cached) {
+        const puzzleData = JSON.parse(cached);
+        console.log(`Found cached puzzle for ${date}:`, puzzleData);
+        return puzzleData;
+      }
+    } catch (error) {
+      console.error('Error reading cached puzzle:', error);
+    }
+    return null;
+  };
+  
+  const cachePuzzle = (date, puzzleData) => {
+    try {
+      const cacheKey = `puzzle_${date}`;
+      localStorage.setItem(cacheKey, JSON.stringify(puzzleData));
+      console.log(`Cached puzzle for ${date} with key: ${cacheKey}`);
+    } catch (error) {
+      console.error('Error caching puzzle:', error);
+    }
+  };
+  
+  const clearCache = () => {
+    try {
+      // Clear all puzzle cache entries
+      Object.keys(localStorage).forEach(key => {
+        if (key.startsWith('puzzle_')) {
+          localStorage.removeItem(key);
+        }
+      });
+      console.log('Cleared all cached puzzles');
+    } catch (error) {
+      console.error('Error clearing cache:', error);
+    }
+  };
 
   // Memoize the fetch function to fix useEffect dependency warning
   const fetchPuzzleForDate = useCallback(async (date) => {
     console.log('Fetching puzzle for date:', date);
-    setIsLoading(true);
-    setFetchError('');
+    
+    // Check cache first
+    const cachedPuzzle = getCachedPuzzle(date);
+    if (cachedPuzzle) {
+      console.log('Using cached puzzle data');
+      
+      // Set the fetch URL to show it was from cache
+      setFetchUrl('Cached data (previously fetched)');
+      
+      // Store categories for hint mode if available
+      if (cachedPuzzle.categories) {
+        setPuzzleCategories(cachedPuzzle.categories);
+      }
+      
+      return cachedPuzzle;
+    }
+    
+    console.log('No cached data found, fetching from API...');
     
     try {
-      // For now, we'll simulate fetching with sample data
-      // In the future, this would be a real API call
-      const puzzleData = await simulatePuzzleFetch(date);
-      console.log('Received puzzle data:', puzzleData);
+      const puzzleData = await fetchRealPuzzle(date);
       
-      if (puzzleData && puzzleData.words && puzzleData.words.length === 16) {
-        // Randomize the word order to prevent giving away answers
-        const randomizedWords = shuffleArray([...puzzleData.words]);
-        console.log('About to set words to:', randomizedWords);
-        console.log('About to set groups to:', [[], [], [], []]);
-        console.log('About to set hasStartedGame to:', true);
-        
-        setWords(randomizedWords);
-        setGroups([[], [], [], []]);
-        setHasStartedGame(true);
-        setInputText(''); // Clear manual input since we fetched automatically
-        
-        console.log('State update calls completed');
-      } else {
-        // Invalid puzzle data received
-        const errorMsg = `Invalid puzzle data received for ${date}. Expected 16 words, got ${puzzleData?.words?.length || 0}`;
-        console.error(errorMsg);
-        setFetchError(errorMsg);
-        // Don't start the game, keep user on input screen
-        setWords([]);
-        setGroups([[], [], [], []]);
-        setHasStartedGame(false);
-      }
+      // Cache the fetched data for future use
+      cachePuzzle(date, puzzleData);
+      
+      return puzzleData;
     } catch (error) {
-      const errorMsg = `Failed to fetch puzzle for ${date}: ${error.message}`;
-      console.error('Puzzle fetch error:', error);
-      setFetchError(errorMsg);
-      // Don't start the game, keep user on input screen
-      setWords([]);
-      setGroups([[], [], [], []]);
-      setHasStartedGame(false);
-    } finally {
-      setIsLoading(false);
+      console.error('Failed to fetch puzzle:', error);
+      throw error;
     }
   }, []);
 
@@ -711,6 +737,19 @@ function App() {
                 />
                 <span className="hint-text">Enable Hint Mode (shows correct/incorrect groups when 4 words are grouped)</span>
               </label>
+              
+              <div className="cache-controls">
+                <button 
+                  className="cache-btn" 
+                  onClick={clearCache}
+                  title="Clear all cached puzzle data"
+                >
+                  Clear Cache
+                </button>
+                <span className="cache-info">
+                  Cached puzzles: {Object.keys(localStorage).filter(key => key.startsWith('puzzle_')).length}
+                </span>
+              </div>
             </div>
           </div>
         )}

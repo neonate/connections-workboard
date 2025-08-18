@@ -510,6 +510,37 @@
   font-weight: 500;
 }
 
+.cache-controls {
+  margin-top: 15px;
+  padding-top: 15px;
+  border-top: 1px solid #e9ecef;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+}
+
+.cache-btn {
+  background-color: #6c757d;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 12px;
+  transition: background-color 0.2s;
+}
+
+.cache-btn:hover {
+  background-color: #5a6268;
+}
+
+.cache-info {
+  font-size: 12px;
+  color: #6c757d;
+  font-style: italic;
+}
+
 .group-header {
   display: flex;
   align-items: center;
