@@ -7,6 +7,7 @@ function App() {
   const [inputText, setInputText] = useState('');
   const [dragOverGroup, setDragOverGroup] = useState(null);
   const [hasStartedGame, setHasStartedGame] = useState(false);
+  const [selectedDate, setSelectedDate] = useState('');
 
   const handleSubmit = () => {
     if (!inputText.trim()) return;
@@ -26,6 +27,15 @@ function App() {
     setWords(wordList);
     setGroups([[], [], [], []]); // Reset groups
     setHasStartedGame(true); // Mark that the game has started
+  };
+
+  const handleFetchPuzzle = () => {
+    if (!selectedDate) {
+      alert('Please select a date first');
+      return;
+    }
+    // TODO: Implement puzzle fetching for selected date
+    alert(`Fetching puzzle for ${selectedDate} - Feature coming soon!`);
   };
 
   const handleDragStart = (e, word) => {
@@ -83,6 +93,7 @@ function App() {
     setWords([]);
     setGroups([[], [], [], []]);
     setInputText('');
+    setSelectedDate('');
     setHasStartedGame(false); // Reset the game state
   };
 
@@ -93,6 +104,9 @@ function App() {
   // Show input screen only if game hasn't started OR if explicitly reset
   const shouldShowInput = !hasStartedGame;
 
+  // Get today's date in YYYY-MM-DD format for the date picker
+  const today = new Date().toISOString().split('T')[0];
+
   return (
     <div className="App">
       <header className="App-header">
@@ -102,6 +116,29 @@ function App() {
       <main className="App-main">
         {shouldShowInput ? (
           <div className="input-section">
+            <div className="date-section">
+              <label htmlFor="puzzle-date" className="date-label">
+                Puzzle Date (Optional):
+              </label>
+              <input
+                type="date"
+                id="puzzle-date"
+                value={selectedDate}
+                onChange={(e) => setSelectedDate(e.target.value)}
+                max={today}
+                className="date-picker"
+              />
+              <button 
+                className="fetch-btn"
+                onClick={handleFetchPuzzle}
+                disabled={!selectedDate}
+              >
+                Fetch Puzzle
+              </button>
+            </div>
+            <div className="input-divider">
+              <span>OR</span>
+            </div>
             <textarea 
               value={inputText}
               onChange={(e) => setInputText(e.target.value)}
@@ -117,9 +154,16 @@ function App() {
           <div className="board-section">
             <div className="board-header">
               <h2>Create Four Groups of Four!</h2>
-              <button className="reset-btn" onClick={resetBoard}>
-                Reset Board
-              </button>
+              <div className="board-info">
+                {selectedDate && (
+                  <span className="puzzle-date-info">
+                    Puzzle Date: {new Date(selectedDate).toLocaleDateString()}
+                  </span>
+                )}
+                <button className="reset-btn" onClick={resetBoard}>
+                  Reset Board
+                </button>
+              </div>
             </div>
             
             {/* Word Grid */}
