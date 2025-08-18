@@ -248,15 +248,16 @@ function App() {
       
       const foundWords = new Set();
       
-      // Pattern 1: Newer format (July 2025 style) - * Category: WORD1, WORD2, WORD3, WORD4
-      const newerFormatPattern = /\*\s*([^:]+):\s*([A-Z]{3,20}),\s*([A-Z]{3,20}),\s*([A-Z]{3,20}),\s*([A-Z]{3,20})/gi;
-      let newerMatch;
+      // Pattern 1: Look for the specific solution section format that contains the actual puzzle answers
+      // This should be the most reliable pattern - the actual solution section
+      const solutionPattern = /\*\s*([^:]+):\s*([A-Z]{3,20}),\s*([A-Z]{3,20}),\s*([A-Z]{3,20}),\s*([A-Z]{3,20})/gi;
+      let solutionMatch;
       
-      while ((newerMatch = newerFormatPattern.exec(html)) !== null) {
-        const category = newerMatch[1];
-        const words = [newerMatch[2], newerMatch[3], newerMatch[4], newerMatch[5]];
+      while ((solutionMatch = solutionPattern.exec(html)) !== null) {
+        const category = solutionMatch[1];
+        const words = [solutionMatch[2], solutionMatch[3], solutionMatch[4], solutionMatch[5]];
         
-        console.log(`Found newer format category "${category}" with words:`, words);
+        console.log(`Found solution category "${category}" with words:`, words);
         
         words.forEach(word => {
           if (word && word.length >= 3 && word.length <= 20) {
@@ -265,7 +266,7 @@ function App() {
         });
       }
       
-      // Pattern 2: Older format (January 2024 style) - * Color - **CATEGORY - WORD1, WORD2, WORD3, WORD4**
+      // Pattern 2: Look for the older format used in some articles
       const olderFormatPattern = /\*\s*([A-Za-z]+)\s*-\s*\*\*([^*]+)\*\*\s*-\s*([A-Z]{3,20}),\s*([A-Z]{3,20}),\s*([A-Z]{3,20}),\s*([A-Z]{3,20})/gi;
       let olderMatch;
       
@@ -283,48 +284,71 @@ function App() {
         });
       }
       
-      // If we found words in either format, use those
+      // If we found words in the solution format, use those (most reliable)
       if (foundWords.size >= 16) {
         const words = Array.from(foundWords).slice(0, 16);
-        console.log('Successfully parsed puzzle words from Mashable format:', words);
+        console.log('Successfully parsed puzzle words from solution format:', words);
         return { words, date };
       }
       
-      // Fallback: try other patterns if the main formats didn't work
-      const fallbackPatterns = [
-        // Look for words in the solution section (usually in bold or strong tags)
+      // Pattern 3: Look for words specifically in the "What is the answer to Connections today" section
+      // This is usually the most reliable section for the actual puzzle answers
+      const answerSectionPattern = /What is the answer to Connections today[^]*?(\*\s*[^:]+:\s*[A-Z]{3,20},\s*[A-Z]{3,20},\s*[A-Z]{3,20},\s*[A-Z]{3,20})/gi;
+      let answerSectionMatch;
+      
+      while ((answerSectionMatch = answerSectionPattern.exec(html)) !== null) {
+        const match = answerSectionMatch[1];
+        const wordMatch = match.match(/([A-Z]{3,20}),\s*([A-Z]{3,20}),\s*([A-Z]{3,20}),\s*([A-Z]{3,20})/);
+        
+        if (wordMatch) {
+          const words = [wordMatch[1], wordMatch[2], wordMatch[3], wordMatch[4]];
+          console.log(`Found words in answer section:`, words);
+          
+          words.forEach(word => {
+            if (word && word.length >= 3 && word.length <= 20) {
+              foundWords.add(word.trim());
+            }
+          });
+        }
+      }
+      
+      // If we found words in the answer section, use those
+      if (foundWords.size >= 16) {
+        const words = Array.from(foundWords).slice(0, 16);
+        console.log('Successfully parsed puzzle words from answer section:', words);
+        return { words, date };
+      }
+      
+      // Fallback: Only if we absolutely can't find the solution format, try other patterns
+      // But be much more restrictive to avoid picking up random page content
+      console.log('Solution format not found, trying restrictive fallback patterns...');
+      
+      const restrictivePatterns = [
+        // Look for words that are likely puzzle answers (in specific contexts)
         /<strong[^>]*>([A-Z]{3,20})<\/strong>/gi,
-        /<b[^>]*>([A-Z]{3,20})<\/b>/gi,
-        // Look for words in list items that contain puzzle solutions
-        /<li[^>]*>([^<]*?([A-Z]{3,20})[^<]*?)<\/li>/gi,
-        // Look for words in paragraphs that mention the categories
-        /<p[^>]*>([^<]*?([A-Z]{3,20})[^<]*?)<\/p>/gi,
-        // Look for words in headings that might contain puzzle information
-        /<h[1-6][^>]*>([^<]*?([A-Z]{3,20})[^<]*?)<\/h[1-6]>/gi,
-        // Look for words that appear in all caps (likely puzzle words)
-        /\b([A-Z]{3,20})\b/g
+        /<b[^>]*>([A-Z]{3,20})<\/b>/gi
       ];
       
-      for (const pattern of fallbackPatterns) {
+      for (const pattern of restrictivePatterns) {
         let match;
         while ((match = pattern.exec(html)) !== null) {
-          let word = match[1] || match[2] || match[0];
+          let word = match[1];
           word = word.trim().toUpperCase();
           
-          // Filter for reasonable puzzle words
+          // Much more restrictive filtering - only words that look like puzzle answers
           if (word.length >= 3 && word.length <= 20 && 
               /^[A-Z]+$/.test(word) && // Only letters, no numbers or special chars
-              !['THE', 'AND', 'FOR', 'ARE', 'BUT', 'NOT', 'YOU', 'ALL', 'CAN', 'HER', 'WAS', 'ONE', 'OUR', 'OUT', 'DAY', 'GET', 'HAS', 'HIM', 'HIS', 'HOW', 'MAN', 'NEW', 'NOW', 'OLD', 'SEE', 'TWO', 'WAY', 'WHO', 'BOY', 'DID', 'ITS', 'LET', 'PUT', 'SAY', 'SHE', 'TOO', 'USE', 'NYT', 'CONNECTIONS', 'TODAY', 'HINTS', 'ANSWERS', 'JULY', 'AUGUST', 'SEPTEMBER', 'OCTOBER', 'NOVEMBER', 'DECEMBER', 'JANUARY', 'FEBRUARY', 'MARCH', 'APRIL', 'MAY', 'JUNE'].includes(word)) {
+              !['THE', 'AND', 'FOR', 'ARE', 'BUT', 'NOT', 'YOU', 'ALL', 'CAN', 'HER', 'WAS', 'ONE', 'OUR', 'OUT', 'DAY', 'GET', 'HAS', 'HIM', 'HIS', 'HOW', 'MAN', 'NEW', 'NOW', 'OLD', 'SEE', 'TWO', 'WAY', 'WHO', 'BOY', 'DID', 'ITS', 'LET', 'PUT', 'SAY', 'SHE', 'TOO', 'USE', 'NYT', 'CONNECTIONS', 'TODAY', 'HINTS', 'ANSWERS', 'JULY', 'AUGUST', 'SEPTEMBER', 'OCTOBER', 'NOVEMBER', 'DECEMBER', 'JANUARY', 'FEBRUARY', 'MARCH', 'APRIL', 'MAY', 'JUNE', 'UUID', 'RSS', 'API', 'HTTP', 'HTML', 'CSS', 'JS', 'PHP', 'SQL', 'XML', 'JSON', 'URL', 'DOM', 'CPU', 'RAM', 'USB', 'HDD', 'SSD', 'GPU', 'VPN', 'DNS', 'IP', 'MAC', 'PC', 'TV', 'CD', 'DVD', 'MP3', 'MP4', 'PDF', 'ZIP', 'RAR', 'EXE', 'TXT', 'DOC', 'XLS', 'PPT'].includes(word)) {
             foundWords.add(word);
           }
         }
       }
       
-      console.log('Found potential words:', Array.from(foundWords));
+      console.log('Found potential words (restrictive fallback):', Array.from(foundWords));
       
       if (foundWords.size >= 16) {
         const words = Array.from(foundWords).slice(0, 16);
-        console.log('Parsed words from Mashable HTML fallback patterns:', words);
+        console.log('Parsed words from restrictive fallback patterns:', words);
         return { words, date };
       }
       
