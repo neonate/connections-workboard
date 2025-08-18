@@ -127,9 +127,9 @@ function App() {
 
   // Seeded random number generator
   const seededRandom = (seed) => {
-    let m = 0x80000000;
-    let a = 1103515245;
-    let c = 12345;
+    const m = 0x80000000;
+    const a = 1103515245;
+    const c = 12345;
     let state = seed ? seed : Math.floor(Math.random() * (m - 1));
     
     return () => {
