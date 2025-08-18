@@ -71,84 +71,129 @@ function App() {
     }
   }, [selectedDate, fetchPuzzleForDate]);
 
-  // Simulate puzzle fetching - replace with real API call later
-  const simulatePuzzleFetch = async (date) => {
-    console.log('Simulating fetch for date:', date);
-    // Simulate network delay with realistic timing
-    await new Promise(resolve => setTimeout(resolve, 1000 + Math.random() * 2000));
-    
-    // Test error handling - simulate a failure for a specific date
-    if (date === '2024-01-29') {
-      throw new Error('Simulated network failure for testing error handling');
-    }
-    
-    // Test invalid data handling - simulate corrupted data for another date
-    if (date === '2024-01-30') {
-      return { words: ['INVALID', 'DATA'], date: date }; // Only 2 words instead of 16
-    }
-    
-    // Normalize the date to ensure consistent format
-    const normalizedDate = date.split('T')[0]; // Remove time component if present
-    console.log('Normalized date:', normalizedDate);
-    
-    // Sample puzzle data - in reality, this would come from an API
-    const samplePuzzles = {
-      '2024-01-15': {
-        words: ['CUE', 'STOP', 'BREAKFAST', 'SHOT', 'POOL', 'POCKET', 'PROMPT', 'PARKING', 'CHANCE', 'WI-FI', 'DIGITAL', 'OPENING', 'WRIST', 'NOD', 'BREAK', 'SIGNAL'],
-        date: '2024-01-15'
-      },
-      '2024-01-16': {
-        words: ['APPLE', 'ORANGE', 'BANANA', 'GRAPE', 'CAR', 'TRUCK', 'BIKE', 'BOAT', 'SUN', 'MOON', 'STAR', 'PLANET', 'BOOK', 'PEN', 'PAPER', 'PENCIL'],
-        date: '2024-01-16'
-      },
-      '2024-01-17': {
-        words: ['RED', 'BLUE', 'GREEN', 'YELLOW', 'DOG', 'CAT', 'BIRD', 'FISH', 'PIZZA', 'BURGER', 'TACO', 'SUSHI', 'RUN', 'WALK', 'JUMP', 'SWIM'],
-        date: '2024-01-17'
-      },
-      '2024-01-26': {
-        words: ['MUSIC', 'ART', 'DANCE', 'POETRY', 'FIRE', 'WATER', 'EARTH', 'AIR', 'COFFEE', 'TEA', 'JUICE', 'MILK', 'SPRING', 'SUMMER', 'FALL', 'WINTER'],
-        date: '2024-01-26'
-      },
-      '2024-01-27': {
-        words: ['BRAIN', 'COURAGE', 'HEART', 'HOME', 'GUARD', 'MIND', 'TEND', 'WATCH', 'ACHE', 'BURN', 'SMART', 'STING', 'ANSWER', 'TWO', 'WRIST', 'WRONG'],
-        date: '2024-01-27'
-      },
-      '2024-01-28': {
-        words: ['HAPPY', 'SAD', 'ANGRY', 'EXCITED', 'BIG', 'SMALL', 'TALL', 'SHORT', 'HOT', 'COLD', 'WARM', 'COOL', 'FAST', 'SLOW', 'QUICK', 'RAPID'],
-        date: '2024-01-28'
-      },
-      '2025-07-02': {
-        words: ['BOOTLEG', 'COPY', 'FAKE', 'REPLICA', 'DREAMS', 'ID', 'OEDIPUS', 'SLIP', 'MOBILE', 'PAIN', 'REX', 'SHIRT', 'FRESHWATER', 'JUNIPER', 'SENECA', 'SOPHOCLES'],
-        date: '2025-07-02'
-      }
+  // Real puzzle fetching function with anti-bot measures
+  const fetchRealPuzzle = async (date) => {
+    // Anti-bot measures
+    const headers = {
+      'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+      'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+      'Accept-Language': 'en-US,en;q=0.5',
+      'Accept-Encoding': 'gzip, deflate, br',
+      'DNT': '1',
+      'Connection': 'keep-alive',
+      'Upgrade-Insecure-Requests': '1',
+      'Sec-Fetch-Dest': 'document',
+      'Sec-Fetch-Mode': 'navigate',
+      'Sec-Fetch-Site': 'none',
+      'Cache-Control': 'max-age=0'
     };
-    
-    console.log('Available sample puzzles:', Object.keys(samplePuzzles));
-    console.log('Looking for puzzle with normalized date:', normalizedDate);
+
+    // Add realistic delays and randomization
+    const baseDelay = 2000 + Math.random() * 3000; // 2-5 seconds
+    await new Promise(resolve => setTimeout(resolve, baseDelay));
+
+    try {
+      // Try multiple sources for NYT Connections puzzles
+      const sources = [
+        `https://www.nytimes.com/games/connections/${date}`,
+        `https://nytconnections.com/${date}`,
+        `https://connections.nyt.com/${date}`
+      ];
+      
+      let puzzleData = null;
+      
+      for (const url of sources) {
+        try {
+          console.log(`Trying to fetch from: ${url}`);
+          
+          const response = await fetch(url, {
+            method: 'GET',
+            headers,
+            credentials: 'omit',
+            mode: 'cors'
+          });
+
+          if (response.ok) {
+            const html = await response.text();
+            console.log(`Successfully fetched from: ${url}`);
+            
+            // Parse the HTML to extract puzzle words
+            puzzleData = parsePuzzleWordsFromHTML(html, date);
+            
+            if (puzzleData && puzzleData.words && puzzleData.words.length === 16) {
+              console.log('Successfully parsed puzzle data:', puzzleData);
+              break; // Found valid puzzle data, exit loop
+            }
+          }
+        } catch (sourceError) {
+          console.log(`Failed to fetch from ${url}:`, sourceError.message);
+          continue; // Try next source
+        }
+      }
+      
+      if (!puzzleData || !puzzleData.words || puzzleData.words.length !== 16) {
+        throw new Error('Failed to fetch valid puzzle data from all sources');
+      }
+      
+      return puzzleData;
+    } catch (error) {
+      console.error('Real puzzle fetch failed:', error);
+      throw error;
+    }
+  };
+
+  // Parse puzzle words from HTML (needs to be implemented based on actual page structure)
+  const parsePuzzleWordsFromHTML = (html, date) => {
+    try {
+      // This is a placeholder - would need to be implemented based on actual NYT page structure
+      // For now, we'll try to extract words from common patterns
+      
+      // Look for common patterns in NYT Connections pages
+      const wordPatterns = [
+        /data-word="([^"]+)"/g,
+        /class="[^"]*word[^"]*"[^>]*>([^<]+)</g,
+        /"word":"([^"]+)"/g,
+        /word:\s*"([^"]+)"/g
+      ];
+      
+      const foundWords = new Set();
+      
+      for (const pattern of wordPatterns) {
+        let match;
+        while ((match = pattern.exec(html)) !== null) {
+          const word = match[1].trim().toUpperCase();
+          if (word.length > 0 && word.length < 20) { // Reasonable word length
+            foundWords.add(word);
+          }
+        }
+      }
+      
+      if (foundWords.size >= 16) {
+        const words = Array.from(foundWords).slice(0, 16);
+        console.log('Parsed words from HTML:', words);
+        return { words, date };
+      }
+      
+      // If we can't parse the HTML, throw an error
+      throw new Error('Could not parse puzzle words from HTML');
+      
+    } catch (error) {
+      console.error('HTML parsing failed:', error);
+      throw error;
+    }
+  };
+
+  // Remove the simulatePuzzleFetch function and replace with real fetching
+  const simulatePuzzleFetch = async (date) => {
+    console.log('Attempting to fetch real puzzle for date:', date);
     
     try {
-      // Test the lookup logic
-      console.log('Testing lookup for 2024-01-27:', samplePuzzles['2024-01-27']);
-      console.log('Testing lookup for normalized date:', samplePuzzles[normalizedDate]);
-      console.log('Direct comparison 2024-01-27 === normalizedDate:', '2024-01-27' === normalizedDate);
-      
-      // Return puzzle for selected date or generate a unique one based on the date
-      if (samplePuzzles[normalizedDate]) {
-        console.log('Found sample puzzle for normalized date:', normalizedDate);
-        return samplePuzzles[normalizedDate];
-      } else {
-        console.log('No sample puzzle found, generating unique one for normalized date:', normalizedDate);
-        // Generate a unique puzzle for any other date using the date as a seed
-        const dateSeed = new Date(normalizedDate).getTime();
-        const uniqueWords = generateUniquePuzzle(dateSeed);
-        return {
-          words: uniqueWords,
-          date: normalizedDate
-        };
-      }
+      // Try to fetch the real puzzle
+      const puzzleData = await fetchRealPuzzle(date);
+      return puzzleData;
     } catch (error) {
-      console.error('Error in puzzle lookup logic:', error);
-      throw error;
+      console.error('Real puzzle fetch failed, cannot provide fallback:', error);
+      throw error; // Don't provide fake data, let the error bubble up
     }
   };
 
@@ -204,69 +249,6 @@ function App() {
       state = (a * state + c) % m;
       return state / (m - 1);
     };
-  };
-
-  // Real puzzle fetching function with anti-bot measures
-  const fetchRealPuzzle = async (date) => {
-    // Anti-bot measures
-    const headers = {
-      'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
-      'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
-      'Accept-Language': 'en-US,en;q=0.5',
-      'Accept-Encoding': 'gzip, deflate, br',
-      'DNT': '1',
-      'Connection': 'keep-alive',
-      'Upgrade-Insecure-Requests': '1',
-      'Sec-Fetch-Dest': 'document',
-      'Sec-Fetch-Mode': 'navigate',
-      'Sec-Fetch-Site': 'none',
-      'Cache-Control': 'max-age=0'
-    };
-
-    // Add realistic delays and randomization
-    const baseDelay = 2000 + Math.random() * 3000; // 2-5 seconds
-    await new Promise(resolve => setTimeout(resolve, baseDelay));
-
-    try {
-      // Example URL pattern for NYT Connections (would need actual URL)
-      const url = `https://example.com/connections/${date}`;
-      
-      const response = await fetch(url, {
-        method: 'GET',
-        headers,
-        // Add other realistic browser behavior
-        credentials: 'omit',
-        mode: 'cors'
-      });
-
-      if (!response.ok) {
-        throw new Error(`HTTP ${response.status}: ${response.statusText}`);
-      }
-
-      const html = await response.text();
-      
-      // Parse the HTML to extract puzzle words
-      // This would need to be implemented based on the actual page structure
-      const words = parsePuzzleWordsFromHTML(html);
-      
-      // Validate the parsed words
-      if (!words || !Array.isArray(words) || words.length !== 16) {
-        throw new Error(`Failed to parse puzzle words. Expected 16 words, got ${words?.length || 0}`);
-      }
-      
-      return { words, date };
-    } catch (error) {
-      console.error('Real puzzle fetch failed:', error);
-      // Don't fall back to sample data - let the error bubble up
-      throw error;
-    }
-  };
-
-  // Parse puzzle words from HTML (placeholder implementation)
-  const parsePuzzleWordsFromHTML = (html) => {
-    // This would need to be implemented based on the actual page structure
-    // For now, return sample data
-    return ['CUE', 'STOP', 'BREAKFAST', 'SHOT', 'POOL', 'POCKET', 'PROMPT', 'PARKING', 'CHANCE', 'WI-FI', 'DIGITAL', 'OPENING', 'WRIST', 'NOD', 'BREAK', 'SIGNAL'];
   };
 
   // Fisher-Yates shuffle algorithm for randomizing words
