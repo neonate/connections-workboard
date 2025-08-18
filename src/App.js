@@ -62,11 +62,80 @@ function App() {
       '2024-01-17': {
         words: ['RED', 'BLUE', 'GREEN', 'YELLOW', 'DOG', 'CAT', 'BIRD', 'FISH', 'PIZZA', 'BURGER', 'TACO', 'SUSHI', 'RUN', 'WALK', 'JUMP', 'SWIM'],
         date: '2024-01-17'
+      },
+      '2024-01-26': {
+        words: ['MUSIC', 'ART', 'DANCE', 'POETRY', 'FIRE', 'WATER', 'EARTH', 'AIR', 'COFFEE', 'TEA', 'JUICE', 'MILK', 'SPRING', 'SUMMER', 'FALL', 'WINTER'],
+        date: '2024-01-26'
+      },
+      '2024-01-27': {
+        words: ['LION', 'TIGER', 'BEAR', 'WOLF', 'PENNY', 'NICKEL', 'DIME', 'QUARTER', 'NORTH', 'SOUTH', 'EAST', 'WEST', 'MORNING', 'NOON', 'EVENING', 'NIGHT'],
+        date: '2024-01-27'
+      },
+      '2024-01-28': {
+        words: ['HAPPY', 'SAD', 'ANGRY', 'EXCITED', 'BIG', 'SMALL', 'TALL', 'SHORT', 'HOT', 'COLD', 'WARM', 'COOL', 'FAST', 'SLOW', 'QUICK', 'RAPID'],
+        date: '2024-01-28'
       }
     };
     
-    // Return puzzle for selected date or a default one
-    return samplePuzzles[date] || samplePuzzles['2024-01-15'];
+    // Return puzzle for selected date or generate a unique one based on the date
+    if (samplePuzzles[date]) {
+      return samplePuzzles[date];
+    } else {
+      // Generate a unique puzzle for any other date using the date as a seed
+      const dateSeed = new Date(date).getTime();
+      const uniqueWords = generateUniquePuzzle(dateSeed);
+      return {
+        words: uniqueWords,
+        date: date
+      };
+    }
+  };
+
+  // Generate unique puzzle words based on date seed
+  const generateUniquePuzzle = (seed) => {
+    const allWordSets = [
+      ['CUP', 'BOWL', 'PLATE', 'FORK', 'CHAIR', 'TABLE', 'BED', 'SOFA', 'TREE', 'FLOWER', 'GRASS', 'BUSH', 'BIRD', 'FISH', 'SNAKE', 'LIZARD'],
+      ['SUN', 'MOON', 'STAR', 'CLOUD', 'RAIN', 'SNOW', 'WIND', 'STORM', 'ROCK', 'SAND', 'DIRT', 'CLAY', 'GOLD', 'SILVER', 'BRONZE', 'COPPER'],
+      ['BOOK', 'MAGAZINE', 'NEWSPAPER', 'JOURNAL', 'PENCIL', 'PEN', 'MARKER', 'CRAYON', 'PIZZA', 'HAMBURGER', 'HOTDOG', 'SANDWICH', 'COFFEE', 'TEA', 'JUICE', 'WATER'],
+      ['CAR', 'TRUCK', 'BUS', 'TRAIN', 'PLANE', 'HELICOPTER', 'BOAT', 'SHIP', 'DOOR', 'WINDOW', 'WALL', 'FLOOR', 'ROOF', 'CEILING', 'STAIRS', 'ELEVATOR'],
+      ['HAPPY', 'SAD', 'ANGRY', 'EXCITED', 'TIRED', 'ENERGETIC', 'CALM', 'NERVOUS', 'HOT', 'COLD', 'WARM', 'COOL', 'DRY', 'WET', 'SOFT', 'HARD'],
+      ['RED', 'BLUE', 'GREEN', 'YELLOW', 'PURPLE', 'ORANGE', 'PINK', 'BROWN', 'BLACK', 'WHITE', 'GRAY', 'GOLD', 'SILVER', 'BRONZE', 'COPPER', 'BRASS'],
+      ['SPRING', 'SUMMER', 'FALL', 'WINTER', 'JANUARY', 'FEBRUARY', 'MARCH', 'APRIL', 'MAY', 'JUNE', 'JULY', 'AUGUST', 'SEPTEMBER', 'OCTOBER', 'NOVEMBER', 'DECEMBER'],
+      ['MONDAY', 'TUESDAY', 'WEDNESDAY', 'THURSDAY', 'FRIDAY', 'SATURDAY', 'SUNDAY', 'WEEKEND', 'MORNING', 'AFTERNOON', 'EVENING', 'NIGHT', 'DAWN', 'DUSK', 'NOON', 'MIDNIGHT']
+    ];
+    
+    // Use the seed to select and shuffle a word set
+    const setIndex = seed % allWordSets.length;
+    const selectedSet = allWordSets[setIndex];
+    
+    // Shuffle the selected set using the seed for consistent randomization
+    return shuffleArrayWithSeed(selectedSet, seed);
+  };
+
+  // Shuffle array with a specific seed for consistent results
+  const shuffleArrayWithSeed = (array, seed) => {
+    const shuffled = [...array];
+    const random = seededRandom(seed);
+    
+    for (let i = shuffled.length - 1; i > 0; i--) {
+      const j = Math.floor(random() * (i + 1));
+      [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+    }
+    
+    return shuffled;
+  };
+
+  // Seeded random number generator
+  const seededRandom = (seed) => {
+    let m = 0x80000000;
+    let a = 1103515245;
+    let c = 12345;
+    let state = seed ? seed : Math.floor(Math.random() * (m - 1));
+    
+    return () => {
+      state = (a * state + c) % m;
+      return state / (m - 1);
+    };
   };
 
   // Real puzzle fetching function with anti-bot measures
