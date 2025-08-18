@@ -108,15 +108,19 @@ function App() {
             <button type="submit">Start Puzzle</button>
           </form>
           
-          <div className="screenshot-plan">
-            <h3>📸 Screenshot Plan (Coming Soon)</h3>
-            <p>Future enhancement: Upload a screenshot of the NYT Connections puzzle to automatically extract the 16 words.</p>
-            <ul>
-              <li>Take a screenshot of the puzzle grid</li>
-              <li>Upload the image to the app</li>
-              <li>OCR technology will read and extract the words</li>
-              <li>Words will be automatically loaded into the working board</li>
-            </ul>
+          <div className="chatgpt-instructions">
+            <h3>💡 Pro Tip: Use ChatGPT to Get Words</h3>
+            <p>Don&apos;t want to type all 16 words manually? Here&apos;s an easy way:</p>
+            <ol>
+              <li><strong>Take a screenshot</strong> of the NYT Connections puzzle grid</li>
+              <li><strong>Upload it to ChatGPT</strong> and ask: &ldquo;What are the 16 words in this NYT Connections puzzle? Please list them separated by commas.&rdquo;</li>
+              <li><strong>Copy the response</strong> and paste it into the textarea above</li>
+              <li><strong>Click &ldquo;Start Puzzle&rdquo;</strong> to begin organizing!</li>
+            </ol>
+            <div className="example-prompt">
+              <h4>Example ChatGPT Prompt:</h4>
+              <p>&ldquo;I have a screenshot of today&apos;s NYT Connections puzzle. Can you identify all 16 words in the grid and list them separated by commas? Just the words, nothing else.&rdquo;</p>
+            </div>
           </div>
         </div>
       </div>

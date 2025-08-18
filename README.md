@@ -24,10 +24,10 @@ This app provides a drag-and-drop interface for organizing NYT Connections puzzl
 - **Responsive Design**: Works on desktop and mobile devices
 - **Reset Functionality**: Clear the board and start over
 
-### Planned Features (Phase 2)
-- **Screenshot Upload**: Upload a screenshot of the NYT Connections puzzle
-- **OCR Integration**: Automatically extract words from puzzle images
-- **Auto-population**: Load extracted words directly into the working board
+### Smart Word Input
+- **ChatGPT Integration**: Upload puzzle screenshots to ChatGPT for automatic word extraction
+- **Easy Workflow**: Screenshot → ChatGPT → Copy words → Paste → Start solving
+- **No Manual Typing**: Avoid typing all 16 words manually
 
 ## Getting Started
 
@@ -62,29 +62,40 @@ This app provides a drag-and-drop interface for organizing NYT Connections puzzl
 
 ## How to Use
 
+### Method 1: ChatGPT + Screenshot (Recommended)
+1. **Take a Screenshot**: Capture the NYT Connections puzzle grid
+2. **Upload to ChatGPT**: Ask: "What are the 16 words in this NYT Connections puzzle? Please list them separated by commas."
+3. **Copy Response**: Get the comma-separated word list from ChatGPT
+4. **Paste & Start**: Paste the words into the app and click "Start Puzzle"
+
+### Method 2: Manual Entry
 1. **Enter Words**: On the input screen, enter the 16 words from your NYT Connections puzzle
    - Separate words with commas or new lines
    - Words will be automatically converted to uppercase
    - Click "Start Puzzle" when ready
 
-2. **Organize Words**: 
+### Solving the Puzzle
+1. **Organize Words**: 
    - Drag words from the top grid into the group areas below
    - Each group can hold up to 4 words
    - Visual feedback shows when groups are full
 
-3. **Manage Groups**:
+2. **Manage Groups**:
    - Remove words from groups using the × button
    - Words return to the main board when removed
    - Reset the entire board using the Reset button
 
-## Screenshot Plan
+## ChatGPT Integration
 
-The app is designed with future OCR integration in mind:
+The app includes built-in instructions for using ChatGPT to extract puzzle words:
 
-- **Image Upload**: Users will be able to upload screenshots of NYT Connections puzzles
-- **Word Extraction**: OCR technology will automatically read and extract the 16 words
-- **Auto-population**: Extracted words will be loaded directly into the working board
-- **Validation**: Built-in checks to ensure exactly 16 words are extracted
+- **Simple Workflow**: Screenshot → ChatGPT → Copy → Paste
+- **Clear Prompts**: Example ChatGPT prompts provided
+- **No API Keys**: Uses ChatGPT's free web interface
+- **Universal Access**: Works with any device that can access ChatGPT
+
+### Example ChatGPT Prompt
+> "I have a screenshot of today's NYT Connections puzzle. Can you identify all 16 words in the grid and list them separated by commas? Just the words, nothing else."
 
 ## Development Phases
 
@@ -100,11 +111,10 @@ The app is designed with future OCR integration in mind:
 - [x] Group size restrictions
 - [x] Basic styling and layout
 
-### Phase 3 🔄 - Screenshot Integration
-- [ ] Image upload functionality
-- [ ] OCR integration for word extraction
-- [ ] Auto-population of words
-- [ ] Image validation and error handling
+### Phase 3 ✅ - Smart Input Methods
+- [x] ChatGPT integration instructions
+- [x] Screenshot workflow documentation
+- [x] User-friendly prompts and examples
 
 ### Phase 4 🔄 - Enhanced Features
 - [ ] Save/load game state (localStorage)
@@ -136,4 +146,4 @@ This project is open source and available under the [MIT License](LICENSE).
 
 ## Current Status
 
-The app is currently in **Phase 2** with a fully functional MVP. Users can manually enter puzzle words and organize them using drag-and-drop. The next major milestone is implementing screenshot-based word extraction using OCR technology.
+The app is currently in **Phase 3** with a fully functional MVP and smart input methods. Users can either manually enter puzzle words or use ChatGPT to extract words from screenshots. The next phase focuses on enhanced features like save/load functionality and game state management.

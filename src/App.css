@@ -23,11 +23,13 @@
 .input-section h2 {
   color: #333;
   margin-bottom: 10px;
+  text-align: center;
 }
 
 .input-section p {
   color: #666;
   margin-bottom: 20px;
+  text-align: center;
 }
 
 .input-section textarea {
@@ -61,26 +63,67 @@
   background-color: #0056b3;
 }
 
-.screenshot-plan {
-  margin-top: 40px;
-  padding: 20px;
-  background-color: #f8f9fa;
-  border-radius: 8px;
-  border-left: 4px solid #007bff;
+/* ChatGPT Instructions Section */
+.chatgpt-instructions {
+  background: linear-gradient(135deg, #10a37f 0%, #0d8f6f 100%);
+  color: white;
+  border-radius: 12px;
+  padding: 25px;
+  margin-top: 30px;
 }
 
-.screenshot-plan h3 {
-  color: #007bff;
+.chatgpt-instructions h3 {
+  color: white;
   margin-top: 0;
+  margin-bottom: 15px;
+  font-size: 1.4em;
 }
 
-.screenshot-plan ul {
+.chatgpt-instructions p {
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 20px;
   text-align: left;
-  color: #666;
 }
 
-.screenshot-plan li {
-  margin-bottom: 8px;
+.chatgpt-instructions ol {
+  text-align: left;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 20px;
+  padding-left: 20px;
+}
+
+.chatgpt-instructions li {
+  margin-bottom: 12px;
+  line-height: 1.6;
+}
+
+.chatgpt-instructions strong {
+  color: white;
+}
+
+.example-prompt {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  padding: 20px;
+  margin-top: 20px;
+}
+
+.example-prompt h4 {
+  color: white;
+  margin-top: 0;
+  margin-bottom: 15px;
+  font-size: 1.2em;
+}
+
+.example-prompt p {
+  color: rgba(255, 255, 255, 0.8);
+  font-style: italic;
+  margin-bottom: 0;
+  text-align: left;
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 15px;
+  border-radius: 6px;
+  border-left: 3px solid rgba(255, 255, 255, 0.3);
 }
 
 .game-board {
@@ -223,4 +266,20 @@
 
 .reset-btn:hover {
   background-color: #545b62;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .input-section {
+    max-width: 100%;
+    padding: 0 15px;
+  }
+  
+  .chatgpt-instructions {
+    padding: 20px;
+  }
+  
+  .example-prompt {
+    padding: 15px;
+  }
 }
