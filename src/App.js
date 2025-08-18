@@ -13,6 +13,7 @@ function App() {
 
   // Memoize the fetch function to fix useEffect dependency warning
   const fetchPuzzleForDate = useCallback(async (date) => {
+    console.log('Fetching puzzle for date:', date);
     setIsLoading(true);
     setFetchError('');
     
@@ -20,6 +21,7 @@ function App() {
       // For now, we'll simulate fetching with sample data
       // In the future, this would be a real API call
       const puzzleData = await simulatePuzzleFetch(date);
+      console.log('Received puzzle data:', puzzleData);
       
       if (puzzleData && puzzleData.words) {
         // Randomize the word order to prevent giving away answers
@@ -40,14 +42,23 @@ function App() {
   // Auto-fetch puzzle when date changes
   useEffect(() => {
     if (selectedDate) {
+      console.log('Selected date:', selectedDate);
+      console.log('Selected date type:', typeof selectedDate);
+      console.log('Selected date length:', selectedDate.length);
+      console.log('Selected date split by T:', selectedDate.split('T'));
       fetchPuzzleForDate(selectedDate);
     }
   }, [selectedDate, fetchPuzzleForDate]);
 
   // Simulate puzzle fetching - replace with real API call later
   const simulatePuzzleFetch = async (date) => {
+    console.log('Simulating fetch for date:', date);
     // Simulate network delay with realistic timing
     await new Promise(resolve => setTimeout(resolve, 1000 + Math.random() * 2000));
+    
+    // Normalize the date to ensure consistent format
+    const normalizedDate = date.split('T')[0]; // Remove time component if present
+    console.log('Normalized date:', normalizedDate);
     
     // Sample puzzle data - in reality, this would come from an API
     const samplePuzzles = {
@@ -77,16 +88,21 @@ function App() {
       }
     };
     
+    console.log('Available sample puzzles:', Object.keys(samplePuzzles));
+    console.log('Looking for puzzle with normalized date:', normalizedDate);
+    
     // Return puzzle for selected date or generate a unique one based on the date
-    if (samplePuzzles[date]) {
-      return samplePuzzles[date];
+    if (samplePuzzles[normalizedDate]) {
+      console.log('Found sample puzzle for normalized date:', normalizedDate);
+      return samplePuzzles[normalizedDate];
     } else {
+      console.log('No sample puzzle found, generating unique one for normalized date:', normalizedDate);
       // Generate a unique puzzle for any other date using the date as a seed
-      const dateSeed = new Date(date).getTime();
+      const dateSeed = new Date(normalizedDate).getTime();
       const uniqueWords = generateUniquePuzzle(dateSeed);
       return {
         words: uniqueWords,
-        date: date
+        date: normalizedDate
       };
     }
   };
