@@ -26,10 +26,16 @@ function App() {
       if (puzzleData && puzzleData.words) {
         // Randomize the word order to prevent giving away answers
         const randomizedWords = shuffleArray([...puzzleData.words]);
+        console.log('About to set words to:', randomizedWords);
+        console.log('About to set groups to:', [[], [], [], []]);
+        console.log('About to set hasStartedGame to:', true);
+        
         setWords(randomizedWords);
         setGroups([[], [], [], []]);
         setHasStartedGame(true);
         setInputText(''); // Clear manual input since we fetched automatically
+        
+        console.log('State update calls completed');
       }
     } catch (error) {
       setFetchError(`Failed to fetch puzzle for ${date}: ${error.message}`);
@@ -407,6 +413,7 @@ function App() {
             
             {/* Word Grid */}
             <div className="word-grid">
+              {console.log('Rendering word grid with words:', words)}
               {words.map((word, index) => (
                 <div
                   key={index}
