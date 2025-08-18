@@ -134,9 +134,17 @@ function App() {
       const day = dateObj.getDate();
       const year = dateObj.getFullYear();
       
-      // word.tips URL pattern
-      const wordTipsUrl = `https://word.tips/connections-hints-today/`;
-      console.log(`Fetching from word.tips: ${wordTipsUrl}`);
+      // Determine if this is today's puzzle or a past puzzle
+      const today = new Date();
+      const isToday = dateObj.toDateString() === today.toDateString();
+      
+      // Choose the correct word.tips URL based on date
+      const wordTipsUrl = isToday 
+        ? 'https://word.tips/connections-hints-today/'
+        : 'https://word.tips/connections-hints-yesterday/';
+      
+      console.log(`Selected date: ${date}, Today: ${today.toDateString()}, Is today: ${isToday}`);
+      console.log(`Using URL: ${wordTipsUrl}`);
       
       // CORS proxy options to try if direct fetch fails
       const corsProxies = [
@@ -273,7 +281,8 @@ function App() {
           { name: 'Silent "W"', words: ['PLAYWRIGHT', 'SWORD', 'WRAP', 'WREATH'], color: 'green' },
           { name: 'Legends of Classic Hollywood', words: ['DEAN', 'GABLE', 'GARLAND', 'TEMPLE'], color: 'blue' },
           { name: 'Hit the ___', words: ['HAY', 'JACKPOT', 'ROAD', 'ROOF'], color: 'purple' }
-        ]
+        ],
+        note: 'This is sample data. For real puzzles, the app will fetch from word.tips using the correct URL (today vs yesterday).'
       };
       
       // Store categories for hint mode
