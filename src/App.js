@@ -116,6 +116,10 @@ function App() {
       '2024-01-28': {
         words: ['HAPPY', 'SAD', 'ANGRY', 'EXCITED', 'BIG', 'SMALL', 'TALL', 'SHORT', 'HOT', 'COLD', 'WARM', 'COOL', 'FAST', 'SLOW', 'QUICK', 'RAPID'],
         date: '2024-01-28'
+      },
+      '2025-07-02': {
+        words: ['BOOTLEG', 'COPY', 'FAKE', 'REPLICA', 'DREAMS', 'ID', 'OEDIPUS', 'SLIP', 'MOBILE', 'PAIN', 'REX', 'SHIRT', 'FRESHWATER', 'JUNIPER', 'SENECA', 'SOPHOCLES'],
+        date: '2025-07-02'
       }
     };
     
@@ -158,12 +162,19 @@ function App() {
       ['HAPPY', 'SAD', 'ANGRY', 'EXCITED', 'TIRED', 'ENERGETIC', 'CALM', 'NERVOUS', 'HOT', 'COLD', 'WARM', 'COOL', 'DRY', 'WET', 'SOFT', 'HARD'],
       ['RED', 'BLUE', 'GREEN', 'YELLOW', 'PURPLE', 'ORANGE', 'PINK', 'BROWN', 'BLACK', 'WHITE', 'GRAY', 'GOLD', 'SILVER', 'BRONZE', 'COPPER', 'BRASS'],
       ['SPRING', 'SUMMER', 'FALL', 'WINTER', 'JANUARY', 'FEBRUARY', 'MARCH', 'APRIL', 'MAY', 'JUNE', 'JULY', 'AUGUST', 'SEPTEMBER', 'OCTOBER', 'NOVEMBER', 'DECEMBER'],
-      ['MONDAY', 'TUESDAY', 'WEDNESDAY', 'THURSDAY', 'FRIDAY', 'SATURDAY', 'SUNDAY', 'WEEKEND', 'MORNING', 'AFTERNOON', 'EVENING', 'NIGHT', 'DAWN', 'DUSK', 'NOON', 'MIDNIGHT']
+      ['MONDAY', 'TUESDAY', 'WEDNESDAY', 'THURSDAY', 'FRIDAY', 'SATURDAY', 'SUNDAY', 'WEEKEND', 'MORNING', 'AFTERNOON', 'EVENING', 'NIGHT', 'DAWN', 'DUSK', 'NOON', 'MIDNIGHT'],
+      ['APPLE', 'BANANA', 'ORANGE', 'GRAPE', 'STRAWBERRY', 'BLUEBERRY', 'RASPBERRY', 'BLACKBERRY', 'PEACH', 'PLUM', 'CHERRY', 'LEMON', 'LIME', 'PINEAPPLE', 'MANGO', 'KIWI'],
+      ['DOG', 'CAT', 'HORSE', 'COW', 'PIG', 'SHEEP', 'GOAT', 'CHICKEN', 'DUCK', 'GOOSE', 'TURKEY', 'RABBIT', 'HAMSTER', 'GUINEA', 'FERRET', 'GERBIL'],
+      ['MATH', 'SCIENCE', 'HISTORY', 'ENGLISH', 'GEOGRAPHY', 'ART', 'MUSIC', 'PHYSICS', 'CHEMISTRY', 'BIOLOGY', 'LITERATURE', 'PHILOSOPHY', 'PSYCHOLOGY', 'SOCIOLOGY', 'ECONOMICS', 'POLITICS'],
+      ['PIZZA', 'BURGER', 'TACO', 'SUSHI', 'PASTA', 'STEAK', 'CHICKEN', 'FISH', 'SALAD', 'SOUP', 'SANDWICH', 'WRAP', 'CURRY', 'STIR', 'NOODLES', 'RICE']
     ];
     
     // Use the seed to select and shuffle a word set
-    const setIndex = seed % allWordSets.length;
+    // Ensure different dates get different word sets by using more seed variation
+    const setIndex = Math.abs(seed) % allWordSets.length;
     const selectedSet = allWordSets[setIndex];
+    
+    console.log('Generating unique puzzle for seed:', seed, 'using word set:', setIndex);
     
     // Shuffle the selected set using the seed for consistent randomization
     return shuffleArrayWithSeed(selectedSet, seed);
@@ -432,6 +443,8 @@ function App() {
                 {selectedDate && (
                   <span className="puzzle-date-info">
                     Puzzle Date: {new Date(selectedDate).toLocaleDateString()}
+                    <br />
+                    <small>Raw: {selectedDate}</small>
                   </span>
                 )}
                 <button className="reset-btn" onClick={resetBoard}>
