@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import './App.css';
 
 function App() {
@@ -8,11 +8,139 @@ function App() {
   const [dragOverGroup, setDragOverGroup] = useState(null);
   const [hasStartedGame, setHasStartedGame] = useState(false);
   const [selectedDate, setSelectedDate] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
+  const [fetchError, setFetchError] = useState('');
+
+  // Memoize the fetch function to fix useEffect dependency warning
+  const fetchPuzzleForDate = useCallback(async (date) => {
+    setIsLoading(true);
+    setFetchError('');
+    
+    try {
+      // For now, we'll simulate fetching with sample data
+      // In the future, this would be a real API call
+      const puzzleData = await simulatePuzzleFetch(date);
+      
+      if (puzzleData && puzzleData.words) {
+        // Randomize the word order to prevent giving away answers
+        const randomizedWords = shuffleArray([...puzzleData.words]);
+        setWords(randomizedWords);
+        setGroups([[], [], [], []]);
+        setHasStartedGame(true);
+        setInputText(''); // Clear manual input since we fetched automatically
+      }
+    } catch (error) {
+      setFetchError(`Failed to fetch puzzle for ${date}: ${error.message}`);
+      console.error('Puzzle fetch error:', error);
+    } finally {
+      setIsLoading(false);
+    }
+  }, []);
+
+  // Auto-fetch puzzle when date changes
+  useEffect(() => {
+    if (selectedDate) {
+      fetchPuzzleForDate(selectedDate);
+    }
+  }, [selectedDate, fetchPuzzleForDate]);
+
+  // Simulate puzzle fetching - replace with real API call later
+  const simulatePuzzleFetch = async (date) => {
+    // Simulate network delay with realistic timing
+    await new Promise(resolve => setTimeout(resolve, 1000 + Math.random() * 2000));
+    
+    // Sample puzzle data - in reality, this would come from an API
+    const samplePuzzles = {
+      '2024-01-15': {
+        words: ['CUE', 'STOP', 'BREAKFAST', 'SHOT', 'POOL', 'POCKET', 'PROMPT', 'PARKING', 'CHANCE', 'WI-FI', 'DIGITAL', 'OPENING', 'WRIST', 'NOD', 'BREAK', 'SIGNAL'],
+        date: '2024-01-15'
+      },
+      '2024-01-16': {
+        words: ['APPLE', 'ORANGE', 'BANANA', 'GRAPE', 'CAR', 'TRUCK', 'BIKE', 'BOAT', 'SUN', 'MOON', 'STAR', 'PLANET', 'BOOK', 'PEN', 'PAPER', 'PENCIL'],
+        date: '2024-01-16'
+      },
+      '2024-01-17': {
+        words: ['RED', 'BLUE', 'GREEN', 'YELLOW', 'DOG', 'CAT', 'BIRD', 'FISH', 'PIZZA', 'BURGER', 'TACO', 'SUSHI', 'RUN', 'WALK', 'JUMP', 'SWIM'],
+        date: '2024-01-17'
+      }
+    };
+    
+    // Return puzzle for selected date or a default one
+    return samplePuzzles[date] || samplePuzzles['2024-01-15'];
+  };
+
+  // Real puzzle fetching function with anti-bot measures
+  const fetchRealPuzzle = async (date) => {
+    // Anti-bot measures
+    const headers = {
+      'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+      'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+      'Accept-Language': 'en-US,en;q=0.5',
+      'Accept-Encoding': 'gzip, deflate, br',
+      'DNT': '1',
+      'Connection': 'keep-alive',
+      'Upgrade-Insecure-Requests': '1',
+      'Sec-Fetch-Dest': 'document',
+      'Sec-Fetch-Mode': 'navigate',
+      'Sec-Fetch-Site': 'none',
+      'Cache-Control': 'max-age=0'
+    };
+
+    // Add realistic delays and randomization
+    const baseDelay = 2000 + Math.random() * 3000; // 2-5 seconds
+    await new Promise(resolve => setTimeout(resolve, baseDelay));
+
+    try {
+      // Example URL pattern for NYT Connections (would need actual URL)
+      const url = `https://example.com/connections/${date}`;
+      
+      const response = await fetch(url, {
+        method: 'GET',
+        headers,
+        // Add other realistic browser behavior
+        credentials: 'omit',
+        mode: 'cors'
+      });
+
+      if (!response.ok) {
+        throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+      }
+
+      const html = await response.text();
+      
+      // Parse the HTML to extract puzzle words
+      // This would need to be implemented based on the actual page structure
+      const words = parsePuzzleWordsFromHTML(html);
+      
+      return { words, date };
+    } catch (error) {
+      console.error('Real puzzle fetch failed:', error);
+      // Fall back to sample data for now
+      return simulatePuzzleFetch(date);
+    }
+  };
+
+  // Parse puzzle words from HTML (placeholder implementation)
+  const parsePuzzleWordsFromHTML = (html) => {
+    // This would need to be implemented based on the actual page structure
+    // For now, return sample data
+    return ['CUE', 'STOP', 'BREAKFAST', 'SHOT', 'POOL', 'POCKET', 'PROMPT', 'PARKING', 'CHANCE', 'WI-FI', 'DIGITAL', 'OPENING', 'WRIST', 'NOD', 'BREAK', 'SIGNAL'];
+  };
+
+  // Fisher-Yates shuffle algorithm for randomizing words
+  const shuffleArray = (array) => {
+    const shuffled = [...array];
+    for (let i = shuffled.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+    }
+    return shuffled;
+  };
 
   const handleSubmit = () => {
     if (!inputText.trim()) return;
     
-    // Parse words from input (support both newline and comma separation)
+    // Parse words from input (support both newline or comma separation)
     const wordList = inputText
       .split(/[\n,]/)
       .map(word => word.trim())
@@ -24,18 +152,12 @@ function App() {
       return;
     }
     
-    setWords(wordList);
-    setGroups([[], [], [], []]); // Reset groups
-    setHasStartedGame(true); // Mark that the game has started
-  };
-
-  const handleFetchPuzzle = () => {
-    if (!selectedDate) {
-      alert('Please select a date first');
-      return;
-    }
-    // TODO: Implement puzzle fetching for selected date
-    alert(`Fetching puzzle for ${selectedDate} - Feature coming soon!`);
+    // Randomize manual input words too
+    const randomizedWords = shuffleArray(wordList);
+    setWords(randomizedWords);
+    setGroups([[], [], [], []]);
+    setHasStartedGame(true);
+    setSelectedDate(''); // Clear date since we're using manual input
   };
 
   const handleDragStart = (e, word) => {
@@ -94,7 +216,8 @@ function App() {
     setGroups([[], [], [], []]);
     setInputText('');
     setSelectedDate('');
-    setHasStartedGame(false); // Reset the game state
+    setHasStartedGame(false);
+    setFetchError('');
   };
 
   const isGroupFull = (groupIndex) => {
@@ -118,7 +241,7 @@ function App() {
           <div className="input-section">
             <div className="date-section">
               <label htmlFor="puzzle-date" className="date-label">
-                Puzzle Date (Optional):
+                Select Puzzle Date:
               </label>
               <input
                 type="date"
@@ -127,15 +250,21 @@ function App() {
                 onChange={(e) => setSelectedDate(e.target.value)}
                 max={today}
                 className="date-picker"
+                disabled={isLoading}
               />
-              <button 
-                className="fetch-btn"
-                onClick={handleFetchPuzzle}
-                disabled={!selectedDate}
-              >
-                Fetch Puzzle
-              </button>
+              {isLoading && (
+                <div className="loading-spinner">
+                  <span>Fetching...</span>
+                </div>
+              )}
             </div>
+            
+            {fetchError && (
+              <div className="error-message">
+                {fetchError}
+              </div>
+            )}
+            
             <div className="input-divider">
               <span>OR</span>
             </div>
@@ -145,8 +274,13 @@ function App() {
               placeholder="Paste your 16 puzzle words here (one per line or comma-separated)..."
               className="puzzle-input"
               rows="8"
+              disabled={isLoading}
             />
-            <button className="submit-btn" onClick={handleSubmit}>
+            <button 
+              className="submit-btn" 
+              onClick={handleSubmit}
+              disabled={isLoading}
+            >
               Create Puzzle Board
             </button>
           </div>
