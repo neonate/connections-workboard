@@ -55,10 +55,10 @@ function App() {
     }
   };
 
-  // Clear any existing cached data on component mount
-  useEffect(() => {
-    clearCache();
-  }, []);
+  // Remove automatic cache clearing - let users control when to clear cache
+  // useEffect(() => {
+  //   clearCache();
+  // }, []);
 
   // Memoize the fetch function to fix useEffect dependency warning
   const fetchPuzzleForDate = useCallback(async (date) => {
