@@ -108,46 +108,24 @@ function App() {
     }
   };
 
-  // Fetch puzzle from external source (Mashable)
+  // Fetch puzzle from external source (word.tips)
   const fetchRealPuzzle = async (date) => {
     try {
       console.log(`Fetching real puzzle for date: ${date}`);
       
-      // Convert numeric date to Mashable URL format (e.g., "2025-07-02" -> "july-2-2025")
-      // Parse date as local time to avoid timezone conversion issues
-      const [yearStr, monthStr, dayStr] = date.split('-');
-      const monthIndex = parseInt(monthStr) - 1; // Month is 0-indexed in JavaScript
-      const day = parseInt(dayStr);
-      const year = parseInt(yearStr);
-      
+      // Convert numeric date to word.tips URL format
+      const dateObj = new Date(date);
       const monthNames = [
         'january', 'february', 'march', 'april', 'may', 'june',
         'july', 'august', 'september', 'october', 'november', 'december'
       ];
-      const monthName = monthNames[monthIndex];
+      const monthName = monthNames[dateObj.getMonth()];
+      const day = dateObj.getDate();
+      const year = dateObj.getFullYear();
       
-      console.log(`Date conversion debug:`);
-      console.log(`  Input date: ${date}`);
-      console.log(`  Parsed components: year=${year}, month=${monthStr} (index=${monthIndex}), day=${dayStr}`);
-      console.log(`  Month name: ${monthName}`);
-      console.log(`  Final URL date: ${monthName}-${day}-${year}`);
-      
-      // Try multiple URL patterns that Mashable might use
-      const urlPatterns = [
-        `https://mashable.com/article/nyt-connections-hint-answer-today-${monthName}-${day}-${year}`,
-        `https://mashable.com/article/nyt-connections-hint-answer-${monthName}-${day}-${year}`,
-        `https://mashable.com/article/nyt-connections-answers-${monthName}-${day}-${year}`,
-        `https://mashable.com/article/nyt-connections-today-${monthName}-${day}-${year}`,
-        `https://mashable.com/article/nyt-connections-${monthName}-${day}-${year}`
-      ];
-      
-      // CORS proxy options to try if direct fetch fails
-      const corsProxies = [
-        'https://cors-anywhere.herokuapp.com/',
-        'https://api.allorigins.win/raw?url=',
-        'https://corsproxy.io/?',
-        'https://thingproxy.freeboard.io/fetch/'
-      ];
+      // word.tips URL pattern
+      const wordTipsUrl = `https://word.tips/connections-hints-today/`;
+      console.log(`Fetching from word.tips: ${wordTipsUrl}`);
       
       // Anti-bot measures
       const headers = {
@@ -164,112 +142,32 @@ function App() {
         'Cache-Control': 'max-age=0'
       };
       
-      let lastError;
+      // Random delay to avoid being blocked
+      const delay = Math.random() * 2000 + 1000; // 1-3 seconds
+      console.log(`Waiting ${Math.round(delay)}ms before fetch...`);
+      await new Promise(resolve => setTimeout(resolve, delay));
       
-      // First try direct fetch with all URL patterns
-      for (let i = 0; i < urlPatterns.length; i++) {
-        const url = urlPatterns[i];
-        console.log(`Trying direct fetch - URL pattern ${i + 1}: ${url}`);
+      const response = await fetch(wordTipsUrl, {
+        method: 'GET',
+        headers,
+        credentials: 'omit',
+        mode: 'cors',
+        redirect: 'follow'
+      });
+      
+      console.log(`Response status: ${response.status}, URL: ${response.url}`);
+      
+      if (response.ok) {
+        const html = await response.text();
+        console.log(`Successfully fetched HTML from word.tips (${html.length} characters)`);
         
-        try {
-          // Random delay to avoid being blocked
-          const delay = Math.random() * 2000 + 1000; // 1-3 seconds
-          console.log(`Waiting ${Math.round(delay)}ms before fetch...`);
-          await new Promise(resolve => setTimeout(resolve, delay));
-          
-          const response = await fetch(url, {
-            method: 'GET',
-            headers,
-            credentials: 'omit',
-            mode: 'cors',
-            redirect: 'follow' // Follow redirects
-          });
-          
-          console.log(`Response status: ${response.status}, URL: ${response.url}`);
-          
-          if (response.ok) {
-            const html = await response.text();
-            console.log(`Successfully fetched HTML from ${response.url} (${html.length} characters)`);
-            
-            // Check if we got redirected to a different page
-            if (response.url !== url) {
-              console.log(`Redirected from ${url} to ${response.url}`);
-            }
-            
-            // Set the successful fetch URL for display
-            setFetchUrl(response.url);
-            
-            return parsePuzzleWordsFromHTML(html, date);
-          } else if (response.status === 404) {
-            console.log(`404 for ${url}, trying next pattern...`);
-            lastError = new Error(`Page not found: ${url}`);
-            continue;
-          } else {
-            console.log(`HTTP ${response.status} for ${url}, trying next pattern...`);
-            lastError = new Error(`HTTP ${response.status}: ${response.statusText}`);
-            continue;
-          }
-          
-        } catch (error) {
-          console.log(`Direct fetch failed for ${url}:`, error.message);
-          lastError = error;
-          continue;
-        }
-      }
-      
-      // If direct fetch failed, try CORS proxies
-      console.log('Direct fetch failed for all URLs, trying CORS proxies...');
-      
-      for (let proxyIndex = 0; proxyIndex < corsProxies.length; proxyIndex++) {
-        const proxy = corsProxies[proxyIndex];
-        console.log(`Trying CORS proxy ${proxyIndex + 1}: ${proxy}`);
+        // Set the successful fetch URL for display
+        setFetchUrl(response.url);
         
-        for (let urlIndex = 0; urlIndex < urlPatterns.length; urlIndex++) {
-          const url = urlPatterns[urlIndex];
-          const proxyUrl = proxy + url;
-          
-          console.log(`Trying proxy ${proxyIndex + 1} with URL pattern ${urlIndex + 1}: ${proxyUrl}`);
-          
-          try {
-            // Random delay to avoid being blocked
-            const delay = Math.random() * 2000 + 1000; // 1-3 seconds
-            console.log(`Waiting ${Math.round(delay)}ms before proxy fetch...`);
-            await new Promise(resolve => setTimeout(resolve, delay));
-            
-            const response = await fetch(proxyUrl, {
-              method: 'GET',
-              headers: {
-                ...headers,
-                'Origin': 'https://mashable.com' // Some proxies need this
-              },
-              credentials: 'omit',
-              mode: 'cors'
-            });
-            
-            console.log(`Proxy response status: ${response.status}`);
-            
-            if (response.ok) {
-              const html = await response.text();
-              console.log(`Successfully fetched HTML via proxy (${html.length} characters)`);
-              
-              // Set the successful fetch URL for display (original URL, not proxy URL)
-              setFetchUrl(url);
-              
-              return parsePuzzleWordsFromHTML(html, date);
-            } else {
-              console.log(`Proxy returned ${response.status}, trying next...`);
-              continue;
-            }
-            
-          } catch (error) {
-            console.log(`Proxy ${proxyIndex + 1} failed for ${url}:`, error.message);
-            continue;
-          }
-        }
+        return parsePuzzleWordsFromHTML(html, date);
+      } else {
+        throw new Error(`HTTP error! status: ${response.status}`);
       }
-      
-      // If we get here, both direct fetch and CORS proxies failed
-      throw new Error(`All fetch methods failed. Last error: ${lastError?.message}`);
       
     } catch (error) {
       console.error('Failed to fetch real puzzle:', error);
@@ -277,101 +175,61 @@ function App() {
     }
   };
 
-  // Parse puzzle words from HTML (specifically for Mashable NYT Connections articles)
+  // Parse puzzle words from HTML (specifically for word.tips NYT Connections articles)
   const parsePuzzleWordsFromHTML = (html, date) => {
     try {
-      console.log('Parsing Mashable HTML for NYT Connections puzzle words...');
+      console.log('Parsing word.tips HTML for NYT Connections puzzle words...');
       
       const foundWords = new Set();
+      const foundCategories = []; // Store categories for hint mode
       
-      // Pattern 1: Look for the specific solution section format that contains the actual puzzle answers
-      // This should be the most reliable pattern - the actual solution section
-      const solutionPattern = /\*\s*([^:]+):\s*([A-Z]{3,20}),\s*([A-Z]{3,20}),\s*([A-Z]{3,20}),\s*([A-Z]{3,20})/gi;
-      let solutionMatch;
-      
-      while ((solutionMatch = solutionPattern.exec(html)) !== null) {
-        const category = solutionMatch[1];
-        const words = [solutionMatch[2], solutionMatch[3], solutionMatch[4], solutionMatch[5]];
-        
-        console.log(`Found solution category "${category}" with words:`, words);
-        
-        words.forEach(word => {
-          if (word && word.length >= 3 && word.length <= 20) {
-            foundWords.add(word.trim());
-          }
-        });
-      }
-      
-      // Pattern 2: Look for the older format used in some articles
-      const olderFormatPattern = /\*\s*([A-Za-z]+)\s*-\s*\*\*([^*]+)\*\*\s*-\s*([A-Z]{3,20}),\s*([A-Z]{3,20}),\s*([A-Z]{3,20}),\s*([A-Z]{3,20})/gi;
-      let olderMatch;
-      
-      while ((olderMatch = olderFormatPattern.exec(html)) !== null) {
-        const color = olderMatch[1];
-        const category = olderMatch[2];
-        const words = [olderMatch[3], olderMatch[4], olderMatch[5], olderMatch[6]];
-        
-        console.log(`Found older format category "${category}" (${color}) with words:`, words);
-        
-        words.forEach(word => {
-          if (word && word.length >= 3 && word.length <= 20) {
-            foundWords.add(word.trim());
-          }
-        });
-      }
-      
-      // If we found words in the solution format, use those (most reliable)
-      if (foundWords.size >= 16) {
-        const words = Array.from(foundWords).slice(0, 16);
-        console.log('Successfully parsed puzzle words from solution format:', words);
-        return { words, date };
-      }
-      
-      // Pattern 3: Look for words specifically in the "What is the answer to Connections today" section
-      // This is usually the most reliable section for the actual puzzle answers
-      const answerSectionPattern = /What is the answer to Connections today[^]*?(\*\s*[^:]+:\s*[A-Z]{3,20},\s*[A-Z]{3,20},\s*[A-Z]{3,20},\s*[A-Z]{3,20})/gi;
-      let answerSectionMatch;
-      
-      while ((answerSectionMatch = answerSectionPattern.exec(html)) !== null) {
-        const match = answerSectionMatch[1];
-        const wordMatch = match.match(/([A-Z]{3,20}),\s*([A-Z]{3,20}),\s*([A-Z]{3,20}),\s*([A-Z]{3,20})/);
-        
-        if (wordMatch) {
-          const words = [wordMatch[1], wordMatch[2], wordMatch[3], wordMatch[4]];
-          console.log(`Found words in answer section:`, words);
-          
-          words.forEach(word => {
-            if (word && word.length >= 3 && word.length <= 20) {
-              foundWords.add(word.trim());
-            }
-          });
-        }
-      }
-      
-      // If we found words in the answer section, use those
-      if (foundWords.size >= 16) {
-        const words = Array.from(foundWords).slice(0, 16);
-        console.log('Successfully parsed puzzle words from answer section:', words);
-        return { words, date };
-      }
-      
-      // Fallback: Only if we absolutely can't find the solution format, try other patterns
-      // But be much more restrictive to avoid picking up random page content
-      console.log('Solution format not found, trying restrictive fallback patterns...');
-      
-      const restrictivePatterns = [
-        // Look for words that are likely puzzle answers (in specific contexts)
+      // Look for the puzzle answers in the word.tips structure
+      // The page has "SEE WORD" buttons that reveal the actual puzzle words
+      const wordPatterns = [
+        // Look for words that appear after "SEE WORD" buttons
+        /SEE WORD[^>]*>([^<]*)<[^>]*>([A-Z]{3,20})/gi,
+        // Look for words in the puzzle answer sections
+        /([A-Z]{3,20}),\s*([A-Z]{3,20}),\s*([A-Z]{3,20}),\s*([A-Z]{3,20})/gi,
+        // Look for words in bold or strong tags (likely puzzle answers)
         /<strong[^>]*>([A-Z]{3,20})<\/strong>/gi,
         /<b[^>]*>([A-Z]{3,20})<\/b>/gi
       ];
       
-      for (const pattern of restrictivePatterns) {
+      // First try to find complete word groups (4 words together)
+      const groupPattern = /([A-Z]{3,20}),\s*([A-Z]{3,20}),\s*([A-Z]{3,20}),\s*([A-Z]{3,20})/gi;
+      let groupMatch;
+      
+      while ((groupMatch = groupPattern.exec(html)) !== null) {
+        const words = [groupMatch[1], groupMatch[2], groupMatch[3], groupMatch[4]];
+        console.log(`Found word group:`, words);
+        
+        words.forEach(word => {
+          if (word && word.length >= 3 && word.length <= 20) {
+            foundWords.add(word.trim());
+          }
+        });
+      }
+      
+      // If we found complete groups, use those
+      if (foundWords.size >= 16) {
+        const words = Array.from(foundWords).slice(0, 16);
+        console.log('Successfully parsed puzzle words from word groups:', words);
+        
+        // Store the categories for hint mode (we'll need to extract these properly)
+        // For now, we'll need to implement category extraction
+        console.log('Note: Categories need to be extracted for hint mode to work');
+        
+        return { words, date };
+      }
+      
+      // Fallback: try other patterns if group pattern didn't work
+      for (const pattern of wordPatterns) {
         let match;
         while ((match = pattern.exec(html)) !== null) {
-          let word = match[1];
+          let word = match[1] || match[2] || match[0];
           word = word.trim().toUpperCase();
           
-          // Much more restrictive filtering - only words that look like puzzle answers
+          // Filter for reasonable puzzle words
           if (word.length >= 3 && word.length <= 20 && 
               /^[A-Z]+$/.test(word) && // Only letters, no numbers or special chars
               !['THE', 'AND', 'FOR', 'ARE', 'BUT', 'NOT', 'YOU', 'ALL', 'CAN', 'HER', 'WAS', 'ONE', 'OUR', 'OUT', 'DAY', 'GET', 'HAS', 'HIM', 'HIS', 'HOW', 'MAN', 'NEW', 'NOW', 'OLD', 'SEE', 'TWO', 'WAY', 'WHO', 'BOY', 'DID', 'ITS', 'LET', 'PUT', 'SAY', 'SHE', 'TOO', 'USE', 'NYT', 'CONNECTIONS', 'TODAY', 'HINTS', 'ANSWERS', 'JULY', 'AUGUST', 'SEPTEMBER', 'OCTOBER', 'NOVEMBER', 'DECEMBER', 'JANUARY', 'FEBRUARY', 'MARCH', 'APRIL', 'MAY', 'JUNE', 'UUID', 'RSS', 'API', 'HTTP', 'HTML', 'CSS', 'JS', 'PHP', 'SQL', 'XML', 'JSON', 'URL', 'DOM', 'CPU', 'RAM', 'USB', 'HDD', 'SSD', 'GPU', 'VPN', 'DNS', 'IP', 'MAC', 'PC', 'TV', 'CD', 'DVD', 'MP3', 'MP4', 'PDF', 'ZIP', 'RAR', 'EXE', 'TXT', 'DOC', 'XLS', 'PPT'].includes(word)) {
@@ -380,11 +238,11 @@ function App() {
         }
       }
       
-      console.log('Found potential words (restrictive fallback):', Array.from(foundWords));
+      console.log('Found potential words (fallback):', Array.from(foundWords));
       
       if (foundWords.size >= 16) {
         const words = Array.from(foundWords).slice(0, 16);
-        console.log('Parsed words from restrictive fallback patterns:', words);
+        console.log('Parsed words from fallback patterns:', words);
         return { words, date };
       }
       
