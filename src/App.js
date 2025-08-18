@@ -55,6 +55,11 @@ function App() {
     }
   };
 
+  // Clear any existing cached data on component mount
+  useEffect(() => {
+    clearCache();
+  }, []);
+
   // Memoize the fetch function to fix useEffect dependency warning
   const fetchPuzzleForDate = useCallback(async (date) => {
     console.log('Fetching puzzle for date:', date);
