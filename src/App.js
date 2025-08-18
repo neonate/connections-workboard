@@ -104,6 +104,14 @@ function App() {
         `https://mashable.com/article/nyt-connections-${monthName}-${day}-${year}`
       ];
       
+      // CORS proxy options to try if direct fetch fails
+      const corsProxies = [
+        'https://cors-anywhere.herokuapp.com/',
+        'https://api.allorigins.win/raw?url=',
+        'https://corsproxy.io/?',
+        'https://thingproxy.freeboard.io/fetch/'
+      ];
+      
       // Anti-bot measures
       const headers = {
         'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
@@ -121,10 +129,10 @@ function App() {
       
       let lastError;
       
-      // Try each URL pattern until one works
+      // First try direct fetch with all URL patterns
       for (let i = 0; i < urlPatterns.length; i++) {
         const url = urlPatterns[i];
-        console.log(`Trying URL pattern ${i + 1}: ${url}`);
+        console.log(`Trying direct fetch - URL pattern ${i + 1}: ${url}`);
         
         try {
           // Random delay to avoid being blocked
@@ -163,14 +171,61 @@ function App() {
           }
           
         } catch (error) {
-          console.log(`Error with ${url}:`, error.message);
+          console.log(`Direct fetch failed for ${url}:`, error.message);
           lastError = error;
           continue;
         }
       }
       
-      // If we get here, none of the URL patterns worked
-      throw new Error(`All URL patterns failed. Last error: ${lastError?.message}`);
+      // If direct fetch failed, try CORS proxies
+      console.log('Direct fetch failed for all URLs, trying CORS proxies...');
+      
+      for (let proxyIndex = 0; proxyIndex < corsProxies.length; proxyIndex++) {
+        const proxy = corsProxies[proxyIndex];
+        console.log(`Trying CORS proxy ${proxyIndex + 1}: ${proxy}`);
+        
+        for (let urlIndex = 0; urlIndex < urlPatterns.length; urlIndex++) {
+          const url = urlPatterns[urlIndex];
+          const proxyUrl = proxy + url;
+          
+          console.log(`Trying proxy ${proxyIndex + 1} with URL pattern ${urlIndex + 1}: ${proxyUrl}`);
+          
+          try {
+            // Random delay to avoid being blocked
+            const delay = Math.random() * 2000 + 1000; // 1-3 seconds
+            console.log(`Waiting ${Math.round(delay)}ms before proxy fetch...`);
+            await new Promise(resolve => setTimeout(resolve, delay));
+            
+            const response = await fetch(proxyUrl, {
+              method: 'GET',
+              headers: {
+                ...headers,
+                'Origin': 'https://mashable.com' // Some proxies need this
+              },
+              credentials: 'omit',
+              mode: 'cors'
+            });
+            
+            console.log(`Proxy response status: ${response.status}`);
+            
+            if (response.ok) {
+              const html = await response.text();
+              console.log(`Successfully fetched HTML via proxy (${html.length} characters)`);
+              return parsePuzzleWordsFromHTML(html, date);
+            } else {
+              console.log(`Proxy returned ${response.status}, trying next...`);
+              continue;
+            }
+            
+          } catch (error) {
+            console.log(`Proxy ${proxyIndex + 1} failed for ${url}:`, error.message);
+            continue;
+          }
+        }
+      }
+      
+      // If we get here, both direct fetch and CORS proxies failed
+      throw new Error(`All fetch methods failed. Last error: ${lastError?.message}`);
       
     } catch (error) {
       console.error('Failed to fetch real puzzle:', error);
