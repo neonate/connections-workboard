@@ -80,8 +80,12 @@ function App() {
     try {
       const puzzleData = await fetchRealPuzzle(date);
       
-      // Cache the fetched data for future use
-      cachePuzzle(date, puzzleData);
+      // Only cache real API responses, not sample data
+      if (puzzleData && !puzzleData.isSampleData) {
+        cachePuzzle(date, puzzleData);
+      } else {
+        console.log('Not caching sample data or invalid response');
+      }
       
       return puzzleData;
     } catch (error) {
@@ -298,6 +302,17 @@ function App() {
       // Provide fallback sample data so users can test hint mode
       console.log('All fetch methods failed, providing fallback sample data...');
       
+      // Clear any cached data for this date since it's not real
+      try {
+        const cacheKey = `puzzle_${date}`;
+        if (localStorage.getItem(cacheKey)) {
+          localStorage.removeItem(cacheKey);
+          console.log(`Cleared invalid cached data for ${date}`);
+        }
+      } catch (error) {
+        console.error('Error clearing invalid cache:', error);
+      }
+      
       // Return sample data for testing hint mode
       const samplePuzzle = {
         words: ['BENT', 'FACULTY', 'FLAIR', 'GIFT', 'PLAYWRIGHT', 'SWORD', 'WRAP', 'WREATH', 'DEAN', 'GABLE', 'GARLAND', 'TEMPLE', 'HAY', 'JACKPOT', 'ROAD', 'ROOF'],
@@ -308,13 +323,12 @@ function App() {
           { name: 'Legends of Classic Hollywood', words: ['DEAN', 'GABLE', 'GARLAND', 'TEMPLE'], color: 'blue' },
           { name: 'Hit the ___', words: ['HAY', 'JACKPOT', 'ROAD', 'ROOF'], color: 'purple' }
         ],
-        note: 'This is sample data. For real puzzles, the app will fetch from word.tips using the correct URL (today vs yesterday).'
+        note: 'This is sample data. For real puzzles, the app will fetch from word.tips using the correct URL (today vs yesterday).',
+        isSampleData: true // Flag to identify this as sample data
       };
       
-      // Store categories for hint mode
-      setPuzzleCategories(samplePuzzle.categories);
-      
-      console.log('Returning sample puzzle data for testing:', samplePuzzle);
+      // Don't cache sample data - only cache real API responses
+      console.log('Returning sample puzzle data for testing (not cached):', samplePuzzle);
       return samplePuzzle;
       
     } catch (error) {
@@ -748,6 +762,9 @@ function App() {
                 </button>
                 <span className="cache-info">
                   Cached puzzles: {Object.keys(localStorage).filter(key => key.startsWith('puzzle_')).length}
+                  {fetchUrl === 'Cached data (previously fetched)' && ' (Real data)'}
+                  {fetchUrl && fetchUrl.includes('word.tips') && ' (API fetched)'}
+                  {fetchUrl && !fetchUrl.includes('word.tips') && !fetchUrl.includes('Cached') && ' (Sample data)'}
                 </span>
               </div>
             </div>
