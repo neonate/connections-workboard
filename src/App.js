@@ -11,6 +11,7 @@ function App() {
   const [isLoading, setIsLoading] = useState(false);
   const [fetchError, setFetchError] = useState(null);
   const [fetchUrl, setFetchUrl] = useState(''); // Track the successful fetch URL
+  const [loadingStatus, setLoadingStatus] = useState(''); // Track loading progress
 
   // Memoize the fetch function to fix useEffect dependency warning
   const fetchPuzzleForDate = useCallback(async (date) => {
@@ -76,7 +77,21 @@ function App() {
     }
     
     console.log('Manual fetch triggered for date:', selectedDate);
-    await fetchPuzzleForDate(selectedDate);
+    setIsLoading(true);
+    setLoadingStatus('Starting fetch...');
+    setFetchError(null);
+    
+    try {
+      await fetchPuzzleForDate(selectedDate);
+      setLoadingStatus('Fetch completed successfully!');
+    } catch (error) {
+      setFetchError(error.message);
+      setLoadingStatus('Fetch failed');
+    } finally {
+      setIsLoading(false);
+      // Clear status after a short delay
+      setTimeout(() => setLoadingStatus(''), 2000);
+    }
   };
 
   // Fetch puzzle from external source (Mashable)
@@ -572,6 +587,15 @@ function App() {
                 {isLoading ? 'Loading...' : 'Fetch Puzzle'}
               </button>
             </div>
+            
+            {isLoading && (
+              <div className="loading-section">
+                <div className="loading-spinner"></div>
+                <div className="loading-text">Fetching puzzle data...</div>
+                <div className="loading-status">{loadingStatus}</div>
+                <div className="loading-details">This may take a few seconds as we try multiple sources</div>
+              </div>
+            )}
             
             {fetchError && (
               <div className="error-message">
