@@ -12,6 +12,7 @@ function App() {
   const [fetchError, setFetchError] = useState(null);
   const [fetchUrl, setFetchUrl] = useState(''); // Track the successful fetch URL
   const [loadingStatus, setLoadingStatus] = useState(''); // Track loading progress
+  const [hintMode, setHintMode] = useState(false); // Enable hint mode to show correct/incorrect groups
 
   // Memoize the fetch function to fix useEffect dependency warning
   const fetchPuzzleForDate = useCallback(async (date) => {
@@ -60,6 +61,19 @@ function App() {
       setIsLoading(false);
     }
   }, []);
+
+  // Check if a group of 4 words is correct (for hint mode)
+  const isGroupCorrect = (groupWords) => {
+    if (!hintMode || groupWords.length !== 4) return null;
+    
+    // For now, we'll need to implement this based on the actual puzzle solution
+    // This is a placeholder - we'll need to store the correct groupings when we fetch the puzzle
+    console.log('Checking if group is correct:', groupWords);
+    
+    // TODO: Implement actual solution checking
+    // This would compare the group against the known correct categories
+    return null; // null = no hint, true = correct, false = incorrect
+  };
 
   // Remove the auto-fetch useEffect - user must manually click fetch button
   // useEffect(() => {
@@ -668,15 +682,28 @@ function App() {
               {groups.map((group, groupIndex) => (
                 <div
                   key={groupIndex}
-                  className={`group-area ${dragOverGroup === groupIndex ? 'drag-over' : ''} ${isGroupFull(groupIndex) ? 'group-full' : ''}`}
+                  className={`group-area ${dragOverGroup === groupIndex ? 'drag-over' : ''} ${group.length === 4 ? 'group-full' : ''} ${
+                    hintMode && group.length === 4 
+                      ? isGroupCorrect(group) === true 
+                        ? 'group-correct' 
+                        : isGroupCorrect(group) === false 
+                          ? 'group-incorrect' 
+                          : ''
+                      : ''
+                  }`}
                   onDragOver={(e) => handleDragOver(e, groupIndex)}
                   onDragLeave={handleDragLeave}
                   onDrop={(e) => handleDrop(e, groupIndex)}
                 >
-                  <h3>
-                    Group {groupIndex + 1} 
+                  <div className="group-header">
+                    <span className="group-title">Group {groupIndex + 1}</span>
                     <span className="group-count">({group.length}/4)</span>
-                  </h3>
+                    {hintMode && group.length === 4 && (
+                      <span className={`group-status ${isGroupCorrect(group) === true ? 'status-correct' : 'status-incorrect'}`}>
+                        {isGroupCorrect(group) === true ? '✓ Correct' : isGroupCorrect(group) === false ? '✗ Incorrect' : ''}
+                      </span>
+                    )}
+                  </div>
                   <div className="group-words">
                     {group.map((word, wordIndex) => (
                       <div key={wordIndex} className="group-word">
@@ -692,6 +719,18 @@ function App() {
                   </div>
                 </div>
               ))}
+            </div>
+
+            <div className="hint-mode-section">
+              <label className="hint-checkbox-label">
+                <input
+                  type="checkbox"
+                  checked={hintMode}
+                  onChange={(e) => setHintMode(e.target.checked)}
+                  className="hint-checkbox"
+                />
+                <span className="hint-text">Enable Hint Mode (shows correct/incorrect groups when 4 words are grouped)</span>
+              </label>
             </div>
           </div>
         )}
