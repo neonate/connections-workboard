@@ -60,17 +60,24 @@ function App() {
     }
   }, []);
 
-  // Auto-fetch puzzle when date changes
-  useEffect(() => {
-    console.log('useEffect triggered with selectedDate:', selectedDate);
-    if (selectedDate) {
-      console.log('Selected date:', selectedDate);
-      console.log('Selected date type:', typeof selectedDate);
-      console.log('Selected date length:', selectedDate.length);
-      console.log('Selected date split by T:', selectedDate.split('T'));
-      fetchPuzzleForDate(selectedDate);
+  // Remove the auto-fetch useEffect - user must manually click fetch button
+  // useEffect(() => {
+  //   if (selectedDate) {
+  //     console.log('useEffect triggered with selectedDate:', selectedDate);
+  //     fetchPuzzleForDate(selectedDate);
+  //   }
+  // }, [selectedDate, fetchPuzzleForDate]);
+
+  // Manual fetch function that user triggers with button click
+  const handleFetchPuzzle = async () => {
+    if (!selectedDate) {
+      alert('Please select a date first');
+      return;
     }
-  }, [selectedDate, fetchPuzzleForDate]);
+    
+    console.log('Manual fetch triggered for date:', selectedDate);
+    await fetchPuzzleForDate(selectedDate);
+  };
 
   // Fetch puzzle from external source (Mashable)
   const fetchRealPuzzle = async (date) => {
@@ -542,12 +549,11 @@ function App() {
         {shouldShowInput ? (
           <div className="input-section">
             <div className="date-section">
-              <label htmlFor="puzzle-date" className="date-label">
-                Select Puzzle Date:
-              </label>
+              <label htmlFor="date-picker" className="date-label">Select Puzzle Date:</label>
               <input
                 type="date"
-                id="puzzle-date"
+                id="date-picker"
+                className="date-picker"
                 value={selectedDate}
                 onChange={(e) => {
                   console.log('Date picker onChange triggered');
@@ -557,17 +563,14 @@ function App() {
                   console.log('setSelectedDate called with:', e.target.value);
                 }}
                 max={today}
-                className="date-picker"
-                disabled={isLoading}
               />
-              {isLoading && (
-                <div className="loading-spinner">
-                  <span>Fetching...</span>
-                </div>
-              )}
-              <div style={{fontSize: '12px', color: '#666', marginTop: '5px'}}>
-                Current selectedDate: {selectedDate || 'none'}
-              </div>
+              <button 
+                className="fetch-btn" 
+                onClick={handleFetchPuzzle}
+                disabled={!selectedDate || isLoading}
+              >
+                {isLoading ? 'Loading...' : 'Fetch Puzzle'}
+              </button>
             </div>
             
             {fetchError && (
