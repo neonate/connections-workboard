@@ -92,24 +92,29 @@ function App() {
     console.log('Available sample puzzles:', Object.keys(samplePuzzles));
     console.log('Looking for puzzle with normalized date:', normalizedDate);
     
-    // Test the lookup logic
-    console.log('Testing lookup for 2024-01-27:', samplePuzzles['2024-01-27']);
-    console.log('Testing lookup for normalized date:', samplePuzzles[normalizedDate]);
-    console.log('Direct comparison 2024-01-27 === normalizedDate:', '2024-01-27' === normalizedDate);
-    
-    // Return puzzle for selected date or generate a unique one based on the date
-    if (samplePuzzles[normalizedDate]) {
-      console.log('Found sample puzzle for normalized date:', normalizedDate);
-      return samplePuzzles[normalizedDate];
-    } else {
-      console.log('No sample puzzle found, generating unique one for normalized date:', normalizedDate);
-      // Generate a unique puzzle for any other date using the date as a seed
-      const dateSeed = new Date(normalizedDate).getTime();
-      const uniqueWords = generateUniquePuzzle(dateSeed);
-      return {
-        words: uniqueWords,
-        date: normalizedDate
-      };
+    try {
+      // Test the lookup logic
+      console.log('Testing lookup for 2024-01-27:', samplePuzzles['2024-01-27']);
+      console.log('Testing lookup for normalized date:', samplePuzzles[normalizedDate]);
+      console.log('Direct comparison 2024-01-27 === normalizedDate:', '2024-01-27' === normalizedDate);
+      
+      // Return puzzle for selected date or generate a unique one based on the date
+      if (samplePuzzles[normalizedDate]) {
+        console.log('Found sample puzzle for normalized date:', normalizedDate);
+        return samplePuzzles[normalizedDate];
+      } else {
+        console.log('No sample puzzle found, generating unique one for normalized date:', normalizedDate);
+        // Generate a unique puzzle for any other date using the date as a seed
+        const dateSeed = new Date(normalizedDate).getTime();
+        const uniqueWords = generateUniquePuzzle(dateSeed);
+        return {
+          words: uniqueWords,
+          date: normalizedDate
+        };
+      }
+    } catch (error) {
+      console.error('Error in puzzle lookup logic:', error);
+      throw error;
     }
   };
 
