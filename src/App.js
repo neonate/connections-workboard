@@ -93,89 +93,113 @@ function App() {
     await new Promise(resolve => setTimeout(resolve, baseDelay));
 
     try {
-      // Try multiple sources for NYT Connections puzzles
-      const sources = [
-        `https://www.nytimes.com/games/connections/${date}`,
-        `https://nytconnections.com/${date}`,
-        `https://connections.nyt.com/${date}`
-      ];
+      // Use Mashable URL pattern for NYT Connections puzzles
+      const mashableUrl = `https://mashable.com/article/nyt-connections-answers-${date}`;
+      console.log(`Fetching from Mashable: ${mashableUrl}`);
       
-      let puzzleData = null;
-      
-      for (const url of sources) {
-        try {
-          console.log(`Trying to fetch from: ${url}`);
-          
-          const response = await fetch(url, {
-            method: 'GET',
-            headers,
-            credentials: 'omit',
-            mode: 'cors'
-          });
+      const response = await fetch(mashableUrl, {
+        method: 'GET',
+        headers,
+        credentials: 'omit',
+        mode: 'cors'
+      });
 
-          if (response.ok) {
-            const html = await response.text();
-            console.log(`Successfully fetched from: ${url}`);
-            
-            // Parse the HTML to extract puzzle words
-            puzzleData = parsePuzzleWordsFromHTML(html, date);
-            
-            if (puzzleData && puzzleData.words && puzzleData.words.length === 16) {
-              console.log('Successfully parsed puzzle data:', puzzleData);
-              break; // Found valid puzzle data, exit loop
-            }
-          }
-        } catch (sourceError) {
-          console.log(`Failed to fetch from ${url}:`, sourceError.message);
-          continue; // Try next source
-        }
+      if (!response.ok) {
+        throw new Error(`HTTP ${response.status}: ${response.statusText}`);
       }
+
+      const html = await response.text();
+      console.log('Successfully fetched from Mashable');
+      
+      // Parse the HTML to extract puzzle words
+      const puzzleData = parsePuzzleWordsFromHTML(html, date);
       
       if (!puzzleData || !puzzleData.words || puzzleData.words.length !== 16) {
-        throw new Error('Failed to fetch valid puzzle data from all sources');
+        throw new Error('Failed to parse puzzle words from Mashable HTML');
       }
       
       return puzzleData;
     } catch (error) {
-      console.error('Real puzzle fetch failed:', error);
+      console.error('Mashable puzzle fetch failed:', error);
       throw error;
     }
   };
 
-  // Parse puzzle words from HTML (needs to be implemented based on actual page structure)
+  // Parse puzzle words from HTML (specifically for Mashable NYT Connections articles)
   const parsePuzzleWordsFromHTML = (html, date) => {
     try {
-      // This is a placeholder - would need to be implemented based on actual NYT page structure
-      // For now, we'll try to extract words from common patterns
+      console.log('Parsing Mashable HTML for NYT Connections puzzle words...');
       
-      // Look for common patterns in NYT Connections pages
+      // Look for the specific patterns used in Mashable NYT Connections articles
       const wordPatterns = [
-        /data-word="([^"]+)"/g,
-        /class="[^"]*word[^"]*"[^>]*>([^<]+)</g,
-        /"word":"([^"]+)"/g,
-        /word:\s*"([^"]+)"/g
+        // Look for words in the solution section (usually in bold or strong tags)
+        /<strong[^>]*>([A-Z]{3,20})<\/strong>/gi,
+        /<b[^>]*>([A-Z]{3,20})<\/b>/gi,
+        // Look for words in list items that contain puzzle solutions
+        /<li[^>]*>([^<]*?([A-Z]{3,20})[^<]*?)<\/li>/gi,
+        // Look for words in paragraphs that mention the categories
+        /<p[^>]*>([^<]*?([A-Z]{3,20})[^<]*?)<\/p>/gi,
+        // Look for words in headings that might contain puzzle information
+        /<h[1-6][^>]*>([^<]*?([A-Z]{3,20})[^<]*?)<\/h[1-6]>/gi,
+        // Look for the specific category format used in Mashable articles
+        /\*\s*([^:]+):\s*([A-Z]{3,20}),\s*([A-Z]{3,20}),\s*([A-Z]{3,20}),\s*([A-Z]{3,20})/gi,
+        // Look for words that appear in all caps (likely puzzle words)
+        /\b([A-Z]{3,20})\b/g
       ];
       
       const foundWords = new Set();
       
+      // First, try to find the specific solution section format
+      const solutionPattern = /\*\s*([^:]+):\s*([A-Z]{3,20}),\s*([A-Z]{3,20}),\s*([A-Z]{3,20}),\s*([A-Z]{3,20})/gi;
+      let solutionMatch;
+      
+      while ((solutionMatch = solutionPattern.exec(html)) !== null) {
+        // Extract the 4 words from each category
+        const category = solutionMatch[1];
+        const words = [solutionMatch[2], solutionMatch[3], solutionMatch[4], solutionMatch[5]];
+        
+        console.log(`Found category "${category}" with words:`, words);
+        
+        words.forEach(word => {
+          if (word && word.length >= 3 && word.length <= 20) {
+            foundWords.add(word.trim());
+          }
+        });
+      }
+      
+      // If we found words in the solution format, use those
+      if (foundWords.size >= 16) {
+        const words = Array.from(foundWords).slice(0, 16);
+        console.log('Successfully parsed puzzle words from solution format:', words);
+        return { words, date };
+      }
+      
+      // Fallback: try other patterns if solution format didn't work
       for (const pattern of wordPatterns) {
         let match;
         while ((match = pattern.exec(html)) !== null) {
-          const word = match[1].trim().toUpperCase();
-          if (word.length > 0 && word.length < 20) { // Reasonable word length
+          let word = match[1] || match[2] || match[0];
+          word = word.trim().toUpperCase();
+          
+          // Filter for reasonable puzzle words
+          if (word.length >= 3 && word.length <= 20 && 
+              /^[A-Z]+$/.test(word) && // Only letters, no numbers or special chars
+              !['THE', 'AND', 'FOR', 'ARE', 'BUT', 'NOT', 'YOU', 'ALL', 'CAN', 'HER', 'WAS', 'ONE', 'OUR', 'OUT', 'DAY', 'GET', 'HAS', 'HIM', 'HIS', 'HOW', 'MAN', 'NEW', 'NOW', 'OLD', 'SEE', 'TWO', 'WAY', 'WHO', 'BOY', 'DID', 'ITS', 'LET', 'PUT', 'SAY', 'SHE', 'TOO', 'USE', 'NYT', 'CONNECTIONS', 'TODAY', 'HINTS', 'ANSWERS', 'JULY', 'AUGUST', 'SEPTEMBER', 'OCTOBER', 'NOVEMBER', 'DECEMBER', 'JANUARY', 'FEBRUARY', 'MARCH', 'APRIL', 'MAY', 'JUNE'].includes(word)) {
             foundWords.add(word);
           }
         }
       }
       
+      console.log('Found potential words:', Array.from(foundWords));
+      
       if (foundWords.size >= 16) {
         const words = Array.from(foundWords).slice(0, 16);
-        console.log('Parsed words from HTML:', words);
+        console.log('Parsed words from Mashable HTML:', words);
         return { words, date };
       }
       
-      // If we can't parse the HTML, throw an error
-      throw new Error('Could not parse puzzle words from HTML');
+      // If we can't parse enough words, throw an error
+      throw new Error(`Could not parse enough puzzle words from HTML. Found ${foundWords.size} words, need 16.`);
       
     } catch (error) {
       console.error('HTML parsing failed:', error);
