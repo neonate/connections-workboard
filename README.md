@@ -1,6 +1,14 @@
-# Connections Workboard
+# NYT Connections Working Board
 
-A React-based web application for managing connections and work items.
+A React-based web application for solving NYT Connections puzzles with an interactive drag-and-drop interface.
+
+## Project Overview
+
+This app allows users to:
+- Paste 16 puzzle words from NYT Connections
+- View words as draggable "post-it notes"
+- Group words into sets of 4 by dragging and dropping
+- Work through puzzles interactively
 
 ## Technology Stack
 
@@ -17,6 +25,38 @@ A React-based web application for managing connections and work items.
 - Responsive design principles
 - Testing-driven development approach
 - ESLint configuration for code quality
+
+## Development Phases
+
+### Phase 1 - Setup & Scaffolding ✅
+- Basic React app structure
+- NYT Connections header
+- Input section for puzzle words
+- Board section placeholder
+
+### Phase 2 - MVP: Manual Input + Dragging (Next)
+- Text input for 16 words
+- Draggable post-it notes
+- Drag-and-drop grouping
+- Basic styling and layout
+
+### Phase 3 - Puzzle Date Options
+- Date picker functionality
+- Manual input override option
+
+### Phase 4 - Puzzle Fetching (Optional)
+- Fetch today's puzzle data
+- Parse external puzzle sources
+
+### Phase 5 - Hint Mode (Extra Credit)
+- Multiple hint levels
+- Toggle functionality
+
+### Phase 6 - Polish & UX
+- Reset functionality
+- Save/load state
+- Enhanced styling
+- Responsive design
 
 ## Getting Started
 
@@ -52,47 +92,11 @@ The application will open in your browser at [http://localhost:3000](http://loca
 - `npm test` - Runs the test suite
 - `npm run lint` - Checks for linting errors
 - `npm run lint:fix` - Automatically fixes linting errors
-- `npm run eject` - Ejects from Create React App (one-way operation)
 
-## Project Structure
+## Current Status
 
-```
-connections-workboard/
-├── public/           # Static files
-├── src/             # Source code
-│   ├── components/  # React components
-│   ├── App.js       # Main App component
-│   └── index.js     # Application entry point
-├── package.json     # Dependencies and scripts
-├── .gitignore      # Git ignore rules
-└── README.md       # This file
-```
-
-## Development
-
-- The development server will automatically reload when you make changes
-- ESLint is configured to maintain code quality
-- Tests run automatically when files change
-
-## Building for Production
-
-To create a production build:
-
-```bash
-npm run build
-```
-
-This creates an optimized build in the `build/` folder.
-
-## Testing
-
-Run the test suite:
-
-```bash
-npm test
-```
-
-Tests will run in watch mode and automatically re-run when files change.
+**Phase 1 Complete**: Basic app structure with header and input sections ready.
+**Next**: Implement draggable post-it notes and drag-and-drop functionality.
 
 ## Contributing
 
