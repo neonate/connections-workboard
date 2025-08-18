@@ -37,7 +37,10 @@ function App() {
 
   const handleDragOver = (e, groupIndex) => {
     e.preventDefault();
-    setDragOverGroup(groupIndex);
+    // Only allow drag over if group has less than 4 words
+    if (groups[groupIndex].length < 4) {
+      setDragOverGroup(groupIndex);
+    }
   };
 
   const handleDragLeave = () => {
@@ -49,18 +52,28 @@ function App() {
     const word = e.dataTransfer.getData('text/plain');
     setDragOverGroup(null);
     
+    // Check if group is already full
+    if (groups[groupIndex].length >= 4) {
+      return; // Don't allow drop if group is full
+    }
+    
     // Remove word from all groups first
     const newGroups = groups.map(group => group.filter(w => w !== word));
     
     // Add word to the target group
     newGroups[groupIndex] = [...newGroups[groupIndex], word];
     
+    // Remove word from the original words array
+    setWords(prevWords => prevWords.filter(w => w !== word));
     setGroups(newGroups);
   };
 
   const removeFromGroup = (word, groupIndex) => {
     const newGroups = [...groups];
     newGroups[groupIndex] = newGroups[groupIndex].filter(w => w !== word);
+    
+    // Add word back to the original words array
+    setWords(prevWords => [...prevWords, word]);
     setGroups(newGroups);
   };
 
@@ -68,6 +81,10 @@ function App() {
     setWords([]);
     setGroups([[], [], [], []]);
     setInputText('');
+  };
+
+  const isGroupFull = (groupIndex) => {
+    return groups[groupIndex].length >= 4;
   };
 
   return (
@@ -119,12 +136,15 @@ function App() {
               {groups.map((group, groupIndex) => (
                 <div
                   key={groupIndex}
-                  className={`group-area ${dragOverGroup === groupIndex ? 'drag-over' : ''}`}
+                  className={`group-area ${dragOverGroup === groupIndex ? 'drag-over' : ''} ${isGroupFull(groupIndex) ? 'group-full' : ''}`}
                   onDragOver={(e) => handleDragOver(e, groupIndex)}
                   onDragLeave={handleDragLeave}
                   onDrop={(e) => handleDrop(e, groupIndex)}
                 >
-                  <h3>Group {groupIndex + 1}</h3>
+                  <h3>
+                    Group {groupIndex + 1} 
+                    <span className="group-count">({group.length}/4)</span>
+                  </h3>
                   <div className="group-words">
                     {group.map((word, wordIndex) => (
                       <div key={wordIndex} className="group-word">
@@ -138,6 +158,9 @@ function App() {
                       </div>
                     ))}
                   </div>
+                  {isGroupFull(groupIndex) && (
+                    <div className="group-full-message">Group is full!</div>
+                  )}
                 </div>
               ))}
             </div>
