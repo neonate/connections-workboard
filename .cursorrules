@@ -44,6 +44,15 @@ Follow the following rules:
 - If you run into the same persistent error, write logs and console messages to help track down the issue, and remember to check the logs after you make changes to see if the issue is resolved.
 - If you are struggling with some piece of code, or aren't 100% sure on how to implement something, you can always use the firecrawl tool to research solutions.
 
+## Documentation and Testing Rules:
+- **ALWAYS update README.md** when adding new features, fixing bugs, or making significant changes
+- **ALWAYS update or add tests** to cover new functionality and ensure bug fixes are properly tested
+- **README updates should include**: new features, updated screenshots if UI changes, new usage instructions, updated examples
+- **Test updates should include**: new test cases for new features, regression tests for bug fixes, updated test data if needed
+- **Commit both code and documentation together**: feature/bug fix + README update + test updates in the same commit
+- **Documentation should be user-focused**: explain what changed, why it matters, and how to use new features
+- **Test coverage should be comprehensive**: aim for 100% test pass rate and cover edge cases for new functionality
+
 ## Quality Assurance Rules:
 - **CRITICAL: ALWAYS run tests before committing any code changes**
 - **Run `npm run test:ci` to ensure all tests pass before committing**
