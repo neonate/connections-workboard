@@ -18,8 +18,9 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "npm run test:ci && react-scripts build",
     "test": "react-scripts test",
+    "test:ci": "react-scripts test --watchAll=false --coverage --passWithNoTests",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
