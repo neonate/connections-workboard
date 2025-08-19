@@ -51,7 +51,7 @@ The NYT Connections Working Board is a React-based web application that allows u
 - **Yellow: Aptitude** - BENT, FACULTY, FLAIR, GIFT
 - **Green: Silent "W"** - PLAYWRIGHT, SWORD, WRAP, WREATH (words that start with silent W)
 - **Blue: Legends of classic Hollywood** - DEAN, GABLE, GARLAND, TEMPLE
-- **Purple: Hit the ___ ** - HAY, JACKPOT, ROAD, ROOF (forming phrases like "Hit the Hay", "Hit the Road", etc.)
+- **Purple: Hit the ___** - HAY, JACKPOT, ROAD, ROOF (forming phrases like "Hit the Hay", "Hit the Road", etc.)
 
 ## Smart Word Input
 
