@@ -163,6 +163,25 @@
   overflow: hidden;
   text-overflow: ellipsis;
   line-height: 1.2;
+  /* Dynamic font sizing for better word fit */
+  font-size: clamp(8px, 2.5vw, 14px);
+}
+
+/* Custom font sizing for different word lengths */
+.word-tile[data-word-length="short"] {
+  font-size: 14px;
+}
+
+.word-tile[data-word-length="medium"] {
+  font-size: 12px;
+}
+
+.word-tile[data-word-length="long"] {
+  font-size: 10px;
+}
+
+.word-tile[data-word-length="very-long"] {
+  font-size: 8px;
 }
 
 .word-tile:hover {
@@ -173,6 +192,8 @@
   overflow: visible;
   white-space: normal;
   z-index: 10;
+  /* Reset font size on hover for readability */
+  font-size: 14px;
 }
 
 .word-tile:active {
@@ -238,12 +259,41 @@
   line-height: 1.2;
 }
 
+/* Dynamic font sizing for group words */
+.group-word[data-word-length="short"] {
+  font-size: 14px;
+}
+
+.group-word[data-word-length="medium"] {
+  font-size: 12px;
+}
+
+.group-word[data-word-length="long"] {
+  font-size: 10px;
+}
+
+.group-word[data-word-length="very-long"] {
+  font-size: 8px;
+}
+
 .group-word:hover {
   background-color: #0056b3;
   transform: translateY(-1px);
   overflow: visible;
   white-space: normal;
   z-index: 10;
+  /* Reset font size on hover for readability */
+  font-size: 14px;
+}
+
+.group-word:active {
+  cursor: grabbing;
+  transform: translateY(0);
+}
+
+.group-word.dragging {
+  opacity: 0.5;
+  transform: scale(0.95);
 }
 
 .reset-button {
@@ -301,10 +351,26 @@
   
   .word-tile {
     padding: 12px 8px;
-    font-size: 12px;
     min-height: 50px;
     min-width: 60px;
     border-radius: 6px;
+  }
+  
+  /* Mobile font size adjustments for dynamic sizing */
+  .word-tile[data-word-length="short"] {
+    font-size: 12px;
+  }
+  
+  .word-tile[data-word-length="medium"] {
+    font-size: 10px;
+  }
+  
+  .word-tile[data-word-length="long"] {
+    font-size: 8px;
+  }
+  
+  .word-tile[data-word-length="very-long"] {
+    font-size: 6px;
   }
   
   .groups-container {
@@ -320,9 +386,25 @@
   .group-word {
     padding: 8px 12px;
     margin: 4px;
-    font-size: 12px;
     min-width: 80px;
     max-width: 120px;
+  }
+  
+  /* Mobile font size adjustments for group words */
+  .group-word[data-word-length="short"] {
+    font-size: 12px;
+  }
+  
+  .group-word[data-word-length="medium"] {
+    font-size: 10px;
+  }
+  
+  .group-word[data-word-length="long"] {
+    font-size: 8px;
+  }
+  
+  .group-word[data-word-length="very-long"] {
+    font-size: 6px;
   }
   
   .chatgpt-instructions {
@@ -373,10 +455,26 @@
   
   .word-tile {
     padding: 10px 6px;
-    font-size: 11px;
     min-height: 45px;
     min-width: 50px;
     border-radius: 5px;
+  }
+  
+  /* Small mobile font size adjustments */
+  .word-tile[data-word-length="short"] {
+    font-size: 11px;
+  }
+  
+  .word-tile[data-word-length="medium"] {
+    font-size: 9px;
+  }
+  
+  .word-tile[data-word-length="long"] {
+    font-size: 7px;
+  }
+  
+  .word-tile[data-word-length="very-long"] {
+    font-size: 5px;
   }
   
   .groups-container h2 {
@@ -392,9 +490,25 @@
   .group-word {
     padding: 6px 10px;
     margin: 3px;
-    font-size: 11px;
     min-width: 70px;
     max-width: 100px;
+  }
+  
+  /* Small mobile font size adjustments for group words */
+  .group-word[data-word-length="short"] {
+    font-size: 11px;
+  }
+  
+  .group-word[data-word-length="medium"] {
+    font-size: 9px;
+  }
+  
+  .group-word[data-word-length="long"] {
+    font-size: 7px;
+  }
+  
+  .group-word[data-word-length="very-long"] {
+    font-size: 5px;
   }
   
   .chatgpt-instructions {

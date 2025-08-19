@@ -209,16 +209,27 @@ function App() {
 
       <div className="game-board">
         <div className="word-grid">
-          {words.map((word, index) => (
-            <div
-              key={index}
-              className="word-tile"
-              draggable
-              onDragStart={(e) => handleDragStart(e, word)}
-            >
-              {word}
-            </div>
-          ))}
+          {words.map((word, index) => {
+            // Determine word length category for font sizing
+            const getWordLengthClass = (word) => {
+              if (word.length <= 6) return 'short';
+              if (word.length <= 9) return 'medium';
+              if (word.length <= 12) return 'long';
+              return 'very-long';
+            };
+            
+            return (
+              <div
+                key={index}
+                className="word-tile"
+                draggable
+                onDragStart={(e) => handleDragStart(e, word)}
+                data-word-length={getWordLengthClass(word)}
+              >
+                {word}
+              </div>
+            );
+          })}
         </div>
 
         <div className="groups-container">
@@ -231,16 +242,27 @@ function App() {
               onDrop={(e) => handleDrop(e, groupIndex)}
             >
               <h3>Group {groupIndex + 1}</h3>
-              {group.map((word, wordIndex) => (
-                <span
-                  key={wordIndex}
-                  className="group-word"
-                  onClick={() => removeFromGroup(word, groupIndex)}
-                  title="Click to remove from group"
-                >
-                  {word}
-                </span>
-              ))}
+              {group.map((word, wordIndex) => {
+                // Determine word length category for font sizing
+                const getWordLengthClass = (word) => {
+                  if (word.length <= 6) return 'short';
+                  if (word.length <= 9) return 'medium';
+                  if (word.length <= 12) return 'long';
+                  return 'very-long';
+                };
+                
+                return (
+                  <span
+                    key={wordIndex}
+                    className="group-word"
+                    onClick={() => removeFromGroup(word, groupIndex)}
+                    title="Click to remove from group"
+                    data-word-length={getWordLengthClass(word)}
+                  >
+                    {word}
+                  </span>
+                );
+              })}
             </div>
           ))}
         </div>
