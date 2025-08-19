@@ -5,11 +5,6 @@ yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
 
-# Production builds
-build/
-dist/
-out/
-
 # Environment variables
 .env
 .env.local
@@ -58,7 +53,6 @@ jspm_packages/
 .yarn-integrity
 
 # parcel-bundler cache (https://parceljs.org/)
-.cache
 .parcel-cache
 
 # Next.js build output
@@ -68,7 +62,7 @@ jspm_packages/
 .nuxt
 
 # Gatsby files
-.cache/
+# .cache/ - Removed to avoid build interference
 
 # Storybook build outputs
 .out
@@ -99,9 +93,9 @@ ehthumbs.db
 Thumbs.db
 
 # Testing
-coverage/
-.nyc_output/
+# coverage/ - Already covered above
+# .nyc_output/ - Already covered above
 
 # Misc
-*.tgz
-*.tar.gz
+# *.tgz - Already covered above
+# *.tar.gz - Already covered above
