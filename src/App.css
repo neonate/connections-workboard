@@ -168,6 +168,23 @@
   border-radius: 12px;
 }
 
+/* Mobile-first responsive design */
+@media (max-width: 768px) {
+  .word-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    padding: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .word-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+    padding: 12px;
+  }
+}
+
 .word-tile {
   background-color: #007bff;
   color: white;
@@ -189,6 +206,21 @@
 
 .word-tile:active {
   cursor: grabbing;
+}
+
+/* Mobile-responsive word tiles */
+@media (max-width: 768px) {
+  .word-tile {
+    padding: 15px 12px;
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .word-tile {
+    padding: 12px 8px;
+    font-size: 14px;
+  }
 }
 
 .groups-container {
@@ -308,5 +340,83 @@
   
   .example-prompt {
     padding: 15px;
+  }
+  
+  .word-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    padding: 15px;
+  }
+  
+  .word-tile {
+    padding: 15px 12px;
+    font-size: 16px;
+  }
+  
+  .groups-container {
+    padding: 0 10px;
+  }
+  
+  .group-area {
+    padding: 15px;
+    margin-bottom: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .App {
+    padding: 10px;
+  }
+  
+  .App-header h1 {
+    font-size: 2em;
+  }
+  
+  .input-section {
+    padding: 0 10px;
+  }
+  
+  .input-section textarea {
+    padding: 12px;
+    font-size: 14px;
+  }
+  
+  .input-section button {
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+  
+  .word-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+    padding: 12px;
+  }
+  
+  .word-tile {
+    padding: 12px 8px;
+    font-size: 14px;
+  }
+  
+  .groups-container h2 {
+    font-size: 1.5em;
+  }
+  
+  .group-area {
+    padding: 12px;
+    margin-bottom: 12px;
+  }
+  
+  .group-word {
+    padding: 8px 12px;
+    margin: 3px;
+    font-size: 14px;
+  }
+  
+  .chatgpt-instructions {
+    padding: 15px;
+  }
+  
+  .example-prompt {
+    padding: 12px;
   }
 }
