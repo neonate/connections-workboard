@@ -11,7 +11,7 @@ The NYT Connections Working Board is a React-based web application that allows u
 - **Frontend**: React.js with modern hooks
 - **Styling**: CSS3 with responsive design
 - **Testing**: Jest + React Testing Library
-- **Deployment**: Digital Ocean App Platform
+- **Deployment**: Static hosting (any platform)
 - **Build**: Create React App with npm
 
 ## Current Features
@@ -68,11 +68,17 @@ The app provides a streamlined workflow for using ChatGPT to extract puzzle word
 
 ## Deployment
 
-The app is deployed on Digital Ocean App Platform:
+The app can be deployed to any static hosting platform:
 
-1. **Automatic Builds**: GitHub Actions runs tests on every commit
-2. **Live URL**: [Your App URL]
-3. **Mobile Optimized**: Works great on iPhone and other mobile devices
+1. **Build the app**: `npm run build`
+2. **Deploy options**:
+   - **Netlify**: Drag and drop the `build/` folder
+   - **Vercel**: Connect your GitHub repo for automatic deployments
+   - **GitHub Pages**: Enable Pages in your repo settings
+   - **Firebase Hosting**: Use Firebase CLI to deploy
+   - **Any static host**: Upload the `build/` folder contents
+
+**Note**: The app is a static React build, so it works on any web hosting service.
 
 ## Local Development
 
@@ -95,7 +101,7 @@ npm run build
 The app includes comprehensive tests that run automatically:
 
 - **Unit Tests**: 18 tests covering core functionality
-- **CI Integration**: Tests run on every commit via GitHub Actions
+- **CI Integration**: Tests run on every commit (GitHub Actions, GitLab CI, etc.)
 - **Coverage**: Tests cover input validation, drag-and-drop, and UI components
 
 ## Contributing
