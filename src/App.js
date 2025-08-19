@@ -150,10 +150,6 @@ function App() {
     window.history.replaceState({}, '', window.location.pathname);
   };
 
-  const isGroupFull = (groupIndex) => {
-    return groups[groupIndex].length >= 4;
-  };
-
   if (!hasStartedGame) {
     return (
       <div className="App">
