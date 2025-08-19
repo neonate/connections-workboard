@@ -39,12 +39,12 @@ The NYT Connections Working Board is a React-based web application that allows u
 ## Screenshots
 
 ### 1. Input Screen - Getting Started
-![Input Screen](screenshots/input-screen.png)
+![Input Screen](screenshots/initial_screen.png)
 
 **Start here!** Enter the 16 words from your NYT Connections puzzle. You can either type them manually or use the ChatGPT method (recommended) by taking a screenshot and asking ChatGPT to identify the words. The app will validate that you have exactly 16 words before starting the puzzle.
 
 ### 2. Grouped Hints - Working Out the Connections
-![Grouped Hints](screenshots/grouped-hints.png)
+![Grouped Hints](screenshots/board_in_progress.png)
 
 **Organize and solve!** Once you start the puzzle, drag and drop words into groups of 4. This screenshot shows how the app makes it easy to work out the correct groupings without having to make guesses in the real NYT Connections app. You can see that words like "BLABBERMOUTH", "CHATTERBOX", "WINDBAG", and "PRATTLER" are grouped together (likely meaning "talkative person"), while "PORT", "SHERRY", "MARSALA", and "VERMOUTH" form another group (types of wine).
 
