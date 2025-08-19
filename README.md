@@ -21,7 +21,7 @@ The NYT Connections Working Board is a React-based web application that allows u
 - **URL Persistence**: Game state survives page refreshes
 - **Mobile Optimized**: Responsive design that works great on iPhone
 - **Dynamic Font Sizing**: Automatically adjusts text size to fit long words
-- **Smart Word Input**: ChatGPT integration for easy word extraction
+- **Smart Word Input**: Streamlined ChatGPT workflow for easy word extraction
 
 ## How to Use
 
@@ -50,7 +50,7 @@ The NYT Connections Working Board is a React-based web application that allows u
 
 ## Smart Word Input
 
-The app includes built-in ChatGPT integration to make word input effortless:
+The app provides a streamlined workflow for using ChatGPT to extract puzzle words:
 
 - **Screenshot Method**: Take a photo of the puzzle grid and ask ChatGPT to identify the words
 - **Copy-to-Clipboard**: One-click copying of the perfect ChatGPT prompt
@@ -61,7 +61,7 @@ The app includes built-in ChatGPT integration to make word input effortless:
 
 - ✅ **Phase 1 - Setup & Scaffolding**: Basic React app with header
 - ✅ **Phase 2 - MVP: Manual Input + Dragging**: Core drag-and-drop functionality
-- ✅ **Phase 3 - Smart Input Methods**: ChatGPT integration and copy-to-clipboard
+- ✅ **Phase 3 - Smart Input Methods**: ChatGPT workflow and copy-to-clipboard
 - ✅ **Phase 4 - Mobile Optimization**: Responsive design and iPhone-friendly layout
 - ✅ **Phase 5 - URL Persistence**: Game state survives page refreshes
 - ✅ **Phase 6 - Dynamic Typography**: Smart font sizing for long words
