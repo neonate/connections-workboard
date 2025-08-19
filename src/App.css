@@ -108,11 +108,38 @@
   margin-top: 20px;
 }
 
-.example-prompt h4 {
-  color: white;
-  margin-top: 0;
+.prompt-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   margin-bottom: 15px;
+}
+
+.prompt-header h4 {
+  color: white;
+  margin: 0;
   font-size: 1.2em;
+}
+
+.copy-btn {
+  background-color: rgba(255, 255, 255, 0.2);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 6px;
+  padding: 8px 12px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.2s;
+  min-width: 60px;
+}
+
+.copy-btn:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+.copy-btn:active {
+  transform: scale(0.95);
 }
 
 .example-prompt p {

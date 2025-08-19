@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import './App.css';
 
 function App() {
@@ -7,6 +7,7 @@ function App() {
   const [inputText, setInputText] = useState('');
   const [dragOverGroup, setDragOverGroup] = useState(null);
   const [hasStartedGame, setHasStartedGame] = useState(false);
+  const [copySuccess, setCopySuccess] = useState(false);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -27,6 +28,25 @@ function App() {
       } else {
         alert('Please enter exactly 16 words separated by commas or new lines.');
       }
+    }
+  };
+
+  const copyToClipboard = async (text) => {
+    try {
+      await navigator.clipboard.writeText(text);
+      setCopySuccess(true);
+      setTimeout(() => setCopySuccess(false), 2000); // Reset after 2 seconds
+    } catch (err) {
+      console.error('Failed to copy text: ', err);
+      // Fallback for older browsers
+      const textArea = document.createElement('textarea');
+      textArea.value = text;
+      document.body.appendChild(textArea);
+      textArea.select();
+      document.execCommand('copy');
+      document.body.removeChild(textArea);
+      setCopySuccess(true);
+      setTimeout(() => setCopySuccess(false), 2000);
     }
   };
 
@@ -118,7 +138,16 @@ function App() {
               <li><strong>Click &ldquo;Start Puzzle&rdquo;</strong> to begin organizing!</li>
             </ol>
             <div className="example-prompt">
-              <h4>Example ChatGPT Prompt:</h4>
+              <div className="prompt-header">
+                <h4>Example ChatGPT Prompt:</h4>
+                <button 
+                  className="copy-btn"
+                  onClick={() => copyToClipboard("I have a screenshot of today's NYT Connections puzzle. Can you identify all 16 words in the grid and list them separated by commas? Just the words, nothing else.")}
+                  title="Copy to clipboard"
+                >
+                  {copySuccess ? '✓ Copied!' : '📋'}
+                </button>
+              </div>
               <p>&ldquo;I have a screenshot of today&apos;s NYT Connections puzzle. Can you identify all 16 words in the grid and list them separated by commas? Just the words, nothing else.&rdquo;</p>
             </div>
           </div>
