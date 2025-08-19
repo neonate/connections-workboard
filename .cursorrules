@@ -45,6 +45,9 @@ Follow the following rules:
 - If you are struggling with some piece of code, or aren't 100% sure on how to implement something, you can always use the firecrawl tool to research solutions.
 
 ## Quality Assurance Rules:
+- **CRITICAL: ALWAYS run tests before committing any code changes**
+- **Run `npm run test:ci` to ensure all tests pass before committing**
+- **Never commit code that fails tests**
 - All tests should always pass before deploying to production. If they don't, make sure you notify me.
 - When writing and running tests we need 100% of the tests to pass before moving on.
 - Keep files under 300 lines of code; refactor when approaching this limit
@@ -63,6 +66,7 @@ Follow the following rules:
 - Don't drastically change existing patterns without explicit instruction
 
 ## Git and Deployment Rules:
+- **ALWAYS run tests before committing: `npm run test:ci`**
 - Never leave unstaged/untracked files after committing to git
 - Don't create new branches unless explicitly requested
 - Never commit .env files to version control
@@ -80,3 +84,4 @@ Follow the following rules:
 - Tests should be lightweight and run quickly during builds
 - Focus on testing core functionality and user interactions
 - Use proper mocking for external dependencies and browser APIs
+- **ALWAYS run `npm run test:ci` before committing to ensure test quality**
