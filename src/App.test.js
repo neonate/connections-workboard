@@ -19,14 +19,33 @@ afterAll(() => {
   console.error = originalError;
 });
 
-// Mock clipboard API
-Object.assign(navigator, {
-  clipboard: {
-    writeText: jest.fn(),
-  },
-});
+// Mock URL parameters to ensure tests start fresh
+const mockURLSearchParams = (params = {}) => {
+  const searchParams = new Map(Object.entries(params));
+  const get = (key) => searchParams.get(key) || null;
+  
+  Object.defineProperty(window, 'location', {
+    value: {
+      pathname: '/',
+      search: '',
+    },
+    writable: true,
+  });
+  
+  Object.defineProperty(window, 'history', {
+    value: {
+      replaceState: jest.fn(),
+    },
+    writable: true,
+  });
+};
 
 describe('App Component', () => {
+  beforeEach(() => {
+    // Clear URL parameters before each test
+    mockURLSearchParams();
+  });
+
   test('renders header correctly', () => {
     render(<App />);
     expect(screen.getByText('NYT Connections Working Board')).toBeInTheDocument();

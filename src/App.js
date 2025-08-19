@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import './App.css';
 
 function App() {
@@ -8,6 +8,52 @@ function App() {
   const [dragOverGroup, setDragOverGroup] = useState(null);
   const [hasStartedGame, setHasStartedGame] = useState(false);
   const [copySuccess, setCopySuccess] = useState(false);
+
+  // Load game state from URL on component mount
+  useEffect(() => {
+    const urlParams = new URLSearchParams(window.location.search);
+    const savedWords = urlParams.get('words');
+    const savedGroups = urlParams.get('groups');
+    
+    if (savedWords) {
+      try {
+        const decodedWords = decodeURIComponent(savedWords);
+        const wordArray = JSON.parse(decodedWords);
+        if (Array.isArray(wordArray) && wordArray.length === 16) {
+          setWords(wordArray);
+          setHasStartedGame(true);
+          
+          // Load groups if they exist
+          if (savedGroups) {
+            try {
+              const decodedGroups = decodeURIComponent(savedGroups);
+              const groupsArray = JSON.parse(decodedGroups);
+              if (Array.isArray(groupsArray) && groupsArray.length === 4) {
+                setGroups(groupsArray);
+              }
+            } catch (e) {
+              console.error('Failed to parse saved groups:', e);
+              setGroups([[], [], [], []]);
+            }
+          }
+        }
+      } catch (e) {
+        console.error('Failed to parse saved words:', e);
+      }
+    }
+  }, []);
+
+  // Update URL when game state changes
+  useEffect(() => {
+    if (hasStartedGame && words.length > 0) {
+      const urlParams = new URLSearchParams();
+      urlParams.set('words', encodeURIComponent(JSON.stringify(words)));
+      urlParams.set('groups', encodeURIComponent(JSON.stringify(groups)));
+      
+      const newUrl = `${window.location.pathname}?${urlParams.toString()}`;
+      window.history.replaceState({}, '', newUrl);
+    }
+  }, [hasStartedGame, words, groups]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -99,6 +145,9 @@ function App() {
     setInputText('');
     setHasStartedGame(false);
     setDragOverGroup(null);
+    
+    // Clear URL parameters
+    window.history.replaceState({}, '', window.location.pathname);
   };
 
   const isGroupFull = (groupIndex) => {
@@ -181,33 +230,26 @@ function App() {
           {groups.map((group, groupIndex) => (
             <div
               key={groupIndex}
-              className={`group-area ${dragOverGroup === groupIndex ? 'drag-over' : ''} ${isGroupFull(groupIndex) ? 'group-full' : ''}`}
+              className={`group-area ${dragOverGroup === groupIndex ? 'drag-over' : ''}`}
               onDragOver={(e) => handleDragOver(e, groupIndex)}
               onDrop={(e) => handleDrop(e, groupIndex)}
             >
-              <div className="group-header">
-                <h3>Group {groupIndex + 1}</h3>
-                <span className="group-count">{group.length}/4</span>
-              </div>
+              <h3>Group {groupIndex + 1}</h3>
               {group.map((word, wordIndex) => (
-                <div key={wordIndex} className="group-word">
+                <span
+                  key={wordIndex}
+                  className="group-word"
+                  onClick={() => removeFromGroup(word, groupIndex)}
+                  title="Click to remove from group"
+                >
                   {word}
-                  <button
-                    className="remove-btn"
-                    onClick={() => removeFromGroup(word, groupIndex)}
-                  >
-                    ×
-                  </button>
-                </div>
+                </span>
               ))}
-              {group.length === 0 && (
-                <p className="empty-group">Drag words here to group them</p>
-              )}
             </div>
           ))}
         </div>
 
-        <button className="reset-btn" onClick={resetBoard}>
+        <button className="reset-button" onClick={resetBoard}>
           Reset Board
         </button>
       </div>
