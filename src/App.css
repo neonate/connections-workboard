@@ -156,9 +156,12 @@
   justify-content: center;
   text-align: center;
   min-height: 60px;
+  min-width: 80px;
   box-sizing: border-box;
   transition: all 0.2s ease;
-  word-wrap: break-word;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
   line-height: 1.2;
 }
 
@@ -167,6 +170,9 @@
   border-color: #007bff;
   transform: translateY(-2px);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: visible;
+  white-space: normal;
+  z-index: 10;
 }
 
 .word-tile:active {
@@ -223,15 +229,21 @@
   font-weight: 600;
   cursor: pointer;
   transition: all 0.2s ease;
-  max-width: 120px;
+  min-width: 100px;
+  max-width: 150px;
   text-align: center;
-  word-wrap: break-word;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
   line-height: 1.2;
 }
 
 .group-word:hover {
   background-color: #0056b3;
   transform: translateY(-1px);
+  overflow: visible;
+  white-space: normal;
+  z-index: 10;
 }
 
 .reset-button {
@@ -291,6 +303,7 @@
     padding: 12px 8px;
     font-size: 12px;
     min-height: 50px;
+    min-width: 60px;
     border-radius: 6px;
   }
   
@@ -308,7 +321,8 @@
     padding: 8px 12px;
     margin: 4px;
     font-size: 12px;
-    max-width: 100px;
+    min-width: 80px;
+    max-width: 120px;
   }
   
   .chatgpt-instructions {
@@ -361,6 +375,7 @@
     padding: 10px 6px;
     font-size: 11px;
     min-height: 45px;
+    min-width: 50px;
     border-radius: 5px;
   }
   
@@ -378,7 +393,8 @@
     padding: 6px 10px;
     margin: 3px;
     font-size: 11px;
-    max-width: 90px;
+    min-width: 70px;
+    max-width: 100px;
   }
   
   .chatgpt-instructions {
