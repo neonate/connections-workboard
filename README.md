@@ -49,7 +49,7 @@ The NYT Connections Working Board is a React-based web application that allows u
 **Organize and solve!** Once you start the puzzle, drag and drop words into groups of 4. This screenshot shows how the app makes it easy to work out the correct groupings without having to make guesses in the real NYT Connections app. For example, with the words "PLAYWRIGHT", "DEAN", "ROOF", "TEMPLE", "FACULTY", "WREATH", "BENT", "SWORD", "GARLAND", "HAY", "GIFT", "WRAP", "JACKPOT", "FLAIR", "GABLE", "ROAD", you can organize them into logical groups like:
 
 - **Yellow: Aptitude** - BENT, FACULTY, FLAIR, GIFT
-- **Green: Silent "W"** - ANSWER, TWO, WRIST, WRONG (words that start with silent W)
+- **Green: Silent "W"** - PLAYWRIGHT, SWORD, WRAP, WREATH (words that start with silent W)
 - **Blue: Legends of classic Hollywood** - DEAN, GABLE, GARLAND, TEMPLE
 - **Purple: Hit the ___ ** - HAY, JACKPOT, ROAD, ROOF (forming phrases like "Hit the Hay", "Hit the Road", etc.)
 
