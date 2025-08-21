@@ -262,17 +262,28 @@ class WebScraperBase extends BasePuzzleFetcher {
       dateStr = dateStr.replace(/^(for\s+|puzzle\s+for\s+|date:\s*)/i, '');
       dateStr = dateStr.replace(/\s*\(.*\)$/, ''); // Remove parenthetical info
       
-      // Try to parse the date
+      // Check for YYYY-MM-DD format first to avoid timezone issues
+      const isoMatch = dateStr.match(/(\d{4}-\d{2}-\d{2})/);
+      if (isoMatch) {
+        const [year, month, day] = isoMatch[1].split('-').map(num => parseInt(num, 10));
+        if (year >= 1900 && year <= 2100 && month >= 1 && month <= 12 && day >= 1 && day <= 31) {
+          const formatted = `${year}-${String(month).padStart(2, '0')}-${String(day).padStart(2, '0')}`;
+          console.log(`📅 [${this.sourceName}] Formatted date: "${dateString}" → "${formatted}"`);
+          return formatted;
+        }
+      }
+      
+      // Try to parse the date using timezone-safe method
       const date = new Date(dateStr);
       
       if (isNaN(date.getTime())) {
         throw new Error(`Invalid date: ${dateString}`);
       }
       
-      // Format as YYYY-MM-DD
-      const year = date.getFullYear();
-      const month = String(date.getMonth() + 1).padStart(2, '0');
-      const day = String(date.getDate()).padStart(2, '0');
+      // Format as YYYY-MM-DD using UTC to avoid timezone conversion issues
+      const year = date.getUTCFullYear();
+      const month = String(date.getUTCMonth() + 1).padStart(2, '0');
+      const day = String(date.getUTCDate()).padStart(2, '0');
       
       const formatted = `${year}-${month}-${day}`;
       console.log(`📅 [${this.sourceName}] Formatted date: "${dateString}" → "${formatted}"`);

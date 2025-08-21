@@ -1,4 +1,4 @@
-import { render, screen, fireEvent, waitFor } from '@testing-library/react';
+import { render, screen, fireEvent, waitFor, act } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import App from './App';
 
@@ -50,8 +50,10 @@ describe('App Component', () => {
     window.history.replaceState({}, '', window.location.pathname);
   });
 
-  test('shows input section initially', () => {
-    render(<App />);
+  test('shows input section initially', async () => {
+    await act(async () => {
+      render(<App />);
+    });
     expect(screen.getByText('Choose Your Input Method')).toBeInTheDocument();
     expect(screen.getByText('📅 Method 1: Load Puzzle by Date')).toBeInTheDocument();
     expect(screen.getByText('✏️ Method 2: Manual Entry')).toBeInTheDocument();
@@ -59,21 +61,27 @@ describe('App Component', () => {
     expect(screen.getByText('Start Puzzle')).toBeInTheDocument();
   });
 
-  test('shows date picker and fetch button', () => {
-    render(<App />);
+  test('shows date picker and fetch button', async () => {
+    await act(async () => {
+      render(<App />);
+    });
     // Use more specific selectors to avoid conflicts
     expect(screen.getByRole('textbox', { type: 'date' })).toBeInTheDocument();
     expect(screen.getByText('📥 Load Puzzle')).toBeInTheDocument();
   });
 
-  test('fetch button is enabled when date is selected', () => {
-    render(<App />);
+  test('fetch button is enabled when date is selected', async () => {
+    await act(async () => {
+      render(<App />);
+    });
     const fetchButton = screen.getByText('📥 Load Puzzle');
     expect(fetchButton).toBeEnabled();
   });
 
-  test('fetch button is initially enabled', () => {
-    render(<App />);
+  test('fetch button is initially enabled', async () => {
+    await act(async () => {
+      render(<App />);
+    });
     const fetchButton = screen.getByText('📥 Load Puzzle');
     
     // Should be enabled when date is selected by default
@@ -81,14 +89,18 @@ describe('App Component', () => {
   });
 
   test('validates empty input', async () => {
-    render(<App />);
+    await act(async () => {
+      render(<App />);
+    });
     
     // Empty input should not trigger alert, just do nothing
     expect(screen.getByText('Choose Your Input Method')).toBeInTheDocument();
   });
 
   test('shows error for too many words', async () => {
-    render(<App />);
+    await act(async () => {
+      render(<App />);
+    });
     
     const textarea = screen.getByPlaceholderText('Enter 16 words here...');
     const submitButton = screen.getByText('Start Puzzle');
@@ -107,7 +119,9 @@ describe('App Component', () => {
   });
 
   test('validates too few words', async () => {
-    render(<App />);
+    await act(async () => {
+      render(<App />);
+    });
     
     const textarea = screen.getByPlaceholderText('Enter 16 words here...');
     const submitButton = screen.getByText('Start Puzzle');
@@ -125,16 +139,20 @@ describe('App Component', () => {
   });
 
   test('starts game with valid input', async () => {
-    render(<App />);
+    await act(async () => {
+      render(<App />);
+    });
     
     const textarea = screen.getByPlaceholderText('Enter 16 words here...');
     const submitButton = screen.getByText('Start Puzzle');
     
     // Enter 16 words
     const words = 'word1, word2, word3, word4, word5, word6, word7, word8, word9, word10, word11, word12, word13, word14, word15, word16';
-    fireEvent.change(textarea, { target: { value: words } });
     
-    fireEvent.click(submitButton);
+    await act(async () => {
+      fireEvent.change(textarea, { target: { value: words } });
+      fireEvent.click(submitButton);
+    });
     
     // Should show game board
     await waitFor(() => {
@@ -143,16 +161,20 @@ describe('App Component', () => {
   });
 
   test('shows game board with words', async () => {
-    render(<App />);
+    await act(async () => {
+      render(<App />);
+    });
     
     const textarea = screen.getByPlaceholderText('Enter 16 words here...');
     const submitButton = screen.getByText('Start Puzzle');
     
     // Enter 16 words
     const words = 'word1, word2, word3, word4, word5, word6, word7, word8, word9, word10, word11, word12, word13, word14, word15, word16';
-    fireEvent.change(textarea, { target: { value: words } });
     
-    fireEvent.click(submitButton);
+    await act(async () => {
+      fireEvent.change(textarea, { target: { value: words } });
+      fireEvent.click(submitButton);
+    });
     
     // Should show all 16 words (converted to uppercase)
     await waitFor(() => {
@@ -162,7 +184,9 @@ describe('App Component', () => {
   });
 
   test('copy to clipboard functionality', async () => {
-    render(<App />);
+    await act(async () => {
+      render(<App />);
+    });
     
     // The copy button is on the input screen, not the game board
     // Find and click copy button (the button shows just the icon)
@@ -174,16 +198,20 @@ describe('App Component', () => {
   });
 
   test('reset button returns to input screen', async () => {
-    render(<App />);
+    await act(async () => {
+      render(<App />);
+    });
     
     const textarea = screen.getByPlaceholderText('Enter 16 words here...');
     const submitButton = screen.getByText('Start Puzzle');
     
     // Enter 16 words and start game
     const words = 'word1, word2, word3, word4, word5, word6, word7, word8, word9, word10, word11, word12, word13, word14, word15, word16';
-    fireEvent.change(textarea, { target: { value: words } });
     
-    fireEvent.click(submitButton);
+    await act(async () => {
+      fireEvent.change(textarea, { target: { value: words } });
+      fireEvent.click(submitButton);
+    });
     
     // Wait for game board to appear
     await waitFor(() => {
@@ -191,8 +219,10 @@ describe('App Component', () => {
     });
     
     // Click reset button
-    const resetButton = screen.getByText('Start Over');
-    fireEvent.click(resetButton);
+    await act(async () => {
+      const resetButton = screen.getByText('Start Over');
+      fireEvent.click(resetButton);
+    });
     
     // Should be back to input screen
     expect(screen.getByText('Choose Your Input Method')).toBeInTheDocument();
@@ -200,7 +230,9 @@ describe('App Component', () => {
   });
 
   test('copy button shows success message', async () => {
-    render(<App />);
+    await act(async () => {
+      render(<App />);
+    });
     
     // The copy button is on the input screen, not the game board
     // Find copy button by its title attribute

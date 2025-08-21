@@ -261,6 +261,11 @@ describe('WebScraperBase', () => {
     });
 
     it('should retry on failure and eventually succeed', async () => {
+      jest.setTimeout(15000); // Increase timeout for retry tests
+      
+      // Mock faster retry delays for testing
+      scraper.config.retryDelay = 100; // 100ms instead of 2000ms
+      
       const operation = jest.fn()
         .mockRejectedValueOnce(new Error('Attempt 1 failed'))
         .mockRejectedValueOnce(new Error('Attempt 2 failed'))
@@ -270,14 +275,19 @@ describe('WebScraperBase', () => {
 
       expect(result).toBe('success');
       expect(operation).toHaveBeenCalledTimes(3);
-    });
+    }, 15000);
 
     it('should throw error after max retries', async () => {
+      jest.setTimeout(15000); // Increase timeout for retry tests
+      
+      // Mock faster retry delays for testing
+      scraper.config.retryDelay = 100; // 100ms instead of 2000ms
+      
       const operation = jest.fn().mockRejectedValue(new Error('Always fails'));
 
       await expect(scraper._retryOperation(operation, 'test')).rejects.toThrow('Always fails');
       expect(operation).toHaveBeenCalledTimes(3);
-    });
+    }, 15000);
   });
 
   describe('fetchPuzzle implementation', () => {
@@ -297,6 +307,9 @@ describe('WebScraperBase', () => {
     });
 
     it('should use retry logic for fetchPuzzle', async () => {
+      // Mock faster retry delays for testing
+      scraper.config.retryDelay = 10; // 10ms instead of 2000ms
+      
       global.fetch
         .mockRejectedValueOnce(new Error('Network error'))
         .mockResolvedValueOnce(mockResponse);
@@ -304,7 +317,7 @@ describe('WebScraperBase', () => {
       const result = await scraper.fetchPuzzle('2025-01-01');
 
       expect(result.date).toBe('2025-01-01');
-    });
+    }, 10000);
   });
 
   describe('abstract methods', () => {
