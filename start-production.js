@@ -22,7 +22,7 @@ if (!fs.existsSync(buildPath)) {
 const backendNodeModules = path.join(__dirname, 'backend', 'node_modules');
 if (!fs.existsSync(backendNodeModules)) {
   console.log('📦 Installing backend dependencies...');
-  const backendInstall = spawn('npm', ['install'], {
+  const backendInstall = spawn('npm', ['install', '--registry=https://registry.npmjs.org'], {
     cwd: path.join(__dirname, 'backend'),
     stdio: 'inherit'
   });

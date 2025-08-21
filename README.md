@@ -51,6 +51,9 @@ A comprehensive web application for solving NYT Connections puzzles with intelli
 - Node.js 18.x or higher
 - npm 8.x or higher
 
+### ⚠️ Important for Apple/Corporate Environment Users
+If you have `npm_config_registry` set to Apple's internal registry in your environment, this project includes `.npmrc` files that override it to use the standard npm registry. This prevents deployment issues and ensures all team members use consistent package sources.
+
 ### Quick Start
 
 1. **Clone the repository**
