@@ -270,7 +270,7 @@ For dynamic puzzle fetching, deploy both frontend and backend:
 
 **Frontend:**
 - Build and deploy as above
-- Set `REACT_APP_BACKEND_URL=https://your-backend-domain.com`
+- Set `REACT_APP_API_URL=https://your-backend-domain.com` (or `REACT_APP_BACKEND_URL` for compatibility)
 
 **Backend Options:**
 - **Railway**: `railway up` from `/backend` directory
@@ -282,7 +282,8 @@ For dynamic puzzle fetching, deploy both frontend and backend:
 ### Environment Variables
 ```bash
 # Frontend (.env)
-REACT_APP_BACKEND_URL=http://localhost:3001  # Backend API URL
+REACT_APP_API_URL=http://localhost:3001  # Backend API URL (preferred)
+REACT_APP_BACKEND_URL=http://localhost:3001  # Alternative name (compatibility)
 
 # Backend (.env)
 PORT=3001                    # Server port
