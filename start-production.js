@@ -22,9 +22,13 @@ if (!fs.existsSync(buildPath)) {
 const backendNodeModules = path.join(__dirname, 'backend', 'node_modules');
 if (!fs.existsSync(backendNodeModules)) {
   console.log('📦 Installing backend dependencies...');
-  const backendInstall = spawn('npm', ['install', '--registry=https://registry.npmjs.org'], {
+  const backendInstall = spawn('npm', ['install'], {
     cwd: path.join(__dirname, 'backend'),
-    stdio: 'inherit'
+    stdio: 'inherit',
+    env: {
+      ...process.env,
+      NPM_CONFIG_REGISTRY: 'https://registry.npmjs.org'
+    }
   });
   
   backendInstall.on('close', (code) => {

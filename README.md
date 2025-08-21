@@ -64,13 +64,13 @@ If you have `npm_config_registry` set to Apple's internal registry in your envir
 
 2. **Install frontend dependencies**
    ```bash
-   npm install
+   NPM_CONFIG_REGISTRY=https://registry.npmjs.org npm install
    ```
 
 3. **Install backend dependencies**
    ```bash
    cd backend
-   npm install
+   NPM_CONFIG_REGISTRY=https://registry.npmjs.org npm install
    cd ..
    ```
 
@@ -86,7 +86,7 @@ If you have `npm_config_registry` set to Apple's internal registry in your envir
 ### Frontend Only Mode
 If you only want to use static puzzles without dynamic fetching:
 ```bash
-npm install
+NPM_CONFIG_REGISTRY=https://registry.npmjs.org npm install
 npm start
 ```
 The app will run on `http://localhost:3000` with static puzzle data only.
@@ -116,10 +116,10 @@ npm start
 ### Production Build
 ```bash
 # Build frontend
-npm run build
+NPM_CONFIG_REGISTRY=https://registry.npmjs.org npm run build
 
 # Build and prepare backend for deployment
-cd backend && npm install --production
+cd backend && NPM_CONFIG_REGISTRY=https://registry.npmjs.org npm install --production
 ```
 
 ## 📊 How It Works
@@ -336,7 +336,7 @@ CORS_ORIGIN=http://localhost:3000  # Frontend URL for CORS
    - **Console errors**: Check for JavaScript errors
 
 4. **Backend won't start**
-   - **Dependencies**: Run `cd backend && npm install`
+   - **Dependencies**: Run `cd backend && NPM_CONFIG_REGISTRY=https://registry.npmjs.org npm install`
    - **Port conflict**: Ensure port 3001 is available
    - **Node version**: Verify Node.js 18+ is installed
 
