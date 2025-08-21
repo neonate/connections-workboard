@@ -73,7 +73,7 @@ export class BasePuzzleFetcher {
    * @protected
    * @abstract
    */
-  async _executeFetch(date) {
+  async _executeFetch(_date) {
     throw new Error("Method '_executeFetch()' must be implemented by subclasses.");
   }
 
@@ -83,7 +83,7 @@ export class BasePuzzleFetcher {
    * @param {string} date - Date in YYYY-MM-DD format
    * @returns {Promise<boolean>} True if data is available for this date
    */
-  async isAvailable(date) {
+  async isAvailable(_date) {
     throw new Error('isAvailable() must be implemented by subclass');
   }
 

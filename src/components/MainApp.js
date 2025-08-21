@@ -415,30 +415,7 @@ function MainApp() {
    * @param {number} groupIndex - The index of the group
    * @returns {string} The hint text or empty string
    */
-  const getGroupHint = (groupIndex) => {
-    if (!correctAnswers || !groups[groupIndex] || groups[groupIndex].length !== 4) {
-      return '';
-    }
-    
-    // Find the matching correct group
-    const sortedGroupWords = [...groups[groupIndex]].sort().map(w => w.toLowerCase());
-    
-    for (let i = 0; i < correctAnswers.groups.length; i++) {
-      const correctGroup = correctAnswers.groups[i];
-      const sortedCorrectWords = [...correctGroup.words].sort().map(w => w.toLowerCase());
-      
-      if (JSON.stringify(sortedGroupWords) === JSON.stringify(sortedCorrectWords)) {
-        const hint = correctGroup.hint;
 
-        // Only return if it's a descriptive hint (not just the group name)
-        if (hint && hint !== correctGroup.name && hint.match(/[a-z]/)) {
-          return hint;
-        }
-      }
-    }
-    
-    return '';
-  };
 
   /**
    * Copies ChatGPT prompt to clipboard
