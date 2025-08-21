@@ -79,7 +79,10 @@ Follow the following rules:
 - Don't drastically change existing patterns without explicit instruction
 
 ## Git and Deployment Rules:
-- **ALWAYS run tests before committing: `npm run test:ci`**
+- **MANDATORY PRE-COMMIT VERIFICATION**: Before ANY commit, ALWAYS run `npm run test:ci` and ensure 100% pass rate
+- **NEVER commit failing tests**: If ANY test fails, fix it before committing - no exceptions
+- **Test verification is BLOCKING**: Do not proceed with commits until all tests are green
+- **Clean test status required**: Exit code must be 0 from `npm run test:ci` before any git commit
 - Never leave unstaged/untracked files after committing to git
 - Don't create new branches unless explicitly requested
 - Never commit .env files to version control
@@ -91,10 +94,21 @@ Follow the following rules:
 - Never name files "improved-something" or "refactored-something"
 
 ## Testing Rules:
+- **MANDATORY TEST VERIFICATION**: Run `npm run test:ci` before EVERY commit - ZERO exceptions
+- **ALL TESTS MUST PASS**: 100% pass rate required before any git commit operation
+- **NO COMMITS WITH FAILING TESTS**: If tests fail, FIX them before committing
 - When writing tests, make sure that you ONLY use Jest and React Testing Library, do NOT use other testing frameworks
 - All tests should be fully annotated and should contain JSDoc docstrings
 - All tests should be in ./src with .test.js or .spec.js extensions
 - Tests should be lightweight and run quickly during builds
 - Focus on testing core functionality and user interactions
 - Use proper mocking for external dependencies and browser APIs
-- **ALWAYS run `npm run test:ci` before committing to ensure test quality**
+- **PRE-COMMIT WORKFLOW**: 1) Make changes → 2) Run `npm run test:ci` → 3) Fix any failures → 4) Only then commit
+
+## Pre-Commit Verification Protocol:
+- **STEP 1**: After making any code changes, ALWAYS run `npm run test:ci`
+- **STEP 2**: Verify that ALL tests pass (exit code 0, no failures, no errors)
+- **STEP 3**: If ANY test fails, STOP and fix the failing tests immediately
+- **STEP 4**: Re-run `npm run test:ci` until 100% pass rate is achieved
+- **STEP 5**: Only after clean test run, proceed with `git add` and `git commit`
+- **ENFORCEMENT**: This protocol is NON-NEGOTIABLE for all commits
