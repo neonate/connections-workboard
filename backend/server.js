@@ -1,3 +1,15 @@
+// Node.js 18 compatibility fix for undici/cheerio
+if (typeof global.File === 'undefined') {
+  global.File = class File {
+    constructor(bits, name, options = {}) {
+      this.bits = bits;
+      this.name = name;
+      this.type = options.type || '';
+      this.lastModified = options.lastModified || Date.now();
+    }
+  };
+}
+
 const express = require('express');
 const cors = require('cors');
 const fs = require('fs-extra');
