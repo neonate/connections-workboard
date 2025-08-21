@@ -1,0 +1,46 @@
+{
+  "date": "2025-05-25",
+  "gameId": 714,
+  "groups": [
+    {
+      "name": "PLAYING CARDS",
+      "level": 0,
+      "words": [
+        "ACE",
+        "JACK",
+        "KING",
+        "QUEEN"
+      ]
+    },
+    {
+      "name": "DOPPELGÄNGER",
+      "level": 1,
+      "words": [
+        "CLONE",
+        "DOUBLE",
+        "RINGER",
+        "TWIN"
+      ]
+    },
+    {
+      "name": "EAR PIERCING SITES",
+      "level": 2,
+      "words": [
+        "CONCH",
+        "HELIX",
+        "LOBE",
+        "ROOK"
+      ]
+    },
+    {
+      "name": "___ MAIL",
+      "level": 3,
+      "words": [
+        "CHAIN",
+        "ELECTRONIC",
+        "JUNK",
+        "SNAIL"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "date": "2025-06-24",
+  "gameId": 744,
+  "groups": [
+    {
+      "name": "STRICT",
+      "level": 0,
+      "words": [
+        "FIRM",
+        "RIGID",
+        "STERN",
+        "TOUGH"
+      ]
+    },
+    {
+      "name": "BOTANICAL COVERINGS",
+      "level": 1,
+      "words": [
+        "HULL",
+        "HUSK",
+        "POD",
+        "SHELL"
+      ]
+    },
+    {
+      "name": "SEEN IN OPENING CREDITS",
+      "level": 2,
+      "words": [
+        "CAST",
+        "DIRECTOR",
+        "STUDIO",
+        "TITLE"
+      ]
+    },
+    {
+      "name": "OBJECTS IN 0-, 1-, 2- AND 3-DIMENSIONAL SPACE",
+      "level": 3,
+      "words": [
+        "LINE",
+        "PLANE",
+        "POINT",
+        "SOLID"
+      ]
+    }
+  ]
+}

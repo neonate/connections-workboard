@@ -1,0 +1,46 @@
+{
+  "date": "2025-07-02",
+  "gameId": 752,
+  "groups": [
+    {
+      "name": "KNOCKOFF",
+      "level": 0,
+      "words": [
+        "BOOTLEG",
+        "COPY",
+        "FAKE",
+        "REPLICA"
+      ]
+    },
+    {
+      "name": "ASSOCIATED WITH FREUD",
+      "level": 1,
+      "words": [
+        "DREAMS",
+        "ID",
+        "OEDIPUS",
+        "SLIP"
+      ]
+    },
+    {
+      "name": "WORDS AFTER “T-”",
+      "level": 2,
+      "words": [
+        "MOBILE",
+        "PAIN",
+        "REX",
+        "SHIRT"
+      ]
+    },
+    {
+      "name": "STARTING WITH HIGH SCHOOL/COLLEGE ABBREVIATIONS",
+      "level": 3,
+      "words": [
+        "FRESHWATER",
+        "JUNIPER",
+        "SENECA",
+        "SOPHOCLES"
+      ]
+    }
+  ]
+}

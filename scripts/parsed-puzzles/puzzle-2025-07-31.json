@@ -1,0 +1,46 @@
+{
+  "date": "2025-07-31",
+  "gameId": 781,
+  "groups": [
+    {
+      "name": "FIRST ___",
+      "level": 0,
+      "words": [
+        "AID",
+        "LADY",
+        "NATIONS",
+        "RESPONDER"
+      ]
+    },
+    {
+      "name": "SECOND ___",
+      "level": 1,
+      "words": [
+        "COMING",
+        "FIDDLE",
+        "GUESS",
+        "NATURE"
+      ]
+    },
+    {
+      "name": "THIRD ___",
+      "level": 2,
+      "words": [
+        "EYE",
+        "PARTY",
+        "RAIL",
+        "ROCK"
+      ]
+    },
+    {
+      "name": "LAST ___",
+      "level": 3,
+      "words": [
+        "LAUGH",
+        "RESORT",
+        "STRAW",
+        "SUPPER"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "date": "2025-06-07",
+  "gameId": 727,
+  "groups": [
+    {
+      "name": "TIPS FOR WORKING OUT SAFELY",
+      "level": 0,
+      "words": [
+        "BREATHE",
+        "HYDRATE",
+        "REST",
+        "STRETCH"
+      ]
+    },
+    {
+      "name": "ESTABLISH",
+      "level": 1,
+      "words": [
+        "FOUND",
+        "INSTITUTE",
+        "LAUNCH",
+        "START"
+      ]
+    },
+    {
+      "name": "DITTY",
+      "level": 2,
+      "words": [
+        "AIR",
+        "NUMBER",
+        "SONG",
+        "STRAIN"
+      ]
+    },
+    {
+      "name": "SPRING ___",
+      "level": 3,
+      "words": [
+        "CHICKEN",
+        "EQUINOX",
+        "FLING",
+        "ONION"
+      ]
+    }
+  ]
+}

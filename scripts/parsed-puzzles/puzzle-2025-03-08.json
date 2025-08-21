@@ -1,0 +1,46 @@
+{
+  "date": "2025-03-08",
+  "gameId": 636,
+  "groups": [
+    {
+      "name": "FAUX",
+      "level": 0,
+      "words": [
+        "ARTIFICIAL",
+        "FAKE",
+        "IMITATION",
+        "MOCK"
+      ]
+    },
+    {
+      "name": "WASHING MACHINE CYCLES/SETTINGS",
+      "level": 1,
+      "words": [
+        "BULKY",
+        "COTTON",
+        "DELICATE",
+        "SPIN"
+      ]
+    },
+    {
+      "name": "WORDS SAID FREQUENTLY IN THE “BILL AND TED” MOVIES",
+      "level": 2,
+      "words": [
+        "BOGUS",
+        "DUDE",
+        "EXCELLENT",
+        "TOTALLY"
+      ]
+    },
+    {
+      "name": "___BOX",
+      "level": 3,
+      "words": [
+        "CHATTER",
+        "JUKE",
+        "SHADOW",
+        "SOAP"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "date": "2025-04-18",
+  "gameId": 677,
+  "groups": [
+    {
+      "name": "INTERJECTIONS",
+      "level": 0,
+      "words": [
+        "BOY",
+        "GOODNESS",
+        "MAN",
+        "WOW"
+      ]
+    },
+    {
+      "name": "HORROR MOVIES, WITH “THE”",
+      "level": 1,
+      "words": [
+        "BIRDS",
+        "EXORCIST",
+        "HAUNTING",
+        "SHINING"
+      ]
+    },
+    {
+      "name": "THINGS YOU CAN PICK",
+      "level": 2,
+      "words": [
+        "APPLE",
+        "BANJO",
+        "CARD",
+        "NOSE"
+      ]
+    },
+    {
+      "name": "PERSONAL PROPERTY MINUS “S”",
+      "level": 3,
+      "words": [
+        "BELONGING",
+        "EFFECT",
+        "GOOD",
+        "POSSESSION"
+      ]
+    }
+  ]
+}

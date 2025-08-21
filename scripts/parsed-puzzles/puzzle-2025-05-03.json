@@ -1,0 +1,46 @@
+{
+  "date": "2025-05-03",
+  "gameId": 692,
+  "groups": [
+    {
+      "name": "AWESOME",
+      "level": 0,
+      "words": [
+        "DOPE",
+        "FIRE",
+        "LIT",
+        "SICK"
+      ]
+    },
+    {
+      "name": "DEFEAT SOUNDLY",
+      "level": 1,
+      "words": [
+        "CREAM",
+        "LICK",
+        "PASTE",
+        "SMOKE"
+      ]
+    },
+    {
+      "name": "“WILL” CONTRACTIONS WITHOUT THE APOSTROPHE",
+      "level": 2,
+      "words": [
+        "HELL",
+        "ILL",
+        "SHELL",
+        "WELL"
+      ]
+    },
+    {
+      "name": "URL ENDINGS PLUS A LETTER",
+      "level": 3,
+      "words": [
+        "COMP",
+        "MILK",
+        "NETI",
+        "ORGO"
+      ]
+    }
+  ]
+}

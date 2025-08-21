@@ -1,0 +1,46 @@
+{
+  "date": "2025-05-23",
+  "gameId": 712,
+  "groups": [
+    {
+      "name": "QUITE THE PARTY",
+      "level": 0,
+      "words": [
+        "BASH",
+        "BLAST",
+        "BLOWOUT",
+        "RAVE"
+      ]
+    },
+    {
+      "name": "ONE’S CONSTITUTION",
+      "level": 1,
+      "words": [
+        "CHARACTER",
+        "FIBER",
+        "MAKEUP",
+        "NATURE"
+      ]
+    },
+    {
+      "name": "BRITISH IMPERIAL UNITS OF WEIGHT",
+      "level": 2,
+      "words": [
+        "DRAM",
+        "OUNCE",
+        "POUND",
+        "STONE"
+      ]
+    },
+    {
+      "name": "WHAT “CAT’S EYE” CAN BE USED TO DESCRIBE",
+      "level": 3,
+      "words": [
+        "EYELINER",
+        "GLASSES",
+        "MARBLE",
+        "NEBULA"
+      ]
+    }
+  ]
+}

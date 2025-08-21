@@ -1,0 +1,46 @@
+{
+  "date": "2025-03-20",
+  "gameId": 648,
+  "groups": [
+    {
+      "name": "OUTSPOKEN",
+      "level": 0,
+      "words": [
+        "DIRECT",
+        "FRANK",
+        "LOUD",
+        "VOCAL"
+      ]
+    },
+    {
+      "name": "BODIES OF WATER",
+      "level": 1,
+      "words": [
+        "BAY",
+        "CHANNEL",
+        "SOUND",
+        "STRAIT"
+      ]
+    },
+    {
+      "name": "KINDS OF CORDS",
+      "level": 2,
+      "words": [
+        "BUNGEE",
+        "EXTENSION",
+        "SPINAL",
+        "UMBILICAL"
+      ]
+    },
+    {
+      "name": "THINGS IN BOTTLES",
+      "level": 3,
+      "words": [
+        "GENIE",
+        "LIGHTNING",
+        "MESSAGE",
+        "SHIP"
+      ]
+    }
+  ]
+}

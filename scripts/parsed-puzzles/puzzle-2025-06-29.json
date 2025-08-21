@@ -1,0 +1,46 @@
+{
+  "date": "2025-06-29",
+  "gameId": 749,
+  "groups": [
+    {
+      "name": "ICE CREAM TREATS",
+      "level": 0,
+      "words": [
+        "FLOAT",
+        "SHAKE",
+        "SPLIT",
+        "SUNDAE"
+      ]
+    },
+    {
+      "name": "FLINCH",
+      "level": 1,
+      "words": [
+        "BOLT",
+        "JERK",
+        "JUMP",
+        "STARTLE"
+      ]
+    },
+    {
+      "name": "DANCE MOVES",
+      "level": 2,
+      "words": [
+        "CABBAGE PATCH",
+        "FLOSS",
+        "MOONWALK",
+        "ROBOT"
+      ]
+    },
+    {
+      "name": "SEEN IN THE AFTERMATH OF A RAINSTORM",
+      "level": 3,
+      "words": [
+        "EARTHWORM",
+        "MUD",
+        "MUSHROOM",
+        "PUDDLE"
+      ]
+    }
+  ]
+}

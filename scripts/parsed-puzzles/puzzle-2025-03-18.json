@@ -1,0 +1,46 @@
+{
+  "date": "2025-03-18",
+  "gameId": 646,
+  "groups": [
+    {
+      "name": "EXCEPTIONAL",
+      "level": 0,
+      "words": [
+        "REMARKABLE",
+        "SINGULAR",
+        "SPECIAL",
+        "UNIQUE"
+      ]
+    },
+    {
+      "name": "GERMAN WORDS",
+      "level": 1,
+      "words": [
+        "ANGST",
+        "DIE",
+        "KINDER",
+        "WURST"
+      ]
+    },
+    {
+      "name": "PLURAL ANIMALS IDENTICAL TO THEIR SINGULAR FORMS",
+      "level": 2,
+      "words": [
+        "DEER",
+        "SHEEP",
+        "SHRIMP",
+        "SQUID"
+      ]
+    },
+    {
+      "name": "PLURAL WORDS THAT ARE VERY DIFFERENT FROM THEIR SINGULAR FORMS",
+      "level": 3,
+      "words": [
+        "DICE",
+        "LICE",
+        "MICE",
+        "OXEN"
+      ]
+    }
+  ]
+}

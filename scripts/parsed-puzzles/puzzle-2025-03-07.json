@@ -1,0 +1,46 @@
+{
+  "date": "2025-03-07",
+  "gameId": 635,
+  "groups": [
+    {
+      "name": "EMBLEM",
+      "level": 0,
+      "words": [
+        "LABEL",
+        "MARK",
+        "SEAL",
+        "STAMP"
+      ]
+    },
+    {
+      "name": "SUBJECTS OF ACCLAIMED MUSICAL BIOPICS",
+      "level": 1,
+      "words": [
+        "BROWN",
+        "CASH",
+        "DYLAN",
+        "MERCURY"
+      ]
+    },
+    {
+      "name": "U.S. CITIES",
+      "level": 2,
+      "words": [
+        "BUFFALO",
+        "HELENA",
+        "IRVING",
+        "PHOENIX"
+      ]
+    },
+    {
+      "name": "FRUITS WITH THEIR SECOND LETTERS CHANGED",
+      "level": 3,
+      "words": [
+        "AMPLE",
+        "DOTE",
+        "LUMON",
+        "POACH"
+      ]
+    }
+  ]
+}

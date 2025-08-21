@@ -1,0 +1,46 @@
+{
+  "date": "2025-05-15",
+  "gameId": 704,
+  "groups": [
+    {
+      "name": "RATIONALE",
+      "level": 0,
+      "words": [
+        "BASIS",
+        "FOUNDATION",
+        "GROUNDS",
+        "REASON"
+      ]
+    },
+    {
+      "name": "TYPES OF SNOW",
+      "level": 1,
+      "words": [
+        "CRUST",
+        "ICE",
+        "POWDER",
+        "SLUSH"
+      ]
+    },
+    {
+      "name": "LAST WORDS OF FAMOUS OPERA TITLES",
+      "level": 2,
+      "words": [
+        "BESS",
+        "BUTTERFLY",
+        "FLUTE",
+        "SEVILLE"
+      ]
+    },
+    {
+      "name": "REAL ___",
+      "level": 3,
+      "words": [
+        "DEAL",
+        "ESTATE",
+        "MADRID",
+        "WORLD"
+      ]
+    }
+  ]
+}

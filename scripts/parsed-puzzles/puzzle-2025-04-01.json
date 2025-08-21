@@ -1,0 +1,46 @@
+{
+  "date": "2025-04-01",
+  "gameId": 660,
+  "groups": [
+    {
+      "name": "CURRENCY SYMBOLS",
+      "level": 0,
+      "words": [
+        "$",
+        "€",
+        "£",
+        "¥"
+      ]
+    },
+    {
+      "name": "AND/TOGETHER WITH",
+      "level": 1,
+      "words": [
+        "&",
+        "+",
+        "N",
+        "X"
+      ]
+    },
+    {
+      "name": "EMOTICON MOUTHS",
+      "level": 2,
+      "words": [
+        "(",
+        ")",
+        "O",
+        "P"
+      ]
+    },
+    {
+      "name": "\"RIGHT\"",
+      "level": 3,
+      "words": [
+        "R",
+        "→",
+        "⊾",
+        "✔"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "date": "2025-03-16",
+  "gameId": 644,
+  "groups": [
+    {
+      "name": "BUNCH",
+      "level": 0,
+      "words": [
+        "CLUSTER",
+        "COLLECTION",
+        "CONSTELLATION",
+        "GROUP"
+      ]
+    },
+    {
+      "name": "ENDING WITH SILENT “T”",
+      "level": 1,
+      "words": [
+        "BALLET",
+        "DEBUT",
+        "RAPPORT",
+        "TAROT"
+      ]
+    },
+    {
+      "name": "SERIAL KILLER MOVIES",
+      "level": 2,
+      "words": [
+        "MONSTER",
+        "PSYCHO",
+        "SEVEN",
+        "ZODIAC"
+      ]
+    },
+    {
+      "name": "STARTING WITH CONSTELLATIONS",
+      "level": 3,
+      "words": [
+        "DRACONIAN",
+        "HYDRANT",
+        "LEONARDO",
+        "LIBRARY"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "date": "2025-05-21",
+  "gameId": 710,
+  "groups": [
+    {
+      "name": "PROHIBIT, AS ENTRY",
+      "level": 0,
+      "words": [
+        "BAR",
+        "BLOCK",
+        "DENY",
+        "REFUSE"
+      ]
+    },
+    {
+      "name": "FOLDERS ON A MAC",
+      "level": 1,
+      "words": [
+        "DESKTOP",
+        "MUSIC",
+        "PICTURES",
+        "TRASH"
+      ]
+    },
+    {
+      "name": "MEDICINE FORMATS",
+      "level": 2,
+      "words": [
+        "CREAM",
+        "PATCH",
+        "SPRAY",
+        "TABLET"
+      ]
+    },
+    {
+      "name": "THINGS THAT OPEN LIKE A CLAM",
+      "level": 3,
+      "words": [
+        "CLAM",
+        "COMPACT",
+        "LAPTOP",
+        "WAFFLE IRON"
+      ]
+    }
+  ]
+}

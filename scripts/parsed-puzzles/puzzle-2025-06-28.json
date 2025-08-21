@@ -1,0 +1,46 @@
+{
+  "date": "2025-06-28",
+  "gameId": 748,
+  "groups": [
+    {
+      "name": "THINGS A DOG CAN FETCH",
+      "level": 0,
+      "words": [
+        "BALL",
+        "BONE",
+        "FRISBEE",
+        "STICK"
+      ]
+    },
+    {
+      "name": "GREAT MANY",
+      "level": 1,
+      "words": [
+        "DROVE",
+        "HOST",
+        "LOAD",
+        "SCORE"
+      ]
+    },
+    {
+      "name": "POSSIBLE RESULTS OF A TRAFFIC VIOLATION",
+      "level": 2,
+      "words": [
+        "BOOT",
+        "POINTS",
+        "TICKET",
+        "TOW"
+      ]
+    },
+    {
+      "name": "INDUSTRIAL REVOLUTION INVENTORS",
+      "level": 3,
+      "words": [
+        "BELL",
+        "DIESEL",
+        "SINGER",
+        "WATT"
+      ]
+    }
+  ]
+}

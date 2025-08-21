@@ -1,0 +1,46 @@
+{
+  "date": "2025-05-22",
+  "gameId": 711,
+  "groups": [
+    {
+      "name": "FINE PRINT",
+      "level": 0,
+      "words": [
+        "ASTERISK",
+        "CATCH",
+        "CONDITION",
+        "STRINGS"
+      ]
+    },
+    {
+      "name": "CHARACTERS WITH GREEN SKIN",
+      "level": 1,
+      "words": [
+        "ELPHABA",
+        "GRINCH",
+        "HULK",
+        "SHREK"
+      ]
+    },
+    {
+      "name": "FEATURES OF THE NATIONAL MALL IN D.C.",
+      "level": 2,
+      "words": [
+        "CAPITOL",
+        "MALL",
+        "OBELISK",
+        "POOL"
+      ]
+    },
+    {
+      "name": "FAMOUS RIDDLE-GIVERS",
+      "level": 3,
+      "words": [
+        "BRIDGE TROLL",
+        "MAD HATTER",
+        "RIDDLER",
+        "SPHINX"
+      ]
+    }
+  ]
+}

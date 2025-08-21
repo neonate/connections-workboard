@@ -1,0 +1,46 @@
+{
+  "date": "2025-06-09",
+  "gameId": 729,
+  "groups": [
+    {
+      "name": "KEYBOARD SHORTCUT COMMANDS",
+      "level": 0,
+      "words": [
+        "PASTE",
+        "PRINT",
+        "QUIT",
+        "SAVE"
+      ]
+    },
+    {
+      "name": "SECURE IN ADVANCE",
+      "level": 1,
+      "words": [
+        "BOOK",
+        "ORDER",
+        "REQUEST",
+        "RESERVE"
+      ]
+    },
+    {
+      "name": "CRIME ORGANIZATION",
+      "level": 2,
+      "words": [
+        "CREW",
+        "FAMILY",
+        "RING",
+        "SYNDICATE"
+      ]
+    },
+    {
+      "name": "SPELLING BEE RANKS MINUS A LETTER",
+      "level": 3,
+      "words": [
+        "GENUS",
+        "GOO",
+        "MAZING",
+        "SLID"
+      ]
+    }
+  ]
+}

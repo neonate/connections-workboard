@@ -1,0 +1,46 @@
+{
+  "date": "2025-05-10",
+  "gameId": 699,
+  "groups": [
+    {
+      "name": "LETTER SIGN-OFFS",
+      "level": 0,
+      "words": [
+        "BEST",
+        "CHEERS",
+        "LOVE",
+        "SINCERELY"
+      ]
+    },
+    {
+      "name": "WITHOUT",
+      "level": 1,
+      "words": [
+        "ABSENT",
+        "MINUS",
+        "SANS",
+        "WANTING"
+      ]
+    },
+    {
+      "name": "VIGOR",
+      "level": 2,
+      "words": [
+        "BEANS",
+        "ENERGY",
+        "PEP",
+        "ZIP"
+      ]
+    },
+    {
+      "name": "___ STRIP",
+      "level": 3,
+      "words": [
+        "BACON",
+        "COMIC",
+        "LANDING",
+        "SUNSET"
+      ]
+    }
+  ]
+}

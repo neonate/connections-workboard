@@ -1,0 +1,46 @@
+{
+  "date": "2025-04-24",
+  "gameId": 683,
+  "groups": [
+    {
+      "name": "THINGS THAT ARE WHITE",
+      "level": 0,
+      "words": [
+        "BABY POWDER",
+        "MILK",
+        "POLAR BEAR",
+        "SNOW"
+      ]
+    },
+    {
+      "name": "KINDS OF LETTUCE",
+      "level": 1,
+      "words": [
+        "BUTTER",
+        "ICEBERG",
+        "LEAF",
+        "ROMAINE"
+      ]
+    },
+    {
+      "name": "“BATMAN” VILLAINS",
+      "level": 2,
+      "words": [
+        "BANE",
+        "JOKER",
+        "PENGUIN",
+        "SCARECROW"
+      ]
+    },
+    {
+      "name": "THEY HAVE LITERAL/IDIOMATIC EARS",
+      "level": 3,
+      "words": [
+        "CORNFIELD",
+        "MUSICIANS",
+        "PITCHERS",
+        "WALLS"
+      ]
+    }
+  ]
+}

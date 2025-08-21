@@ -1,0 +1,46 @@
+{
+  "date": "2025-04-03",
+  "gameId": 662,
+  "groups": [
+    {
+      "name": "PRINTED NOTIFICATION",
+      "level": 0,
+      "words": [
+        "ANNOUNCEMENT",
+        "BULLETIN",
+        "NOTICE",
+        "POSTER"
+      ]
+    },
+    {
+      "name": "SEEN AT A GROCERY CHECKOUT COUNTER",
+      "level": 1,
+      "words": [
+        "CONVEYOR BELT",
+        "REGISTER",
+        "SCALE",
+        "SCANNER"
+      ]
+    },
+    {
+      "name": "THINGS WITH TABS",
+      "level": 2,
+      "words": [
+        "BROWSER",
+        "FOLDER",
+        "KEYBOARD",
+        "SODA CAN"
+      ]
+    },
+    {
+      "name": "PALM ___",
+      "level": 3,
+      "words": [
+        "BEACH",
+        "READER",
+        "SUNDAY",
+        "TREE"
+      ]
+    }
+  ]
+}

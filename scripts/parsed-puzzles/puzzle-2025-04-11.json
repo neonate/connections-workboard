@@ -1,0 +1,46 @@
+{
+  "date": "2025-04-11",
+  "gameId": 670,
+  "groups": [
+    {
+      "name": "SOURCES OF VITAMINS",
+      "level": 0,
+      "words": [
+        "CITRUS",
+        "LEAFY GREENS",
+        "SUNSHINE",
+        "SUPPLEMENTS"
+      ]
+    },
+    {
+      "name": "PLACES USED IN RETAIL SUFFIXES",
+      "level": 1,
+      "words": [
+        "CITY",
+        "LAND",
+        "TOWN",
+        "WORLD"
+      ]
+    },
+    {
+      "name": "PLACES TO FIND STARS",
+      "level": 2,
+      "words": [
+        "AMERICAN FLAG",
+        "GALAXY",
+        "RED CARPET",
+        "UBER RATING"
+      ]
+    },
+    {
+      "name": "WORDS AFTER “GO”",
+      "level": 3,
+      "words": [
+        "ALL OUT",
+        "BETWEEN",
+        "KART",
+        "STEADY"
+      ]
+    }
+  ]
+}

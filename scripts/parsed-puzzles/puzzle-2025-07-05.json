@@ -1,0 +1,46 @@
+{
+  "date": "2025-07-05",
+  "gameId": 755,
+  "groups": [
+    {
+      "name": "CON GAME",
+      "level": 0,
+      "words": [
+        "HUSTLE",
+        "RACKET",
+        "SCHEME",
+        "STING"
+      ]
+    },
+    {
+      "name": "COMBINE, AS BAKING INGREDIENTS",
+      "level": 1,
+      "words": [
+        "BEAT",
+        "BLEND",
+        "FOLD",
+        "STIR"
+      ]
+    },
+    {
+      "name": "YEARN",
+      "level": 2,
+      "words": [
+        "BURN",
+        "ITCH",
+        "LONG",
+        "PINE"
+      ]
+    },
+    {
+      "name": "KINDS OF LISTS",
+      "level": 3,
+      "words": [
+        "BUCKET",
+        "LAUNDRY",
+        "SHORT",
+        "TO-DO"
+      ]
+    }
+  ]
+}

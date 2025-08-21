@@ -1,0 +1,46 @@
+{
+  "date": "2025-06-18",
+  "gameId": 738,
+  "groups": [
+    {
+      "name": "QUALITIES OF A RAINY DAY",
+      "level": 0,
+      "words": [
+        "COLD",
+        "GRAY",
+        "WET",
+        "WINDY"
+      ]
+    },
+    {
+      "name": "SQUARELY",
+      "level": 1,
+      "words": [
+        "DEAD",
+        "EXACTLY",
+        "RIGHT",
+        "SMACK"
+      ]
+    },
+    {
+      "name": "CONTENTS OF A POD",
+      "level": 2,
+      "words": [
+        "ASTRONAUT",
+        "COFFEE",
+        "PEA",
+        "WHALE"
+      ]
+    },
+    {
+      "name": "BODY PART PLUS A STARTING LETTER",
+      "level": 3,
+      "words": [
+        "BARM",
+        "LEAR",
+        "RANKLE",
+        "SHIP"
+      ]
+    }
+  ]
+}

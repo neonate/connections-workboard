@@ -1,0 +1,46 @@
+{
+  "date": "2025-07-11",
+  "gameId": 761,
+  "groups": [
+    {
+      "name": "TRADEMARKS THAT HAVE BECOME VERBS",
+      "level": 0,
+      "words": [
+        "GOOGLE",
+        "PHOTOSHOP",
+        "UBER",
+        "ZOOM"
+      ]
+    },
+    {
+      "name": "SILLY PERSON",
+      "level": 1,
+      "words": [
+        "DODO",
+        "GOOF",
+        "GOOSE",
+        "YAHOO"
+      ]
+    },
+    {
+      "name": "KINDS OF SONGS",
+      "level": 2,
+      "words": [
+        "FOLK",
+        "LOVE",
+        "SIREN",
+        "SWAN"
+      ]
+    },
+    {
+      "name": "HOMOPHONES OF SYNONYMS FOR “DESPICABLE”",
+      "level": 3,
+      "words": [
+        "FOWL",
+        "MIEN",
+        "OFFAL",
+        "VIAL"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "date": "2025-06-01",
+  "gameId": 721,
+  "groups": [
+    {
+      "name": "LOCAL WATERING HOLE",
+      "level": 0,
+      "words": [
+        "DIVE",
+        "ESTABLISHMENT",
+        "HAUNT",
+        "JOINT"
+      ]
+    },
+    {
+      "name": "COMPETE IN A MODERN PENTATHLON",
+      "level": 1,
+      "words": [
+        "FENCE",
+        "RIDE",
+        "SHOOT",
+        "SWIM"
+      ]
+    },
+    {
+      "name": "ENSURE, AS A VICTORY",
+      "level": 2,
+      "words": [
+        "CINCH",
+        "GUARANTEE",
+        "ICE",
+        "LOCK"
+      ]
+    },
+    {
+      "name": "___ FUND",
+      "level": 3,
+      "words": [
+        "HEDGE",
+        "MUTUAL",
+        "SLUSH"
+      ]
+    }
+  ]
+}

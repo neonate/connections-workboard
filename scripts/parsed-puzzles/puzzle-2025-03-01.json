@@ -1,0 +1,45 @@
+{
+  "date": "2025-03-01",
+  "gameId": 629,
+  "groups": [
+    {
+      "name": "ASSOCIATED WITH GOOD LUCK",
+      "level": 0,
+      "words": [
+        "HORSESHOE",
+        "LADYBUG",
+        "PENNY",
+        "SHAMROCK"
+      ]
+    },
+    {
+      "name": "TO-BO- COMPOUND WORDS",
+      "level": 1,
+      "words": [
+        "TOLLBOOTH",
+        "TOMBOY",
+        "TOOLBOX",
+        "TOWBOAT"
+      ]
+    },
+    {
+      "name": "BROADWAY MUSICALS, FAMILIARLY",
+      "level": 2,
+      "words": [
+        "FIDDLER",
+        "MERRILY",
+        "PHANTOM",
+        "SUNSET"
+      ]
+    },
+    {
+      "name": "WORDS BEFORE “COWBOY” IN FILM AND MUSIC",
+      "level": 3,
+      "words": [
+        "DRUGSTORE",
+        "MIDNIGHT",
+        "RHINESTONE"
+      ]
+    }
+  ]
+}

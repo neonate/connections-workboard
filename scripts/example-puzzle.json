@@ -1,0 +1,26 @@
+{
+  "date": "2025-08-21",
+  "gameId": 803,
+  "groups": [
+    {
+      "name": "EXAMPLE CATEGORY",
+      "level": 0,
+      "words": ["WORD1", "WORD2", "WORD3", "WORD4"]
+    },
+    {
+      "name": "ANOTHER CATEGORY",
+      "level": 1,
+      "words": ["WORD5", "WORD6", "WORD7", "WORD8"]
+    },
+    {
+      "name": "THIRD CATEGORY",
+      "level": 2,
+      "words": ["WORD9", "WORD10", "WORD11", "WORD12"]
+    },
+    {
+      "name": "FOURTH CATEGORY",
+      "level": 3,
+      "words": ["WORD13", "WORD14", "WORD15", "WORD16"]
+    }
+  ]
+}

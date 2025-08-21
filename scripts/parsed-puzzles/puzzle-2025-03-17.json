@@ -1,0 +1,46 @@
+{
+  "date": "2025-03-17",
+  "gameId": 645,
+  "groups": [
+    {
+      "name": "FILAMENT",
+      "level": 0,
+      "words": [
+        "FIBER",
+        "STRAND",
+        "STRING",
+        "THREAD"
+      ]
+    },
+    {
+      "name": "UNINHIBITEDNESS",
+      "level": 1,
+      "words": [
+        "ABANDON",
+        "FREEDOM",
+        "SPONTANEITY",
+        "UNRESTRAINT"
+      ]
+    },
+    {
+      "name": "KINDS OF TRUCKS",
+      "level": 2,
+      "words": [
+        "DUMP",
+        "GARBAGE",
+        "MONSTER",
+        "PICKUP"
+      ]
+    },
+    {
+      "name": "BANDS MINUS THE NUMBER FIVE",
+      "level": 3,
+      "words": [
+        "BEN FOLDS",
+        "JACKSON",
+        "MAROON",
+        "MC"
+      ]
+    }
+  ]
+}

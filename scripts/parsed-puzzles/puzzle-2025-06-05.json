@@ -1,0 +1,46 @@
+{
+  "date": "2025-06-05",
+  "gameId": 725,
+  "groups": [
+    {
+      "name": "PRECIPICE",
+      "level": 0,
+      "words": [
+        "BRINK",
+        "CUSP",
+        "EVE",
+        "VERGE"
+      ]
+    },
+    {
+      "name": "PLUMBING EQUIPMENT",
+      "level": 1,
+      "words": [
+        "PIPE",
+        "PLUNGER",
+        "SNAKE",
+        "WRENCH"
+      ]
+    },
+    {
+      "name": "WAYS TO MODIFY A CAR'S EXTERIOR",
+      "level": 2,
+      "words": [
+        "BUMPER",
+        "GRILLE",
+        "RIM",
+        "SPOILER"
+      ]
+    },
+    {
+      "name": "BEST FEMALE ROCK PERFORMANCE GRAMMY WINNERS",
+      "level": 3,
+      "words": [
+        "APPLE",
+        "CROW",
+        "SUMMER",
+        "TURNER"
+      ]
+    }
+  ]
+}

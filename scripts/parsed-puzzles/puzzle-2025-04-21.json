@@ -1,0 +1,46 @@
+{
+  "date": "2025-04-21",
+  "gameId": 680,
+  "groups": [
+    {
+      "name": "INFO ON A NUTRITION LABEL",
+      "level": 0,
+      "words": [
+        "FAT",
+        "IRON",
+        "PROTEIN",
+        "SODIUM"
+      ]
+    },
+    {
+      "name": "METAPHOR FOR SOMETHING UNEXPECTED",
+      "level": 1,
+      "words": [
+        "BOMBSHELL",
+        "CURVEBALL",
+        "TWIST",
+        "WRENCH"
+      ]
+    },
+    {
+      "name": "THINGS YOU CAN INSERT INTO A SPREADSHEET",
+      "level": 2,
+      "words": [
+        "CELL",
+        "COLUMN",
+        "ROW",
+        "SHEET"
+      ]
+    },
+    {
+      "name": "HELICAL THINGS",
+      "level": 3,
+      "words": [
+        "CORKSCREW",
+        "DNA",
+        "FUSILLI",
+        "SPRING"
+      ]
+    }
+  ]
+}

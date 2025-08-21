@@ -1,0 +1,46 @@
+{
+  "date": "2025-05-14",
+  "gameId": 703,
+  "groups": [
+    {
+      "name": "ABSORB USING CAPILLARY ACTION",
+      "level": 0,
+      "words": [
+        "DRAW",
+        "PULL",
+        "SUCK",
+        "WICK"
+      ]
+    },
+    {
+      "name": "GREEK PREFIXES",
+      "level": 1,
+      "words": [
+        "HYPER",
+        "KILO",
+        "META",
+        "NEO"
+      ]
+    },
+    {
+      "name": "TITULAR ANIMALS OF FILM",
+      "level": 2,
+      "words": [
+        "BABE",
+        "BOLT",
+        "DUMBO",
+        "TED"
+      ]
+    },
+    {
+      "name": "STARTING WITH SILENT LETTERS",
+      "level": 3,
+      "words": [
+        "GNOME",
+        "KNEE",
+        "MNEMONIC",
+        "PSYCHE"
+      ]
+    }
+  ]
+}

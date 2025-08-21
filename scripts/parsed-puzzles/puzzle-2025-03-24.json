@@ -1,0 +1,46 @@
+{
+  "date": "2025-03-24",
+  "gameId": 652,
+  "groups": [
+    {
+      "name": "BAD-SMELLING",
+      "level": 0,
+      "words": [
+        "FOUL",
+        "RANK",
+        "RIPE",
+        "SOUR"
+      ]
+    },
+    {
+      "name": "UNFLUCTUATING",
+      "level": 1,
+      "words": [
+        "CONSTANT",
+        "LEVEL",
+        "STABLE",
+        "UNIFORM"
+      ]
+    },
+    {
+      "name": "WHO VIDEO GAMES ARE FOR, PER ESRB RATINGS",
+      "level": 2,
+      "words": [
+        "ADULTS ONLY",
+        "EVERYONE",
+        "TEEN",
+        "MATURE"
+      ]
+    },
+    {
+      "name": "THINGS WITH LAYERS",
+      "level": 3,
+      "words": [
+        "EARTH",
+        "HENHOUSE",
+        "ONION",
+        "PHOTOSHOP"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "date": "2025-07-06",
+  "gameId": 756,
+  "groups": [
+    {
+      "name": "FIRED OBJECTS",
+      "level": 0,
+      "words": [
+        "CERAMICS",
+        "CHINA",
+        "POTTERY",
+        "WARE"
+      ]
+    },
+    {
+      "name": "PARTICLE",
+      "level": 1,
+      "words": [
+        "CRUMB",
+        "GRAIN",
+        "MORSEL",
+        "SHRED"
+      ]
+    },
+    {
+      "name": "DRS",
+      "level": 2,
+      "words": [
+        "DRE",
+        "EVIL",
+        "PEPPER",
+        "SEUSS"
+      ]
+    },
+    {
+      "name": "ENDING WITH HOMOPHONES OF PARTS OF THE LEG",
+      "level": 3,
+      "words": [
+        "CRYPTO",
+        "DECAF",
+        "DISNEY",
+        "PRUSSIAN"
+      ]
+    }
+  ]
+}

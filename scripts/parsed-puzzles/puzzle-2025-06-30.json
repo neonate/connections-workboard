@@ -1,0 +1,46 @@
+{
+  "date": "2025-06-30",
+  "gameId": 750,
+  "groups": [
+    {
+      "name": "DENTAL ADDITIONS",
+      "level": 0,
+      "words": [
+        "BRIDGE",
+        "CROWN",
+        "FILLING",
+        "VENEER"
+      ]
+    },
+    {
+      "name": "METAPHORS FOR A DRAMATIC AND CHAOTIC EVENT",
+      "level": 1,
+      "words": [
+        "CIRCUS",
+        "ROLLER COASTER",
+        "SOAP OPERA",
+        "WHIRLWIND"
+      ]
+    },
+    {
+      "name": "SECOND WORDS IN DAVID LYNCH TITLES",
+      "level": 2,
+      "words": [
+        "DRIVE",
+        "HIGHWAY",
+        "PEAKS",
+        "VELVET"
+      ]
+    },
+    {
+      "name": "WHAT “JET” MIGHT REFER TO",
+      "level": 3,
+      "words": [
+        "AIRPLANE",
+        "BLACK",
+        "HOT TUB NOZZLE",
+        "NFL PLAYER"
+      ]
+    }
+  ]
+}

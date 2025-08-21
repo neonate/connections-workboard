@@ -1,0 +1,1539 @@
+{
+  "totalPuzzles": 153,
+  "dateRange": {
+    "start": "2025-03-01",
+    "end": "2025-07-31"
+  },
+  "puzzles": [
+    {
+      "date": "2025-03-01",
+      "gameId": 629,
+      "categories": [
+        "ASSOCIATED WITH GOOD LUCK",
+        "TO-BO- COMPOUND WORDS",
+        "BROADWAY MUSICALS, FAMILIARLY",
+        "WORDS BEFORE “COWBOY” IN FILM AND MUSIC"
+      ]
+    },
+    {
+      "date": "2025-03-02",
+      "gameId": 630,
+      "categories": [
+        "CELLPHONE MODES",
+        "EVADE",
+        "WHAT “W” MIGHT STAND FOR",
+        "___STRING"
+      ]
+    },
+    {
+      "date": "2025-03-03",
+      "gameId": 631,
+      "categories": [
+        "BE AT LEISURE",
+        "FORMATS OF GOLD",
+        "CYLINDER OF MATERIAL",
+        "SEEN IN “THE FLINTSTONES”"
+      ]
+    },
+    {
+      "date": "2025-03-04",
+      "gameId": 632,
+      "categories": [
+        "ADJECTIVES FOR NICE SKIN",
+        "MESS OF HAIR",
+        "DICKENS CHARACTERS",
+        "___ CHAIN"
+      ]
+    },
+    {
+      "date": "2025-03-05",
+      "gameId": 633,
+      "categories": [
+        "PERIPHERY",
+        "THINGS PEOPLE DO TO FINGERNAILS",
+        "WHAT MIGHT BRING TEARS TO YOUR EYES",
+        "___BALL RECREATIONAL SPORTS"
+      ]
+    },
+    {
+      "date": "2025-03-06",
+      "gameId": 634,
+      "categories": [
+        "WANE",
+        "DO SOME TASKS IN THE GARDEN",
+        "SHOES",
+        "SAND___"
+      ]
+    },
+    {
+      "date": "2025-03-07",
+      "gameId": 635,
+      "categories": [
+        "EMBLEM",
+        "SUBJECTS OF ACCLAIMED MUSICAL BIOPICS",
+        "U.S. CITIES",
+        "FRUITS WITH THEIR SECOND LETTERS CHANGED"
+      ]
+    },
+    {
+      "date": "2025-03-08",
+      "gameId": 636,
+      "categories": [
+        "FAUX",
+        "WASHING MACHINE CYCLES/SETTINGS",
+        "WORDS SAID FREQUENTLY IN THE “BILL AND TED” MOVIES",
+        "___BOX"
+      ]
+    },
+    {
+      "date": "2025-03-09",
+      "gameId": 637,
+      "categories": [
+        "COMPUTER INPUT DEVICES",
+        "BUILDING MATERIALS",
+        "HELPFUL DEED",
+        "#1 SONGS FROM 1982"
+      ]
+    },
+    {
+      "date": "2025-03-10",
+      "gameId": 638,
+      "categories": [
+        "CAT BREEDS",
+        "FAMOUS SMILES",
+        "ATTRACTIONS ICONICALLY DIFFERENT FROM THEIR ORIGINAL FORMS",
+        "ASSOCIATED WITH “THE DUDE” LEBOWSKI"
+      ]
+    },
+    {
+      "date": "2025-03-11",
+      "gameId": 639,
+      "categories": [
+        "VARIATION FROM THE NORM",
+        "THINGS THAT RING",
+        "THINGS TRADITIONALLY MADE OF LEATHER",
+        "SINGER-SONGWRITER PIANISTS"
+      ]
+    },
+    {
+      "date": "2025-03-12",
+      "gameId": 640,
+      "categories": [
+        "INGREDIENTS IN CLASSIC POUND CAKE",
+        "THINGS THAT ARE RED",
+        "WORDS SAID TO HAVE NO EXACT RHYMES",
+        "___ CANDY"
+      ]
+    },
+    {
+      "date": "2025-03-13",
+      "gameId": 641,
+      "categories": [
+        "PARTIALITY",
+        "SIGNAL DOWN, AS A TAXI",
+        "CARDS IN TEXAS HOLD ’EM",
+        "SHAKESPEAREAN WORDS"
+      ]
+    },
+    {
+      "date": "2025-03-14",
+      "gameId": 642,
+      "categories": [
+        "IMPOSE, AS A PENALTY",
+        "CHECKOUT LINE IMPULSE BUYS",
+        "MOVIES OF VARIOUS LENGTHS",
+        "___ ROAD"
+      ]
+    },
+    {
+      "date": "2025-03-15",
+      "gameId": 643,
+      "categories": [
+        "SHARP PROTRUSION",
+        "FEATURES OF STRINGED INSTRUMENTS",
+        "LITIGATION VERBS",
+        "IN “STAR LIGHT, STAR BRIGHT”"
+      ]
+    },
+    {
+      "date": "2025-03-16",
+      "gameId": 644,
+      "categories": [
+        "BUNCH",
+        "ENDING WITH SILENT “T”",
+        "SERIAL KILLER MOVIES",
+        "STARTING WITH CONSTELLATIONS"
+      ]
+    },
+    {
+      "date": "2025-03-17",
+      "gameId": 645,
+      "categories": [
+        "FILAMENT",
+        "UNINHIBITEDNESS",
+        "KINDS OF TRUCKS",
+        "BANDS MINUS THE NUMBER FIVE"
+      ]
+    },
+    {
+      "date": "2025-03-18",
+      "gameId": 646,
+      "categories": [
+        "EXCEPTIONAL",
+        "GERMAN WORDS",
+        "PLURAL ANIMALS IDENTICAL TO THEIR SINGULAR FORMS",
+        "PLURAL WORDS THAT ARE VERY DIFFERENT FROM THEIR SINGULAR FORMS"
+      ]
+    },
+    {
+      "date": "2025-03-19",
+      "gameId": 647,
+      "categories": [
+        "SIGNIFY",
+        "WEB BROWSER BUTTONS",
+        "PARTS OF A ROAD",
+        "À/A LA ___"
+      ]
+    },
+    {
+      "date": "2025-03-20",
+      "gameId": 648,
+      "categories": [
+        "OUTSPOKEN",
+        "BODIES OF WATER",
+        "KINDS OF CORDS",
+        "THINGS IN BOTTLES"
+      ]
+    },
+    {
+      "date": "2025-03-21",
+      "gameId": 649,
+      "categories": [
+        "MILIEU",
+        "LUMINARY",
+        "ARCHITECTURAL DRAWING TOOLS",
+        "BAR ___"
+      ]
+    },
+    {
+      "date": "2025-03-22",
+      "gameId": 650,
+      "categories": [
+        "MUSICAL INSTRUMENTS",
+        "KNICKKNACK",
+        "WORDS WITH THE PREFIX MEANING “THREE”",
+        "WORDS ABBREVIATED WITH “T” + LETTER"
+      ]
+    },
+    {
+      "date": "2025-03-23",
+      "gameId": 651,
+      "categories": [
+        "CAPTIVATE",
+        "THINGS WITH WINGS",
+        "WORDS THAT MODIFY “WATCH”",
+        "WORDS REPEATED IN “MISS MARY MACK”"
+      ]
+    },
+    {
+      "date": "2025-03-24",
+      "gameId": 652,
+      "categories": [
+        "BAD-SMELLING",
+        "UNFLUCTUATING",
+        "WHO VIDEO GAMES ARE FOR, PER ESRB RATINGS",
+        "THINGS WITH LAYERS"
+      ]
+    },
+    {
+      "date": "2025-03-25",
+      "gameId": 653,
+      "categories": [
+        "BLACK-AND-WHITE THINGS",
+        "ANAGRAMS",
+        "U.S. PRESIDENTIAL NICKNAMES",
+        "CLEAR AS ___"
+      ]
+    },
+    {
+      "date": "2025-03-26",
+      "gameId": 654,
+      "categories": [
+        "PARTS OF A TABLE SETTING",
+        "INCREASED, WITH “UP”",
+        "KINDS OF DIGITAL STORAGE",
+        "UNITS OF VOLUME PLUS LETTER"
+      ]
+    },
+    {
+      "date": "2025-03-27",
+      "gameId": 655,
+      "categories": [
+        "AFFECT",
+        "YOU GOT IT!",
+        "SLANG FOR MONEY",
+        "OBJECTS WITH THE PREFIX “MICRO-”"
+      ]
+    },
+    {
+      "date": "2025-03-28",
+      "gameId": 656,
+      "categories": [
+        "HURL",
+        "BE ON BOTH SIDES OF",
+        "PARTS OF A CLASSIC GIRL SCOUT UNIFORM",
+        "___ HALL"
+      ]
+    },
+    {
+      "date": "2025-03-29",
+      "gameId": 657,
+      "categories": [
+        "MATERIALS ASSOCIATED WITH FANCY DINING",
+        "KINDS OF SHORTS",
+        "NOUNS IN A FAMOUS PALINDROME",
+        "MOVIES FROM 1985"
+      ]
+    },
+    {
+      "date": "2025-03-30",
+      "gameId": 658,
+      "categories": [
+        "AVERAGE",
+        "PICTURED ON THE U.S. GREAT SEAL",
+        "PROPER NOUNS IN BROADWAY MUSICAL TITLES THAT ARE SPOKEN PHRASES",
+        "___MAN"
+      ]
+    },
+    {
+      "date": "2025-03-31",
+      "gameId": 659,
+      "categories": [
+        "CONSUMED",
+        "ALSO",
+        "ATM OPTIONS",
+        "___PLAY"
+      ]
+    },
+    {
+      "date": "2025-04-01",
+      "gameId": 660,
+      "categories": [
+        "CURRENCY SYMBOLS",
+        "AND/TOGETHER WITH",
+        "EMOTICON MOUTHS",
+        "\"RIGHT\""
+      ]
+    },
+    {
+      "date": "2025-04-02",
+      "gameId": 661,
+      "categories": [
+        "CAPRICE",
+        "ILK",
+        "WILLIAMSES",
+        "WORDS PRONOUNCED DIFFERENTLY AS PROPER NOUNS"
+      ]
+    },
+    {
+      "date": "2025-04-03",
+      "gameId": 662,
+      "categories": [
+        "PRINTED NOTIFICATION",
+        "SEEN AT A GROCERY CHECKOUT COUNTER",
+        "THINGS WITH TABS",
+        "PALM ___"
+      ]
+    },
+    {
+      "date": "2025-04-04",
+      "gameId": 663,
+      "categories": [
+        "WHAT’S LEFTOVER",
+        "CAR TRIP",
+        "BASEBALL VENUES",
+        "COMPANIES WITH “E” REMOVED"
+      ]
+    },
+    {
+      "date": "2025-04-05",
+      "gameId": 664,
+      "categories": [
+        "EMPLOY",
+        "PARTS OF A WEBSITE",
+        "MAGAZINES",
+        "ENDING WITH MEDIEVAL WEAPONS"
+      ]
+    },
+    {
+      "date": "2025-04-06",
+      "gameId": 665,
+      "categories": [
+        "ALOOF",
+        "UTILITIES",
+        "WHAT AN ELECTROMETER MEASURES",
+        "___ JOINT"
+      ]
+    },
+    {
+      "date": "2025-04-07",
+      "gameId": 666,
+      "categories": [
+        "THROB",
+        "LANDFORMS",
+        "PICTURE HANGING NEEDS",
+        "FOOT___"
+      ]
+    },
+    {
+      "date": "2025-04-08",
+      "gameId": 667,
+      "categories": [
+        "PRICK",
+        "RADIO LINGO",
+        "OLD TESTAMENT BOOKS",
+        "WORDS PRONOUNCED “SH” WITHOUT AN “SH”"
+      ]
+    },
+    {
+      "date": "2025-04-09",
+      "gameId": 668,
+      "categories": [
+        "ROUND THREE-DIMENSIONAL OBJECTS",
+        "PUNCH",
+        "ANIMALS IN THE WITCHES' BREW IN “MACBETH”",
+        "FOX___"
+      ]
+    },
+    {
+      "date": "2025-04-10",
+      "gameId": 669,
+      "categories": [
+        "SHADES OF YELLOW",
+        "SUPPLY",
+        "ANTI-SPIRIT OF CHRISTMAS",
+        "SPANISH WORDS"
+      ]
+    },
+    {
+      "date": "2025-04-11",
+      "gameId": 670,
+      "categories": [
+        "SOURCES OF VITAMINS",
+        "PLACES USED IN RETAIL SUFFIXES",
+        "PLACES TO FIND STARS",
+        "WORDS AFTER “GO”"
+      ]
+    },
+    {
+      "date": "2025-04-12",
+      "gameId": 671,
+      "categories": [
+        "SHORT PERIOD OF TIME",
+        "DO WRONG",
+        "N.B.A. PLAYER",
+        "STARTS OF AFRICAN COUNTRIES"
+      ]
+    },
+    {
+      "date": "2025-04-13",
+      "gameId": 672,
+      "categories": [
+        "STEAL",
+        "ATTENDANCE STATUS",
+        "FONT-MODIFYING WORDS",
+        "___BERRY"
+      ]
+    },
+    {
+      "date": "2025-04-14",
+      "gameId": 673,
+      "categories": [
+        "RESTRICT",
+        "TICKETED EVENTS",
+        "ASSOCIATED WITH THE GAME THE OREGON TRAIL",
+        "WHAT “FORD” MIGHT REFER TO"
+      ]
+    },
+    {
+      "date": "2025-04-15",
+      "gameId": 674,
+      "categories": [
+        "DESIST",
+        "CARD GAMES",
+        "ELEMENTS OF GREEK DRAMA",
+        "SECOND WORDS OF “PETER PAN” CHARACTERS"
+      ]
+    },
+    {
+      "date": "2025-04-16",
+      "gameId": 675,
+      "categories": [
+        "BURLESQUE WEAR",
+        "MESS UP THE SURFACE OF",
+        "THEY ROAR",
+        "LATIN DANCES WITH A VOWEL CHANGED"
+      ]
+    },
+    {
+      "date": "2025-04-17",
+      "gameId": 676,
+      "categories": [
+        "CENTRAL SECTION OF THE BODY",
+        "COMPONENTS OF A PIZZA",
+        "UNITS OF BEER",
+        "BASEBALL GREATS"
+      ]
+    },
+    {
+      "date": "2025-04-18",
+      "gameId": 677,
+      "categories": [
+        "INTERJECTIONS",
+        "HORROR MOVIES, WITH “THE”",
+        "THINGS YOU CAN PICK",
+        "PERSONAL PROPERTY MINUS “S”"
+      ]
+    },
+    {
+      "date": "2025-04-19",
+      "gameId": 678,
+      "categories": [
+        "SPOKEN PRESENTATION",
+        "ADJECTIVES FOR A DESERT",
+        "DOG BREEDS, INFORMALLY",
+        "REPRESENTED BY THREE-DIGIT NUMBERS"
+      ]
+    },
+    {
+      "date": "2025-04-20",
+      "gameId": 679,
+      "categories": [
+        "GLIMPSE",
+        "NEEDS FOR TIE-DYEING A SHIRT",
+        "THINGS YOU CAN CRACK",
+        "WORDS BEFORE “HOP”"
+      ]
+    },
+    {
+      "date": "2025-04-21",
+      "gameId": 680,
+      "categories": [
+        "INFO ON A NUTRITION LABEL",
+        "METAPHOR FOR SOMETHING UNEXPECTED",
+        "THINGS YOU CAN INSERT INTO A SPREADSHEET",
+        "HELICAL THINGS"
+      ]
+    },
+    {
+      "date": "2025-04-22",
+      "gameId": 681,
+      "categories": [
+        "CANCEL, AS A PROJECT",
+        "SEEN IN A POTTERY STUDIO",
+        "THINGS THAT ARE SLIPPERY",
+        "NATURAL PRODUCERS OF HEAT"
+      ]
+    },
+    {
+      "date": "2025-04-23",
+      "gameId": 682,
+      "categories": [
+        "PARTS OF A TREE",
+        "CANINE/FELINE FEATURES",
+        "COMEDIC ROUTINE",
+        "___POLE"
+      ]
+    },
+    {
+      "date": "2025-04-24",
+      "gameId": 683,
+      "categories": [
+        "THINGS THAT ARE WHITE",
+        "KINDS OF LETTUCE",
+        "“BATMAN” VILLAINS",
+        "THEY HAVE LITERAL/IDIOMATIC EARS"
+      ]
+    },
+    {
+      "date": "2025-04-25",
+      "gameId": 684,
+      "categories": [
+        "GUM FLAVORS",
+        "STARTING POINT",
+        "GREAT AMERICAN SONGBOOK SONGS",
+        "___ TUBE"
+      ]
+    },
+    {
+      "date": "2025-04-26",
+      "gameId": 685,
+      "categories": [
+        "TINT",
+        "VALLEY",
+        "BOBS",
+        "COLOR ANAGRAMS"
+      ]
+    },
+    {
+      "date": "2025-04-27",
+      "gameId": 686,
+      "categories": [
+        "CALCULATOR BUTTONS",
+        "AMOUNTS OF HAIR",
+        "SALTY SNACK UNIT",
+        "SWEDISH ___"
+      ]
+    },
+    {
+      "date": "2025-04-28",
+      "gameId": 687,
+      "categories": [
+        "HAIR PRODUCTS",
+        "AUSTERE",
+        "CLUES AT A CRIME SCENE",
+        "WEARY"
+      ]
+    },
+    {
+      "date": "2025-04-29",
+      "gameId": 688,
+      "categories": [
+        "COOKING CONCOCTIONS",
+        "SEEN ON A TABLE AT A DINNER PARTY",
+        "THINGS TO CLIMB",
+        "WHAT \"DIAMOND\" CAN REFER TO"
+      ]
+    },
+    {
+      "date": "2025-04-30",
+      "gameId": 689,
+      "categories": [
+        "PARTS OF A SHOE",
+        "ACCOMMODATION",
+        "REPUTATION",
+        "ENDING WITH SYNONYMS FOR “YUCK”"
+      ]
+    },
+    {
+      "date": "2025-05-01",
+      "gameId": 690,
+      "categories": [
+        "WINNINGS",
+        "STOP, AS A HABIT",
+        "MOVIE CAMERA VERBS",
+        "WORDS THAT PRECEDE \"-SIZE\" TO MEAN SMALL"
+      ]
+    },
+    {
+      "date": "2025-05-02",
+      "gameId": 691,
+      "categories": [
+        "KINDS OF CARVINGS",
+        "PILLAR",
+        "BBQ OFFERING",
+        "___NECK"
+      ]
+    },
+    {
+      "date": "2025-05-03",
+      "gameId": 692,
+      "categories": [
+        "AWESOME",
+        "DEFEAT SOUNDLY",
+        "“WILL” CONTRACTIONS WITHOUT THE APOSTROPHE",
+        "URL ENDINGS PLUS A LETTER"
+      ]
+    },
+    {
+      "date": "2025-05-04",
+      "gameId": 693,
+      "categories": [
+        "QUALITIES OF OVERCOOKED MEAT",
+        "PLAY SOME ELECTRIC GUITAR",
+        "INGREDIENTS IN BUBBLE TEA",
+        "PLANETS/DWARF PLANET WITH FIRST LETTER CHANGED"
+      ]
+    },
+    {
+      "date": "2025-05-05",
+      "gameId": 694,
+      "categories": [
+        "GLIDE",
+        "ASSOCIATED WITH COUNT DRACULA",
+        "STOP CHANGING",
+        "THINGS THAT ARE LONG AND CYLINDRICAL"
+      ]
+    },
+    {
+      "date": "2025-05-06",
+      "gameId": 695,
+      "categories": [
+        "SILENCE",
+        "TENNIS COMPETITION UNITS",
+        "COMPARATIVELY SMALL",
+        "STARTING WITH SYNONYMS FOR “TEASE”"
+      ]
+    },
+    {
+      "date": "2025-05-07",
+      "gameId": 696,
+      "categories": [
+        "GET BETTER, AS A BROKEN BONE",
+        "NOT INCLUDING",
+        "TAROT MINOR ARCANA SUITS",
+        "HOMOPHONES OF GEMSTONES"
+      ]
+    },
+    {
+      "date": "2025-05-08",
+      "gameId": 697,
+      "categories": [
+        "COMMIT TO PAPER",
+        "NEEDS FOR PLAYING YAHTZEE",
+        "HEROES OF ACTION MOVIE FRANCHISES",
+        "___STICK"
+      ]
+    },
+    {
+      "date": "2025-05-09",
+      "gameId": 698,
+      "categories": [
+        "TV DISPLAY SETTINGS",
+        "FUZZY, AS A MEMORY",
+        "RESULTS OF SOME ARITHMETIC",
+        "WINDOW TREATMENTS IN THE SINGULAR"
+      ]
+    },
+    {
+      "date": "2025-05-10",
+      "gameId": 699,
+      "categories": [
+        "LETTER SIGN-OFFS",
+        "WITHOUT",
+        "VIGOR",
+        "___ STRIP"
+      ]
+    },
+    {
+      "date": "2025-05-11",
+      "gameId": 700,
+      "categories": [
+        "MAKE HAPPY",
+        "EVADE",
+        "COMMON VIDEO GAME FEATURES",
+        "MOTHER ___"
+      ]
+    },
+    {
+      "date": "2025-05-12",
+      "gameId": 701,
+      "categories": [
+        "PLACES TO FIND PAPER MONEY",
+        "REBOUND",
+        "THINGS TRACKED BY WEB ANALYTICS",
+        "THINGS YOU CAN DO WITH YOUR LIPS"
+      ]
+    },
+    {
+      "date": "2025-05-13",
+      "gameId": 702,
+      "categories": [
+        "PLACES TO SHOP",
+        "KINDS OF PIZZA",
+        "ENDING WITH COLORS",
+        "___ CLEANER"
+      ]
+    },
+    {
+      "date": "2025-05-14",
+      "gameId": 703,
+      "categories": [
+        "ABSORB USING CAPILLARY ACTION",
+        "GREEK PREFIXES",
+        "TITULAR ANIMALS OF FILM",
+        "STARTING WITH SILENT LETTERS"
+      ]
+    },
+    {
+      "date": "2025-05-15",
+      "gameId": 704,
+      "categories": [
+        "RATIONALE",
+        "TYPES OF SNOW",
+        "LAST WORDS OF FAMOUS OPERA TITLES",
+        "REAL ___"
+      ]
+    },
+    {
+      "date": "2025-05-16",
+      "gameId": 705,
+      "categories": [
+        "KINDS OF PLANTS",
+        "DISCONTINUE",
+        "ASSOCIATED WITH BULLS",
+        "ENDING WITH BUILDING MATERIALS"
+      ]
+    },
+    {
+      "date": "2025-05-17",
+      "gameId": 706,
+      "categories": [
+        "MEMBER OF A KINGDOM IN TAXONOMY",
+        "GRADUATED INSTRUMENTS",
+        "KINDS OF PENGUINS",
+        "“E” THINGS"
+      ]
+    },
+    {
+      "date": "2025-05-18",
+      "gameId": 707,
+      "categories": [
+        "TASKS FOR A STUDENT",
+        "ENCOURAGING RESPONSES IN A GUESSING GAME",
+        "UP FOR ANYTHING",
+        "WHAT “A” MIGHT MEAN"
+      ]
+    },
+    {
+      "date": "2025-05-19",
+      "gameId": 708,
+      "categories": [
+        "FUNDRAISING EVENT",
+        "SPACES ON A MONOPOLY BOARD",
+        "FEATURES OF A TOOTHED WHALE",
+        "HOMOPHONES OF PARTS OF THE FOOT"
+      ]
+    },
+    {
+      "date": "2025-05-20",
+      "gameId": 709,
+      "categories": [
+        "ACCOUNT BOOK",
+        "SEEN IN A BARN",
+        "DETECTIVES OF KID-LIT",
+        "WORDS BEFORE “BED”"
+      ]
+    },
+    {
+      "date": "2025-05-21",
+      "gameId": 710,
+      "categories": [
+        "PROHIBIT, AS ENTRY",
+        "FOLDERS ON A MAC",
+        "MEDICINE FORMATS",
+        "THINGS THAT OPEN LIKE A CLAM"
+      ]
+    },
+    {
+      "date": "2025-05-22",
+      "gameId": 711,
+      "categories": [
+        "FINE PRINT",
+        "CHARACTERS WITH GREEN SKIN",
+        "FEATURES OF THE NATIONAL MALL IN D.C.",
+        "FAMOUS RIDDLE-GIVERS"
+      ]
+    },
+    {
+      "date": "2025-05-23",
+      "gameId": 712,
+      "categories": [
+        "QUITE THE PARTY",
+        "ONE’S CONSTITUTION",
+        "BRITISH IMPERIAL UNITS OF WEIGHT",
+        "WHAT “CAT’S EYE” CAN BE USED TO DESCRIBE"
+      ]
+    },
+    {
+      "date": "2025-05-24",
+      "gameId": 713,
+      "categories": [
+        "BABY GEAR",
+        "KINDS OF PANTS MINUS \"S\"",
+        "NEW YORK SPORTS TEAM MEMBERS",
+        "BLACK WOMEN AUTHORS"
+      ]
+    },
+    {
+      "date": "2025-05-25",
+      "gameId": 714,
+      "categories": [
+        "PLAYING CARDS",
+        "DOPPELGÄNGER",
+        "EAR PIERCING SITES",
+        "___ MAIL"
+      ]
+    },
+    {
+      "date": "2025-05-26",
+      "gameId": 715,
+      "categories": [
+        "ITEMS IN A LINEN CLOSET",
+        "DIAMETRIC",
+        "LINGERIE",
+        "CARD GAMES WITH FIRST LETTER CHANGED"
+      ]
+    },
+    {
+      "date": "2025-05-27",
+      "gameId": 716,
+      "categories": [
+        "ROUND FLAT THINGS",
+        "AIRPORT FEATURES",
+        "GUITAR PLAYING TECHNIQUES",
+        "WHAT CHARACTERS WERE TRANSFORMED INTO IN “BEAUTY AND THE BEAST”"
+      ]
+    },
+    {
+      "date": "2025-05-28",
+      "gameId": 717,
+      "categories": [
+        "CONNECT",
+        "PARTS OF A BIKE",
+        "BEST PICTURE WINNERS SINCE 2000",
+        "MUSIC GENRES PLUS A LETTER"
+      ]
+    },
+    {
+      "date": "2025-05-29",
+      "gameId": 718,
+      "categories": [
+        "SALUTE",
+        "SUITABLE",
+        "VERBS FOR FINISHING DONUTS",
+        "WHAT “BUFF” MIGHT MEAN"
+      ]
+    },
+    {
+      "date": "2025-05-30",
+      "gameId": 719,
+      "categories": [
+        "RODS",
+        "THEY'RE ON A ROLL!",
+        "COMMON SWAG ITEMS",
+        "WORDS BEFORE “SHACK”"
+      ]
+    },
+    {
+      "date": "2025-05-31",
+      "gameId": 720,
+      "categories": [
+        "ALCOVE",
+        "WAYS TO RECOGNIZE ACHIEVEMENT",
+        "VERBS IN BREADMAKING",
+        "THINGS YOU CAN BLOW"
+      ]
+    },
+    {
+      "date": "2025-06-01",
+      "gameId": 721,
+      "categories": [
+        "LOCAL WATERING HOLE",
+        "COMPETE IN A MODERN PENTATHLON",
+        "ENSURE, AS A VICTORY",
+        "___ FUND"
+      ]
+    },
+    {
+      "date": "2025-06-02",
+      "gameId": 722,
+      "categories": [
+        "EXPEDITION",
+        "HOLD DEAR",
+        "WORDS WHOSE ONLY VOWEL IS “Y”",
+        "NAMES ENDING IN “K” PLUS WORD"
+      ]
+    },
+    {
+      "date": "2025-06-03",
+      "gameId": 723,
+      "categories": [
+        "BE OSTENTATIOUS",
+        "COPACETIC",
+        "KINDS OF BRACELETS",
+        "THINGS YOU CAN PRACTICE"
+      ]
+    },
+    {
+      "date": "2025-06-04",
+      "gameId": 724,
+      "categories": [
+        "PARTS OF A SONG",
+        "SUPPORT AUDIBLY",
+        "THINGS IN AN ENTRYWAY",
+        "IMAGERY IN MAGRITTE PAINTINGS"
+      ]
+    },
+    {
+      "date": "2025-06-05",
+      "gameId": 725,
+      "categories": [
+        "PRECIPICE",
+        "PLUMBING EQUIPMENT",
+        "WAYS TO MODIFY A CAR'S EXTERIOR",
+        "BEST FEMALE ROCK PERFORMANCE GRAMMY WINNERS"
+      ]
+    },
+    {
+      "date": "2025-06-06",
+      "gameId": 726,
+      "categories": [
+        "NEWSPAPER JOBS",
+        "EVERYDAY",
+        "WHAT “CON” MIGHT MEAN",
+        "ENDING WITH KINDS OF DOGS"
+      ]
+    },
+    {
+      "date": "2025-06-07",
+      "gameId": 727,
+      "categories": [
+        "TIPS FOR WORKING OUT SAFELY",
+        "ESTABLISH",
+        "DITTY",
+        "SPRING ___"
+      ]
+    },
+    {
+      "date": "2025-06-08",
+      "gameId": 728,
+      "categories": [
+        "PERSIST",
+        "ANIMAL METAPHORS IN ECONOMICS",
+        "SIDEBAR INFO ON A PERSON’S WIKIPEDIA PAGE",
+        "HOMOPHONES OF SLANG FOR MONEY"
+      ]
+    },
+    {
+      "date": "2025-06-09",
+      "gameId": 729,
+      "categories": [
+        "KEYBOARD SHORTCUT COMMANDS",
+        "SECURE IN ADVANCE",
+        "CRIME ORGANIZATION",
+        "SPELLING BEE RANKS MINUS A LETTER"
+      ]
+    },
+    {
+      "date": "2025-06-10",
+      "gameId": 730,
+      "categories": [
+        "ARBITRATE",
+        "THINGS YOU CAN INSERT IN A DOCUMENT",
+        "80S SLANG",
+        "___ DUTY"
+      ]
+    },
+    {
+      "date": "2025-06-11",
+      "gameId": 731,
+      "categories": [
+        "BOAST",
+        "ARC-SHAPED THINGS",
+        "CEREAL MASCOTS",
+        "WAYS TO DENOTE A CITATION"
+      ]
+    },
+    {
+      "date": "2025-06-12",
+      "gameId": 732,
+      "categories": [
+        "GETTING COZY",
+        "GOSSIPING",
+        "ENGAGING IN AN ACTIVITY WITH PINS OR NEEDLES",
+        "STARTING WITH TITLES"
+      ]
+    },
+    {
+      "date": "2025-06-13",
+      "gameId": 733,
+      "categories": [
+        "PERSPECTIVE",
+        "SEEN AT AN ICE CREAM SHOP",
+        "HIT SONGS OF 1998",
+        "HOT ___"
+      ]
+    },
+    {
+      "date": "2025-06-14",
+      "gameId": 734,
+      "categories": [
+        "GODDESS",
+        "ELEMENTS OF A CLASSIC “MOM” TATTOO",
+        "DOGS OF THE SCREEN",
+        "___ TERRIER"
+      ]
+    },
+    {
+      "date": "2025-06-15",
+      "gameId": 735,
+      "categories": [
+        "SLANG FOR COFFEE",
+        "\"AW, HECK!\"",
+        "CONSIDERATIONS FOR MOVIE RATINGS",
+        "WHAT “POP” MIGHT MEAN"
+      ]
+    },
+    {
+      "date": "2025-06-16",
+      "gameId": 736,
+      "categories": [
+        "EXPRESSIONLESS",
+        "DRAPERY HANGING ITEMS",
+        "WHAT A DRINK IS SERVED WITH",
+        "STARTING WITH METHODS OF TRANSPORTATION"
+      ]
+    },
+    {
+      "date": "2025-06-17",
+      "gameId": 737,
+      "categories": [
+        "THINGS TO BOOK FOR A VACATION",
+        "METTLE",
+        "BAD THINGS FOR A WEBSITE TO DO",
+        "FIGURES IN CLASSIC DISNEY ANIMATED FILMS"
+      ]
+    },
+    {
+      "date": "2025-06-18",
+      "gameId": 738,
+      "categories": [
+        "QUALITIES OF A RAINY DAY",
+        "SQUARELY",
+        "CONTENTS OF A POD",
+        "BODY PART PLUS A STARTING LETTER"
+      ]
+    },
+    {
+      "date": "2025-06-19",
+      "gameId": 739,
+      "categories": [
+        "COMPONENTS OF ONE’S GRADE",
+        "MAP APP OPTIONS",
+        "CLASSIC TOYS",
+        "FENCING GEAR"
+      ]
+    },
+    {
+      "date": "2025-06-20",
+      "gameId": 740,
+      "categories": [
+        "ITEMS IN A SEWING KIT",
+        "CAPTURE ON VIDEO",
+        "PRO WRESTLING ICONS, WITH “THE”",
+        "WAX ___"
+      ]
+    },
+    {
+      "date": "2025-06-21",
+      "gameId": 741,
+      "categories": [
+        "STOCKY",
+        "COMPANY",
+        "APPLE PRODUCTS",
+        "STARTS OF EUROPEAN COUNTRIES"
+      ]
+    },
+    {
+      "date": "2025-06-22",
+      "gameId": 742,
+      "categories": [
+        "NEWS ANNOUNCEMENT",
+        "NOUNS FROM A FAMOUS LINE IN THE DECLARATION OF INDEPENDENCE",
+        "HBO SHOWS",
+        "WHAT “LEFT” MIGHT MEAN"
+      ]
+    },
+    {
+      "date": "2025-06-23",
+      "gameId": 743,
+      "categories": [
+        "KINDS OF JEANS",
+        "FICTION CATEGORIES",
+        "WORDS IN HEMINGWAY TITLES",
+        "___ GLASS GLASSWARE"
+      ]
+    },
+    {
+      "date": "2025-06-24",
+      "gameId": 744,
+      "categories": [
+        "STRICT",
+        "BOTANICAL COVERINGS",
+        "SEEN IN OPENING CREDITS",
+        "OBJECTS IN 0-, 1-, 2- AND 3-DIMENSIONAL SPACE"
+      ]
+    },
+    {
+      "date": "2025-06-25",
+      "gameId": 745,
+      "categories": [
+        "KINDS OF CHEESES",
+        "BEVERAGE SELF-SERVICE ITEMS",
+        "WOODWORKING HAND TOOLS",
+        "BIRDS MINUS LAST LETTER"
+      ]
+    },
+    {
+      "date": "2025-06-26",
+      "gameId": 746,
+      "categories": [
+        "COMPONENTS OF A SALAD",
+        "KINDS OF MACHINES",
+        "LEGAL DRAMAS",
+        "ENDING WITH PLAYING CARDS"
+      ]
+    },
+    {
+      "date": "2025-06-27",
+      "gameId": 747,
+      "categories": [
+        "IN FASHION",
+        "PARTS OF AN ANGEL COSTUME",
+        "“SESAME STREET” FIGURES",
+        "___ BROTHERS"
+      ]
+    },
+    {
+      "date": "2025-06-28",
+      "gameId": 748,
+      "categories": [
+        "THINGS A DOG CAN FETCH",
+        "GREAT MANY",
+        "POSSIBLE RESULTS OF A TRAFFIC VIOLATION",
+        "INDUSTRIAL REVOLUTION INVENTORS"
+      ]
+    },
+    {
+      "date": "2025-06-29",
+      "gameId": 749,
+      "categories": [
+        "ICE CREAM TREATS",
+        "FLINCH",
+        "DANCE MOVES",
+        "SEEN IN THE AFTERMATH OF A RAINSTORM"
+      ]
+    },
+    {
+      "date": "2025-06-30",
+      "gameId": 750,
+      "categories": [
+        "DENTAL ADDITIONS",
+        "METAPHORS FOR A DRAMATIC AND CHAOTIC EVENT",
+        "SECOND WORDS IN DAVID LYNCH TITLES",
+        "WHAT “JET” MIGHT REFER TO"
+      ]
+    },
+    {
+      "date": "2025-07-01",
+      "gameId": 751,
+      "categories": [
+        "STEAL",
+        "DO SOME GROOMING",
+        "DAPPER",
+        "___STONE"
+      ]
+    },
+    {
+      "date": "2025-07-02",
+      "gameId": 752,
+      "categories": [
+        "KNOCKOFF",
+        "ASSOCIATED WITH FREUD",
+        "WORDS AFTER “T-”",
+        "STARTING WITH HIGH SCHOOL/COLLEGE ABBREVIATIONS"
+      ]
+    },
+    {
+      "date": "2025-07-03",
+      "gameId": 753,
+      "categories": [
+        "CORRESPONDENCE",
+        "AIRPORT BOARD INFO",
+        "PRO ATHLETE DATA",
+        "FARMERS’ THINGS"
+      ]
+    },
+    {
+      "date": "2025-07-04",
+      "gameId": 754,
+      "categories": [
+        "WHAT “ID” MIGHT REFER TO",
+        "WHAT “IN” MIGHT REFER TO",
+        "WHAT “LA” MIGHT REFER TO",
+        "WHAT “OK” MIGHT REFER TO"
+      ]
+    },
+    {
+      "date": "2025-07-05",
+      "gameId": 755,
+      "categories": [
+        "CON GAME",
+        "COMBINE, AS BAKING INGREDIENTS",
+        "YEARN",
+        "KINDS OF LISTS"
+      ]
+    },
+    {
+      "date": "2025-07-06",
+      "gameId": 756,
+      "categories": [
+        "FIRED OBJECTS",
+        "PARTICLE",
+        "DRS",
+        "ENDING WITH HOMOPHONES OF PARTS OF THE LEG"
+      ]
+    },
+    {
+      "date": "2025-07-07",
+      "gameId": 757,
+      "categories": [
+        "INFORMANT",
+        "BIG IMPRESSION",
+        "BASKETBALL MOVES",
+        "TOP ___"
+      ]
+    },
+    {
+      "date": "2025-07-08",
+      "gameId": 758,
+      "categories": [
+        "LIAISON",
+        "SEEN IN A LOCKER ROOM",
+        "SOMETHING ENTERED FOR ACCESS",
+        "JOHNS"
+      ]
+    },
+    {
+      "date": "2025-07-09",
+      "gameId": 759,
+      "categories": [
+        "LOWEST PART",
+        "KINDS OF SOCKS",
+        "THINGS YOU DO AT SOMEONE'S FRONT DOOR",
+        "ENDING IN SYNONYMS FOR \"CLIP\""
+      ]
+    },
+    {
+      "date": "2025-07-10",
+      "gameId": 760,
+      "categories": [
+        "PARTS OF A WHEEL",
+        "MILITARY CLOTHING DESCRIPTORS",
+        "USED IN VENTILATION",
+        "FAIL TO TAKE ADVANTAGE OF, AS AN OPPORTUNITY"
+      ]
+    },
+    {
+      "date": "2025-07-11",
+      "gameId": 761,
+      "categories": [
+        "TRADEMARKS THAT HAVE BECOME VERBS",
+        "SILLY PERSON",
+        "KINDS OF SONGS",
+        "HOMOPHONES OF SYNONYMS FOR “DESPICABLE”"
+      ]
+    },
+    {
+      "date": "2025-07-12",
+      "gameId": 762,
+      "categories": [
+        "ENDORSE",
+        "DETAILED",
+        "ERA",
+        "IN THE NATO ALPHABET"
+      ]
+    },
+    {
+      "date": "2025-07-13",
+      "gameId": 763,
+      "categories": [
+        "INSULT",
+        "CREDIT CARD INFO",
+        "SLANG FOR PRINTED MATTER",
+        "WINE NICKNAMES"
+      ]
+    },
+    {
+      "date": "2025-07-14",
+      "gameId": 764,
+      "categories": [
+        "SHADES OF BLUE",
+        "ADJECTIVES FOR A SPORTS CAR",
+        "WORDS BEFORE “ROGER/S”",
+        "DISNEY ANIMATED CHARACTERS PLUS A LETTER"
+      ]
+    },
+    {
+      "date": "2025-07-15",
+      "gameId": 765,
+      "categories": [
+        "GYMNASTICS APPARATUS",
+        "FORCE TO LEAVE",
+        "HORROR MOVIES FROM 2022",
+        "HORSE___"
+      ]
+    },
+    {
+      "date": "2025-07-16",
+      "gameId": 766,
+      "categories": [
+        "PARTS OF A COLLEGE CAMPUS",
+        "EXAGGERATED, AS A PERFORMANCE",
+        "CLOSE IN ON",
+        "STARTS OF GREEK LETTERS"
+      ]
+    },
+    {
+      "date": "2025-07-17",
+      "gameId": 767,
+      "categories": [
+        "MEDDLE",
+        "WORDS AFTER “NO” TO MEAN “IT’S ALL GOOD”",
+        "SUPER ___",
+        "ENDING WITH FISH"
+      ]
+    },
+    {
+      "date": "2025-07-18",
+      "gameId": 768,
+      "categories": [
+        "SEQUENCE",
+        "PICK UP ON",
+        "YOGA BACKBENDS",
+        "ELECTRIC ___"
+      ]
+    },
+    {
+      "date": "2025-07-19",
+      "gameId": 769,
+      "categories": [
+        "SOURCES OF DRINKING WATER",
+        "THINGS YOU CAN DO WITH A FOOTBALL",
+        "SHARP FASTENERS",
+        "STARTS OF TEENAGE MUTANT NINJA TURTLES"
+      ]
+    },
+    {
+      "date": "2025-07-20",
+      "gameId": 770,
+      "categories": [
+        "MOVE TO THE MUSIC",
+        "INHALATION",
+        "MARTINI SPECIFICATIONS",
+        "___WORD"
+      ]
+    },
+    {
+      "date": "2025-07-21",
+      "gameId": 771,
+      "categories": [
+        "ADDITIONAL PERK",
+        "PHASE TRANSITIONS FOR LIQUIDS",
+        "CONCEPTS FROM “SEINFELD”",
+        "WHAT ' CAN INDICATE"
+      ]
+    },
+    {
+      "date": "2025-07-22",
+      "gameId": 772,
+      "categories": [
+        "SASSINESS",
+        "MITIGATE",
+        "PATTERNS",
+        "___ PIE"
+      ]
+    },
+    {
+      "date": "2025-07-23",
+      "gameId": 773,
+      "categories": [
+        "DREAD-INDUCING FIGURES",
+        "KINDS OF STEAKS",
+        "RELATED TO BUYING A HOME",
+        "ANIMALS ENDING WITH ANIMALS"
+      ]
+    },
+    {
+      "date": "2025-07-24",
+      "gameId": 774,
+      "categories": [
+        "COLOSSAL",
+        "LEAVE QUICKLY",
+        "PARTS OF A BASKETBALL HOOP",
+        "HOMOPHONES OF SYNONYMS FOR “NAB”"
+      ]
+    },
+    {
+      "date": "2025-07-25",
+      "gameId": 775,
+      "categories": [
+        "HUSH-HUSH",
+        "STATE ABBREVIATIONS",
+        "BASEBALL CALLS",
+        "QUEEN ___"
+      ]
+    },
+    {
+      "date": "2025-07-26",
+      "gameId": 776,
+      "categories": [
+        "HERBS AND SPICES",
+        "SHADES OF GREEN",
+        "TRAVEL ON FOOT",
+        "STARTS OF EUROPEAN CAPITALS"
+      ]
+    },
+    {
+      "date": "2025-07-27",
+      "gameId": 777,
+      "categories": [
+        "\"NOTHING TO IT!\"",
+        "OUTDOOR EVENTS",
+        "WORDS BEFORE \"SCHOOL\"",
+        "ASSOCIATED WITH TRICKS"
+      ]
+    },
+    {
+      "date": "2025-07-28",
+      "gameId": 778,
+      "categories": [
+        "FOREMOST",
+        "INDICATION",
+        "ITEM IN A COLLECTION",
+        "___ MOVIE"
+      ]
+    },
+    {
+      "date": "2025-07-29",
+      "gameId": 779,
+      "categories": [
+        "DISCOUNT",
+        "IRRITATE",
+        "POKER ACTIONS",
+        "THINGS YOU CAN PUMP"
+      ]
+    },
+    {
+      "date": "2025-07-30",
+      "gameId": 780,
+      "categories": [
+        "INSTRUCT",
+        "MEANS",
+        "STARTING WITH GREEK NUMERICAL PREFIXES",
+        "ANAGRAMS OF MUSICAL INSTRUMENTS"
+      ]
+    },
+    {
+      "date": "2025-07-31",
+      "gameId": 781,
+      "categories": [
+        "FIRST ___",
+        "SECOND ___",
+        "THIRD ___",
+        "LAST ___"
+      ]
+    }
+  ]
+}

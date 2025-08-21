@@ -1,0 +1,46 @@
+{
+  "date": "2025-07-23",
+  "gameId": 773,
+  "groups": [
+    {
+      "name": "DREAD-INDUCING FIGURES",
+      "level": 0,
+      "words": [
+        "BOGEYMAN",
+        "BUGBEAR",
+        "HOBGOBLIN",
+        "PHANTOM"
+      ]
+    },
+    {
+      "name": "KINDS OF STEAKS",
+      "level": 1,
+      "words": [
+        "CHATEAUBRIAND",
+        "FLATIRON",
+        "PORTERHOUSE",
+        "TOMAHAWK"
+      ]
+    },
+    {
+      "name": "RELATED TO BUYING A HOME",
+      "level": 2,
+      "words": [
+        "APPRAISAL",
+        "ESCROW",
+        "INSURANCE",
+        "MORTGAGE"
+      ]
+    },
+    {
+      "name": "ANIMALS ENDING WITH ANIMALS",
+      "level": 3,
+      "words": [
+        "GEODUCK",
+        "SEAHORSE",
+        "TITMOUSE",
+        "WOMBAT"
+      ]
+    }
+  ]
+}

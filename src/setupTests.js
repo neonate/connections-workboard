@@ -3,3 +3,8 @@
 // expect(element).toHaveTextContent(/react/i)
 // learn more: https://github.com/testing-library/jest-dom
 import '@testing-library/jest-dom';
+
+// Force React 17/18 compatibility for tests
+import { configure } from '@testing-library/react';
+
+configure({ legacyRootApi: true });

@@ -27,8 +27,16 @@ jobs:
     - name: Install dependencies
       run: npm ci
 
-    - name: Run tests
+    - name: Run tests with mocks (default)
       run: npm run test:ci
+      env:
+        RUN_REAL_API_TESTS: false
+
+    - name: Run tests with real API (optional)
+      run: npm run test:ci
+      env:
+        RUN_REAL_API_TESTS: true
+      continue-on-error: true  # Don't fail the build if real API tests fail
 
     - name: Build project
       run: npm run build

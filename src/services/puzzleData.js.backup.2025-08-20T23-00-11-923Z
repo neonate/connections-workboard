@@ -1,0 +1,264 @@
+/**
+ * Static NYT Connections puzzle data
+ * All puzzle data is managed out-of-band and hardcoded here
+ */
+
+// Puzzle data from 2025-08-01 to 2025-08-20
+const EXTENDED_PUZZLES = {
+  '2025-08-20': {
+    date: '2025-08-20',
+    gameId: 802,
+    groups: [
+      { name: 'BLACK-AND-WHITE THINGS', level: 0, words: ['DOMINO', 'PIANO KEYS', 'YIN-YANG SYMBOL', 'ZEBRA'] },
+      { name: 'PAIRS OF RODS', level: 1, words: ['CHOPSTICKS', 'CLAVES', 'KNITTING NEEDLES', 'SKI POLES'] },
+      { name: 'THINGS THAT ROTATE ABOUT A VERTICAL AXIS', level: 2, words: ['BARBER POLE', 'CAROUSEL', 'CEILING FAN', 'LAZY SUSAN'] },
+      { name: 'RODS THAT CURVE AT ONE END', level: 3, words: ['CANDY CANE', 'CROCHET HOOK', 'CROOK', 'CROWBAR'] }
+    ],
+    source: 'static'
+  },
+  '2025-08-17': {
+    date: '2025-08-17',
+    gameId: 798,
+    groups: [
+      { name: 'CONVENIENTLY LOCATED', level: 0, words: ['ACCESSIBLE', 'CLOSE', 'HANDY', 'NEARBY'] },
+      { name: 'NEEDS FOR SENDING A LETTER', level: 1, words: ['ADDRESS', 'ENVELOPE', 'NAME', 'STAMP'] },
+      { name: 'WORDS ON A DOOR', level: 2, words: ['EXIT', 'OPEN', 'PUSH', 'WELCOME'] },
+      { name: 'FIRST AMENDMENT FREEDOMS', level: 3, words: ['ASSEMBLY', 'PETITION', 'PRESS', 'SPEECH'] }
+    ],
+    source: 'static'
+  },
+  '2025-08-16': {
+    date: '2025-08-16',
+    gameId: 797,
+    groups: [
+      { name: 'INTREPIDITY', level: 0, words: ['FORTITUDE', 'GRIT', 'PLUCK', 'RESOLVE'] },
+      { name: 'RENOVATIONS', level: 1, words: ['CONSTRUCTION', 'REPAIRS', 'UPGRADES', 'WORK'] },
+      { name: 'TROUNCE', level: 2, words: ['CREAM', 'CRUSH', 'ROUT', 'SHELLAC'] },
+      { name: 'KINDS OF SOFT/LIGHTWEIGHT PAPER', level: 3, words: ['CREPE', 'ROLLING', 'TISSUE', 'TOILET'] }
+    ],
+    source: 'static'
+  },
+  '2025-08-15': {
+    date: '2025-08-15',
+    gameId: 796,
+    groups: [
+      { name: 'POULTRY CUTS', level: 0, words: ['BREAST', 'TENDER', 'THIGH', 'WING'] },
+      { name: 'HANDLE, AS A BILL', level: 1, words: ['FOOT', 'PAY', 'SETTLE', 'TAKE CARE OF'] },
+      { name: 'SPLENDID', level: 2, words: ['BRILLIANT', 'CAPITAL', 'FINE', 'GRAND'] },
+      { name: 'STARTS OF CULINARY NUTS', level: 3, words: ['CASH', 'HAZE', 'MAC', 'PEC'] }
+    ],
+    source: 'static'
+  },
+  '2025-08-14': {
+    date: '2025-08-14',
+    gameId: 795,
+    groups: [
+      { name: 'DERRIERE', level: 0, words: ['BACKSIDE', 'CABOOSE', 'SEAT', 'TAIL'] },
+      { name: 'USED TO HIT A BALL IN SPORTS', level: 1, words: ['BAT', 'MALLET', 'RACKET', 'STICK'] },
+      { name: 'COMPONENTS OF A BRIDE\'S ENSEMBLE', level: 2, words: ['BOUQUET', 'BUSTLE', 'TRAIN', 'VEIL'] },
+      { name: 'RHYMING COMPOUND WORDS', level: 3, words: ['BACKPACK', 'COOKBOOK', 'HUBBUB', 'NITWIT'] }
+    ],
+    source: 'static'
+  },
+  '2025-08-13': {
+    date: '2025-08-13',
+    gameId: 794,
+    groups: [
+      { name: 'CAPTIVATE', level: 0, words: ['CHARM', 'ENTRANCE', 'RIVET', 'THRILL'] },
+      { name: 'EXCERPT', level: 1, words: ['CLIP', 'EXTRACT', 'PASSAGE', 'QUOTE'] },
+      { name: 'MEMBER OF A GIRL GROUP', level: 2, words: ['BANGLE', 'CHICK', 'GO-GO', 'SUPREME'] },
+      { name: 'STAR___', level: 3, words: ['BOARD', 'FISH', 'GATE', 'STRUCK'] }
+    ],
+    source: 'static'
+  },
+  '2025-08-12': {
+    date: '2025-08-12',
+    gameId: 793,
+    groups: [
+      { name: 'GROUPS OF TEN', level: 0, words: ['BOWLING PINS', 'COMMANDMENTS', 'DECADE', 'FINGERS'] },
+      { name: 'PLACES WITH LANES', level: 1, words: ['BOWLING ALLEY', 'HIGHWAY', 'SUPERMARKET', 'SWIMMING POOL'] },
+      { name: 'LANDMARKS IN DOWNTOWN NYC', level: 2, words: ['BOWLING GREEN', 'BROOKLYN BRIDGE', 'CITY HALL', 'WALL STREET'] },
+      { name: 'THINGS WITH HOLES', level: 3, words: ['BOWLING BALL', 'COLANDER', 'GOLF COURSE', 'SPONGE'] }
+    ],
+    source: 'static'
+  },
+  '2025-08-11': {
+    date: '2025-08-11',
+    gameId: 792,
+    groups: [
+      { name: 'ORDINARY', level: 0, words: ['NORMAL', 'PLAIN', 'STANDARD', 'VANILLA'] },
+      { name: 'ABANDON', level: 1, words: ['DESERT', 'DUMP', 'MAROON', 'STRAND'] },
+      { name: 'SPECS ON CONSUMER PACKAGING', level: 2, words: ['COUNT', 'MEASURE', 'WEIGHT', 'VOLUME'] },
+      { name: 'DARK ___', level: 3, words: ['AGES', 'CHOCOLATE', 'HORSE', 'MATTER'] }
+    ],
+    source: 'static'
+  },
+  '2025-08-10': {
+    date: '2025-08-10',
+    gameId: 791,
+    groups: [
+      { name: 'INFLUENCE', level: 0, words: ['JUICE', 'PULL', 'SWAY', 'WEIGHT'] },
+      { name: 'AMASS', level: 1, words: ['CLUSTER', 'COLLECT', 'CONCENTRATE', 'GROUP'] },
+      { name: 'KINDS OF FICTION', level: 2, words: ['FAN', 'HISTORICAL', 'PULP', 'SCIENCE'] },
+      { name: 'STARTING WITH MATH AND SCIENCE CLASSES, FOR SHORT', level: 3, words: ['BIOPIC', 'CALCIUM', 'CHEMISE', 'TRIGLYCERIDE'] }
+    ],
+    source: 'static'
+  },
+  '2025-08-09': {
+    date: '2025-08-09',
+    gameId: 790,
+    groups: [
+      { name: 'RESULT', level: 0, words: ['FRUIT', 'PRODUCT', 'RETURN', 'YIELD'] },
+      { name: 'KINDS OF JOKES', level: 1, words: ['DAD', 'INSIDE', 'KNOCK-KNOCK', 'PRACTICAL'] },
+      { name: 'MOVIES FEATURING SUPERNATURAL ROMANCE', level: 2, words: ['CASPER', 'GHOST', 'LET ME IN', 'TWILIGHT'] },
+      { name: 'CORN-Y THINGS', level: 3, words: ['MAZE', 'MUFFIN', 'SILK', 'SYRUP'] }
+    ],
+    source: 'static'
+  },
+  '2025-08-08': {
+    date: '2025-08-08',
+    gameId: 789,
+    groups: [
+      { name: 'MAKE EQUAL, AS A SCORE', level: 0, words: ['DRAW', 'EVEN', 'SQUARE', 'TIE'] },
+      { name: 'BESTOW', level: 1, words: ['CONFER', 'GRANT', 'PRESENT', 'VEST'] },
+      { name: 'THINGS YOU MIGHT DO DURING A BORING CLASS/MEETING', level: 2, words: ['DOODLE', 'DOZE', 'PASS NOTES', 'SPACE'] },
+      { name: 'WORDS AFTER THE LETTERS "MS"', level: 3, words: ['DEGREE', 'MARVEL', 'PAC-MAN', 'PAINT'] }
+    ],
+    source: 'static'
+  },
+  '2025-08-07': {
+    date: '2025-08-07',
+    gameId: 788,
+    groups: [
+      { name: 'MOUSE ACTIONS', level: 0, words: ['CLICK', 'DRAG', 'HOVER', 'SCROLL'] },
+      { name: 'PERFORATE', level: 1, words: ['BORE', 'PIERCE', 'POKE', 'PUNCH'] },
+      { name: 'ONES WITH POINTY EARS', level: 2, words: ['BATMAN', 'DEVIL', 'ELF', 'VULCAN'] },
+      { name: 'WIMBLEDON WINNERS', level: 3, words: ['BORG', 'GRAF', 'KING', 'SINNER'] }
+    ],
+    source: 'static'
+  },
+  '2025-08-06': {
+    date: '2025-08-06',
+    gameId: 787,
+    groups: [
+      { name: 'ACCESSORY WITH A POINTY FASTENER', level: 0, words: ['BADGE', 'BROOCH', 'BUTTON', 'PIN'] },
+      { name: 'TEASE', level: 1, words: ['BAIT', 'NEEDLE', 'RAG', 'RIB'] },
+      { name: 'BOXING PUNCHES', level: 2, words: ['CROSS', 'HOOK', 'JAB', 'UPPERCUT'] },
+      { name: 'MUSCLE NICKNAMES PLUS "S"', level: 3, words: ['SHAMMY', 'SPEC', 'SQUAD', 'STRAP'] }
+    ],
+    source: 'static'
+  },
+  '2025-08-05': {
+    date: '2025-08-05',
+    gameId: 786,
+    groups: [
+      { name: 'SUBTERRANEAN TRANSIT', level: 0, words: ['METRO', 'SUBWAY', 'TUBE', 'UNDERGROUND'] },
+      { name: 'MAKE INTO SMALLER PIECES WHILE COOKING', level: 1, words: ['CUBE', 'GRATE', 'MINCE', 'SLICE'] },
+      { name: 'USED TO DECORATE A SNOWMAN', level: 2, words: ['CARROT', 'COAL', 'PIPE', 'SCARF'] },
+      { name: '___ CODE', level: 3, words: ['DRESS', 'HEALTH', 'SECRET', 'ZIP'] }
+    ],
+    source: 'static'
+  },
+  '2025-08-04': {
+    date: '2025-08-04',
+    gameId: 785,
+    groups: [
+      { name: 'ARTHROPODS', level: 0, words: ['APHID', 'BEETLE', 'MITE', 'TICK'] },
+      { name: 'TREES', level: 1, words: ['BEECH', 'CEDAR', 'PINE', 'YEW'] },
+      { name: '[LETTER] (IS) FOR ___', level: 2, words: ['APPLE', 'COOKIE', 'EFFORT', 'VENDETTA'] },
+      { name: 'WORDS THAT SOUNDS LIKE TWO LETTERS', level: 3, words: ['DECAY', 'EASY', 'GEO', 'ZITI'] }
+    ],
+    source: 'static'
+  },
+  '2025-08-03': {
+    date: '2025-08-03',
+    gameId: 784,
+    groups: [
+      { name: 'EMULATE', level: 0, words: ['COPY', 'ECHO', 'MIRROR', 'PARROT'] },
+      { name: 'SPORTS', level: 1, words: ['CRICKET', 'GOLF', 'POLO', 'SQUASH'] },
+      { name: 'MANIA', level: 2, words: ['BUG', 'CRAZE', 'FAD', 'FEVER'] },
+      { name: 'SINGLE ANIMAL IN A CREATIVELY SPELLED BAND NAME', level: 3, words: ['BEETLE', 'BIRD', 'GORILLA', 'MONKEY'] }
+    ],
+    source: 'static'
+  },
+  '2025-08-02': {
+    date: '2025-08-02',
+    gameId: 783,
+    groups: [
+      { name: 'ATTACH WITH ADHESIVE', level: 0, words: ['ADHERE', 'AFFIX', 'GLUE', 'STICK'] },
+      { name: 'POLITE TERMS FOR SEX', level: 1, words: ['COMMERCE', 'CONGRESS', 'INTIMACY', 'RELATIONS'] },
+      { name: 'BOWLING RESULTS', level: 2, words: ['FOUL', 'SPARE', 'SPLIT', 'STRIKE'] },
+      { name: 'CONTRONYMS (WORDS THAT CAN MEAN OPPOSITE THINGS)', level: 3, words: ['CLEAVE', 'GARNISH', 'OVERSIGHT', 'SANCTION'] }
+    ],
+    source: 'static'
+  },
+  '2025-08-01': {
+    date: '2025-08-01',
+    gameId: 782,
+    groups: [
+      { name: 'APTITUDE', level: 0, words: ['BENT', 'FACULTY', 'FLAIR', 'GIFT'] },
+      { name: 'SILENT "W"', level: 1, words: ['PLAYWRIGHT', 'SWORD', 'WRAP', 'WREATH'] },
+      { name: 'LEGENDS OF CLASSIC HOLLYWOOD', level: 2, words: ['DEAN', 'GABLE', 'GARLAND', 'TEMPLE'] },
+      { name: 'HIT THE ___', level: 3, words: ['HAY', 'JACKPOT', 'ROAD', 'ROOF'] }
+    ],
+    source: 'static'
+  }
+};
+
+// Process the puzzle data to include computed fields
+Object.keys(EXTENDED_PUZZLES).forEach(date => {
+  const puzzle = EXTENDED_PUZZLES[date];
+  puzzle.words = puzzle.groups.flatMap(group => group.words);
+  puzzle.category = puzzle.groups.map(g => g.name).join(' | ');
+});
+
+/**
+ * Gets a puzzle by date
+ * @param {string} date - Date in YYYY-MM-DD format
+ * @returns {Object|null} Puzzle data or null if not found
+ */
+export const getPuzzleByDate = (date) => {
+  return EXTENDED_PUZZLES[date] || null;
+};
+
+/**
+ * Gets all available puzzle dates
+ * @returns {string[]} Array of dates in YYYY-MM-DD format
+ */
+export const getAvailableDates = () => {
+  return Object.keys(EXTENDED_PUZZLES).sort();
+};
+
+/**
+ * Gets the latest available puzzle date
+ * @returns {string|null} Latest puzzle date or null
+ */
+export const getLatestPuzzleDate = () => {
+  const dates = getAvailableDates();
+  return dates[dates.length - 1] || null;
+};
+
+/**
+ * Gets the available date range
+ * @returns {{minDate: string, maxDate: string}} Date range object
+ */
+export const getAvailableDateRange = () => {
+  const dates = getAvailableDates();
+  
+  if (dates.length === 0) {
+    return { minDate: null, maxDate: null };
+  }
+  
+  return {
+    minDate: dates[0],
+    maxDate: dates[dates.length - 1]
+  };
+};
+
+/**
+ * Gets all puzzle data
+ * @returns {Object} All puzzle data indexed by date
+ */
+export const getAllPuzzles = () => {
+  return EXTENDED_PUZZLES;
+};

@@ -1,0 +1,46 @@
+{
+  "date": "2025-07-07",
+  "gameId": 757,
+  "groups": [
+    {
+      "name": "INFORMANT",
+      "level": 0,
+      "words": [
+        "CANARY",
+        "LEAK",
+        "RAT",
+        "SOURCE"
+      ]
+    },
+    {
+      "name": "BIG IMPRESSION",
+      "level": 1,
+      "words": [
+        "FOOTPRINT",
+        "IMPACT",
+        "MARK",
+        "SPLASH"
+      ]
+    },
+    {
+      "name": "BASKETBALL MOVES",
+      "level": 2,
+      "words": [
+        "BLOCK",
+        "DRIBBLE",
+        "PASS",
+        "SHOOT"
+      ]
+    },
+    {
+      "name": "TOP ___",
+      "level": 3,
+      "words": [
+        "BANANA",
+        "DOG",
+        "HAT",
+        "SECRET"
+      ]
+    }
+  ]
+}

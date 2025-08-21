@@ -1,0 +1,46 @@
+{
+  "date": "2025-07-12",
+  "gameId": 762,
+  "groups": [
+    {
+      "name": "ENDORSE",
+      "level": 0,
+      "words": [
+        "BACK",
+        "CHAMPION",
+        "SECOND",
+        "SUPPORT"
+      ]
+    },
+    {
+      "name": "DETAILED",
+      "level": 1,
+      "words": [
+        "ELABORATE",
+        "MINUTE",
+        "PARTICULAR",
+        "THOROUGH"
+      ]
+    },
+    {
+      "name": "ERA",
+      "level": 2,
+      "words": [
+        "AGE",
+        "DAY",
+        "PERIOD",
+        "TIME"
+      ]
+    },
+    {
+      "name": "IN THE NATO ALPHABET",
+      "level": 3,
+      "words": [
+        "ECHO",
+        "KILO",
+        "UNIFORM",
+        "VICTOR"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "date": "2025-03-23",
+  "gameId": 651,
+  "groups": [
+    {
+      "name": "CAPTIVATE",
+      "level": 0,
+      "words": [
+        "ABSORB",
+        "ENTRANCE",
+        "GRAB",
+        "RIVET"
+      ]
+    },
+    {
+      "name": "THINGS WITH WINGS",
+      "level": 1,
+      "words": [
+        "AIRPLANE",
+        "FAIRY",
+        "FLY",
+        "HOSPITAL"
+      ]
+    },
+    {
+      "name": "WORDS THAT MODIFY “WATCH”",
+      "level": 2,
+      "words": [
+        "POCKET",
+        "SMART",
+        "STOP",
+        "WRIST"
+      ]
+    },
+    {
+      "name": "WORDS REPEATED IN “MISS MARY MACK”",
+      "level": 3,
+      "words": [
+        "BACK",
+        "BLACK",
+        "BUTTONS",
+        "MACK"
+      ]
+    }
+  ]
+}

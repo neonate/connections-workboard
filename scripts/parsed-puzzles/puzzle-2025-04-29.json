@@ -1,0 +1,46 @@
+{
+  "date": "2025-04-29",
+  "gameId": 688,
+  "groups": [
+    {
+      "name": "COOKING CONCOCTIONS",
+      "level": 0,
+      "words": [
+        "BATTER",
+        "DOUGH",
+        "MIXTURE",
+        "PASTE"
+      ]
+    },
+    {
+      "name": "SEEN ON A TABLE AT A DINNER PARTY",
+      "level": 1,
+      "words": [
+        "CANDLESTICK",
+        "PITCHER",
+        "PLACEMAT",
+        "PLATE"
+      ]
+    },
+    {
+      "name": "THINGS TO CLIMB",
+      "level": 2,
+      "words": [
+        "LADDER",
+        "MOUNTAIN",
+        "ROPE",
+        "TREE"
+      ]
+    },
+    {
+      "name": "WHAT \"DIAMOND\" CAN REFER TO",
+      "level": 3,
+      "words": [
+        "GEMSTONE",
+        "INFIELD",
+        "RHOMBUS",
+        "SUIT"
+      ]
+    }
+  ]
+}

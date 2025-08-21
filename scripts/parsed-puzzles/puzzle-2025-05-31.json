@@ -1,0 +1,46 @@
+{
+  "date": "2025-05-31",
+  "gameId": 720,
+  "groups": [
+    {
+      "name": "ALCOVE",
+      "level": 0,
+      "words": [
+        "CAVITY",
+        "HOLLOW",
+        "NOOK",
+        "RECESS"
+      ]
+    },
+    {
+      "name": "WAYS TO RECOGNIZE ACHIEVEMENT",
+      "level": 1,
+      "words": [
+        "CERTIFICATE",
+        "MEDAL",
+        "PLAQUE",
+        "TROPHY"
+      ]
+    },
+    {
+      "name": "VERBS IN BREADMAKING",
+      "level": 2,
+      "words": [
+        "FERMENT",
+        "PROOF",
+        "REST",
+        "RISE"
+      ]
+    },
+    {
+      "name": "THINGS YOU CAN BLOW",
+      "level": 3,
+      "words": [
+        "BUBBLE",
+        "FUSE",
+        "KISS",
+        "RASPBERRY"
+      ]
+    }
+  ]
+}

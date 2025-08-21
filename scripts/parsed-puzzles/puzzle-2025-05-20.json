@@ -1,0 +1,46 @@
+{
+  "date": "2025-05-20",
+  "gameId": 709,
+  "groups": [
+    {
+      "name": "ACCOUNT BOOK",
+      "level": 0,
+      "words": [
+        "LEDGER",
+        "LOG",
+        "RECORD",
+        "REGISTER"
+      ]
+    },
+    {
+      "name": "SEEN IN A BARN",
+      "level": 1,
+      "words": [
+        "BALE",
+        "HORSE",
+        "PITCHFORK",
+        "TROUGH"
+      ]
+    },
+    {
+      "name": "DETECTIVES OF KID-LIT",
+      "level": 2,
+      "words": [
+        "BROWN",
+        "DREW",
+        "HARDY",
+        "HOLMES"
+      ]
+    },
+    {
+      "name": "WORDS BEFORE “BED”",
+      "level": 3,
+      "words": [
+        "CANOPY",
+        "DAY",
+        "MURPHY",
+        "WATER"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "date": "2025-03-29",
+  "gameId": 657,
+  "groups": [
+    {
+      "name": "MATERIALS ASSOCIATED WITH FANCY DINING",
+      "level": 0,
+      "words": [
+        "CHINA",
+        "CRYSTAL",
+        "LINEN",
+        "SILVER"
+      ]
+    },
+    {
+      "name": "KINDS OF SHORTS",
+      "level": 1,
+      "words": [
+        "BERMUDA",
+        "BIKE",
+        "BOXER",
+        "CARGO"
+      ]
+    },
+    {
+      "name": "NOUNS IN A FAMOUS PALINDROME",
+      "level": 2,
+      "words": [
+        "CANAL",
+        "MAN",
+        "PANAMA",
+        "PLAN"
+      ]
+    },
+    {
+      "name": "MOVIES FROM 1985",
+      "level": 3,
+      "words": [
+        "BRAZIL",
+        "CLUE",
+        "COMMANDO",
+        "WITNESS"
+      ]
+    }
+  ]
+}

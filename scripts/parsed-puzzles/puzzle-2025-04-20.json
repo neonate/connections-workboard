@@ -1,0 +1,46 @@
+{
+  "date": "2025-04-20",
+  "gameId": 679,
+  "groups": [
+    {
+      "name": "GLIMPSE",
+      "level": 0,
+      "words": [
+        "GANDER",
+        "GLANCE",
+        "LOOK",
+        "PEEP"
+      ]
+    },
+    {
+      "name": "NEEDS FOR TIE-DYEING A SHIRT",
+      "level": 1,
+      "words": [
+        "BASIN",
+        "DYE",
+        "RUBBER BANDS",
+        "SHIRT"
+      ]
+    },
+    {
+      "name": "THINGS YOU CAN CRACK",
+      "level": 2,
+      "words": [
+        "CODE",
+        "EGG",
+        "JOKE",
+        "WHIP"
+      ]
+    },
+    {
+      "name": "WORDS BEFORE “HOP”",
+      "level": 3,
+      "words": [
+        "BAR",
+        "BUNNY",
+        "HIP",
+        "SOCK"
+      ]
+    }
+  ]
+}

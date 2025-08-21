@@ -1,0 +1,46 @@
+{
+  "date": "2025-03-30",
+  "gameId": 658,
+  "groups": [
+    {
+      "name": "AVERAGE",
+      "level": 0,
+      "words": [
+        "MEAN",
+        "NORM",
+        "PAR",
+        "STANDARD"
+      ]
+    },
+    {
+      "name": "PICTURED ON THE U.S. GREAT SEAL",
+      "level": 1,
+      "words": [
+        "ARROWS",
+        "EAGLE",
+        "OLIVE BRANCH",
+        "SHIELD"
+      ]
+    },
+    {
+      "name": "PROPER NOUNS IN BROADWAY MUSICAL TITLES THAT ARE SPOKEN PHRASES",
+      "level": 2,
+      "words": [
+        "BIRDIE",
+        "DOLLY",
+        "KATE",
+        "YANKEES"
+      ]
+    },
+    {
+      "name": "___MAN",
+      "level": 3,
+      "words": [
+        "BOGEY",
+        "CRAFTS",
+        "GENTLE",
+        "SPOKES"
+      ]
+    }
+  ]
+}

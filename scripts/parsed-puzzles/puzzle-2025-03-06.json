@@ -1,0 +1,46 @@
+{
+  "date": "2025-03-06",
+  "gameId": 634,
+  "groups": [
+    {
+      "name": "WANE",
+      "level": 0,
+      "words": [
+        "DWINDLE",
+        "FADE",
+        "PETER",
+        "TAPER"
+      ]
+    },
+    {
+      "name": "DO SOME TASKS IN THE GARDEN",
+      "level": 1,
+      "words": [
+        "PLANT",
+        "PRUNE",
+        "WATER",
+        "WEED"
+      ]
+    },
+    {
+      "name": "SHOES",
+      "level": 2,
+      "words": [
+        "FLAT",
+        "MARY JANE",
+        "MULE",
+        "SLIDE"
+      ]
+    },
+    {
+      "name": "SAND___",
+      "level": 3,
+      "words": [
+        "CASTLE",
+        "PAPER",
+        "PIPER",
+        "STONE"
+      ]
+    }
+  ]
+}

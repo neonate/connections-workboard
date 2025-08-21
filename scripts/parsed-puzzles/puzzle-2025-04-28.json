@@ -1,0 +1,46 @@
+{
+  "date": "2025-04-28",
+  "gameId": 687,
+  "groups": [
+    {
+      "name": "HAIR PRODUCTS",
+      "level": 0,
+      "words": [
+        "GEL",
+        "MOUSSE",
+        "SPRAY",
+        "WAX"
+      ]
+    },
+    {
+      "name": "AUSTERE",
+      "level": 1,
+      "words": [
+        "BARE",
+        "PLAIN",
+        "SIMPLE",
+        "SPARE"
+      ]
+    },
+    {
+      "name": "CLUES AT A CRIME SCENE",
+      "level": 2,
+      "words": [
+        "FIBER",
+        "FINGERPRINT",
+        "HAIR",
+        "TIRE MARK"
+      ]
+    },
+    {
+      "name": "WEARY",
+      "level": 3,
+      "words": [
+        "BORE",
+        "DRAIN",
+        "EXHAUST",
+        "TIRE"
+      ]
+    }
+  ]
+}

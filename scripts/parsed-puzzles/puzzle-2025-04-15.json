@@ -1,0 +1,46 @@
+{
+  "date": "2025-04-15",
+  "gameId": 674,
+  "groups": [
+    {
+      "name": "DESIST",
+      "level": 0,
+      "words": [
+        "ABSTAIN",
+        "AVOID",
+        "CEASE",
+        "REFRAIN"
+      ]
+    },
+    {
+      "name": "CARD GAMES",
+      "level": 1,
+      "words": [
+        "BRIDGE",
+        "HEARTS",
+        "SPEED",
+        "SPOONS"
+      ]
+    },
+    {
+      "name": "ELEMENTS OF GREEK DRAMA",
+      "level": 2,
+      "words": [
+        "CHORUS",
+        "HERO",
+        "HUBRIS",
+        "TRAGEDY"
+      ]
+    },
+    {
+      "name": "SECOND WORDS OF “PETER PAN” CHARACTERS",
+      "level": 3,
+      "words": [
+        "BELL",
+        "DARLING",
+        "HOOK",
+        "PAN"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "date": "2025-07-20",
+  "gameId": 770,
+  "groups": [
+    {
+      "name": "MOVE TO THE MUSIC",
+      "level": 0,
+      "words": [
+        "BOP",
+        "BOUNCE",
+        "GROOVE",
+        "SWAY"
+      ]
+    },
+    {
+      "name": "INHALATION",
+      "level": 1,
+      "words": [
+        "DRAG",
+        "DRAW",
+        "PUFF",
+        "PULL"
+      ]
+    },
+    {
+      "name": "MARTINI SPECIFICATIONS",
+      "level": 2,
+      "words": [
+        "DRY",
+        "GIN",
+        "SHAKEN",
+        "TWIST"
+      ]
+    },
+    {
+      "name": "___WORD",
+      "level": 3,
+      "words": [
+        "BUZZ",
+        "CROSS",
+        "LOAN",
+        "PASS"
+      ]
+    }
+  ]
+}

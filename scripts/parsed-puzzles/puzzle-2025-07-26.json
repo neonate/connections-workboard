@@ -1,0 +1,46 @@
+{
+  "date": "2025-07-26",
+  "gameId": 776,
+  "groups": [
+    {
+      "name": "HERBS AND SPICES",
+      "level": 0,
+      "words": [
+        "ANISE",
+        "DILL",
+        "MACE",
+        "SAGE"
+      ]
+    },
+    {
+      "name": "SHADES OF GREEN",
+      "level": 1,
+      "words": [
+        "BOTTLE",
+        "HUNTER",
+        "KELLY",
+        "PEA"
+      ]
+    },
+    {
+      "name": "TRAVEL ON FOOT",
+      "level": 2,
+      "words": [
+        "MARCH",
+        "HIKE",
+        "TRAMP",
+        "TREK"
+      ]
+    },
+    {
+      "name": "STARTS OF EUROPEAN CAPITALS",
+      "level": 3,
+      "words": [
+        "COPE",
+        "LUXE",
+        "SARA",
+        "WARS"
+      ]
+    }
+  ]
+}

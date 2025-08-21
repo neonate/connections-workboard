@@ -1,0 +1,46 @@
+{
+  "date": "2025-07-15",
+  "gameId": 765,
+  "groups": [
+    {
+      "name": "GYMNASTICS APPARATUS",
+      "level": 0,
+      "words": [
+        "BARS",
+        "BEAM",
+        "RINGS",
+        "VAULT"
+      ]
+    },
+    {
+      "name": "FORCE TO LEAVE",
+      "level": 1,
+      "words": [
+        "BOOT",
+        "BOUNCE",
+        "EJECT",
+        "REMOVE"
+      ]
+    },
+    {
+      "name": "HORROR MOVIES FROM 2022",
+      "level": 2,
+      "words": [
+        "NOPE",
+        "PEARL",
+        "SCREAM",
+        "SMILE"
+      ]
+    },
+    {
+      "name": "HORSE___",
+      "level": 3,
+      "words": [
+        "FEATHERS",
+        "PLAY",
+        "POWER",
+        "SHOE"
+      ]
+    }
+  ]
+}

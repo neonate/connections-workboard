@@ -1,0 +1,46 @@
+{
+  "date": "2025-04-14",
+  "gameId": 673,
+  "groups": [
+    {
+      "name": "RESTRICT",
+      "level": 0,
+      "words": [
+        "BLOCK",
+        "CHECK",
+        "DAM",
+        "STOP"
+      ]
+    },
+    {
+      "name": "TICKETED EVENTS",
+      "level": 1,
+      "words": [
+        "CONCERT",
+        "GAME",
+        "MOVIE",
+        "PLAY"
+      ]
+    },
+    {
+      "name": "ASSOCIATED WITH THE GAME THE OREGON TRAIL",
+      "level": 2,
+      "words": [
+        "DYSENTERY",
+        "FORD",
+        "HUNT",
+        "OXEN"
+      ]
+    },
+    {
+      "name": "WHAT “FORD” MIGHT REFER TO",
+      "level": 3,
+      "words": [
+        "ACTOR",
+        "CAR",
+        "DIRECTOR",
+        "PRESIDENT"
+      ]
+    }
+  ]
+}

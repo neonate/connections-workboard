@@ -1,0 +1,46 @@
+{
+  "date": "2025-07-17",
+  "gameId": 767,
+  "groups": [
+    {
+      "name": "MEDDLE",
+      "level": 0,
+      "words": [
+        "NOSE AROUND",
+        "POKE",
+        "PRY",
+        "SNOOP"
+      ]
+    },
+    {
+      "name": "WORDS AFTER “NO” TO MEAN “IT’S ALL GOOD”",
+      "level": 1,
+      "words": [
+        "BIGGIE",
+        "HARD FEELINGS",
+        "SWEAT",
+        "WORRIES"
+      ]
+    },
+    {
+      "name": "SUPER ___",
+      "level": 2,
+      "words": [
+        "GLUE",
+        "MARIO WORLD",
+        "PAC",
+        "POWER"
+      ]
+    },
+    {
+      "name": "ENDING WITH FISH",
+      "level": 3,
+      "words": [
+        "CAMISOLE",
+        "CAPE COD",
+        "DRUM AND BASS",
+        "WU-TANG"
+      ]
+    }
+  ]
+}

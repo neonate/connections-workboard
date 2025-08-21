@@ -1,0 +1,46 @@
+{
+  "date": "2025-05-24",
+  "gameId": 713,
+  "groups": [
+    {
+      "name": "BABY GEAR",
+      "level": 0,
+      "words": [
+        "BIB",
+        "BOTTLE",
+        "MONITOR",
+        "STROLLER"
+      ]
+    },
+    {
+      "name": "KINDS OF PANTS MINUS \"S\"",
+      "level": 1,
+      "words": [
+        "CAPRI",
+        "JEAN",
+        "JOGGER",
+        "SLACK"
+      ]
+    },
+    {
+      "name": "NEW YORK SPORTS TEAM MEMBERS",
+      "level": 2,
+      "words": [
+        "JET",
+        "MET",
+        "NET",
+        "RANGER"
+      ]
+    },
+    {
+      "name": "BLACK WOMEN AUTHORS",
+      "level": 3,
+      "words": [
+        "BUTLER",
+        "GAY",
+        "HOOKS",
+        "WALKER"
+      ]
+    }
+  ]
+}

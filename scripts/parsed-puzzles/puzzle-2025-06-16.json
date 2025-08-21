@@ -1,0 +1,46 @@
+{
+  "date": "2025-06-16",
+  "gameId": 736,
+  "groups": [
+    {
+      "name": "EXPRESSIONLESS",
+      "level": 0,
+      "words": [
+        "BLANK",
+        "FLAT",
+        "INANIMATE",
+        "WOODEN"
+      ]
+    },
+    {
+      "name": "DRAPERY HANGING ITEMS",
+      "level": 1,
+      "words": [
+        "BRACKET",
+        "CURTAIN",
+        "HOOK",
+        "ROD"
+      ]
+    },
+    {
+      "name": "WHAT A DRINK IS SERVED WITH",
+      "level": 2,
+      "words": [
+        "COASTER",
+        "GARNISH",
+        "GLASS",
+        "STRAW"
+      ]
+    },
+    {
+      "name": "STARTING WITH METHODS OF TRANSPORTATION",
+      "level": 3,
+      "words": [
+        "BUSBOY",
+        "CARBON",
+        "SHIPSHAPE",
+        "TRAINEE"
+      ]
+    }
+  ]
+}

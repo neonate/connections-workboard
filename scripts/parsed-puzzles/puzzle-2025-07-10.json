@@ -1,0 +1,46 @@
+{
+  "date": "2025-07-10",
+  "gameId": 760,
+  "groups": [
+    {
+      "name": "PARTS OF A WHEEL",
+      "level": 0,
+      "words": [
+        "HUB",
+        "RIM",
+        "SPOKE",
+        "TIRE"
+      ]
+    },
+    {
+      "name": "MILITARY CLOTHING DESCRIPTORS",
+      "level": 1,
+      "words": [
+        "CAMO",
+        "DRAB",
+        "FATIGUE",
+        "KHAKI"
+      ]
+    },
+    {
+      "name": "USED IN VENTILATION",
+      "level": 2,
+      "words": [
+        "DUCT",
+        "EXHAUST",
+        "HOSE",
+        "PIPE"
+      ]
+    },
+    {
+      "name": "FAIL TO TAKE ADVANTAGE OF, AS AN OPPORTUNITY",
+      "level": 3,
+      "words": [
+        "BLOW",
+        "LOSE",
+        "MISS",
+        "WASTE"
+      ]
+    }
+  ]
+}

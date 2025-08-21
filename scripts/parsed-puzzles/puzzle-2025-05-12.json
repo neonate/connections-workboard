@@ -1,0 +1,46 @@
+{
+  "date": "2025-05-12",
+  "gameId": 701,
+  "groups": [
+    {
+      "name": "PLACES TO FIND PAPER MONEY",
+      "level": 0,
+      "words": [
+        "ATM",
+        "CASH REGISTER",
+        "TIP JAR",
+        "WALLET"
+      ]
+    },
+    {
+      "name": "REBOUND",
+      "level": 1,
+      "words": [
+        "BANK",
+        "BOUNCE",
+        "CAROM",
+        "RICOCHET"
+      ]
+    },
+    {
+      "name": "THINGS TRACKED BY WEB ANALYTICS",
+      "level": 2,
+      "words": [
+        "CLICK",
+        "HIT",
+        "PAGE VIEW",
+        "VISIT"
+      ]
+    },
+    {
+      "name": "THINGS YOU CAN DO WITH YOUR LIPS",
+      "level": 3,
+      "words": [
+        "CURL",
+        "PUCKER",
+        "PURSE",
+        "SMACK"
+      ]
+    }
+  ]
+}

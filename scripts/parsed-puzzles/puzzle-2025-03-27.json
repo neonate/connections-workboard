@@ -1,0 +1,46 @@
+{
+  "date": "2025-03-27",
+  "gameId": 655,
+  "groups": [
+    {
+      "name": "AFFECT",
+      "level": 0,
+      "words": [
+        "MOVE",
+        "REACH",
+        "SWAY",
+        "TOUCH"
+      ]
+    },
+    {
+      "name": "YOU GOT IT!",
+      "level": 1,
+      "words": [
+        "BINGO",
+        "CORRECT",
+        "DING",
+        "RIGHT"
+      ]
+    },
+    {
+      "name": "SLANG FOR MONEY",
+      "level": 2,
+      "words": [
+        "CHANGE",
+        "GREEN",
+        "PAPER",
+        "SCRATCH"
+      ]
+    },
+    {
+      "name": "OBJECTS WITH THE PREFIX “MICRO-”",
+      "level": 3,
+      "words": [
+        "CHIP",
+        "PHONE",
+        "SCOPE",
+        "WAVE"
+      ]
+    }
+  ]
+}

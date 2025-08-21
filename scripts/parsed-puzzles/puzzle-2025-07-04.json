@@ -1,0 +1,46 @@
+{
+  "date": "2025-07-04",
+  "gameId": 754,
+  "groups": [
+    {
+      "name": "WHAT “ID” MIGHT REFER TO",
+      "level": 0,
+      "words": [
+        "FREUDIAN CONCEPT",
+        "IDAHO",
+        "DRIVER LICENSE",
+        "RECOGNIZE"
+      ]
+    },
+    {
+      "name": "WHAT “IN” MIGHT REFER TO",
+      "level": 1,
+      "words": [
+        "INCH",
+        "INDIANA",
+        "INSIDE",
+        "TRENDY"
+      ]
+    },
+    {
+      "name": "WHAT “LA” MIGHT REFER TO",
+      "level": 2,
+      "words": [
+        "LANTHANUM",
+        "LOS ANGELES",
+        "LOUISIANA",
+        "MUSICAL NOTE"
+      ]
+    },
+    {
+      "name": "WHAT “OK” MIGHT REFER TO",
+      "level": 3,
+      "words": [
+        "BRITISH MAGAZINE",
+        "GREENLIGHT",
+        "MEDIOCRE",
+        "OKLAHOMA"
+      ]
+    }
+  ]
+}

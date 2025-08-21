@@ -1,0 +1,46 @@
+{
+  "date": "2025-07-29",
+  "gameId": 779,
+  "groups": [
+    {
+      "name": "DISCOUNT",
+      "level": 0,
+      "words": [
+        "DEAL",
+        "PROMOTION",
+        "SALE",
+        "SPECIAL"
+      ]
+    },
+    {
+      "name": "IRRITATE",
+      "level": 1,
+      "words": [
+        "BUG",
+        "NETTLE",
+        "RUFFLE",
+        "STEAM"
+      ]
+    },
+    {
+      "name": "POKER ACTIONS",
+      "level": 2,
+      "words": [
+        "CALL",
+        "CHECK",
+        "FOLD",
+        "RAISE"
+      ]
+    },
+    {
+      "name": "THINGS YOU CAN PUMP",
+      "level": 3,
+      "words": [
+        "BRAKES",
+        "FIST",
+        "GAS",
+        "IRON"
+      ]
+    }
+  ]
+}

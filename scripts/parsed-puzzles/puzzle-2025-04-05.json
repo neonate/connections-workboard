@@ -1,0 +1,46 @@
+{
+  "date": "2025-04-05",
+  "gameId": 664,
+  "groups": [
+    {
+      "name": "EMPLOY",
+      "level": 0,
+      "words": [
+        "CONTRACT",
+        "ENGAGE",
+        "RETAIN",
+        "SIGN"
+      ]
+    },
+    {
+      "name": "PARTS OF A WEBSITE",
+      "level": 1,
+      "words": [
+        "BANNER",
+        "HEADER",
+        "MENU",
+        "SIDEBAR"
+      ]
+    },
+    {
+      "name": "MAGAZINES",
+      "level": 2,
+      "words": [
+        "BILLBOARD",
+        "PEOPLE",
+        "STAR",
+        "TIME"
+      ]
+    },
+    {
+      "name": "ENDING WITH MEDIEVAL WEAPONS",
+      "level": 3,
+      "words": [
+        "CROSSWORD",
+        "GRIMACE",
+        "RAINBOW",
+        "SEMBLANCE"
+      ]
+    }
+  ]
+}

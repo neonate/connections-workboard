@@ -1,0 +1,46 @@
+{
+  "date": "2025-06-20",
+  "gameId": 740,
+  "groups": [
+    {
+      "name": "ITEMS IN A SEWING KIT",
+      "level": 0,
+      "words": [
+        "BUTTON",
+        "NEEDLE",
+        "SCISSORS",
+        "THREAD"
+      ]
+    },
+    {
+      "name": "CAPTURE ON VIDEO",
+      "level": 1,
+      "words": [
+        "FILM",
+        "RECORD",
+        "SHOOT",
+        "TAPE"
+      ]
+    },
+    {
+      "name": "PRO WRESTLING ICONS, WITH “THE”",
+      "level": 2,
+      "words": [
+        "HITMAN",
+        "ROCK",
+        "SNAKE",
+        "UNDERTAKER"
+      ]
+    },
+    {
+      "name": "WAX ___",
+      "level": 3,
+      "words": [
+        "MUSEUM",
+        "PAPER",
+        "POETIC",
+        "SEAL"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "date": "2025-03-09",
+  "gameId": 637,
+  "groups": [
+    {
+      "name": "COMPUTER INPUT DEVICES",
+      "level": 0,
+      "words": [
+        "MICROPHONE",
+        "MOUSE",
+        "SCANNER",
+        "TABLET"
+      ]
+    },
+    {
+      "name": "BUILDING MATERIALS",
+      "level": 1,
+      "words": [
+        "BRICK",
+        "CONCRETE",
+        "METAL",
+        "STONE"
+      ]
+    },
+    {
+      "name": "HELPFUL DEED",
+      "level": 2,
+      "words": [
+        "FAVOR",
+        "KINDNESS",
+        "SERVICE",
+        "SOLID"
+      ]
+    },
+    {
+      "name": "#1 SONGS FROM 1982",
+      "level": 3,
+      "words": [
+        "ABRACADABRA",
+        "CENTERFOLD",
+        "MICKEY",
+        "PHYSICAL"
+      ]
+    }
+  ]
+}

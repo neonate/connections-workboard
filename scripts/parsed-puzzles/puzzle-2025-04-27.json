@@ -1,0 +1,46 @@
+{
+  "date": "2025-04-27",
+  "gameId": 686,
+  "groups": [
+    {
+      "name": "CALCULATOR BUTTONS",
+      "level": 0,
+      "words": [
+        "EQUALS",
+        "MINUS",
+        "PERCENT",
+        "TIMES"
+      ]
+    },
+    {
+      "name": "AMOUNTS OF HAIR",
+      "level": 1,
+      "words": [
+        "LOCK",
+        "SHOCK",
+        "THATCH",
+        "TUFT"
+      ]
+    },
+    {
+      "name": "SALTY SNACK UNIT",
+      "level": 2,
+      "words": [
+        "COMBO",
+        "GOLDFISH",
+        "RUFFLE",
+        "TAKI"
+      ]
+    },
+    {
+      "name": "SWEDISH ___",
+      "level": 3,
+      "words": [
+        "CHEF",
+        "FISH",
+        "MASSAGE",
+        "MEATBALL"
+      ]
+    }
+  ]
+}

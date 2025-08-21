@@ -1,0 +1,46 @@
+{
+  "date": "2025-06-13",
+  "gameId": 733,
+  "groups": [
+    {
+      "name": "PERSPECTIVE",
+      "level": 0,
+      "words": [
+        "ANGLE",
+        "BENT",
+        "LENS",
+        "POINT OF VIEW"
+      ]
+    },
+    {
+      "name": "SEEN AT AN ICE CREAM SHOP",
+      "level": 1,
+      "words": [
+        "CONE",
+        "CUP",
+        "LITTLE SPOON",
+        "SCOOP"
+      ]
+    },
+    {
+      "name": "HIT SONGS OF 1998",
+      "level": 2,
+      "words": [
+        "CLOSING TIME",
+        "IRIS",
+        "ONE WEEK",
+        "TOO CLOSE"
+      ]
+    },
+    {
+      "name": "HOT ___",
+      "level": 3,
+      "words": [
+        "DOG",
+        "POTATO",
+        "ROD",
+        "WATER BOTTLE"
+      ]
+    }
+  ]
+}

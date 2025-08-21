@@ -1,0 +1,46 @@
+{
+  "date": "2025-06-15",
+  "gameId": 735,
+  "groups": [
+    {
+      "name": "SLANG FOR COFFEE",
+      "level": 0,
+      "words": [
+        "BREW",
+        "JAVA",
+        "MUD",
+        "ROCKET FUEL"
+      ]
+    },
+    {
+      "name": "\"AW, HECK!\"",
+      "level": 1,
+      "words": [
+        "BLAST",
+        "CRUD",
+        "CURSES",
+        "FUDGE"
+      ]
+    },
+    {
+      "name": "CONSIDERATIONS FOR MOVIE RATINGS",
+      "level": 2,
+      "words": [
+        "ACTION",
+        "LANGUAGE",
+        "NUDITY",
+        "SMOKING"
+      ]
+    },
+    {
+      "name": "WHAT “POP” MIGHT MEAN",
+      "level": 3,
+      "words": [
+        "BURST",
+        "FATHER",
+        "POPULAR",
+        "SODA"
+      ]
+    }
+  ]
+}
