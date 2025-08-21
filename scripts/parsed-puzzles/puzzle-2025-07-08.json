@@ -1,0 +1,46 @@
+{
+  "date": "2025-07-08",
+  "gameId": 758,
+  "groups": [
+    {
+      "name": "LIAISON",
+      "level": 0,
+      "words": [
+        "AFFAIR",
+        "FLING",
+        "RELATIONS",
+        "THING"
+      ]
+    },
+    {
+      "name": "SEEN IN A LOCKER ROOM",
+      "level": 1,
+      "words": [
+        "BENCH",
+        "LOCKER",
+        "MIRROR",
+        "SCALE"
+      ]
+    },
+    {
+      "name": "SOMETHING ENTERED FOR ACCESS",
+      "level": 2,
+      "words": [
+        "CODE",
+        "KEY",
+        "PASSWORD",
+        "PIN"
+      ]
+    },
+    {
+      "name": "JOHNS",
+      "level": 3,
+      "words": [
+        "CANDY",
+        "CARPENTER",
+        "LEGEND",
+        "MAJOR"
+      ]
+    }
+  ]
+}

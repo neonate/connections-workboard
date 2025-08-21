@@ -1,0 +1,46 @@
+{
+  "date": "2025-03-12",
+  "gameId": 640,
+  "groups": [
+    {
+      "name": "INGREDIENTS IN CLASSIC POUND CAKE",
+      "level": 0,
+      "words": [
+        "BUTTER",
+        "EGGS",
+        "FLOUR",
+        "SUGAR"
+      ]
+    },
+    {
+      "name": "THINGS THAT ARE RED",
+      "level": 1,
+      "words": [
+        "CARDINAL",
+        "ELMO",
+        "KETCHUP",
+        "ROSE"
+      ]
+    },
+    {
+      "name": "WORDS SAID TO HAVE NO EXACT RHYMES",
+      "level": 2,
+      "words": [
+        "MONTH",
+        "ORANGE",
+        "PURPLE",
+        "SILVER"
+      ]
+    },
+    {
+      "name": "___ CANDY",
+      "level": 3,
+      "words": [
+        "COTTON",
+        "EYE",
+        "JOHN",
+        "ROCK"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "date": "2025-06-17",
+  "gameId": 737,
+  "groups": [
+    {
+      "name": "THINGS TO BOOK FOR A VACATION",
+      "level": 0,
+      "words": [
+        "CAR",
+        "FLIGHT",
+        "HOTEL",
+        "TOUR"
+      ]
+    },
+    {
+      "name": "METTLE",
+      "level": 1,
+      "words": [
+        "FIGHT",
+        "GRIT",
+        "RESOLVE",
+        "SPIRIT"
+      ]
+    },
+    {
+      "name": "BAD THINGS FOR A WEBSITE TO DO",
+      "level": 2,
+      "words": [
+        "FREEZE",
+        "GLITCH",
+        "TIMEOUT",
+        "QUIT"
+      ]
+    },
+    {
+      "name": "FIGURES IN CLASSIC DISNEY ANIMATED FILMS",
+      "level": 3,
+      "words": [
+        "ELEPHANT",
+        "FAWN",
+        "MARIONETTE",
+        "MOUSE"
+      ]
+    }
+  ]
+}

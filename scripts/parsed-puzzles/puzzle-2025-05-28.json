@@ -1,0 +1,46 @@
+{
+  "date": "2025-05-28",
+  "gameId": 717,
+  "groups": [
+    {
+      "name": "CONNECT",
+      "level": 0,
+      "words": [
+        "BRIDGE",
+        "JOIN",
+        "LINK",
+        "UNITE"
+      ]
+    },
+    {
+      "name": "PARTS OF A BIKE",
+      "level": 1,
+      "words": [
+        "CHAIN",
+        "PEDAL",
+        "SADDLE",
+        "WHEEL"
+      ]
+    },
+    {
+      "name": "BEST PICTURE WINNERS SINCE 2000",
+      "level": 2,
+      "words": [
+        "CHICAGO",
+        "CRASH",
+        "GLADIATOR",
+        "MOONLIGHT"
+      ]
+    },
+    {
+      "name": "MUSIC GENRES PLUS A LETTER",
+      "level": 3,
+      "words": [
+        "BLUEST",
+        "POPE",
+        "ROCKY",
+        "SKAT"
+      ]
+    }
+  ]
+}

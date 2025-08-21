@@ -1,0 +1,46 @@
+{
+  "date": "2025-05-02",
+  "gameId": 691,
+  "groups": [
+    {
+      "name": "KINDS OF CARVINGS",
+      "level": 0,
+      "words": [
+        "BUST",
+        "RELIEF",
+        "STATUE",
+        "TORSO"
+      ]
+    },
+    {
+      "name": "PILLAR",
+      "level": 1,
+      "words": [
+        "BRACE",
+        "POST",
+        "PROP",
+        "SUPPORT"
+      ]
+    },
+    {
+      "name": "BBQ OFFERING",
+      "level": 2,
+      "words": [
+        "DOG",
+        "LINK",
+        "RIB",
+        "WING"
+      ]
+    },
+    {
+      "name": "___NECK",
+      "level": 3,
+      "words": [
+        "BOTTLE",
+        "BREAK",
+        "GOOSE",
+        "TURTLE"
+      ]
+    }
+  ]
+}

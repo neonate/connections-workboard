@@ -1,0 +1,46 @@
+{
+  "date": "2025-03-19",
+  "gameId": 647,
+  "groups": [
+    {
+      "name": "SIGNIFY",
+      "level": 0,
+      "words": [
+        "CONVEY",
+        "EXPRESS",
+        "MEAN",
+        "SPELL"
+      ]
+    },
+    {
+      "name": "WEB BROWSER BUTTONS",
+      "level": 1,
+      "words": [
+        "BACK",
+        "EXTENSIONS",
+        "FORWARD",
+        "REFRESH"
+      ]
+    },
+    {
+      "name": "PARTS OF A ROAD",
+      "level": 2,
+      "words": [
+        "DIVIDER",
+        "LANE",
+        "MEDIAN",
+        "SHOULDER"
+      ]
+    },
+    {
+      "name": "À/A LA ___",
+      "level": 3,
+      "words": [
+        "CARTE",
+        "KING",
+        "MODE",
+        "PLANCHA"
+      ]
+    }
+  ]
+}

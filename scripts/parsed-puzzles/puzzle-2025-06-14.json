@@ -1,0 +1,46 @@
+{
+  "date": "2025-06-14",
+  "gameId": 734,
+  "groups": [
+    {
+      "name": "GODDESS",
+      "level": 0,
+      "words": [
+        "DIVA",
+        "ICON",
+        "LEGEND",
+        "QUEEN"
+      ]
+    },
+    {
+      "name": "ELEMENTS OF A CLASSIC “MOM” TATTOO",
+      "level": 1,
+      "words": [
+        "ARROW",
+        "HEART",
+        "MOM",
+        "RIBBON"
+      ]
+    },
+    {
+      "name": "DOGS OF THE SCREEN",
+      "level": 2,
+      "words": [
+        "ASTRO",
+        "BLUE",
+        "HOOCH",
+        "TOTO"
+      ]
+    },
+    {
+      "name": "___ TERRIER",
+      "level": 3,
+      "words": [
+        "BORDER",
+        "BOSTON",
+        "BULL",
+        "RAT"
+      ]
+    }
+  ]
+}

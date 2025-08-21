@@ -1,0 +1,46 @@
+{
+  "date": "2025-07-13",
+  "gameId": 763,
+  "groups": [
+    {
+      "name": "INSULT",
+      "level": 0,
+      "words": [
+        "BURN",
+        "KNOCK",
+        "SLIGHT",
+        "ZING"
+      ]
+    },
+    {
+      "name": "CREDIT CARD INFO",
+      "level": 1,
+      "words": [
+        "EXPIRATION",
+        "NAME",
+        "NUMBER",
+        "ZIP"
+      ]
+    },
+    {
+      "name": "SLANG FOR PRINTED MATTER",
+      "level": 2,
+      "words": [
+        "GLOSSY",
+        "MAG",
+        "RAG",
+        "ZINE"
+      ]
+    },
+    {
+      "name": "WINE NICKNAMES",
+      "level": 3,
+      "words": [
+        "BUBBLY",
+        "CAB",
+        "CHARD",
+        "ZIN"
+      ]
+    }
+  ]
+}

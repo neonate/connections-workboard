@@ -1,0 +1,46 @@
+{
+  "date": "2025-05-06",
+  "gameId": 695,
+  "groups": [
+    {
+      "name": "SILENCE",
+      "level": 0,
+      "words": [
+        "CALM",
+        "HUSH",
+        "PEACE",
+        "STILL"
+      ]
+    },
+    {
+      "name": "TENNIS COMPETITION UNITS",
+      "level": 1,
+      "words": [
+        "GAME",
+        "MATCH",
+        "SET",
+        "TOURNAMENT"
+      ]
+    },
+    {
+      "name": "COMPARATIVELY SMALL",
+      "level": 2,
+      "words": [
+        "BABY",
+        "COMPACT",
+        "MINUTE",
+        "TOY"
+      ]
+    },
+    {
+      "name": "STARTING WITH SYNONYMS FOR “TEASE”",
+      "level": 3,
+      "words": [
+        "KIDNEY",
+        "MOCKINGBIRD",
+        "RAZZMATAZZ",
+        "RIBBON"
+      ]
+    }
+  ]
+}

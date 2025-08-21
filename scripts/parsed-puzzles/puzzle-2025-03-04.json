@@ -1,0 +1,46 @@
+{
+  "date": "2025-03-04",
+  "gameId": 632,
+  "groups": [
+    {
+      "name": "ADJECTIVES FOR NICE SKIN",
+      "level": 0,
+      "words": [
+        "DEWY",
+        "FRESH",
+        "GLOWING",
+        "SMOOTH"
+      ]
+    },
+    {
+      "name": "MESS OF HAIR",
+      "level": 1,
+      "words": [
+        "MAT",
+        "MOP",
+        "TANGLE",
+        "THATCH"
+      ]
+    },
+    {
+      "name": "DICKENS CHARACTERS",
+      "level": 2,
+      "words": [
+        "BUCKET",
+        "PIP",
+        "SCROOGE",
+        "TWIST"
+      ]
+    },
+    {
+      "name": "___ CHAIN",
+      "level": 3,
+      "words": [
+        "DAISY",
+        "FOOD",
+        "MOUNTAIN",
+        "SUPPLY"
+      ]
+    }
+  ]
+}

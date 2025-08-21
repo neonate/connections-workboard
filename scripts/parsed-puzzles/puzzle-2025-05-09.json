@@ -1,0 +1,46 @@
+{
+  "date": "2025-05-09",
+  "gameId": 698,
+  "groups": [
+    {
+      "name": "TV DISPLAY SETTINGS",
+      "level": 0,
+      "words": [
+        "BRIGHTNESS",
+        "COLOR",
+        "CONTRAST",
+        "TINT"
+      ]
+    },
+    {
+      "name": "FUZZY, AS A MEMORY",
+      "level": 1,
+      "words": [
+        "DIM",
+        "FAINT",
+        "REMOTE",
+        "VAGUE"
+      ]
+    },
+    {
+      "name": "RESULTS OF SOME ARITHMETIC",
+      "level": 2,
+      "words": [
+        "DIFFERENCE",
+        "PRODUCT",
+        "QUOTIENT",
+        "SUM"
+      ]
+    },
+    {
+      "name": "WINDOW TREATMENTS IN THE SINGULAR",
+      "level": 3,
+      "words": [
+        "BLIND",
+        "DRAPE",
+        "SHADE",
+        "SHUTTER"
+      ]
+    }
+  ]
+}

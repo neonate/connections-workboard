@@ -1,0 +1,46 @@
+{
+  "date": "2025-06-27",
+  "gameId": 747,
+  "groups": [
+    {
+      "name": "IN FASHION",
+      "level": 0,
+      "words": [
+        "CHIC",
+        "CURRENT",
+        "FRESH",
+        "HAPPENING"
+      ]
+    },
+    {
+      "name": "PARTS OF AN ANGEL COSTUME",
+      "level": 1,
+      "words": [
+        "HALO",
+        "HARP",
+        "ROBE",
+        "WINGS"
+      ]
+    },
+    {
+      "name": "“SESAME STREET” FIGURES",
+      "level": 2,
+      "words": [
+        "BIRD",
+        "COUNT",
+        "GROUCH",
+        "MONSTER"
+      ]
+    },
+    {
+      "name": "___ BROTHERS",
+      "level": 3,
+      "words": [
+        "BLOOD",
+        "BLUES",
+        "CHEMICAL",
+        "MARX"
+      ]
+    }
+  ]
+}

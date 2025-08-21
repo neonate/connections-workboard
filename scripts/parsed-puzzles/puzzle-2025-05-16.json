@@ -1,0 +1,46 @@
+{
+  "date": "2025-05-16",
+  "gameId": 705,
+  "groups": [
+    {
+      "name": "KINDS OF PLANTS",
+      "level": 0,
+      "words": [
+        "HERB",
+        "SHRUB",
+        "TREE",
+        "VINE"
+      ]
+    },
+    {
+      "name": "DISCONTINUE",
+      "level": 1,
+      "words": [
+        "DISSOLVE",
+        "END",
+        "SCRAP",
+        "SUNSET"
+      ]
+    },
+    {
+      "name": "ASSOCIATED WITH BULLS",
+      "level": 2,
+      "words": [
+        "MICHAEL JORDAN",
+        "RODEO",
+        "TAURUS",
+        "WALL STREET"
+      ]
+    },
+    {
+      "name": "ENDING WITH BUILDING MATERIALS",
+      "level": 3,
+      "words": [
+        "HOLLYWOOD",
+        "HOURGLASS",
+        "KUBRICK",
+        "NEUROPLASTIC"
+      ]
+    }
+  ]
+}

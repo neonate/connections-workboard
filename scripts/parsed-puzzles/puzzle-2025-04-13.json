@@ -1,0 +1,46 @@
+{
+  "date": "2025-04-13",
+  "gameId": 672,
+  "groups": [
+    {
+      "name": "STEAL",
+      "level": 0,
+      "words": [
+        "NICK",
+        "PINCH",
+        "POCKET",
+        "SWIPE"
+      ]
+    },
+    {
+      "name": "ATTENDANCE STATUS",
+      "level": 1,
+      "words": [
+        "ABSENT",
+        "EXCUSED",
+        "LATE",
+        "PRESENT"
+      ]
+    },
+    {
+      "name": "FONT-MODIFYING WORDS",
+      "level": 2,
+      "words": [
+        "GOTHIC",
+        "ROMAN",
+        "SANS",
+        "TYPEWRITER"
+      ]
+    },
+    {
+      "name": "___BERRY",
+      "level": 3,
+      "words": [
+        "CAPER",
+        "ELDER",
+        "GOOSE",
+        "LOGAN"
+      ]
+    }
+  ]
+}

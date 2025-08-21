@@ -1,0 +1,46 @@
+{
+  "date": "2025-06-11",
+  "gameId": 731,
+  "groups": [
+    {
+      "name": "BOAST",
+      "level": 0,
+      "words": [
+        "BLUSTER",
+        "CROW",
+        "SHOW OFF",
+        "STRUT"
+      ]
+    },
+    {
+      "name": "ARC-SHAPED THINGS",
+      "level": 1,
+      "words": [
+        "BANANA",
+        "EYEBROW",
+        "FLIGHT PATH",
+        "RAINBOW"
+      ]
+    },
+    {
+      "name": "CEREAL MASCOTS",
+      "level": 2,
+      "words": [
+        "COUNT",
+        "ELVES",
+        "LEPRECHAUN",
+        "ROOSTER"
+      ]
+    },
+    {
+      "name": "WAYS TO DENOTE A CITATION",
+      "level": 3,
+      "words": [
+        "ASTERISK",
+        "DAGGER",
+        "NUMBER",
+        "PARENS"
+      ]
+    }
+  ]
+}

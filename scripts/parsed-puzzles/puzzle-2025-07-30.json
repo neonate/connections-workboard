@@ -1,0 +1,46 @@
+{
+  "date": "2025-07-30",
+  "gameId": 780,
+  "groups": [
+    {
+      "name": "INSTRUCT",
+      "level": 0,
+      "words": [
+        "COACH",
+        "DIRECT",
+        "GUIDE",
+        "TRAIN"
+      ]
+    },
+    {
+      "name": "MEANS",
+      "level": 1,
+      "words": [
+        "INSTRUMENT",
+        "MEDIUM",
+        "ORGAN",
+        "VEHICLE"
+      ]
+    },
+    {
+      "name": "STARTING WITH GREEK NUMERICAL PREFIXES",
+      "level": 2,
+      "words": [
+        "DIOXIDE",
+        "MONORAIL",
+        "TETRACYCLINE",
+        "TRIANGLE"
+      ]
+    },
+    {
+      "name": "ANAGRAMS OF MUSICAL INSTRUMENTS",
+      "level": 3,
+      "words": [
+        "ABUT",
+        "BULGE",
+        "GROAN",
+        "VOILA"
+      ]
+    }
+  ]
+}

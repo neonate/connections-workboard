@@ -1,0 +1,46 @@
+{
+  "date": "2025-03-14",
+  "gameId": 642,
+  "groups": [
+    {
+      "name": "IMPOSE, AS A PENALTY",
+      "level": 0,
+      "words": [
+        "ASSESS",
+        "CHARGE",
+        "FINE",
+        "LEVY"
+      ]
+    },
+    {
+      "name": "CHECKOUT LINE IMPULSE BUYS",
+      "level": 1,
+      "words": [
+        "CANDY",
+        "CHAPSTICK",
+        "CHARGING CABLE",
+        "MAGAZINE"
+      ]
+    },
+    {
+      "name": "MOVIES OF VARIOUS LENGTHS",
+      "level": 2,
+      "words": [
+        "EPIC",
+        "FEATURE",
+        "FILM SERIES",
+        "SHORT"
+      ]
+    },
+    {
+      "name": "___ ROAD",
+      "level": 3,
+      "words": [
+        "DIRT",
+        "HIGH",
+        "ROCKY",
+        "SILK"
+      ]
+    }
+  ]
+}

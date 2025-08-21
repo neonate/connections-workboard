@@ -1,0 +1,46 @@
+{
+  "date": "2025-03-31",
+  "gameId": 659,
+  "groups": [
+    {
+      "name": "CONSUMED",
+      "level": 0,
+      "words": [
+        "ATE",
+        "HAD",
+        "PUT AWAY",
+        "TOOK IN"
+      ]
+    },
+    {
+      "name": "ALSO",
+      "level": 1,
+      "words": [
+        "AS WELL",
+        "BESIDES",
+        "TO BOOT",
+        "TOO"
+      ]
+    },
+    {
+      "name": "ATM OPTIONS",
+      "level": 2,
+      "words": [
+        "BALANCE",
+        "DEPOSIT",
+        "TRANSFER",
+        "WITHDRAWAL"
+      ]
+    },
+    {
+      "name": "___PLAY",
+      "level": 3,
+      "words": [
+        "FORE",
+        "HORSE",
+        "SCREEN",
+        "WORD"
+      ]
+    }
+  ]
+}

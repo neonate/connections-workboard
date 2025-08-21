@@ -1,0 +1,46 @@
+{
+  "date": "2025-07-14",
+  "gameId": 764,
+  "groups": [
+    {
+      "name": "SHADES OF BLUE",
+      "level": 0,
+      "words": [
+        "BABY",
+        "ICE",
+        "POWDER",
+        "SKY"
+      ]
+    },
+    {
+      "name": "ADJECTIVES FOR A SPORTS CAR",
+      "level": 1,
+      "words": [
+        "COMPACT",
+        "FAST",
+        "SLEEK",
+        "SPORTY"
+      ]
+    },
+    {
+      "name": "WORDS BEFORE “ROGER/S”",
+      "level": 2,
+      "words": [
+        "GINGER",
+        "JOLLY",
+        "MISTER",
+        "ROY"
+      ]
+    },
+    {
+      "name": "DISNEY ANIMATED CHARACTERS PLUS A LETTER",
+      "level": 3,
+      "words": [
+        "ABUT",
+        "BELLED",
+        "FLOUNDERS",
+        "SCARY"
+      ]
+    }
+  ]
+}

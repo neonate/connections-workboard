@@ -1,0 +1,46 @@
+{
+  "date": "2025-07-28",
+  "gameId": 778,
+  "groups": [
+    {
+      "name": "FOREMOST",
+      "level": 0,
+      "words": [
+        "FIRST",
+        "INITIAL",
+        "ORIGINAL",
+        "PRIMARY"
+      ]
+    },
+    {
+      "name": "INDICATION",
+      "level": 1,
+      "words": [
+        "EVIDENCE",
+        "HINT",
+        "SIGN",
+        "TRACE"
+      ]
+    },
+    {
+      "name": "ITEM IN A COLLECTION",
+      "level": 2,
+      "words": [
+        "COIN",
+        "COMIC",
+        "RECORD",
+        "STAMP"
+      ]
+    },
+    {
+      "name": "___ MOVIE",
+      "level": 3,
+      "words": [
+        "BUDDY",
+        "CULT",
+        "DATE",
+        "SILENT"
+      ]
+    }
+  ]
+}

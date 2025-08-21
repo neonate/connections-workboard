@@ -1,0 +1,191 @@
+{
+  "timestamp": "2025-08-21T21:10:48.520Z",
+  "sources": {
+    "wordTips": {
+      "name": "Word Tips",
+      "description": "Daily NYT Connections answers and hints from Word Tips",
+      "baseUrl": "https://word.tips",
+      "timestamp": "2025-08-21T21:09:54.820Z",
+      "scores": {
+        "reliability": 0.5,
+        "corsCompatibility": 0.5,
+        "responseTime": 1,
+        "historicalCoverage": 0,
+        "htmlStability": 0.8,
+        "dataQuality": 0.7,
+        "updateFrequency": 0.8
+      },
+      "details": {},
+      "errors": [],
+      "overallScore": 0.56
+    },
+    "timesOfIndia": {
+      "name": "Times of India",
+      "description": "Daily NYT Connections coverage from Times of India",
+      "baseUrl": "https://timesofindia.indiatimes.com",
+      "timestamp": "2025-08-21T21:09:55.834Z",
+      "scores": {
+        "reliability": 0,
+        "corsCompatibility": 0.6,
+        "responseTime": 1,
+        "historicalCoverage": 0,
+        "htmlStability": 0.5,
+        "dataQuality": 0.7,
+        "updateFrequency": 0.8
+      },
+      "details": {},
+      "errors": [],
+      "overallScore": 0.41999999999999993
+    },
+    "techRadar": {
+      "name": "TechRadar",
+      "description": "Daily NYT Connections coverage from TechRadar",
+      "baseUrl": "https://www.techradar.com",
+      "timestamp": "2025-08-21T21:10:04.715Z",
+      "scores": {
+        "reliability": 0,
+        "corsCompatibility": 0.5,
+        "responseTime": 1,
+        "historicalCoverage": 0,
+        "htmlStability": 0.5,
+        "dataQuality": 0.7,
+        "updateFrequency": 0.8
+      },
+      "details": {},
+      "errors": [],
+      "overallScore": 0.4049999999999999
+    },
+    "connectionsGame": {
+      "name": "Connections Game IO",
+      "description": "Connections game news and answers",
+      "baseUrl": "https://connectionsgame.io",
+      "timestamp": "2025-08-21T21:10:46.029Z",
+      "scores": {
+        "reliability": 1,
+        "corsCompatibility": 0.5,
+        "responseTime": 1,
+        "historicalCoverage": 0,
+        "htmlStability": 0.6000000000000001,
+        "dataQuality": 0.7,
+        "updateFrequency": 0.8
+      },
+      "details": {},
+      "errors": [],
+      "overallScore": 0.6650000000000001
+    },
+    "connectionsArchive": {
+      "name": "Connections Archive",
+      "description": "Unofficial archive of NYT Connections answers",
+      "baseUrl": "https://connections.swellgarfo.com",
+      "timestamp": "2025-08-21T21:10:48.210Z",
+      "scores": {
+        "reliability": 1,
+        "corsCompatibility": 0.5,
+        "responseTime": 1,
+        "historicalCoverage": 0,
+        "htmlStability": 0.2,
+        "dataQuality": 0.7,
+        "updateFrequency": 0.8
+      },
+      "details": {},
+      "errors": [],
+      "overallScore": 0.6250000000000001
+    }
+  },
+  "ranking": [
+    {
+      "key": "connectionsGame",
+      "name": "Connections Game IO",
+      "score": 0.6650000000000001,
+      "strengths": [
+        "High reliability",
+        "Fast response times"
+      ],
+      "weaknesses": [
+        "Limited historical data"
+      ]
+    },
+    {
+      "key": "connectionsArchive",
+      "name": "Connections Archive",
+      "score": 0.6250000000000001,
+      "strengths": [
+        "High reliability",
+        "Fast response times"
+      ],
+      "weaknesses": [
+        "Limited historical data",
+        "Unstable HTML structure"
+      ]
+    },
+    {
+      "key": "wordTips",
+      "name": "Word Tips",
+      "score": 0.56,
+      "strengths": [
+        "Fast response times",
+        "Stable HTML structure"
+      ],
+      "weaknesses": [
+        "Limited historical data"
+      ]
+    },
+    {
+      "key": "timesOfIndia",
+      "name": "Times of India",
+      "score": 0.41999999999999993,
+      "strengths": [
+        "Fast response times"
+      ],
+      "weaknesses": [
+        "Low reliability",
+        "Limited historical data"
+      ]
+    },
+    {
+      "key": "techRadar",
+      "name": "TechRadar",
+      "score": 0.4049999999999999,
+      "strengths": [
+        "Fast response times"
+      ],
+      "weaknesses": [
+        "Low reliability",
+        "Limited historical data"
+      ]
+    }
+  ],
+  "recommendations": {
+    "primary": {
+      "key": "connectionsGame",
+      "name": "Connections Game IO",
+      "score": 0.6650000000000001,
+      "strengths": [
+        "High reliability",
+        "Fast response times"
+      ],
+      "weaknesses": [
+        "Limited historical data"
+      ]
+    },
+    "backup": {
+      "key": "connectionsArchive",
+      "name": "Connections Archive",
+      "score": 0.6250000000000001,
+      "strengths": [
+        "High reliability",
+        "Fast response times"
+      ],
+      "weaknesses": [
+        "Limited historical data",
+        "Unstable HTML structure"
+      ]
+    }
+  },
+  "summary": {
+    "totalSources": 5,
+    "highestScore": 0.6650000000000001,
+    "averageScore": 0.535,
+    "recommendationsConfidence": "Low"
+  }
+}

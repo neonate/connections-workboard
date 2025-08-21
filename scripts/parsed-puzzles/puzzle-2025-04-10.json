@@ -1,0 +1,46 @@
+{
+  "date": "2025-04-10",
+  "gameId": 669,
+  "groups": [
+    {
+      "name": "SHADES OF YELLOW",
+      "level": 0,
+      "words": [
+        "CANARY",
+        "GOLD",
+        "LEMON",
+        "MUSTARD"
+      ]
+    },
+    {
+      "name": "SUPPLY",
+      "level": 1,
+      "words": [
+        "MINE",
+        "RESERVE",
+        "STORE",
+        "WELL"
+      ]
+    },
+    {
+      "name": "ANTI-SPIRIT OF CHRISTMAS",
+      "level": 2,
+      "words": [
+        "BAH",
+        "COAL",
+        "GRINCH",
+        "NAUGHTY"
+      ]
+    },
+    {
+      "name": "SPANISH WORDS",
+      "level": 3,
+      "words": [
+        "ELLA",
+        "GUSTO",
+        "MAYO",
+        "SOY"
+      ]
+    }
+  ]
+}

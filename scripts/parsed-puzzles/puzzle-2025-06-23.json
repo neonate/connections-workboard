@@ -1,0 +1,46 @@
+{
+  "date": "2025-06-23",
+  "gameId": 743,
+  "groups": [
+    {
+      "name": "KINDS OF JEANS",
+      "level": 0,
+      "words": [
+        "BOYFRIEND",
+        "FLARE",
+        "MOM",
+        "SKINNY"
+      ]
+    },
+    {
+      "name": "FICTION CATEGORIES",
+      "level": 1,
+      "words": [
+        "HISTORICAL",
+        "LITERARY",
+        "SPECULATIVE",
+        "YOUNG ADULT"
+      ]
+    },
+    {
+      "name": "WORDS IN HEMINGWAY TITLES",
+      "level": 2,
+      "words": [
+        "BELL",
+        "FAREWELL",
+        "OLD MAN",
+        "SUN"
+      ]
+    },
+    {
+      "name": "___ GLASS GLASSWARE",
+      "level": 3,
+      "words": [
+        "COCKTAIL",
+        "COLLINS",
+        "OLD FASHIONED",
+        "SHOT"
+      ]
+    }
+  ]
+}

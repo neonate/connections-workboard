@@ -1,79 +1,126 @@
 # NYT Connections Working Board
 
-A web-based tool for solving NYT Connections puzzles by organizing words into groups without making guesses in the real game.
+A web application for solving NYT Connections puzzles with drag-and-drop word grouping and intelligent hint system.
 
-## Project Overview
+## 🚀 Features
 
-The NYT Connections Working Board is a React-based web application that allows users to input the 16 words from a NYT Connections puzzle and organize them into groups of 4. This helps users work out the correct groupings before attempting the actual puzzle, avoiding the frustration of making incorrect guesses.
+- **Drag & Drop Interface**: Organize 16 words into 4 groups of 4
+- **Smart Hint System**: Check if your groups are correct and reveal category names
+- **Puzzle Loading**: Load puzzles from static CSV cache
+- **Manual Entry**: Enter words manually or use ChatGPT workflow
+- **Responsive Design**: Works on desktop and mobile devices
 
-## Technology Stack
+## 🏗️ Architecture
 
-- **Frontend**: React.js with modern hooks
-- **Styling**: CSS3 with responsive design
-- **Testing**: Jest + React Testing Library
-- **Deployment**: Static hosting (any platform)
-- **Build**: Create React App with npm
+### Frontend (React)
+- **MainApp**: Core puzzle interface with drag & drop
+- **puzzleCache**: Static CSV data loading
+- **puzzleFetcher**: Fallback puzzle fetching logic
 
-## Current Features
+### Data Source
+- **Static CSV**: Puzzle data stored in `src/services/puzzleCache.js`
+- **Manual Updates**: CSV data updated out-of-band, not through the web app
+- **Fallback Support**: Original puzzle fetching as backup
 
-- **Manual Word Input**: Enter 16 words via textarea or paste from ChatGPT
-- **Drag & Drop Grouping**: Organize words into 4 groups of 4
-- **URL Persistence**: Game state survives page refreshes
-- **Mobile Optimized**: Responsive design that works great on iPhone
-- **Dynamic Font Sizing**: Automatically adjusts text size to fit long words
-- **Smart Word Input**: Streamlined ChatGPT workflow for easy word extraction
+## 🛠️ Setup & Installation
 
-## How to Use
+### Prerequisites
+- Node.js 18.x or higher
+- npm 8.x or higher
 
-### Method 1: ChatGPT + Screenshot (Recommended)
-1. Take a screenshot of the NYT Connections puzzle grid
-2. Upload it to ChatGPT and ask: "What are the 16 words in this NYT Connections puzzle? Please list them separated by commas."
-3. Copy the response and paste it into the textarea
-4. Click "Start Puzzle" to begin organizing!
+### Installation
 
-### Method 2: Manual Entry
-1. Type or paste the 16 words into the textarea
-2. Separate words with commas or new lines
-3. Click "Start Puzzle" to begin organizing!
+1. **Clone the repository**
+   ```bash
+   git clone <repository-url>
+   cd connections-workboard
+   ```
 
-## Screenshots
+2. **Install dependencies**
+   ```bash
+   npm install
+   ```
 
-### 1. Input Screen - Getting Started
-![Input Screen](screenshots/initial_screen.png)
+3. **Start development server**
+   ```bash
+   npm start
+   ```
 
-**Start here!** Enter the 16 words from your NYT Connections puzzle. You can either type them manually or use the ChatGPT method (recommended) by taking a screenshot and asking ChatGPT to identify the words. The app will validate that you have exactly 16 words before starting the puzzle.
+## 🚀 Running the Application
 
-### 2. Grouped Hints - Working Out the Connections
-![Grouped Hints](screenshots/board_in_progress.png)
+### Development Mode
+```bash
+npm start
+```
+The app will run on `http://localhost:3000`
 
-**Organize and solve!** Once you start the puzzle, drag and drop words into groups of 4. This screenshot shows how the app makes it easy to work out the correct groupings without having to make guesses in the real NYT Connections app. For example, with the words "PLAYWRIGHT", "DEAN", "ROOF", "TEMPLE", "FACULTY", "WREATH", "BENT", "SWORD", "GARLAND", "HAY", "GIFT", "WRAP", "JACKPOT", "FLAIR", "GABLE", "ROAD", you can organize them into logical groups like:
+### Production Build
+```bash
+npm run build
+```
+The built app will be in the `build/` folder
 
-- **Yellow: Aptitude** - BENT, FACULTY, FLAIR, GIFT
-- **Green: Silent "W"** - PLAYWRIGHT, SWORD, WRAP, WREATH (words that start with silent W)
-- **Blue: Legends of classic Hollywood** - DEAN, GABLE, GARLAND, TEMPLE
-- **Purple: Hit the ___** - HAY, JACKPOT, ROAD, ROOF (forming phrases like "Hit the Hay", "Hit the Road", etc.)
+## 📊 Data Management
 
-## Smart Word Input
+### Adding New Puzzles
+Puzzles are managed through the static CSV data in `src/services/puzzleCache.js`:
 
-The app provides a streamlined workflow for using ChatGPT to extract puzzle words:
+1. **Update the CSV data** in the `EXTENDED_PUZZLES` object
+2. **Rebuild the app** with `npm run build`
+3. **Deploy the updated build**
 
-- **Screenshot Method**: Take a photo of the puzzle grid and ask ChatGPT to identify the words
-- **Copy-to-Clipboard**: One-click copying of the perfect ChatGPT prompt
-- **Automatic Parsing**: Handles various separators (commas, newlines, mixed)
-- **Input Validation**: Ensures exactly 16 words before starting
+### CSV Structure
+The internal data structure follows this format:
+```javascript
+'2025-08-17': {
+  groups: [
+    {
+      name: 'CONVENIENTLY LOCATED',
+      level: 0,
+      words: ['ACCESSIBLE', 'CLOSE', 'HANDY', 'NEARBY']
+    },
+    // ... 3 more groups
+  ]
+}
+```
 
-## Development Phases
+## 🎯 Hint System
 
-- ✅ **Phase 1 - Setup & Scaffolding**: Basic React app with header
-- ✅ **Phase 2 - MVP: Manual Input + Dragging**: Core drag-and-drop functionality
-- ✅ **Phase 3 - Smart Input Methods**: ChatGPT workflow and copy-to-clipboard
-- ✅ **Phase 4 - Mobile Optimization**: Responsive design and iPhone-friendly layout
-- ✅ **Phase 5 - URL Persistence**: Game state survives page refreshes
-- ✅ **Phase 6 - Dynamic Typography**: Smart font sizing for long words
+The hint system provides real-time feedback:
 
-## Deployment
+1. **Enable Hints**: Check the "Show Hints" checkbox
+2. **Group Words**: Drag words into groups as usual
+3. **Visual Feedback**: 
+   - ✅ **Green groups**: Correct word combinations
+   - 🎯 **Category reveal**: Shows the actual category name
+4. **Dynamic Updates**: Hints update in real-time as you modify groups
 
-The app can be deployed to any static hosting platform:
+## 📁 File Structure
+
+```
+connections-workboard/
+├── src/                    # React frontend source
+│   ├── components/         # React components
+│   │   └── MainApp.js     # Main puzzle interface
+│   ├── services/          # Data services
+│   │   ├── puzzleCache.js # Static CSV data
+│   │   └── puzzleFetcher.js # Fallback fetching
+│   └── App.js            # Main application
+├── build/                 # Built React app (after npm run build)
+└── package.json          # Dependencies
+```
+
+## 🧪 Testing
+
+Run the test suite:
+```bash
+npm run test:ci
+```
+
+## 🚀 Deployment
+
+### Static Hosting
+The app is a static React build that works on any web hosting service:
 
 1. **Build the app**: `npm run build`
 2. **Deploy options**:
@@ -83,41 +130,48 @@ The app can be deployed to any static hosting platform:
    - **Firebase Hosting**: Use Firebase CLI to deploy
    - **Any static host**: Upload the `build/` folder contents
 
-**Note**: The app is a static React build, so it works on any web hosting service.
+### Data Updates
+To update puzzle data:
+1. Edit `src/services/puzzleCache.js`
+2. Run `npm run build`
+3. Deploy the new build
 
-## Local Development
+## 🔒 Security Features
 
-```bash
-# Install dependencies
-npm install
+- **Static Data**: No server-side code or database
+- **Client-Side Only**: All processing happens in the browser
+- **No User Input Storage**: Data is not persisted or transmitted
 
-# Start development server
-npm start
+## 🐛 Troubleshooting
 
-# Run tests
-npm test
+### Common Issues
 
-# Build for production
-npm run build
-```
+1. **Puzzle not loading**
+   - Check CSV data format in `puzzleCache.js`
+   - Verify date format (YYYY-MM-DD)
+   - Check browser console for errors
 
-## Testing
+2. **Hint system not working**
+   - Ensure puzzle data has groups information
+   - Check browser console for validation logs
 
-The app includes comprehensive tests that run automatically:
+3. **Build failures**
+   - Verify all imports are correct
+   - Check for syntax errors in JavaScript files
 
-- **Unit Tests**: 18 tests covering core functionality
-- **CI Integration**: Tests run on every commit (GitHub Actions, GitLab CI, etc.)
-- **Coverage**: Tests cover input validation, drag-and-drop, and UI components
+### Logs
 
-## Contributing
+- **Frontend logs**: Check browser developer console
+- **Build logs**: Check terminal output during `npm run build`
+
+## 🤝 Contributing
 
 1. Fork the repository
 2. Create a feature branch
 3. Make your changes
-4. Run tests: `npm run test:ci`
-5. Commit and push
-6. Create a pull request
+4. Add tests if applicable
+5. Submit a pull request
 
-## License
+## 📄 License
 
-This project is open source and available under the MIT License.
+This project is licensed under the ISC License.

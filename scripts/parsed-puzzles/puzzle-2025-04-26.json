@@ -1,0 +1,46 @@
+{
+  "date": "2025-04-26",
+  "gameId": 685,
+  "groups": [
+    {
+      "name": "TINT",
+      "level": 0,
+      "words": [
+        "COLOR",
+        "HUE",
+        "SHADE",
+        "TONE"
+      ]
+    },
+    {
+      "name": "VALLEY",
+      "level": 1,
+      "words": [
+        "DALE",
+        "DELL",
+        "GLEN",
+        "HOLLOW"
+      ]
+    },
+    {
+      "name": "BOBS",
+      "level": 2,
+      "words": [
+        "DOLE",
+        "HOPE",
+        "MARLEY",
+        "ROSS"
+      ]
+    },
+    {
+      "name": "COLOR ANAGRAMS",
+      "level": 3,
+      "words": [
+        "DRE",
+        "GARY",
+        "GENRE",
+        "LUBE"
+      ]
+    }
+  ]
+}

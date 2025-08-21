@@ -1,0 +1,46 @@
+{
+  "date": "2025-05-08",
+  "gameId": 697,
+  "groups": [
+    {
+      "name": "COMMIT TO PAPER",
+      "level": 0,
+      "words": [
+        "AUTHOR",
+        "COMPOSE",
+        "PEN",
+        "WRITE"
+      ]
+    },
+    {
+      "name": "NEEDS FOR PLAYING YAHTZEE",
+      "level": 1,
+      "words": [
+        "CUP",
+        "DICE",
+        "PENCIL",
+        "SCORECARD"
+      ]
+    },
+    {
+      "name": "HEROES OF ACTION MOVIE FRANCHISES",
+      "level": 2,
+      "words": [
+        "BOND",
+        "JONES",
+        "OCEAN",
+        "WICK"
+      ]
+    },
+    {
+      "name": "___STICK",
+      "level": 3,
+      "words": [
+        "CANDLE",
+        "CHOP",
+        "JOY",
+        "YARD"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "date": "2025-07-01",
+  "gameId": 751,
+  "groups": [
+    {
+      "name": "STEAL",
+      "level": 0,
+      "words": [
+        "NICK",
+        "PALM",
+        "PINCH",
+        "POCKET"
+      ]
+    },
+    {
+      "name": "DO SOME GROOMING",
+      "level": 1,
+      "words": [
+        "BRUSH",
+        "DRESS",
+        "SHAVE",
+        "SHOWER"
+      ]
+    },
+    {
+      "name": "DAPPER",
+      "level": 2,
+      "words": [
+        "NEAT",
+        "SHARP",
+        "SMART",
+        "TIDY"
+      ]
+    },
+    {
+      "name": "___STONE",
+      "level": 3,
+      "words": [
+        "BIRTH",
+        "KEY",
+        "MILE",
+        "TOUCH"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "date": "2025-04-23",
+  "gameId": 682,
+  "groups": [
+    {
+      "name": "PARTS OF A TREE",
+      "level": 0,
+      "words": [
+        "BRANCH",
+        "LEAF",
+        "ROOT",
+        "TRUNK"
+      ]
+    },
+    {
+      "name": "CANINE/FELINE FEATURES",
+      "level": 1,
+      "words": [
+        "FUR",
+        "MUZZLE",
+        "PAW",
+        "TAIL"
+      ]
+    },
+    {
+      "name": "COMEDIC ROUTINE",
+      "level": 2,
+      "words": [
+        "ACT",
+        "BIT",
+        "GAG",
+        "SKETCH"
+      ]
+    },
+    {
+      "name": "___POLE",
+      "level": 3,
+      "words": [
+        "BEAN",
+        "FLAG",
+        "MAY",
+        "TAD"
+      ]
+    }
+  ]
+}

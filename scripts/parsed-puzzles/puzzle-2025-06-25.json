@@ -1,0 +1,46 @@
+{
+  "date": "2025-06-25",
+  "gameId": 745,
+  "groups": [
+    {
+      "name": "KINDS OF CHEESES",
+      "level": 0,
+      "words": [
+        "BLUE",
+        "GOAT",
+        "JACK",
+        "SWISS"
+      ]
+    },
+    {
+      "name": "BEVERAGE SELF-SERVICE ITEMS",
+      "level": 1,
+      "words": [
+        "CUP",
+        "LID",
+        "NAPKIN",
+        "STRAW"
+      ]
+    },
+    {
+      "name": "WOODWORKING HAND TOOLS",
+      "level": 2,
+      "words": [
+        "CHISEL",
+        "PLANE",
+        "RASP",
+        "SAW"
+      ]
+    },
+    {
+      "name": "BIRDS MINUS LAST LETTER",
+      "level": 3,
+      "words": [
+        "CRAN",
+        "FLAMING",
+        "HERO",
+        "RAVE"
+      ]
+    }
+  ]
+}

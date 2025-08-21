@@ -1,0 +1,46 @@
+{
+  "date": "2025-06-04",
+  "gameId": 724,
+  "groups": [
+    {
+      "name": "PARTS OF A SONG",
+      "level": 0,
+      "words": [
+        "BRIDGE",
+        "CHORUS",
+        "HOOK",
+        "REFRAIN"
+      ]
+    },
+    {
+      "name": "SUPPORT AUDIBLY",
+      "level": 1,
+      "words": [
+        "CHEER",
+        "CLAP",
+        "ROOT",
+        "WHISTLE"
+      ]
+    },
+    {
+      "name": "THINGS IN AN ENTRYWAY",
+      "level": 2,
+      "words": [
+        "BENCH",
+        "COAT RACK",
+        "CONSOLE",
+        "RUNNER"
+      ]
+    },
+    {
+      "name": "IMAGERY IN MAGRITTE PAINTINGS",
+      "level": 3,
+      "words": [
+        "APPLE",
+        "BOWLER",
+        "CLOUD",
+        "PIPE"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "date": "2025-03-28",
+  "gameId": 656,
+  "groups": [
+    {
+      "name": "HURL",
+      "level": 0,
+      "words": [
+        "CHUCK",
+        "PELT",
+        "PITCH",
+        "SLING"
+      ]
+    },
+    {
+      "name": "BE ON BOTH SIDES OF",
+      "level": 1,
+      "words": [
+        "BOOKEND",
+        "BRACKET",
+        "FLANK",
+        "SURROUND"
+      ]
+    },
+    {
+      "name": "PARTS OF A CLASSIC GIRL SCOUT UNIFORM",
+      "level": 2,
+      "words": [
+        "BADGE",
+        "BERET",
+        "SASH",
+        "SKIRT"
+      ]
+    },
+    {
+      "name": "___ HALL",
+      "level": 3,
+      "words": [
+        "BINGO",
+        "CITY",
+        "MONTY",
+        "STUDY"
+      ]
+    }
+  ]
+}

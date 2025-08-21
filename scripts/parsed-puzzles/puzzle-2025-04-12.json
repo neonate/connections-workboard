@@ -1,0 +1,46 @@
+{
+  "date": "2025-04-12",
+  "gameId": 671,
+  "groups": [
+    {
+      "name": "SHORT PERIOD OF TIME",
+      "level": 0,
+      "words": [
+        "BIT",
+        "FLASH",
+        "JIFF",
+        "SEC"
+      ]
+    },
+    {
+      "name": "DO WRONG",
+      "level": 1,
+      "words": [
+        "ERR",
+        "FALL",
+        "SIN",
+        "STRAY"
+      ]
+    },
+    {
+      "name": "N.B.A. PLAYER",
+      "level": 2,
+      "words": [
+        "BUCK",
+        "NET",
+        "SPUR",
+        "SUN"
+      ]
+    },
+    {
+      "name": "STARTS OF AFRICAN COUNTRIES",
+      "level": 3,
+      "words": [
+        "BOTS",
+        "CAME",
+        "KEN",
+        "TAN"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "date": "2025-07-27",
+  "gameId": 777,
+  "groups": [
+    {
+      "name": "\"NOTHING TO IT!\"",
+      "level": 0,
+      "words": [
+        "CHILD’S PLAY",
+        "EASY",
+        "NO SWEAT",
+        "PIECE OF CAKE"
+      ]
+    },
+    {
+      "name": "OUTDOOR EVENTS",
+      "level": 1,
+      "words": [
+        "BLOCK PARTY",
+        "FESTIVAL",
+        "PICNIC",
+        "TAILGATE"
+      ]
+    },
+    {
+      "name": "WORDS BEFORE \"SCHOOL\"",
+      "level": 2,
+      "words": [
+        "ELEMENTARY",
+        "GRADE",
+        "GRAMMAR",
+        "PRIMARY"
+      ]
+    },
+    {
+      "name": "ASSOCIATED WITH TRICKS",
+      "level": 3,
+      "words": [
+        "CON GAME",
+        "HALLOWEEN",
+        "HEARTS",
+        "MAGIC SHOW"
+      ]
+    }
+  ]
+}

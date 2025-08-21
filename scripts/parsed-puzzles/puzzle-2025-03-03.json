@@ -1,0 +1,46 @@
+{
+  "date": "2025-03-03",
+  "gameId": 631,
+  "groups": [
+    {
+      "name": "BE AT LEISURE",
+      "level": 0,
+      "words": [
+        "CHILL",
+        "LOAF",
+        "LOUNGE",
+        "REST"
+      ]
+    },
+    {
+      "name": "FORMATS OF GOLD",
+      "level": 1,
+      "words": [
+        "BAR",
+        "COIN",
+        "LEAF",
+        "NUGGET"
+      ]
+    },
+    {
+      "name": "CYLINDER OF MATERIAL",
+      "level": 2,
+      "words": [
+        "BOLT",
+        "REEL",
+        "ROLL",
+        "SCROLL"
+      ]
+    },
+    {
+      "name": "SEEN IN “THE FLINTSTONES”",
+      "level": 3,
+      "words": [
+        "BONE",
+        "CLUB",
+        "DINOSAUR",
+        "RUBBLE"
+      ]
+    }
+  ]
+}

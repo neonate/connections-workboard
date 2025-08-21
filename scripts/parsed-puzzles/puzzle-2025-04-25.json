@@ -1,0 +1,46 @@
+{
+  "date": "2025-04-25",
+  "gameId": 684,
+  "groups": [
+    {
+      "name": "GUM FLAVORS",
+      "level": 0,
+      "words": [
+        "BUBBLEGUM",
+        "CINNAMON",
+        "MENTHOL",
+        "WINTERGREEN"
+      ]
+    },
+    {
+      "name": "STARTING POINT",
+      "level": 1,
+      "words": [
+        "CATALYST",
+        "LAUNCHPAD",
+        "SPARK",
+        "SPRINGBOARD"
+      ]
+    },
+    {
+      "name": "GREAT AMERICAN SONGBOOK SONGS",
+      "level": 2,
+      "words": [
+        "AUTUMN LEAVES",
+        "SUMMERTIME",
+        "UNFORGETTABLE",
+        "WITCHCRAFT"
+      ]
+    },
+    {
+      "name": "___ TUBE",
+      "level": 3,
+      "words": [
+        "FALLOPIAN",
+        "INNER",
+        "TEST",
+        "VACUUM"
+      ]
+    }
+  ]
+}

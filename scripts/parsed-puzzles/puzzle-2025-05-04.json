@@ -1,0 +1,46 @@
+{
+  "date": "2025-05-04",
+  "gameId": 693,
+  "groups": [
+    {
+      "name": "QUALITIES OF OVERCOOKED MEAT",
+      "level": 0,
+      "words": [
+        "CHEWY",
+        "DRY",
+        "STRINGY",
+        "TOUGH"
+      ]
+    },
+    {
+      "name": "PLAY SOME ELECTRIC GUITAR",
+      "level": 1,
+      "words": [
+        "JAM",
+        "NOODLE",
+        "SHRED",
+        "SOLO"
+      ]
+    },
+    {
+      "name": "INGREDIENTS IN BUBBLE TEA",
+      "level": 2,
+      "words": [
+        "BOBA",
+        "MILK",
+        "SUGAR",
+        "TEA"
+      ]
+    },
+    {
+      "name": "PLANETS/DWARF PLANET WITH FIRST LETTER CHANGED",
+      "level": 3,
+      "words": [
+        "BLUTO",
+        "CARS",
+        "DARTH",
+        "GENUS"
+      ]
+    }
+  ]
+}

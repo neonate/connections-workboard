@@ -1,0 +1,46 @@
+{
+  "date": "2025-04-08",
+  "gameId": 667,
+  "groups": [
+    {
+      "name": "PRICK",
+      "level": 0,
+      "words": [
+        "JAB",
+        "PIERCE",
+        "POKE",
+        "STICK"
+      ]
+    },
+    {
+      "name": "RADIO LINGO",
+      "level": 1,
+      "words": [
+        "COPY",
+        "NEGATIVE",
+        "OVER",
+        "ROGER"
+      ]
+    },
+    {
+      "name": "OLD TESTAMENT BOOKS",
+      "level": 2,
+      "words": [
+        "DANIEL",
+        "JOB",
+        "JUDGES",
+        "NUMBERS"
+      ]
+    },
+    {
+      "name": "WORDS PRONOUNCED “SH” WITHOUT AN “SH”",
+      "level": 3,
+      "words": [
+        "SEAN",
+        "SIOBHAN",
+        "SUGAR",
+        "SURE"
+      ]
+    }
+  ]
+}

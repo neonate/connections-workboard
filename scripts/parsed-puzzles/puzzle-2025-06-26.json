@@ -1,0 +1,46 @@
+{
+  "date": "2025-06-26",
+  "gameId": 746,
+  "groups": [
+    {
+      "name": "COMPONENTS OF A SALAD",
+      "level": 0,
+      "words": [
+        "CHEESE",
+        "DRESSING",
+        "LETTUCE",
+        "PROTEIN"
+      ]
+    },
+    {
+      "name": "KINDS OF MACHINES",
+      "level": 1,
+      "words": [
+        "ENIGMA",
+        "PINBALL",
+        "SEWING",
+        "VENDING"
+      ]
+    },
+    {
+      "name": "LEGAL DRAMAS",
+      "level": 2,
+      "words": [
+        "DAMAGES",
+        "GOLIATH",
+        "MATLOCK",
+        "SUITS"
+      ]
+    },
+    {
+      "name": "ENDING WITH PLAYING CARDS",
+      "level": 3,
+      "words": [
+        "BOJACK",
+        "HAWKING",
+        "LOVELACE",
+        "MCQUEEN"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "date": "2025-07-25",
+  "gameId": 775,
+  "groups": [
+    {
+      "name": "HUSH-HUSH",
+      "level": 0,
+      "words": [
+        "MUM",
+        "PRIVATE",
+        "QUIET",
+        "SECRET"
+      ]
+    },
+    {
+      "name": "STATE ABBREVIATIONS",
+      "level": 1,
+      "words": [
+        "IN",
+        "MA",
+        "OH",
+        "OK"
+      ]
+    },
+    {
+      "name": "BASEBALL CALLS",
+      "level": 2,
+      "words": [
+        "BALL",
+        "FAIR",
+        "FOUL",
+        "OUT"
+      ]
+    },
+    {
+      "name": "QUEEN ___",
+      "level": 3,
+      "words": [
+        "BED",
+        "BEE",
+        "MARY",
+        "MOTHER"
+      ]
+    }
+  ]
+}

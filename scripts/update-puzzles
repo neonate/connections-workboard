@@ -1,0 +1,22 @@
+#!/bin/bash
+
+# NYT Connections Puzzle Data Update Script Wrapper
+# This provides a simpler interface to the main Node.js script
+
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+NODE_SCRIPT="$SCRIPT_DIR/update-puzzle-data.js"
+
+# Check if Node.js script exists
+if [ ! -f "$NODE_SCRIPT" ]; then
+    echo "❌ Error: Could not find update-puzzle-data.js in $SCRIPT_DIR"
+    exit 1
+fi
+
+# Check if Node.js is available
+if ! command -v node &> /dev/null; then
+    echo "❌ Error: Node.js is not installed or not in PATH"
+    exit 1
+fi
+
+# Pass all arguments to the Node.js script
+node "$NODE_SCRIPT" "$@"

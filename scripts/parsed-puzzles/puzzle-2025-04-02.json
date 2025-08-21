@@ -1,0 +1,46 @@
+{
+  "date": "2025-04-02",
+  "gameId": 661,
+  "groups": [
+    {
+      "name": "CAPRICE",
+      "level": 0,
+      "words": [
+        "FANCY",
+        "IMPULSE",
+        "LARK",
+        "WHIM"
+      ]
+    },
+    {
+      "name": "ILK",
+      "level": 1,
+      "words": [
+        "KIND",
+        "LIKE",
+        "SORT",
+        "TYPE"
+      ]
+    },
+    {
+      "name": "WILLIAMSES",
+      "level": 2,
+      "words": [
+        "HANK",
+        "ROBIN",
+        "TENNESSEE",
+        "VENUS"
+      ]
+    },
+    {
+      "name": "WORDS PRONOUNCED DIFFERENTLY AS PROPER NOUNS",
+      "level": 3,
+      "words": [
+        "HERB",
+        "JOB",
+        "NICE",
+        "READING"
+      ]
+    }
+  ]
+}

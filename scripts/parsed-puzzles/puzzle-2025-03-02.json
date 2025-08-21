@@ -1,0 +1,46 @@
+{
+  "date": "2025-03-02",
+  "gameId": 630,
+  "groups": [
+    {
+      "name": "CELLPHONE MODES",
+      "level": 0,
+      "words": [
+        "AIRPLANE",
+        "DO NOT DISTURB",
+        "RING",
+        "VIBRATE"
+      ]
+    },
+    {
+      "name": "EVADE",
+      "level": 1,
+      "words": [
+        "DODGE",
+        "ESCAPE",
+        "LOSE",
+        "SHAKE"
+      ]
+    },
+    {
+      "name": "WHAT “W” MIGHT STAND FOR",
+      "level": 2,
+      "words": [
+        "TUNGSTEN",
+        "WATT",
+        "WEST",
+        "WIN"
+      ]
+    },
+    {
+      "name": "___STRING",
+      "level": 3,
+      "words": [
+        "DRAW",
+        "HAM",
+        "HEART",
+        "SHOE"
+      ]
+    }
+  ]
+}

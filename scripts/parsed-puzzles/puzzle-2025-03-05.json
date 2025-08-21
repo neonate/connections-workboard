@@ -1,0 +1,46 @@
+{
+  "date": "2025-03-05",
+  "gameId": 633,
+  "groups": [
+    {
+      "name": "PERIPHERY",
+      "level": 0,
+      "words": [
+        "BORDER",
+        "EDGE",
+        "FRINGE",
+        "SKIRT"
+      ]
+    },
+    {
+      "name": "THINGS PEOPLE DO TO FINGERNAILS",
+      "level": 1,
+      "words": [
+        "BITE",
+        "CLIP",
+        "FILE",
+        "PAINT"
+      ]
+    },
+    {
+      "name": "WHAT MIGHT BRING TEARS TO YOUR EYES",
+      "level": 2,
+      "words": [
+        "ALLERGY",
+        "MELODRAMA",
+        "ONION",
+        "RELIEF"
+      ]
+    },
+    {
+      "name": "___BALL RECREATIONAL SPORTS",
+      "level": 3,
+      "words": [
+        "DODGE",
+        "KICK",
+        "PICKLE",
+        "SOFT"
+      ]
+    }
+  ]
+}

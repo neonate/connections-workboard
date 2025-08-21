@@ -1,0 +1,46 @@
+{
+  "date": "2025-07-03",
+  "gameId": 753,
+  "groups": [
+    {
+      "name": "CORRESPONDENCE",
+      "level": 0,
+      "words": [
+        "CONTACT",
+        "DEALINGS",
+        "EXCHANGE",
+        "INTERACTION"
+      ]
+    },
+    {
+      "name": "AIRPORT BOARD INFO",
+      "level": 1,
+      "words": [
+        "ARRIVAL",
+        "DESTINATION",
+        "FLIGHT",
+        "GATE"
+      ]
+    },
+    {
+      "name": "PRO ATHLETE DATA",
+      "level": 2,
+      "words": [
+        "COLLEGE",
+        "NUMBER",
+        "POSITION",
+        "TEAM"
+      ]
+    },
+    {
+      "name": "FARMERS’ THINGS",
+      "level": 3,
+      "words": [
+        "ALMANAC",
+        "INSURANCE",
+        "MARKET",
+        "TAN"
+      ]
+    }
+  ]
+}

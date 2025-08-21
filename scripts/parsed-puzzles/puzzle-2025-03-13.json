@@ -1,0 +1,46 @@
+{
+  "date": "2025-03-13",
+  "gameId": 641,
+  "groups": [
+    {
+      "name": "PARTIALITY",
+      "level": 0,
+      "words": [
+        "ANGLE",
+        "BIAS",
+        "SLANT",
+        "SPIN"
+      ]
+    },
+    {
+      "name": "SIGNAL DOWN, AS A TAXI",
+      "level": 1,
+      "words": [
+        "FLAG",
+        "HAIL",
+        "WAVE",
+        "WHISTLE"
+      ]
+    },
+    {
+      "name": "CARDS IN TEXAS HOLD ’EM",
+      "level": 2,
+      "words": [
+        "FLOP",
+        "HOLE",
+        "RIVER",
+        "TURN"
+      ]
+    },
+    {
+      "name": "SHAKESPEAREAN WORDS",
+      "level": 3,
+      "words": [
+        "ANON",
+        "ART",
+        "THOU",
+        "WILT"
+      ]
+    }
+  ]
+}

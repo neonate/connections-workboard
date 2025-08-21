@@ -1,0 +1,46 @@
+{
+  "date": "2025-06-21",
+  "gameId": 741,
+  "groups": [
+    {
+      "name": "STOCKY",
+      "level": 0,
+      "words": [
+        "SOLID",
+        "SQUAT",
+        "STOUT",
+        "THICK"
+      ]
+    },
+    {
+      "name": "COMPANY",
+      "level": 1,
+      "words": [
+        "CONCERN",
+        "FIRM",
+        "HOUSE",
+        "OUTFIT"
+      ]
+    },
+    {
+      "name": "APPLE PRODUCTS",
+      "level": 2,
+      "words": [
+        "BRANDY",
+        "BUTTER",
+        "CIDER",
+        "SAUCE"
+      ]
+    },
+    {
+      "name": "STARTS OF EUROPEAN COUNTRIES",
+      "level": 3,
+      "words": [
+        "GERM",
+        "LUXE",
+        "MALT",
+        "PORT"
+      ]
+    }
+  ]
+}

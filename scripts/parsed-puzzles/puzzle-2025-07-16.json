@@ -1,0 +1,46 @@
+{
+  "date": "2025-07-16",
+  "gameId": 766,
+  "groups": [
+    {
+      "name": "PARTS OF A COLLEGE CAMPUS",
+      "level": 0,
+      "words": [
+        "CAFETERIA",
+        "DORM",
+        "LIBRARY",
+        "QUAD"
+      ]
+    },
+    {
+      "name": "EXAGGERATED, AS A PERFORMANCE",
+      "level": 1,
+      "words": [
+        "CAMP",
+        "DRAMATIC",
+        "HAMMY",
+        "OVERDONE"
+      ]
+    },
+    {
+      "name": "CLOSE IN ON",
+      "level": 2,
+      "words": [
+        "CORNER",
+        "SURROUND",
+        "TRAP",
+        "TREE"
+      ]
+    },
+    {
+      "name": "STARTS OF GREEK LETTERS",
+      "level": 3,
+      "words": [
+        "BET",
+        "DELT",
+        "LAMB",
+        "THE"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "date": "2025-05-30",
+  "gameId": 719,
+  "groups": [
+    {
+      "name": "RODS",
+      "level": 0,
+      "words": [
+        "BAT",
+        "CLUB",
+        "STAFF",
+        "STICK"
+      ]
+    },
+    {
+      "name": "THEY'RE ON A ROLL!",
+      "level": 1,
+      "words": [
+        "FOIL",
+        "TAPE",
+        "RIBBON",
+        "TOILET PAPER"
+      ]
+    },
+    {
+      "name": "COMMON SWAG ITEMS",
+      "level": 2,
+      "words": [
+        "HAT",
+        "TEE",
+        "TOTE",
+        "WATER BOTTLE"
+      ]
+    },
+    {
+      "name": "WORDS BEFORE “SHACK”",
+      "level": 3,
+      "words": [
+        "CADDY",
+        "LOVE",
+        "RADIO",
+        "SHAKE"
+      ]
+    }
+  ]
+}

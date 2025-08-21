@@ -1,0 +1,46 @@
+{
+  "date": "2025-04-04",
+  "gameId": 663,
+  "groups": [
+    {
+      "name": "WHAT’S LEFTOVER",
+      "level": 0,
+      "words": [
+        "BALANCE",
+        "DIFFERENCE",
+        "REMAINDER",
+        "REST"
+      ]
+    },
+    {
+      "name": "CAR TRIP",
+      "level": 1,
+      "words": [
+        "CRUISE",
+        "DRIVE",
+        "RIDE",
+        "SPIN"
+      ]
+    },
+    {
+      "name": "BASEBALL VENUES",
+      "level": 2,
+      "words": [
+        "DIAMOND",
+        "FIELD",
+        "PARK",
+        "STADIUM"
+      ]
+    },
+    {
+      "name": "COMPANIES WITH “E” REMOVED",
+      "level": 3,
+      "words": [
+        "BAY",
+        "HARMONY",
+        "INK",
+        "TRADE"
+      ]
+    }
+  ]
+}

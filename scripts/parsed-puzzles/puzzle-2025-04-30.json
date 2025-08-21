@@ -1,0 +1,46 @@
+{
+  "date": "2025-04-30",
+  "gameId": 689,
+  "groups": [
+    {
+      "name": "PARTS OF A SHOE",
+      "level": 0,
+      "words": [
+        "HEEL",
+        "SOLE",
+        "TONGUE",
+        "UPPER"
+      ]
+    },
+    {
+      "name": "ACCOMMODATION",
+      "level": 1,
+      "words": [
+        "CAPACITY",
+        "CHAIRS",
+        "ROOM",
+        "SEATING"
+      ]
+    },
+    {
+      "name": "REPUTATION",
+      "level": 2,
+      "words": [
+        "FACE",
+        "IMAGE",
+        "REGARD",
+        "STANDING"
+      ]
+    },
+    {
+      "name": "ENDING WITH SYNONYMS FOR “YUCK”",
+      "level": 3,
+      "words": [
+        "DYNASTY",
+        "ENGROSS",
+        "GIMMICK",
+        "MILDEW"
+      ]
+    }
+  ]
+}

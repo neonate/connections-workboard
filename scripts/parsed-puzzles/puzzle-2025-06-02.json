@@ -1,0 +1,46 @@
+{
+  "date": "2025-06-02",
+  "gameId": 722,
+  "groups": [
+    {
+      "name": "EXPEDITION",
+      "level": 0,
+      "words": [
+        "JOURNEY",
+        "ODYSSEY",
+        "QUEST",
+        "VOYAGE"
+      ]
+    },
+    {
+      "name": "HOLD DEAR",
+      "level": 1,
+      "words": [
+        "ESTEEM",
+        "PRIZE",
+        "TREASURE",
+        "VALUE"
+      ]
+    },
+    {
+      "name": "WORDS WHOSE ONLY VOWEL IS “Y”",
+      "level": 2,
+      "words": [
+        "MYRRH",
+        "NYMPH",
+        "RHYTHM",
+        "SPHYNX"
+      ]
+    },
+    {
+      "name": "NAMES ENDING IN “K” PLUS WORD",
+      "level": 3,
+      "words": [
+        "FRANKINCENSE",
+        "JACKPOT",
+        "MARKDOWN",
+        "NICKNAME"
+      ]
+    }
+  ]
+}

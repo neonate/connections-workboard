@@ -1,0 +1,46 @@
+{
+  "date": "2025-07-09",
+  "gameId": 759,
+  "groups": [
+    {
+      "name": "LOWEST PART",
+      "level": 0,
+      "words": [
+        "BASE",
+        "BOTTOM",
+        "FOOT",
+        "FOUNDATION"
+      ]
+    },
+    {
+      "name": "KINDS OF SOCKS",
+      "level": 1,
+      "words": [
+        "ANKLE",
+        "COMPRESSION",
+        "CREW",
+        "DRESS"
+      ]
+    },
+    {
+      "name": "THINGS YOU DO AT SOMEONE'S FRONT DOOR",
+      "level": 2,
+      "words": [
+        "BUZZ",
+        "KNOCK",
+        "RING",
+        "SHOUT"
+      ]
+    },
+    {
+      "name": "ENDING IN SYNONYMS FOR \"CLIP\"",
+      "level": 3,
+      "words": [
+        "COMPARE",
+        "CONNECTICUT",
+        "PARSNIP",
+        "WALLOP"
+      ]
+    }
+  ]
+}

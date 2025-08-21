@@ -1,0 +1,46 @@
+{
+  "date": "2025-07-21",
+  "gameId": 771,
+  "groups": [
+    {
+      "name": "ADDITIONAL PERK",
+      "level": 0,
+      "words": [
+        "BONUS",
+        "EXTRA",
+        "GRAVY",
+        "ICING"
+      ]
+    },
+    {
+      "name": "PHASE TRANSITIONS FOR LIQUIDS",
+      "level": 1,
+      "words": [
+        "CONDENSATION",
+        "FREEZING",
+        "MELTING",
+        "VAPORIZATION"
+      ]
+    },
+    {
+      "name": "CONCEPTS FROM “SEINFELD”",
+      "level": 2,
+      "words": [
+        "FESTIVUS",
+        "REGIFTING",
+        "SHRINKAGE",
+        "YADA YADA"
+      ]
+    },
+    {
+      "name": "WHAT ' CAN INDICATE",
+      "level": 3,
+      "words": [
+        "CONTRACTION",
+        "FOOT",
+        "POSSESSIVE",
+        "QUOTE"
+      ]
+    }
+  ]
+}

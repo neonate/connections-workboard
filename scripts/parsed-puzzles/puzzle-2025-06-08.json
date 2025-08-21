@@ -1,0 +1,46 @@
+{
+  "date": "2025-06-08",
+  "gameId": 728,
+  "groups": [
+    {
+      "name": "PERSIST",
+      "level": 0,
+      "words": [
+        "HOLD",
+        "LAST",
+        "STAND",
+        "STAY"
+      ]
+    },
+    {
+      "name": "ANIMAL METAPHORS IN ECONOMICS",
+      "level": 1,
+      "words": [
+        "BEAR",
+        "BULL",
+        "DOVE",
+        "HAWK"
+      ]
+    },
+    {
+      "name": "SIDEBAR INFO ON A PERSON’S WIKIPEDIA PAGE",
+      "level": 2,
+      "words": [
+        "BORN",
+        "EDUCATION",
+        "OCCUPATION",
+        "SPOUSE"
+      ]
+    },
+    {
+      "name": "HOMOPHONES OF SLANG FOR MONEY",
+      "level": 3,
+      "words": [
+        "BRED",
+        "CACHE",
+        "DOE",
+        "LUTE"
+      ]
+    }
+  ]
+}

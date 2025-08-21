@@ -1,0 +1,46 @@
+{
+  "date": "2025-05-05",
+  "gameId": 694,
+  "groups": [
+    {
+      "name": "GLIDE",
+      "level": 0,
+      "words": [
+        "COAST",
+        "CRUISE",
+        "DRIFT",
+        "FLOAT"
+      ]
+    },
+    {
+      "name": "ASSOCIATED WITH COUNT DRACULA",
+      "level": 1,
+      "words": [
+        "BAT",
+        "CAPE",
+        "CASTLE",
+        "FANG"
+      ]
+    },
+    {
+      "name": "STOP CHANGING",
+      "level": 2,
+      "words": [
+        "FLATTEN",
+        "LEVEL",
+        "PLATEAU",
+        "SETTLE"
+      ]
+    },
+    {
+      "name": "THINGS THAT ARE LONG AND CYLINDRICAL",
+      "level": 3,
+      "words": [
+        "BATON",
+        "CIGAR",
+        "HOAGIE",
+        "TORPEDO"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "date": "2025-03-15",
+  "gameId": 643,
+  "groups": [
+    {
+      "name": "SHARP PROTRUSION",
+      "level": 0,
+      "words": [
+        "BARB",
+        "BRISTLE",
+        "NEEDLE",
+        "SPINE"
+      ]
+    },
+    {
+      "name": "FEATURES OF STRINGED INSTRUMENTS",
+      "level": 1,
+      "words": [
+        "BRIDGE",
+        "NECK",
+        "PEG",
+        "STRING"
+      ]
+    },
+    {
+      "name": "LITIGATION VERBS",
+      "level": 2,
+      "words": [
+        "CHARGE",
+        "MOVE",
+        "SERVE",
+        "SUE"
+      ]
+    },
+    {
+      "name": "IN “STAR LIGHT, STAR BRIGHT”",
+      "level": 3,
+      "words": [
+        "MAY",
+        "MIGHT",
+        "TONIGHT",
+        "WISH"
+      ]
+    }
+  ]
+}

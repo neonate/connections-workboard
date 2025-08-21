@@ -1,0 +1,46 @@
+{
+  "date": "2025-05-26",
+  "gameId": 715,
+  "groups": [
+    {
+      "name": "ITEMS IN A LINEN CLOSET",
+      "level": 0,
+      "words": [
+        "PILLOWCASE",
+        "SHEET",
+        "TOWEL",
+        "WASHCLOTH"
+      ]
+    },
+    {
+      "name": "DIAMETRIC",
+      "level": 1,
+      "words": [
+        "COUNTER",
+        "OPPOSITE",
+        "POLAR",
+        "REVERSE"
+      ]
+    },
+    {
+      "name": "LINGERIE",
+      "level": 2,
+      "words": [
+        "GARTER",
+        "HOSE",
+        "SLIP",
+        "TEDDY"
+      ]
+    },
+    {
+      "name": "CARD GAMES WITH FIRST LETTER CHANGED",
+      "level": 3,
+      "words": [
+        "DIN",
+        "FRIDGE",
+        "GUMMY",
+        "JOKER"
+      ]
+    }
+  ]
+}

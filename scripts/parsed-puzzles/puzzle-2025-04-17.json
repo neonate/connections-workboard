@@ -1,0 +1,46 @@
+{
+  "date": "2025-04-17",
+  "gameId": 676,
+  "groups": [
+    {
+      "name": "CENTRAL SECTION OF THE BODY",
+      "level": 0,
+      "words": [
+        "CORE",
+        "MIDRIFF",
+        "TORSO",
+        "TRUNK"
+      ]
+    },
+    {
+      "name": "COMPONENTS OF A PIZZA",
+      "level": 1,
+      "words": [
+        "CHEESE",
+        "CRUST",
+        "SAUCE",
+        "TOPPINGS"
+      ]
+    },
+    {
+      "name": "UNITS OF BEER",
+      "level": 2,
+      "words": [
+        "CASE",
+        "FORTY",
+        "GROWLER",
+        "SIX-PACK"
+      ]
+    },
+    {
+      "name": "BASEBALL GREATS",
+      "level": 3,
+      "words": [
+        "BONDS",
+        "MANTLE",
+        "TROUT",
+        "YOUNG"
+      ]
+    }
+  ]
+}

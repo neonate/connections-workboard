@@ -1,0 +1,46 @@
+{
+  "date": "2025-04-07",
+  "gameId": 666,
+  "groups": [
+    {
+      "name": "THROB",
+      "level": 0,
+      "words": [
+        "BEAT",
+        "POUND",
+        "PULSE",
+        "THUMP"
+      ]
+    },
+    {
+      "name": "LANDFORMS",
+      "level": 1,
+      "words": [
+        "CAPE",
+        "CRATER",
+        "GORGE",
+        "RIDGE"
+      ]
+    },
+    {
+      "name": "PICTURE HANGING NEEDS",
+      "level": 2,
+      "words": [
+        "HAMMER",
+        "HANGER",
+        "LEVEL",
+        "NAIL"
+      ]
+    },
+    {
+      "name": "FOOT___",
+      "level": 3,
+      "words": [
+        "BALL",
+        "HILLS",
+        "LOCKER",
+        "PRINT"
+      ]
+    }
+  ]
+}

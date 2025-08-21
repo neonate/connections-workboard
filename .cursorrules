@@ -32,6 +32,10 @@ Follow the following rules:
 - proactive_testing: any functionality codes should be accompanied with proper test code.
 
 ## Project Management Rules:
+- **MANDATORY**: Create a task breakdown in the `tasks/` folder for every new task or issue
+- **MANDATORY**: Break down complex work into sequential, checkable steps
+- **MANDATORY**: Update task files as work progresses and mark completed items
+- **MANDATORY**: Keep task files as historical records after completion
 - Always check for a PRD (Product Requirements Document) before starting a new task and follow it closely
 - Look for comprehensive project documentation to understand requirements before making changes
 - Focus only on code areas relevant to the assigned task

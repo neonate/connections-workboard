@@ -1,0 +1,46 @@
+{
+  "date": "2025-06-06",
+  "gameId": 726,
+  "groups": [
+    {
+      "name": "NEWSPAPER JOBS",
+      "level": 0,
+      "words": [
+        "COLUMNIST",
+        "EDITOR",
+        "PHOTOGRAPHER",
+        "REPORTER"
+      ]
+    },
+    {
+      "name": "EVERYDAY",
+      "level": 1,
+      "words": [
+        "COMMON",
+        "REGULAR",
+        "ROUTINE",
+        "STANDARD"
+      ]
+    },
+    {
+      "name": "WHAT “CON” MIGHT MEAN",
+      "level": 2,
+      "words": [
+        "CONVENTION",
+        "CRIMINAL",
+        "DRAWBACK",
+        "SWINDLE"
+      ]
+    },
+    {
+      "name": "ENDING WITH KINDS OF DOGS",
+      "level": 3,
+      "words": [
+        "NEWSHOUND",
+        "SHADOWBOXER",
+        "SNICKERDOODLE",
+        "TRENDSETTER"
+      ]
+    }
+  ]
+}
