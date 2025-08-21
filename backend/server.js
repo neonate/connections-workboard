@@ -19,7 +19,6 @@ const corsOptions = {
 };
 app.use(cors(corsOptions));
 app.use(express.json());
-app.use(express.static(path.join(__dirname, '../build')));
 
 // CSV file path
 const CSV_FILE_PATH = path.join(__dirname, '../data/puzzles.csv');
@@ -646,11 +645,23 @@ app.get('/api/health', (req, res) => {
   });
 });
 
-// Note: For development, serve React app separately
-// For production, uncomment the following lines after building:
-// app.get('/*', (req, res) => {
-//   res.sendFile(path.join(__dirname, '../build/index.html'));
-// });
+// Production: Serve React app from build directory
+if (process.env.NODE_ENV === 'production' || process.env.SERVE_FRONTEND === 'true') {
+  console.log('📦 Serving frontend from build directory...');
+  
+  // Serve static files from the React build directory
+  app.use(express.static(path.join(__dirname, '../build')));
+  
+  // Handle React Router - send all non-API requests to React app
+  app.get('/*', (req, res) => {
+    // Don't serve index.html for API routes
+    if (req.path.startsWith('/api/')) {
+      return res.status(404).json({ error: 'API route not found' });
+    }
+    
+    res.sendFile(path.join(__dirname, '../build/index.html'));
+  });
+}
 
 // Start server
 app.listen(PORT, () => {

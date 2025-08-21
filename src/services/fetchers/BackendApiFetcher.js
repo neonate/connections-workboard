@@ -12,7 +12,11 @@ class BackendApiFetcher extends BasePuzzleFetcher {
       timeout: 30000
     });
     
-    this.baseUrl = process.env.REACT_APP_API_URL || process.env.REACT_APP_BACKEND_URL || 'http://localhost:3001';
+    // In production, backend serves on the same domain as frontend
+    // In development, backend runs on port 3001
+    this.baseUrl = process.env.REACT_APP_API_URL || 
+                   process.env.REACT_APP_BACKEND_URL || 
+                   (process.env.NODE_ENV === 'production' ? '' : 'http://localhost:3001');
   }
 
   /**
