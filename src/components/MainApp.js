@@ -680,6 +680,17 @@ function MainApp() {
           </div>
         </div>
       )}
+      
+      {/* Bug submission link */}
+      <div className="bug-submission-link">
+        <a 
+          href="https://github.com/neonate/connections-workboard/issues" 
+          target="_blank" 
+          rel="noopener noreferrer"
+        >
+          Report a bug or request a feature
+        </a>
+      </div>
     </div>
   );
 }
