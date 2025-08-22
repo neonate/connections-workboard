@@ -31,7 +31,7 @@ function MainApp() {
   const [inputText, setInputText] = useState('');
   const [dragOverGroup, setDragOverGroup] = useState(null);
   const [hasStartedGame, setHasStartedGame] = useState(false);
-  const [copySuccess, setCopySuccess] = useState(false);
+
   const [selectedDate, setSelectedDate] = useState(() => {
     // Set default date to today's date in local timezone
     const today = new Date();
@@ -334,25 +334,7 @@ function MainApp() {
     setWords([...words, word]);
   };
 
-  /**
-   * Copies all groups to clipboard as formatted text
-   */
-  const copyGroupsToClipboard = async () => {
-    const groupTexts = groups.map((group, index) => {
-      if (group.length === 0) return '';
-      return `Group ${index + 1}: ${group.join(', ')}`;
-    }).filter(text => text.length > 0);
-    
-    const finalText = groupTexts.join('\n');
-    
-    try {
-      await navigator.clipboard.writeText(finalText);
-      setCopySuccess(true);
-      setTimeout(() => setCopySuccess(false), 2000);
-    } catch (err) {
-      console.error('Failed to copy: ', err);
-    }
-  };
+
 
   /**
    * Checks if a group has the correct words
@@ -694,9 +676,6 @@ function MainApp() {
               setCurrentPuzzleDate(null); // Reset current puzzle date
             }}>
               Start Over
-            </button>
-            <button onClick={copyGroupsToClipboard}>
-              {copySuccess ? '✓ Copied!' : 'Copy Groups to Clipboard'}
             </button>
           </div>
         </div>
