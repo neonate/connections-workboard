@@ -103,6 +103,16 @@
   margin-bottom: 15px;
 }
 
+.date-limitation-note {
+  font-size: 0.85em;
+  color: #7b68ee;
+  margin: 5px 0 15px 0;
+  padding: 8px 12px;
+  background: rgba(123, 104, 238, 0.1);
+  border-left: 3px solid #7b68ee;
+  border-radius: 4px;
+}
+
 .date-fetch-section {
   display: flex;
   flex-direction: column;

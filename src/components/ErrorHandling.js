@@ -14,7 +14,7 @@ function ErrorDisplay({
   onRetry, 
   onDismiss, 
   context = 'operation',
-  suggestions = {}
+  onDateClick
 }) {
   const [isRetrying, setIsRetrying] = useState(false);
   const [retryCount, setRetryCount] = useState(0);
@@ -58,45 +58,43 @@ function ErrorDisplay({
   };
 
   /**
-   * Get error-specific suggestions
+   * Render formatted error message with clickable date links
    */
-  const getErrorSuggestions = () => {
-    const defaultSuggestions = [];
-
-    if (isNetworkError) {
-      defaultSuggestions.push(
-        'Check your internet connection',
-        'Try again in a few moments',
-        'The puzzle source might be temporarily unavailable'
-      );
-    }
-
-    if (isValidationError) {
-      defaultSuggestions.push(
-        'The puzzle data format may have changed',
-        'Try a different date',
-        'Contact support if this persists'
-      );
-    }
-
-    if (isDynamicFetchError) {
-      defaultSuggestions.push(
-        'Try using static data if available',
-        'The external source may be temporarily down',
-        'Check if the date is within available range'
-      );
-    }
-
-    if (errorMessage.includes('not found')) {
-      defaultSuggestions.push(
-        'This puzzle may not be available yet',
-        'Try yesterday\'s puzzle instead',
-        'Enable dynamic fetching for newer puzzles'
-      );
-    }
-
-    return suggestions.custom || defaultSuggestions;
+  const renderFormattedErrorMessage = (message) => {
+    // Split message into lines for better formatting
+    const lines = message.split('\n');
+    
+    return lines.map((line, lineIndex) => {
+      // Check if this line contains suggested dates
+      const datePattern = /(\d{4}-\d{2}-\d{2})/g;
+      const dates = line.match(datePattern);
+      
+      if (dates && dates.length > 0) {
+        // This line contains dates - make them clickable
+        let formattedLine = line;
+        
+        dates.forEach(date => {
+          const clickableDate = `<span class="clickable-date" data-date="${date}">${date}</span>`;
+          formattedLine = formattedLine.replace(date, clickableDate);
+        });
+        
+        return (
+          <div key={lineIndex} className="error-line">
+            <span dangerouslySetInnerHTML={{ __html: formattedLine }} />
+          </div>
+        );
+      } else {
+        // Regular line
+        return (
+          <div key={lineIndex} className="error-line">
+            {line}
+          </div>
+        );
+      }
+    });
   };
+
+
 
   /**
    * Get retry button text based on state
@@ -121,8 +119,18 @@ function ErrorDisplay({
           </span>
         </div>
 
-        <div className="error-message">
-          {errorMessage}
+        <div 
+          className="error-message"
+          onClick={(e) => {
+            if (e.target.classList.contains('clickable-date') && onDateClick) {
+              const date = e.target.getAttribute('data-date');
+              if (date) {
+                onDateClick(date);
+              }
+            }
+          }}
+        >
+          {renderFormattedErrorMessage(errorMessage)}
         </div>
 
         {context && (
@@ -130,15 +138,6 @@ function ErrorDisplay({
             <strong>Context:</strong> {context}
           </div>
         )}
-
-        <div className="error-suggestions">
-          <strong>What you can try:</strong>
-          <ul>
-            {getErrorSuggestions().map((suggestion, index) => (
-              <li key={index}>{suggestion}</li>
-            ))}
-          </ul>
-        </div>
 
         <div className="error-actions">
           {onRetry && (
@@ -148,51 +147,6 @@ function ErrorDisplay({
               className={`retry-button ${isRetrying ? 'retrying' : ''}`}
             >
               {getRetryButtonText()}
-            </button>
-          )}
-
-          {suggestions.enableDynamic && (
-            <button 
-              onClick={suggestions.enableDynamic}
-              className="action-button dynamic-button"
-            >
-              🌐 Try Dynamic Fetch
-            </button>
-          )}
-
-          {suggestions.useStatic && (
-            <button 
-              onClick={suggestions.useStatic}
-              className="action-button static-button"
-            >
-              📁 Use Static Data
-            </button>
-          )}
-
-          {suggestions.tryDifferentDate && (
-            <button 
-              onClick={suggestions.tryDifferentDate}
-              className="action-button date-button"
-            >
-              📅 Try July 18, 2024
-            </button>
-          )}
-
-          {suggestions.tryPopularDate && (
-            <button 
-              onClick={suggestions.tryPopularDate}
-              className="action-button date-button"
-            >
-              🎲 Try Random Popular Date
-            </button>
-          )}
-
-          {suggestions.manualInput && (
-            <button 
-              onClick={suggestions.manualInput}
-              className="action-button manual-button"
-            >
-              ✏️ Enter Words Manually
             </button>
           )}
 
@@ -250,31 +204,47 @@ function ErrorDisplay({
 
         .error-message {
           background: #fef2f2;
-          padding: 12px;
+          padding: 16px;
           border-radius: 4px;
           margin-bottom: 12px;
-          font-family: monospace;
+          font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
           border-left: 4px solid #dc2626;
+          line-height: 1.6;
+        }
+
+        .error-line {
+          margin-bottom: 6px;
+          text-align: left;
+        }
+
+        .error-line:last-child {
+          margin-bottom: 0;
+        }
+
+        .error-line:first-child {
+          font-weight: 600;
+          margin-bottom: 12px;
+        }
+
+        .clickable-date {
+          color: #2563eb;
+          cursor: pointer;
+          text-decoration: underline;
+          font-weight: 600;
+          transition: color 0.2s;
+          padding: 0;
+          background: none;
+        }
+
+        .clickable-date:hover {
+          color: #1d4ed8;
+          text-decoration: none;
         }
 
         .error-context {
           margin-bottom: 12px;
           font-size: 14px;
           color: #991b1b;
-        }
-
-        .error-suggestions {
-          margin-bottom: 16px;
-        }
-
-        .error-suggestions ul {
-          margin: 8px 0 0 0;
-          padding-left: 20px;
-        }
-
-        .error-suggestions li {
-          margin-bottom: 4px;
-          color: #7f1d1d;
         }
 
         .error-actions {
@@ -308,45 +278,6 @@ function ErrorDisplay({
           animation: pulse 1.5s infinite;
         }
 
-        .action-button {
-          background: #3b82f6;
-          color: white;
-          border: none;
-          padding: 8px 16px;
-          border-radius: 4px;
-          cursor: pointer;
-          font-weight: bold;
-          transition: all 0.2s;
-        }
-
-        .action-button:hover {
-          background: #2563eb;
-        }
-
-        .dynamic-button {
-          background: #059669;
-        }
-
-        .dynamic-button:hover {
-          background: #047857;
-        }
-
-        .static-button {
-          background: #7c3aed;
-        }
-
-        .static-button:hover {
-          background: #6d28d9;
-        }
-
-        .manual-button {
-          background: #ea580c;
-        }
-
-        .manual-button:hover {
-          background: #c2410c;
-        }
-
         .dismiss-button {
           background: #6b7280;
           color: white;
@@ -360,15 +291,6 @@ function ErrorDisplay({
 
         .dismiss-button:hover {
           background: #4b5563;
-        }
-
-        .date-button {
-          background: #8b5cf6;
-          color: white;
-        }
-
-        .date-button:hover {
-          background: #7c3aed;
         }
 
         .error-help {

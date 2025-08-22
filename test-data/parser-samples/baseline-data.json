@@ -1,0 +1,504 @@
+{
+  "capturedAt": "2025-08-22T15:14:23.357Z",
+  "nodeVersion": "v23.11.0",
+  "testResults": [
+    {
+      "date": "2024-06-12",
+      "description": "Edge case with complex movie titles - Hedwig and the Angry Inch",
+      "expectedGroups": 4,
+      "expectedWords": 16,
+      "notes": "Contains multi-word movie titles that can confuse parser",
+      "timestamp": "2025-08-22T15:14:23.358Z",
+      "success": true,
+      "issues": [],
+      "data": {
+        "success": true,
+        "data": {
+          "date": "2024-06-12",
+          "gameId": 367,
+          "words": [
+            "CHINATOWN",
+            "DUMBO",
+            "MANHATTAN",
+            "WALL STREET",
+            "REWIND",
+            "E.T.",
+            "FRIGHT NIGHT",
+            "KILL BILL",
+            "INCH",
+            "MY LEFT FOOT",
+            "THE GREEN MILE",
+            "THE LONGEST YARD",
+            "BEETLEJUICE",
+            "DOGMA",
+            "FOXY BROWN",
+            "OCTOPUSSY"
+          ],
+          "groups": [
+            {
+              "name": "PLACES IN NEW YORK CITY",
+              "level": 0,
+              "words": [
+                "CHINATOWN",
+                "DUMBO",
+                "MANHATTAN",
+                "WALL STREET"
+              ],
+              "hint": "PLACES IN NEW YORK CITY"
+            },
+            {
+              "name": "RHYMING TITLES",
+              "level": 1,
+              "words": [
+                "REWIND",
+                "E.T.",
+                "FRIGHT NIGHT",
+                "KILL BILL"
+              ],
+              "hint": "RHYMING TITLES"
+            },
+            {
+              "name": "ENDING IN UNITS OF MEASUREMENT",
+              "level": 2,
+              "words": [
+                "INCH",
+                "MY LEFT FOOT",
+                "THE GREEN MILE",
+                "THE LONGEST YARD"
+              ],
+              "hint": "ENDING IN UNITS OF MEASUREMENT"
+            },
+            {
+              "name": "STARTING WITH ANIMALS",
+              "level": 3,
+              "words": [
+                "BEETLEJUICE",
+                "DOGMA",
+                "FOXY BROWN",
+                "OCTOPUSSY"
+              ],
+              "hint": "STARTING WITH ANIMALS"
+            }
+          ],
+          "source": "TechRadar",
+          "fetchedAt": "2025-08-22T15:14:23.711Z"
+        }
+      }
+    },
+    {
+      "date": "2024-07-18",
+      "description": "Standard format, simple group names",
+      "expectedGroups": 4,
+      "expectedWords": 16,
+      "notes": "Clean format, good baseline example",
+      "timestamp": "2025-08-22T15:14:24.717Z",
+      "success": true,
+      "issues": [],
+      "data": {
+        "success": true,
+        "data": {
+          "date": "2024-07-18",
+          "gameId": 403,
+          "words": [
+            "COURT",
+            "PLAZA",
+            "SQUARE",
+            "YARD",
+            "BOUT",
+            "CONTEST",
+            "MATCH",
+            "ROUND",
+            "DAZZLE",
+            "FLASH",
+            "POMP",
+            "RITZ",
+            "FIRE",
+            "HEART",
+            "SKULL",
+            "SPARKLES"
+          ],
+          "groups": [
+            {
+              "name": "OPEN SPACE",
+              "level": 0,
+              "words": [
+                "COURT",
+                "PLAZA",
+                "SQUARE",
+                "YARD"
+              ],
+              "hint": "OPEN SPACE"
+            },
+            {
+              "name": "BOXING UNIT",
+              "level": 1,
+              "words": [
+                "BOUT",
+                "CONTEST",
+                "MATCH",
+                "ROUND"
+              ],
+              "hint": "BOXING UNIT"
+            },
+            {
+              "name": "GLITZINESS",
+              "level": 2,
+              "words": [
+                "DAZZLE",
+                "FLASH",
+                "POMP",
+                "RITZ"
+              ],
+              "hint": "GLITZINESS"
+            },
+            {
+              "name": "EMOJI",
+              "level": 3,
+              "words": [
+                "FIRE",
+                "HEART",
+                "SKULL",
+                "SPARKLES"
+              ],
+              "hint": "EMOJI"
+            }
+          ],
+          "source": "TechRadar",
+          "fetchedAt": "2025-08-22T15:14:24.801Z"
+        }
+      }
+    },
+    {
+      "date": "2024-08-21",
+      "description": "Has duplicate HTML elements (regression test)",
+      "expectedGroups": 4,
+      "expectedWords": 16,
+      "notes": "TechRadar HTML contains duplicate sections, tests deduplication",
+      "timestamp": "2025-08-22T15:14:25.803Z",
+      "success": true,
+      "issues": [],
+      "data": {
+        "success": true,
+        "data": {
+          "date": "2024-08-21",
+          "gameId": 437,
+          "words": [
+            "BALLOON",
+            "BASKETBALL",
+            "FLOATIE",
+            "TIRE",
+            "FIZZ",
+            "PUNCH",
+            "SLING",
+            "SOUR",
+            "CAKE",
+            "COAT",
+            "PLASTER",
+            "SMEAR",
+            "BAR",
+            "BUBBLE",
+            "LINE",
+            "PIE"
+          ],
+          "groups": [
+            {
+              "name": "THINGS THAT ARE INFLATED",
+              "level": 1,
+              "words": [
+                "BALLOON",
+                "BASKETBALL",
+                "FLOATIE",
+                "TIRE"
+              ],
+              "hint": "THINGS THAT ARE INFLATED"
+            },
+            {
+              "name": "CLASSIC COCKTAIL TYPES",
+              "level": 3,
+              "words": [
+                "FIZZ",
+                "PUNCH",
+                "SLING",
+                "SOUR"
+              ],
+              "hint": "CLASSIC COCKTAIL TYPES"
+            },
+            {
+              "name": "COVER WITH A THICK LAYER",
+              "level": 0,
+              "words": [
+                "CAKE",
+                "COAT",
+                "PLASTER",
+                "SMEAR"
+              ],
+              "hint": "COVER WITH A THICK LAYER"
+            },
+            {
+              "name": "KINDS OF CHARTS",
+              "level": 2,
+              "words": [
+                "BAR",
+                "BUBBLE",
+                "LINE",
+                "PIE"
+              ],
+              "hint": "KINDS OF CHARTS"
+            }
+          ],
+          "source": "TechRadar",
+          "fetchedAt": "2025-08-22T15:14:25.879Z"
+        }
+      }
+    },
+    {
+      "date": "2024-06-01",
+      "description": "Early June 2024 - boundary of TechRadar coverage",
+      "expectedGroups": 4,
+      "expectedWords": 16,
+      "notes": "First reliable date in TechRadar coverage",
+      "timestamp": "2025-08-22T15:14:26.880Z",
+      "success": true,
+      "issues": [],
+      "data": {
+        "success": true,
+        "data": {
+          "date": "2024-06-01",
+          "gameId": 356,
+          "words": [
+            "HURRY",
+            "NOW",
+            "PRONTO",
+            "STAT",
+            "CURRENT",
+            "DRIFT",
+            "TIDE",
+            "WAVE",
+            "CURL",
+            "FLY",
+            "PRESS",
+            "ROW",
+            "LOCK",
+            "MARKS",
+            "PANE",
+            "RUSTLE"
+          ],
+          "groups": [
+            {
+              "name": "“DON’T DELAY!”",
+              "level": 0,
+              "words": [
+                "HURRY",
+                "NOW",
+                "PRONTO",
+                "STAT"
+              ],
+              "hint": "“DON’T DELAY!”"
+            },
+            {
+              "name": "OCEAN PHENOMENA",
+              "level": 1,
+              "words": [
+                "CURRENT",
+                "DRIFT",
+                "TIDE",
+                "WAVE"
+              ],
+              "hint": "OCEAN PHENOMENA"
+            },
+            {
+              "name": "DUMBBELL EXERCISES",
+              "level": 2,
+              "words": [
+                "CURL",
+                "FLY",
+                "PRESS",
+                "ROW"
+              ],
+              "hint": "DUMBBELL EXERCISES"
+            },
+            {
+              "name": "PHILOSOPHER HOMOPHONES",
+              "level": 3,
+              "words": [
+                "LOCK",
+                "MARKS",
+                "PANE",
+                "RUSTLE"
+              ],
+              "hint": "PHILOSOPHER HOMOPHONES"
+            }
+          ],
+          "source": "TechRadar",
+          "fetchedAt": "2025-08-22T15:14:26.959Z"
+        }
+      }
+    },
+    {
+      "date": "2024-11-13",
+      "description": "November date - different HTML structure",
+      "expectedGroups": 4,
+      "expectedWords": 16,
+      "notes": "Tests different seasonal HTML layouts",
+      "timestamp": "2025-08-22T15:14:27.961Z",
+      "success": true,
+      "issues": [],
+      "data": {
+        "success": true,
+        "data": {
+          "date": "2024-11-13",
+          "gameId": 521,
+          "words": [
+            "CANARY",
+            "LEMON",
+            "MINION",
+            "MUSTARD",
+            "ADDITION",
+            "ANNEX",
+            "EXTENSION",
+            "WING",
+            "CALCULUS",
+            "CAVITY",
+            "PLAQUE",
+            "TARTAR",
+            "COLONEL",
+            "PHARAOH",
+            "WEDNESDAY",
+            "WORCESTERSHIRE"
+          ],
+          "groups": [
+            {
+              "name": "THINGS THAT ARE YELLOW",
+              "level": 0,
+              "words": [
+                "CANARY",
+                "LEMON",
+                "MINION",
+                "MUSTARD"
+              ],
+              "hint": "THINGS THAT ARE YELLOW"
+            },
+            {
+              "name": "BUILDING ADD-ONS",
+              "level": 1,
+              "words": [
+                "ADDITION",
+                "ANNEX",
+                "EXTENSION",
+                "WING"
+              ],
+              "hint": "BUILDING ADD-ONS"
+            },
+            {
+              "name": "CONCERNS FOR A DENTIST",
+              "level": 2,
+              "words": [
+                "CALCULUS",
+                "CAVITY",
+                "PLAQUE",
+                "TARTAR"
+              ],
+              "hint": "CONCERNS FOR A DENTIST"
+            },
+            {
+              "name": "WORDS THAT SEEM LONGER WRITTEN THAN SPOKEN",
+              "level": 3,
+              "words": [
+                "COLONEL",
+                "PHARAOH",
+                "WEDNESDAY",
+                "WORCESTERSHIRE"
+              ],
+              "hint": "WORDS THAT SEEM LONGER WRITTEN THAN SPOKEN"
+            }
+          ],
+          "source": "TechRadar",
+          "fetchedAt": "2025-08-22T15:14:28.035Z"
+        }
+      }
+    },
+    {
+      "date": "2025-08-22",
+      "description": "Current date with compound names (CHEVY CHASE parsing bug)",
+      "expectedGroups": 4,
+      "expectedWords": 16,
+      "notes": "Tests parsing of compound proper names like CHEVY CHASE",
+      "timestamp": "2025-08-22T15:14:29.038Z",
+      "success": true,
+      "issues": [],
+      "data": {
+        "success": true,
+        "data": {
+          "date": "2025-08-22",
+          "gameId": 803,
+          "words": [
+            "ADAMS",
+            "FORD",
+            "GRANT",
+            "WASHINGTON",
+            "CHASE",
+            "CHRISTOPH WALTZ",
+            "GEOFFREY RUSH",
+            "TOM CRUISE",
+            "DRAW",
+            "OMAHA",
+            "STRIP",
+            "STUD",
+            "AMY",
+            "JOHN MALKOVICH",
+            "LAS VEGAS",
+            "PRIVATE RYAN"
+          ],
+          "groups": [
+            {
+              "name": "Four of the 45",
+              "level": 0,
+              "words": [
+                "ADAMS",
+                "FORD",
+                "GRANT",
+                "WASHINGTON"
+              ],
+              "hint": "Four of the 45"
+            },
+            {
+              "name": "Action surnames",
+              "level": 1,
+              "words": [
+                "CHASE",
+                "CHRISTOPH WALTZ",
+                "GEOFFREY RUSH",
+                "TOM CRUISE"
+              ],
+              "hint": "Action surnames"
+            },
+            {
+              "name": "Place your bets",
+              "level": 2,
+              "words": [
+                "DRAW",
+                "OMAHA",
+                "STRIP",
+                "STUD"
+              ],
+              "hint": "Place your bets"
+            },
+            {
+              "name": "Film names featuring verbs as nouns",
+              "level": 3,
+              "words": [
+                "AMY",
+                "JOHN MALKOVICH",
+                "LAS VEGAS",
+                "PRIVATE RYAN"
+              ],
+              "hint": "Film names featuring verbs as nouns"
+            }
+          ],
+          "source": "TechRadar",
+          "fetchedAt": "2025-08-22T15:14:29.111Z"
+        }
+      }
+    }
+  ]
+}

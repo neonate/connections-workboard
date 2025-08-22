@@ -19,6 +19,11 @@ const createCsvWriter = require('csv-writer').createObjectCsvWriter;
 const axios = require('axios');
 const cheerio = require('cheerio');
 
+// Environment configuration
+const NODE_ENV = process.env.NODE_ENV || 'development';
+const IS_TEST_ENV = NODE_ENV === 'test';
+const IS_PRODUCTION = NODE_ENV === 'production';
+
 const app = express();
 const PORT = process.env.PORT || 3001;
 
@@ -512,9 +517,10 @@ async function fetchFromTechRadar(date) {
 
             const colorLevels = { 'YELLOW': 0, 'GREEN': 1, 'BLUE': 2, 'PURPLE': 3 };
 
+    // Deduplicate list items based on the words (since words are unique per group)
+    const seenGroups = new Map(); // Map from color to group data
+    
     listItems.each((i, el) => {
-      if (i >= 4) return; // Only process first 4 items
-      
       const $li = $(el);
       const fullText = $li.text().trim();
       
@@ -527,6 +533,12 @@ async function fetchFromTechRadar(date) {
 
       const color = match[1];
       const content = match[2].trim();
+      
+      // Skip if we already have this color (deduplication)
+      if (seenGroups.has(color)) {
+        console.log(`⏭️  Skipping duplicate ${color} group`);
+        return;
+      }
       
       // Split the content to find the last 4 comma-separated items (the puzzle words)
       const commaParts = content.split(',').map(part => part.trim());
@@ -565,15 +577,22 @@ async function fetchFromTechRadar(date) {
 
       console.log(`✅ Parsed ${color}: ${groupName} - [${groupWords.join(', ')}]`);
 
-      groups.push({
-        name: groupName,
+      const groupData = {
+        name: hints[color] || groupName, // Use clean hint as name, fallback to parsed group name
         level: colorLevels[color],
         words: groupWords,
         hint: hints[color] || groupName // Use hint if available, fallback to group name
-      });
+      };
 
+      seenGroups.set(color, groupData);
+      groups.push(groupData);
       words.push(...groupWords);
     });
+
+    // Ensure we have exactly 4 groups
+    if (groups.length !== 4) {
+      throw new Error(`Expected exactly 4 groups after deduplication, got ${groups.length}`);
+    }
 
     if (words.length !== 16) {
       throw new Error(`Expected 16 total words, got ${words.length}`);
@@ -591,6 +610,21 @@ async function fetchFromTechRadar(date) {
 
   } catch (error) {
     console.error(`❌ Backend: Error fetching from TechRadar: ${error.message}`);
+    
+    // Check if this is a 404/503 (TechRadar doesn't have this date)
+    if (error.response && (error.response.status === 404 || error.response.status === 503)) {
+      // Parse date to check if it's before TechRadar coverage
+      const [year, month] = date.split('-').map(Number);
+      const puzzleDate = new Date(year, month - 1, 1); // First day of the month
+      const techRadarStartDate = new Date(2024, 5, 1); // June 1, 2024
+      
+      if (puzzleDate < techRadarStartDate) {
+        throw new Error(`❌ No reliable web sources available for ${date}. Web coverage began in June 2024.\n\n💡 Try these reliable dates:\n• June 12, 2024 (known working)\n• July 18, 2024 (popular date)\n• Any date from August 2024 onwards`);
+      } else {
+        throw new Error(`TechRadar article not found for ${date} (HTTP ${error.response.status}). This date might not be covered or may have a different URL format.`);
+      }
+    }
+    
     throw error;
   }
 }

@@ -38,5 +38,34 @@ jobs:
         RUN_REAL_API_TESTS: true
       continue-on-error: true  # Don't fail the build if real API tests fail
 
+    - name: Start backend server for parser tests
+      run: |
+        cd backend
+        npm install
+        # Start server in background with logs
+        node server.js > ../backend-test.log 2>&1 &
+        echo $! > server.pid
+        sleep 5  # Give server time to start
+        # Verify server started successfully
+        if ! curl -s http://localhost:3001/api/health > /dev/null; then
+          echo "Backend server failed to start, checking logs:"
+          cat ../backend-test.log
+          exit 1
+        fi
+        echo "Backend server started successfully"
+      env:
+        PORT: 3001
+        NODE_ENV: test
+
+    - name: Run parser regression tests
+      run: npm run test:parser
+      
+    - name: Stop backend server
+      run: |
+        if [ -f backend/server.pid ]; then
+          kill $(cat backend/server.pid) || true
+          rm backend/server.pid
+        fi
+
     - name: Build project
       run: npm run build

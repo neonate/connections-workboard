@@ -58,6 +58,8 @@ function MainApp() {
   const [showSaveOptions, setShowSaveOptions] = useState(false);
   const [fetchSource, setFetchSource] = useState(null);
 
+
+
   /**
    * Load available date range on component mount
    */
@@ -478,7 +480,8 @@ function MainApp() {
           <div className="input-methods">
             <div className="method-section">
               <h3>📅 Method 1: Load Puzzle by Date</h3>
-              <p className="method-note">✅ Load any date - cached puzzles for speed, or fetch live from the web!</p>
+              <p className="method-note">✅ Load any date from June 2024 onwards - cached puzzles for speed, or fetch live from the web!</p>
+              <p className="date-limitation-note">📅 <strong>Date Range:</strong> June 1, 2024 to today (when reliable web sources began covering Connections)</p>
               <div className="date-fetch-section">
 
                 
@@ -490,7 +493,7 @@ function MainApp() {
                       setSelectedDate(e.target.value);
                       setHasUserSelectedDate(true);
                     }}
-                    min="2023-06-12"
+                    min="2024-06-01"
                     max={new Date().toISOString().split('T')[0]}
                   />
                   <button
@@ -510,26 +513,14 @@ function MainApp() {
                   onRetry={() => handleFetchPuzzle()}
                   onDismiss={() => setFetchError('')}
                   context={`fetching puzzle for ${selectedDate}`}
-                  suggestions={{
-                    manualInput: () => {
-                      setFetchError('');
-                      // Focus on manual input section
-                      document.querySelector('textarea')?.scrollIntoView({ behavior: 'smooth' });
-                    },
-                    tryDifferentDate: () => {
-                      setFetchError('');
-                      // Set to a known working date
-                      setSelectedDate('2024-07-18');
-                      setHasUserSelectedDate(true);
-                    },
-                    tryPopularDate: () => {
-                      setFetchError('');
-                      // Set to another popular date
-                      const popularDates = ['2024-06-12', '2024-05-15', '2024-04-20', '2024-03-15'];
-                      const randomDate = popularDates[Math.floor(Math.random() * popularDates.length)];
-                      setSelectedDate(randomDate);
-                      setHasUserSelectedDate(true);
-                    }
+                  onDateClick={(date) => {
+                    setSelectedDate(date);
+                    setHasUserSelectedDate(true);
+                    setFetchError('');
+                    // Trigger puzzle fetch for the new date
+                    setTimeout(() => {
+                      handleFetchPuzzle();
+                    }, 100);
                   }}
                 />
               )}
