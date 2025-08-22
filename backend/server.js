@@ -625,10 +625,10 @@ async function fetchFromTechRadar(date) {
       console.log(`✅ Parsed ${color}: ${groupName} - [${groupWords.join(', ')}]`);
 
       const groupData = {
-        name: hints[color] || groupName, // Use clean hint as name, fallback to parsed group name
+        name: groupName, // Full descriptive category name (e.g., "ACTORS WHOSE LAST NAMES ARE ALSO VERBS")
         level: colorLevels[color],
         words: groupWords,
-        hint: hints[color] || groupName // Use hint if available, fallback to group name
+        hint: hints[color] || groupName // Vague hint (e.g., "Action surnames")
       };
 
       seenGroups.set(color, groupData);

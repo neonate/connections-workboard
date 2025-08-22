@@ -1,5 +1,5 @@
 {
-  "capturedAt": "2025-08-22T16:11:16.017Z",
+  "capturedAt": "2025-08-22T16:22:11.962Z",
   "nodeVersion": "v23.11.0",
   "testResults": [
     {
@@ -8,7 +8,7 @@
       "expectedGroups": 4,
       "expectedWords": 16,
       "notes": "Contains multi-word movie titles that can confuse parser",
-      "timestamp": "2025-08-22T16:11:16.018Z",
+      "timestamp": "2025-08-22T16:22:11.963Z",
       "success": true,
       "issues": [],
       "data": {
@@ -47,7 +47,7 @@
               "hint": "PLACES IN NEW YORK CITY"
             },
             {
-              "name": "RHYMING TITLES",
+              "name": "RHYMING TITLES BE KIND",
               "level": 1,
               "words": [
                 "REWIND",
@@ -58,7 +58,7 @@
               "hint": "RHYMING TITLES"
             },
             {
-              "name": "ENDING IN UNITS OF MEASUREMENT",
+              "name": "ENDING IN UNITS OF MEASUREMENT HEDWIG AND THE ANGRY",
               "level": 2,
               "words": [
                 "INCH",
@@ -81,7 +81,7 @@
             }
           ],
           "source": "TechRadar",
-          "fetchedAt": "2025-08-22T16:11:16.232Z"
+          "fetchedAt": "2025-08-22T16:22:12.230Z"
         }
       }
     },
@@ -91,7 +91,7 @@
       "expectedGroups": 4,
       "expectedWords": 16,
       "notes": "Clean format, good baseline example",
-      "timestamp": "2025-08-22T16:11:17.242Z",
+      "timestamp": "2025-08-22T16:22:13.236Z",
       "success": true,
       "issues": [],
       "data": {
@@ -164,7 +164,7 @@
             }
           ],
           "source": "TechRadar",
-          "fetchedAt": "2025-08-22T16:11:17.334Z"
+          "fetchedAt": "2025-08-22T16:22:13.316Z"
         }
       }
     },
@@ -174,7 +174,7 @@
       "expectedGroups": 4,
       "expectedWords": 16,
       "notes": "TechRadar HTML contains duplicate sections, tests deduplication",
-      "timestamp": "2025-08-22T16:11:18.336Z",
+      "timestamp": "2025-08-22T16:22:14.318Z",
       "success": true,
       "issues": [],
       "data": {
@@ -247,7 +247,7 @@
             }
           ],
           "source": "TechRadar",
-          "fetchedAt": "2025-08-22T16:11:18.421Z"
+          "fetchedAt": "2025-08-22T16:22:14.385Z"
         }
       }
     },
@@ -257,7 +257,7 @@
       "expectedGroups": 4,
       "expectedWords": 16,
       "notes": "First reliable date in TechRadar coverage",
-      "timestamp": "2025-08-22T16:11:19.424Z",
+      "timestamp": "2025-08-22T16:22:15.387Z",
       "success": true,
       "issues": [],
       "data": {
@@ -330,7 +330,7 @@
             }
           ],
           "source": "TechRadar",
-          "fetchedAt": "2025-08-22T16:11:19.510Z"
+          "fetchedAt": "2025-08-22T16:22:15.491Z"
         }
       }
     },
@@ -340,7 +340,7 @@
       "expectedGroups": 4,
       "expectedWords": 16,
       "notes": "Tests different seasonal HTML layouts",
-      "timestamp": "2025-08-22T16:11:20.513Z",
+      "timestamp": "2025-08-22T16:22:16.493Z",
       "success": true,
       "issues": [],
       "data": {
@@ -413,7 +413,7 @@
             }
           ],
           "source": "TechRadar",
-          "fetchedAt": "2025-08-22T16:11:20.593Z"
+          "fetchedAt": "2025-08-22T16:22:16.561Z"
         }
       }
     },
@@ -423,7 +423,7 @@
       "expectedGroups": 4,
       "expectedWords": 16,
       "notes": "Tests parsing of compound proper names like CHEVY CHASE",
-      "timestamp": "2025-08-22T16:11:21.595Z",
+      "timestamp": "2025-08-22T16:22:17.563Z",
       "success": true,
       "issues": [],
       "data": {
@@ -451,7 +451,7 @@
           ],
           "groups": [
             {
-              "name": "Four of the 45",
+              "name": "U.S. PRESIDENTS",
               "level": 0,
               "words": [
                 "ADAMS",
@@ -462,7 +462,7 @@
               "hint": "Four of the 45"
             },
             {
-              "name": "Action surnames",
+              "name": "ACTORS WHOSE LAST NAMES ARE ALSO VERBS",
               "level": 1,
               "words": [
                 "CHEVY CHASE",
@@ -473,7 +473,7 @@
               "hint": "Action surnames"
             },
             {
-              "name": "Place your bets",
+              "name": "KINDS OF POKER",
               "level": 2,
               "words": [
                 "DRAW",
@@ -484,7 +484,7 @@
               "hint": "Place your bets"
             },
             {
-              "name": "Film names featuring verbs as nouns",
+              "name": "PROPER NOUNS AFTER GERUNDS IN '90S MOVIE TITLES",
               "level": 3,
               "words": [
                 "AMY",
@@ -496,7 +496,7 @@
             }
           ],
           "source": "TechRadar",
-          "fetchedAt": "2025-08-22T16:11:21.673Z"
+          "fetchedAt": "2025-08-22T16:22:17.625Z"
         }
       }
     }
