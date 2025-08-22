@@ -25,3 +25,10 @@ yarn-error.log*
 # Archive folder containing unused CSV files and raw data
 /archive
 backend/node_modules/
+
+# Service management files (PID files and logs)
+*.pid
+.*.pid
+*.log
+backend/*.log
+backend/.*.pid
