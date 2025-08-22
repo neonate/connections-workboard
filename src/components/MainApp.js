@@ -152,11 +152,7 @@ function MainApp() {
 
     try {
       // The puzzleFetcher will automatically try static first, then dynamic if needed
-      // Force dynamic fetch for March 6, 2025 to get proper hints from backend
-      const shouldForceDynamic = selectedDate === '2025-03-06';
-      const puzzleData = await fetchPuzzleForDate(selectedDate, { 
-        dynamicOnly: shouldForceDynamic 
-      });
+      const puzzleData = await fetchPuzzleForDate(selectedDate);
       
       console.log('🔍 Debug: fetchPuzzleForDate returned data for date:', puzzleData.date);
       console.log('🔍 Debug: Fetch source:', puzzleData.fetchSource);
@@ -182,13 +178,52 @@ function MainApp() {
             hint: group.hint // Include hints if available
           }))
         };
-        setCorrectAnswers(answers);
         
-        // Debug logging
-        console.log('📋 Stored correct answers:', answers);
-        answers.groups.forEach((group, index) => {
-          console.log(`   Group ${index + 1}: ${group.name} - ${group.words.join(', ')} - Hint: "${group.hint || 'none'}"`);
-        });
+        // Check if hints are missing and try to refresh from backend
+        const missingHints = answers.groups.some(group => !group.hint || group.hint === group.name);
+        if (missingHints && puzzleData.fetchSource !== 'dynamic') {
+          console.log('🔄 Hints missing from cached/static data, attempting dynamic fetch...');
+          try {
+            const freshData = await fetchPuzzleForDate(selectedDate, { dynamicOnly: true });
+            if (freshData && freshData.groups && freshData.groups.every(g => g.hint && g.hint !== g.name)) {
+              console.log('✅ Retrieved fresh data with proper hints');
+              // Update with fresh data that has hints
+              const freshAnswers = {
+                groups: freshData.groups.map(group => ({
+                  name: group.name,
+                  words: group.words,
+                  level: group.level,
+                  hint: group.hint
+                }))
+              };
+              setCorrectAnswers(freshAnswers);
+              // Update the displayed data as well
+              const shuffledWords = shuffleArray(freshData.words);
+              setWords(shuffledWords);
+              setFetchedPuzzleData(freshData);
+              setFetchSource('dynamic');
+              
+              console.log('📋 Updated with fresh correct answers:', freshAnswers);
+              freshAnswers.groups.forEach((group, index) => {
+                console.log(`   Group ${index + 1}: ${group.name} - ${group.words.join(', ')} - Hint: "${group.hint || 'none'}"`);
+              });
+            } else {
+              console.log('⚠️ Fresh fetch did not improve hints, using original data');
+              setCorrectAnswers(answers);
+            }
+          } catch (error) {
+            console.log('⚠️ Failed to fetch fresh data, using cached data:', error.message);
+            setCorrectAnswers(answers);
+          }
+        } else {
+          setCorrectAnswers(answers);
+          
+          // Debug logging
+          console.log('📋 Stored correct answers:', answers);
+          answers.groups.forEach((group, index) => {
+            console.log(`   Group ${index + 1}: ${group.name} - ${group.words.join(', ')} - Hint: "${group.hint || 'none'}"`);
+          });
+        }
       }
 
       // Show appropriate success message based on source
