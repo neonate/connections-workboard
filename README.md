@@ -74,22 +74,84 @@ If you have `npm_config_registry` set to Apple's internal registry in your envir
    cd ..
    ```
 
-4. **Start both servers**
+4. **Start all services**
    ```bash
-   # Terminal 1: Start backend server (for dynamic fetching)
-   cd backend && npm start
-   
-   # Terminal 2: Start frontend (in new terminal)
-   npm start
+   # Start both frontend and backend
+   ./services.sh start
+
+   # Or start individually  
+   ./services.sh start backend
+   ./services.sh start frontend
    ```
+
+### Service Management
+
+The application includes comprehensive service management scripts with robust port management and process verification:
+
+#### Master Service Control (`services.sh`)
+```bash
+# Start all services
+./services.sh start
+
+# Stop all services  
+./services.sh stop
+
+# Restart all services
+./services.sh restart
+
+# Check service status
+./services.sh status
+
+# Development mode (foreground with logs)
+./services.sh dev
+
+# Build for production
+./services.sh build
+
+# Clean up orphaned processes
+./services.sh cleanup
+```
+
+#### Individual Service Control
+```bash
+# Backend only
+./backend/service.sh start
+./backend/service.sh stop
+./backend/service.sh status
+
+# Frontend only  
+./frontend-service.sh start
+./frontend-service.sh stop
+./frontend-service.sh status
+```
+
+#### Service Features
+- **Port Conflict Detection**: Automatically detects and handles port conflicts
+- **Process Verification**: Ensures services are actually running on expected ports
+- **Health Checks**: Validates service health before reporting success
+- **Cleanup Tools**: Removes orphaned processes and stale PID files
+- **Background/Foreground Modes**: Choose between production and development modes
+- **Robust Process Management**: Prevents zombie processes and port conflicts
 
 ### Frontend Only Mode
 If you only want to use static puzzles without dynamic fetching:
 ```bash
 NPM_CONFIG_REGISTRY=https://registry.npmjs.org npm install
-npm start
+./frontend-service.sh start
 ```
 The app will run on `http://localhost:3000` with static puzzle data only.
+
+### Production Mode
+Test production deployment locally:
+```bash
+# Build for production
+npm run build:full
+
+# Start in production mode (unified server)
+npm run start:prod
+# OR
+./frontend-service.sh prod
+```
 
 ## 🚀 Running the Application
 
@@ -385,6 +447,37 @@ curl http://localhost:3001/api/fetch-puzzle/2025-08-21
    npm run test:ci
    ```
 7. **Submit pull request** with clear description
+
+## 🚀 Production Deployment
+
+### Build for Production
+```bash
+# Build the React app
+npm run build
+
+# Install backend dependencies
+cd backend && npm install && cd ..
+```
+
+### Production Mode
+```bash
+# Start in production mode (unified server)
+npm run start:prod
+```
+
+**Production Features:**
+- Unified server (backend API + frontend serving)
+- Static asset serving with React Router support
+- Environment-based configuration
+- All dynamic puzzle fetching capabilities included
+
+### Environment Variables
+Set these environment variables for production:
+```
+NODE_ENV=production
+PORT=8080
+SERVE_FRONTEND=true
+```
 
 ### Adding New Data Sources
 The modular fetcher architecture makes it easy to add new puzzle sources:

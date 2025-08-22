@@ -558,9 +558,48 @@ async function fetchFromTechRadar(date) {
       let groupNameParts = beforeWords.slice();
       
       if (firstWordParts.length > 1) {
-        // If the first word has multiple parts, the initial parts are likely group name
-        groupNameParts.push(...firstWordParts.slice(0, -1));
-        puzzleWords[0] = firstWordParts[firstWordParts.length - 1];
+        // Use hint-driven parsing: check if this category likely contains compound names
+        const currentHint = hints[color] || '';
+        const isCompoundNameCategory = currentHint.toLowerCase().includes('actor') || 
+                                      currentHint.toLowerCase().includes('surname') || 
+                                      currentHint.toLowerCase().includes('name') ||
+                                      currentHint.toLowerCase().includes('director') ||
+                                      currentHint.toLowerCase().includes('musician');
+        
+        // Debug: uncomment for parser debugging
+        // console.log(`🔍 Checking hint for ${color}: "${currentHint}" -> isCompoundNameCategory: ${isCompoundNameCategory}`);
+        // console.log(`🔍 firstWordParts for ${color}: [${firstWordParts.join(', ')}] (length: ${firstWordParts.length})`);
+        
+        if (isCompoundNameCategory && firstWordParts.length >= 2) {
+          // For compound name categories, look for compound names at the END of the firstWordParts
+          // This handles cases like: "ACTORS WHOSE LAST NAMES ARE ALSO VERBS CHEVY CHASE"
+          const lastTwoParts = firstWordParts.slice(-2); // ["CHEVY", "CHASE"]
+          const firstWord = lastTwoParts[0];
+          const secondWord = lastTwoParts[1];
+          
+          // Check if the last two parts look like a compound proper name
+          const looksLikeCompoundName = firstWord && secondWord &&
+                                       firstWord.length > 1 && secondWord.length > 1 &&
+                                       firstWord[0] === firstWord[0].toUpperCase() &&
+                                       secondWord[0] === secondWord[0].toUpperCase();
+          
+          if (looksLikeCompoundName) {
+            // Extract the compound name and adjust the group name
+            const compoundName = `${firstWord} ${secondWord}`;
+            groupNameParts.push(...firstWordParts.slice(0, -2)); // Everything except the last 2 words
+            puzzleWords[0] = compoundName;
+            // Debug: uncomment for parser debugging
+            // console.log(`🎯 Hint-driven compound name extracted: "${compoundName}" (hint: "${currentHint}")`);
+          } else {
+            // Use original logic if it doesn't look like a compound name
+            groupNameParts.push(...firstWordParts.slice(0, -1));
+            puzzleWords[0] = firstWordParts[firstWordParts.length - 1];
+          }
+        } else {
+          // Use original logic for all other categories or longer phrases
+          groupNameParts.push(...firstWordParts.slice(0, -1));
+          puzzleWords[0] = firstWordParts[firstWordParts.length - 1];
+        }
       }
       
       const groupName = groupNameParts.join(' ').trim();

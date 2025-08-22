@@ -1,5 +1,5 @@
 {
-  "capturedAt": "2025-08-22T15:14:23.357Z",
+  "capturedAt": "2025-08-22T15:30:23.317Z",
   "nodeVersion": "v23.11.0",
   "testResults": [
     {
@@ -8,7 +8,7 @@
       "expectedGroups": 4,
       "expectedWords": 16,
       "notes": "Contains multi-word movie titles that can confuse parser",
-      "timestamp": "2025-08-22T15:14:23.358Z",
+      "timestamp": "2025-08-22T15:30:23.318Z",
       "success": true,
       "issues": [],
       "data": {
@@ -81,7 +81,7 @@
             }
           ],
           "source": "TechRadar",
-          "fetchedAt": "2025-08-22T15:14:23.711Z"
+          "fetchedAt": "2025-08-22T15:30:23.495Z"
         }
       }
     },
@@ -91,7 +91,7 @@
       "expectedGroups": 4,
       "expectedWords": 16,
       "notes": "Clean format, good baseline example",
-      "timestamp": "2025-08-22T15:14:24.717Z",
+      "timestamp": "2025-08-22T15:30:24.503Z",
       "success": true,
       "issues": [],
       "data": {
@@ -164,7 +164,7 @@
             }
           ],
           "source": "TechRadar",
-          "fetchedAt": "2025-08-22T15:14:24.801Z"
+          "fetchedAt": "2025-08-22T15:30:24.588Z"
         }
       }
     },
@@ -174,7 +174,7 @@
       "expectedGroups": 4,
       "expectedWords": 16,
       "notes": "TechRadar HTML contains duplicate sections, tests deduplication",
-      "timestamp": "2025-08-22T15:14:25.803Z",
+      "timestamp": "2025-08-22T15:30:25.590Z",
       "success": true,
       "issues": [],
       "data": {
@@ -247,7 +247,7 @@
             }
           ],
           "source": "TechRadar",
-          "fetchedAt": "2025-08-22T15:14:25.879Z"
+          "fetchedAt": "2025-08-22T15:30:25.665Z"
         }
       }
     },
@@ -257,7 +257,7 @@
       "expectedGroups": 4,
       "expectedWords": 16,
       "notes": "First reliable date in TechRadar coverage",
-      "timestamp": "2025-08-22T15:14:26.880Z",
+      "timestamp": "2025-08-22T15:30:26.668Z",
       "success": true,
       "issues": [],
       "data": {
@@ -330,7 +330,7 @@
             }
           ],
           "source": "TechRadar",
-          "fetchedAt": "2025-08-22T15:14:26.959Z"
+          "fetchedAt": "2025-08-22T15:30:26.738Z"
         }
       }
     },
@@ -340,7 +340,7 @@
       "expectedGroups": 4,
       "expectedWords": 16,
       "notes": "Tests different seasonal HTML layouts",
-      "timestamp": "2025-08-22T15:14:27.961Z",
+      "timestamp": "2025-08-22T15:30:27.739Z",
       "success": true,
       "issues": [],
       "data": {
@@ -413,7 +413,7 @@
             }
           ],
           "source": "TechRadar",
-          "fetchedAt": "2025-08-22T15:14:28.035Z"
+          "fetchedAt": "2025-08-22T15:30:27.818Z"
         }
       }
     },
@@ -423,7 +423,7 @@
       "expectedGroups": 4,
       "expectedWords": 16,
       "notes": "Tests parsing of compound proper names like CHEVY CHASE",
-      "timestamp": "2025-08-22T15:14:29.038Z",
+      "timestamp": "2025-08-22T15:30:28.822Z",
       "success": true,
       "issues": [],
       "data": {
@@ -436,7 +436,7 @@
             "FORD",
             "GRANT",
             "WASHINGTON",
-            "CHASE",
+            "CHEVY CHASE",
             "CHRISTOPH WALTZ",
             "GEOFFREY RUSH",
             "TOM CRUISE",
@@ -444,7 +444,7 @@
             "OMAHA",
             "STRIP",
             "STUD",
-            "AMY",
+            "TITLES AMY",
             "JOHN MALKOVICH",
             "LAS VEGAS",
             "PRIVATE RYAN"
@@ -465,7 +465,7 @@
               "name": "Action surnames",
               "level": 1,
               "words": [
-                "CHASE",
+                "CHEVY CHASE",
                 "CHRISTOPH WALTZ",
                 "GEOFFREY RUSH",
                 "TOM CRUISE"
@@ -487,7 +487,7 @@
               "name": "Film names featuring verbs as nouns",
               "level": 3,
               "words": [
-                "AMY",
+                "TITLES AMY",
                 "JOHN MALKOVICH",
                 "LAS VEGAS",
                 "PRIVATE RYAN"
@@ -496,7 +496,7 @@
             }
           ],
           "source": "TechRadar",
-          "fetchedAt": "2025-08-22T15:14:29.111Z"
+          "fetchedAt": "2025-08-22T15:30:28.892Z"
         }
       }
     }

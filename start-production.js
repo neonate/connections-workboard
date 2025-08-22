@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 /**
- * Production startup script for DigitalOcean deployment
+ * Production startup script
  * Runs both backend API server and serves the React build
  */
 
@@ -47,6 +47,7 @@ function startServer() {
   
   // Set environment variables for production
   process.env.NODE_ENV = 'production';
+  // Use PORT environment variable from hosting platform, fallback to 8080
   process.env.PORT = process.env.PORT || '8080';
   
   // Start the backend server (which also serves the frontend build)
