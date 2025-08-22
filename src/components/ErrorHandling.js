@@ -169,6 +169,24 @@ function ErrorDisplay({
             </button>
           )}
 
+          {suggestions.tryDifferentDate && (
+            <button 
+              onClick={suggestions.tryDifferentDate}
+              className="action-button date-button"
+            >
+              📅 Try July 18, 2024
+            </button>
+          )}
+
+          {suggestions.tryPopularDate && (
+            <button 
+              onClick={suggestions.tryPopularDate}
+              className="action-button date-button"
+            >
+              🎲 Try Random Popular Date
+            </button>
+          )}
+
           {suggestions.manualInput && (
             <button 
               onClick={suggestions.manualInput}
@@ -342,6 +360,15 @@ function ErrorDisplay({
 
         .dismiss-button:hover {
           background: #4b5563;
+        }
+
+        .date-button {
+          background: #8b5cf6;
+          color: white;
+        }
+
+        .date-button:hover {
+          background: #7c3aed;
         }
 
         .error-help {

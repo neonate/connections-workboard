@@ -212,7 +212,12 @@ function MainApp() {
       
     } catch (error) {
       console.error(`❌ Puzzle fetch failed for ${selectedDate}:`, error);
-      setFetchError(error);
+      
+      // Enhanced error message with helpful suggestions
+      const errorMessage = typeof error === 'string' ? error : error.message || 'Puzzle fetch failed';
+      const enhancedError = `${errorMessage}\n\n💡 Suggestions:\n• Try clicking "Load Puzzle" again (some dates need a retry)\n• If it fails again, try a different date\n• Popular dates with reliable data: 2024-07-18, 2024-06-12, 2024-05-15`;
+      
+      setFetchError(enhancedError);
     } finally {
       setIsFetching(false);
     }
@@ -510,6 +515,20 @@ function MainApp() {
                       setFetchError('');
                       // Focus on manual input section
                       document.querySelector('textarea')?.scrollIntoView({ behavior: 'smooth' });
+                    },
+                    tryDifferentDate: () => {
+                      setFetchError('');
+                      // Set to a known working date
+                      setSelectedDate('2024-07-18');
+                      setHasUserSelectedDate(true);
+                    },
+                    tryPopularDate: () => {
+                      setFetchError('');
+                      // Set to another popular date
+                      const popularDates = ['2024-06-12', '2024-05-15', '2024-04-20', '2024-03-15'];
+                      const randomDate = popularDates[Math.floor(Math.random() * popularDates.length)];
+                      setSelectedDate(randomDate);
+                      setHasUserSelectedDate(true);
                     }
                   }}
                 />
