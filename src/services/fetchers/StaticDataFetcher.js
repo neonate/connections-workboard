@@ -37,7 +37,8 @@ class StaticDataFetcher extends BasePuzzleFetcher {
         groups: staticPuzzle.groups.map(group => ({
           name: group.name,
           level: group.level,
-          words: [...group.words] // Ensure array is copied
+          words: [...group.words], // Ensure array is copied
+          hint: group.hint || group.name // Include hint if available, fallback to name
         })),
         source: this.sourceName
       };

@@ -152,7 +152,11 @@ function MainApp() {
 
     try {
       // The puzzleFetcher will automatically try static first, then dynamic if needed
-      const puzzleData = await fetchPuzzleForDate(selectedDate);
+      // Force dynamic fetch for March 6, 2025 to get proper hints from backend
+      const shouldForceDynamic = selectedDate === '2025-03-06';
+      const puzzleData = await fetchPuzzleForDate(selectedDate, { 
+        dynamicOnly: shouldForceDynamic 
+      });
       
       console.log('🔍 Debug: fetchPuzzleForDate returned data for date:', puzzleData.date);
       console.log('🔍 Debug: Fetch source:', puzzleData.fetchSource);
