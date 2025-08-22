@@ -2,6 +2,16 @@
 
 A comprehensive web application for solving NYT Connections puzzles with intelligent dynamic fetching, drag-and-drop word grouping, and an advanced hint system with descriptive clues.
 
+## 📸 Screenshots
+
+### Initial Screen - Date Selection & Manual Entry
+![Initial Screen](screenshots/initial_screen.png)
+*Clean interface with date picker for automatic puzzle fetching and manual word entry option*
+
+### Game Board - Drag & Drop Gameplay
+![Board in Progress](screenshots/board_in_progress.png)
+*Interactive drag-and-drop interface with hint system and real-time group organization*
+
 ## 🚀 Features
 
 ### Core Gameplay
