@@ -489,7 +489,25 @@ async function fetchFromTechRadar(date) {
     }
 
     if (listItems.length < 4) {
-      throw new Error(`Expected 4 answer list items with words, found ${listItems.length}`);
+      // Enhanced error reporting for debugging
+      const allListItems = $('li');
+      console.log(`🔍 Debug: Total <li> elements found: ${allListItems.length}`);
+      
+      const colorPatternItems = $('li').filter((i, el) => {
+        const text = $(el).text();
+        return text.match(/^(YELLOW|GREEN|BLUE|PURPLE):/);
+      });
+      console.log(`🔍 Debug: Items with color patterns: ${colorPatternItems.length}`);
+      
+      if (colorPatternItems.length > 0) {
+        colorPatternItems.each((i, el) => {
+          const text = $(el).text().trim();
+          const hasCommas = text.includes(',');
+          console.log(`   ${i}: [${hasCommas ? 'HAS_COMMAS' : 'NO_COMMAS'}] ${text.substring(0, 100)}...`);
+        });
+      }
+      
+      throw new Error(`Expected 4 answer list items with words, found ${listItems.length}. Check console for debugging details.`);
     }
 
             const colorLevels = { 'YELLOW': 0, 'GREEN': 1, 'BLUE': 2, 'PURPLE': 3 };
@@ -545,12 +563,14 @@ async function fetchFromTechRadar(date) {
         throw new Error(`Expected 4 words for ${color} group, got ${groupWords.length}: ${groupWords.join(', ')}`);
       }
 
-                groups.push({
-            name: groupName,
-            level: colorLevels[color],
-            words: groupWords,
-            hint: hints[color] || `${groupName.toLowerCase()} theme` // Fallback hint if not found
-          });
+      console.log(`✅ Parsed ${color}: ${groupName} - [${groupWords.join(', ')}]`);
+
+      groups.push({
+        name: groupName,
+        level: colorLevels[color],
+        words: groupWords,
+        hint: hints[color] || groupName // Use hint if available, fallback to group name
+      });
 
       words.push(...groupWords);
     });
