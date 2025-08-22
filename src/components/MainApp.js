@@ -660,7 +660,7 @@ function MainApp() {
                   onDragLeave={handleDragLeave}
                   onDrop={(e) => handleDrop(e, groupIndex)}
                 >
-                  <h3>Group {groupIndex + 1} ({group.length}/4)</h3>
+                  <h3>Group {groupIndex + 1}</h3>
                   {hintEnabled && isGroupCorrect(group, groupIndex) && (
                     <div className="category-reveal">
                       🎯 {getGroupCategory(groupIndex)}
