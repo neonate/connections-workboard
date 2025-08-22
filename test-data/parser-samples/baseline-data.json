@@ -1,5 +1,5 @@
 {
-  "capturedAt": "2025-08-22T17:38:13.709Z",
+  "capturedAt": "2025-08-22T18:35:06.110Z",
   "nodeVersion": "v23.11.0",
   "testResults": [
     {
@@ -8,7 +8,7 @@
       "expectedGroups": 4,
       "expectedWords": 16,
       "notes": "Contains multi-word movie titles that can confuse parser",
-      "timestamp": "2025-08-22T17:38:13.709Z",
+      "timestamp": "2025-08-22T18:35:06.111Z",
       "success": true,
       "issues": [],
       "data": {
@@ -81,7 +81,7 @@
             }
           ],
           "source": "TechRadar",
-          "fetchedAt": "2025-08-22T17:38:13.979Z"
+          "fetchedAt": "2025-08-22T18:35:06.371Z"
         }
       }
     },
@@ -91,7 +91,7 @@
       "expectedGroups": 4,
       "expectedWords": 16,
       "notes": "Clean format, good baseline example",
-      "timestamp": "2025-08-22T17:38:14.986Z",
+      "timestamp": "2025-08-22T18:35:07.376Z",
       "success": true,
       "issues": [],
       "data": {
@@ -164,7 +164,7 @@
             }
           ],
           "source": "TechRadar",
-          "fetchedAt": "2025-08-22T17:38:15.056Z"
+          "fetchedAt": "2025-08-22T18:35:07.452Z"
         }
       }
     },
@@ -174,7 +174,7 @@
       "expectedGroups": 4,
       "expectedWords": 16,
       "notes": "TechRadar HTML contains duplicate sections, tests deduplication",
-      "timestamp": "2025-08-22T17:38:16.059Z",
+      "timestamp": "2025-08-22T18:35:08.455Z",
       "success": true,
       "issues": [],
       "data": {
@@ -247,7 +247,7 @@
             }
           ],
           "source": "TechRadar",
-          "fetchedAt": "2025-08-22T17:38:16.133Z"
+          "fetchedAt": "2025-08-22T18:35:08.528Z"
         }
       }
     },
@@ -257,7 +257,7 @@
       "expectedGroups": 4,
       "expectedWords": 16,
       "notes": "First reliable date in TechRadar coverage",
-      "timestamp": "2025-08-22T17:38:17.136Z",
+      "timestamp": "2025-08-22T18:35:09.531Z",
       "success": true,
       "issues": [],
       "data": {
@@ -330,7 +330,7 @@
             }
           ],
           "source": "TechRadar",
-          "fetchedAt": "2025-08-22T17:38:17.203Z"
+          "fetchedAt": "2025-08-22T18:35:09.637Z"
         }
       }
     },
@@ -340,7 +340,7 @@
       "expectedGroups": 4,
       "expectedWords": 16,
       "notes": "Tests different seasonal HTML layouts",
-      "timestamp": "2025-08-22T17:38:18.205Z",
+      "timestamp": "2025-08-22T18:35:10.639Z",
       "success": true,
       "issues": [],
       "data": {
@@ -413,7 +413,7 @@
             }
           ],
           "source": "TechRadar",
-          "fetchedAt": "2025-08-22T17:38:18.272Z"
+          "fetchedAt": "2025-08-22T18:35:10.705Z"
         }
       }
     },
@@ -423,7 +423,7 @@
       "expectedGroups": 4,
       "expectedWords": 16,
       "notes": "Tests parsing of compound proper names like CHEVY CHASE",
-      "timestamp": "2025-08-22T17:38:19.273Z",
+      "timestamp": "2025-08-22T18:35:11.707Z",
       "success": true,
       "issues": [],
       "data": {
@@ -496,7 +496,7 @@
             }
           ],
           "source": "TechRadar",
-          "fetchedAt": "2025-08-22T17:38:19.339Z"
+          "fetchedAt": "2025-08-22T18:35:11.775Z"
         }
       }
     },
@@ -506,7 +506,7 @@
       "expectedGroups": 4,
       "expectedWords": 16,
       "notes": "Tests proper separation of vague hints from full category names",
-      "timestamp": "2025-08-22T17:38:20.342Z",
+      "timestamp": "2025-08-22T18:35:12.777Z",
       "success": true,
       "issues": [],
       "data": {
@@ -579,7 +579,7 @@
             }
           ],
           "source": "TechRadar",
-          "fetchedAt": "2025-08-22T17:38:20.410Z"
+          "fetchedAt": "2025-08-22T18:35:12.846Z"
         }
       }
     }
