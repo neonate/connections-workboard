@@ -1376,14 +1376,141 @@
 
 /* Responsive adjustments for mobile */
 @media (max-width: 768px) {
+  .App {
+    padding: 10px 8px;
+  }
+  
+  .App-header {
+    padding: 15px 10px;
+    margin-bottom: 15px;
+  }
+  
+  .App-header h1 {
+    font-size: 1.8em;
+    margin-bottom: 10px;
+  }
+  
+  /* Compact word items for mobile */
+  .words-grid {
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 8px;
+    margin: 0 auto 15px;
+  }
+  
+  .word-item {
+    padding: 8px 10px;
+    font-size: 13px;
+    border-radius: 6px;
+    font-weight: 500;
+    line-height: 1.2;
+  }
+  
+  /* Compact groups for mobile */
+  .groups-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    margin-bottom: 15px;
+  }
+  
+  .group {
+    padding: 12px;
+    min-height: auto;
+  }
+  
+  .group h3 {
+    font-size: 14px;
+    margin-bottom: 8px;
+  }
+  
+  .group-words {
+    gap: 6px;
+  }
+  
+  .group-words .word-item {
+    padding: 6px 8px;
+    font-size: 12px;
+  }
+  
+  /* Compact containers */
+  .words-container {
+    margin-bottom: 15px;
+  }
+  
+  .words-container h3 {
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+  
+  .groups-container h2 {
+    font-size: 18px;
+    margin-bottom: 12px;
+  }
+  
+  /* Compact puzzle date display */
+  .puzzle-date-display {
+    margin-bottom: 15px;
+  }
+  
+  .puzzle-date-display h3 {
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+  
+  /* Compact hint controls */
+  .hint-controls {
+    margin-bottom: 15px;
+  }
+  
+  .hint-banner {
+    margin-top: 10px;
+    padding: 12px;
+  }
+  
+  .hint-info {
+    font-size: 14px;
+    margin-bottom: 8px;
+  }
+  
+  .hint-item {
+    padding: 6px 10px;
+    font-size: 13px;
+  }
+  
+  .hint-color {
+    min-width: 60px;
+    font-size: 12px;
+  }
+  
+  /* Compact controls */
+  .controls {
+    gap: 10px;
+    margin-top: 15px;
+    flex-direction: column;
+  }
+  
+  .controls button {
+    padding: 10px 16px;
+    font-size: 14px;
+  }
+  
+  /* Compact category reveal */
+  .category-reveal {
+    padding: 8px 12px;
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+  
+  /* Date picker mobile optimizations */
   .date-input-controls {
     flex-direction: column;
     align-items: stretch;
+    margin-bottom: 12px;
   }
   
   .date-input-controls input[type="date"] {
     max-width: none;
-    margin-bottom: 10px;
+    margin-bottom: 8px;
+    padding: 10px 12px;
   }
   
   .fetch-btn {
@@ -1391,9 +1518,28 @@
     padding: 12px;
   }
   
-  .date-range-info {
-    margin: 10px 0;
-    padding: 8px;
-    font-size: 13px;
+  /* Compact input sections */
+  .input-section {
+    margin-bottom: 20px;
+    padding: 15px;
+  }
+  
+  .input-section h2 {
+    font-size: 1.5em;
+    margin-bottom: 12px;
+  }
+  
+  .method-section {
+    padding: 15px;
+  }
+  
+  .method-section h3 {
+    font-size: 1.2em;
+    margin-bottom: 12px;
+  }
+  
+  .method-note {
+    font-size: 14px;
+    margin-bottom: 12px;
   }
 }
