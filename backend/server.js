@@ -583,7 +583,11 @@ async function fetchFromTechRadar(date) {
                                        firstWord[0] === firstWord[0].toUpperCase() &&
                                        secondWord[0] === secondWord[0].toUpperCase();
           
-          if (looksLikeCompoundName) {
+          // Additional check: avoid compound names if the first word is a common category descriptor
+          const categoryWords = ['MOVIE', 'MOVIES', 'FILM', 'FILMS', 'TITLES', 'TITLE', 'SONG', 'SONGS', 'BOOK', 'BOOKS'];
+          const isLikelyCategoryWord = categoryWords.includes(firstWord.toUpperCase());
+          
+          if (looksLikeCompoundName && !isLikelyCategoryWord) {
             // Extract the compound name and adjust the group name
             const compoundName = `${firstWord} ${secondWord}`;
             groupNameParts.push(...firstWordParts.slice(0, -2)); // Everything except the last 2 words
@@ -591,9 +595,13 @@ async function fetchFromTechRadar(date) {
             // Debug: uncomment for parser debugging
             // console.log(`🎯 Hint-driven compound name extracted: "${compoundName}" (hint: "${currentHint}")`);
           } else {
-            // Use original logic if it doesn't look like a compound name
+            // Use original logic if it doesn't look like a compound name or has category words
             groupNameParts.push(...firstWordParts.slice(0, -1));
             puzzleWords[0] = firstWordParts[firstWordParts.length - 1];
+            // Debug: uncomment for parser debugging
+            if (isLikelyCategoryWord) {
+              // console.log(`🚫 Skipped compound name "${firstWord} ${secondWord}" - contains category word "${firstWord}"`);
+            }
           }
         } else {
           // Use original logic for all other categories or longer phrases
