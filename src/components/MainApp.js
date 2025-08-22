@@ -592,7 +592,7 @@ function MainApp() {
                   <div className="hint-grid">
                     {correctAnswers && correctAnswers.groups.map((group, index) => {
                       const colors = ['yellow', 'green', 'blue', 'purple'];
-                      const hint = group.hint && group.hint !== group.name && group.hint.match(/[a-z]/) 
+                      const hint = group.hint && group.hint !== group.name && group.hint.match(/[a-zA-Z]/) 
                         ? group.hint 
                         : `Theme: ${group.name.toLowerCase()}`;
                       

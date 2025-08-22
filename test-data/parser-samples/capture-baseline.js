@@ -51,6 +51,13 @@ const KNOWN_WORKING_DATES = [
     expectedGroups: 4,
     expectedWords: 16,
     notes: 'Tests parsing of compound proper names like CHEVY CHASE'
+  },
+  {
+    date: '2025-03-06',
+    description: 'Future date with hint vs category name separation',
+    expectedGroups: 4,
+    expectedWords: 16,
+    notes: 'Tests proper separation of vague hints from full category names'
   }
 ];
 
