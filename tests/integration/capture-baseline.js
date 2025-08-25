@@ -12,52 +12,59 @@ const path = require('path');
 const KNOWN_WORKING_DATES = [
   {
     date: '2024-06-12',
-    description: 'Edge case with complex movie titles - Hedwig and the Angry Inch',
+    description: 'HTML structure parsing - complex movie titles correctly separated',
     expectedGroups: 4,
     expectedWords: 16,
-    notes: 'Contains multi-word movie titles that can confuse parser'
+    notes: 'Tests HTML-based parsing of complex titles like "HEDWIG AND THE ANGRY INCH" - should separate category from words'
   },
   {
     date: '2024-07-18',
-    description: 'Standard format, simple group names',
+    description: 'HTML structure parsing - standard format validation',
     expectedGroups: 4,
     expectedWords: 16,
-    notes: 'Clean format, good baseline example'
+    notes: 'Clean HTML format, validates basic HTML structure parsing works'
   },
   {
     date: '2024-08-21',
-    description: 'Has duplicate HTML elements (regression test)',
+    description: 'HTML structure parsing - duplicate HTML elements handling',
     expectedGroups: 4,
     expectedWords: 16,
-    notes: 'TechRadar HTML contains duplicate sections, tests deduplication'
+    notes: 'TechRadar HTML contains duplicate sections, tests HTML selector robustness'
   },
   {
     date: '2024-06-01',
-    description: 'Early June 2024 - boundary of TechRadar coverage',
+    description: 'HTML structure parsing - early coverage boundary',
     expectedGroups: 4,
     expectedWords: 16,
-    notes: 'First reliable date in TechRadar coverage'
+    notes: 'First reliable date in TechRadar coverage, tests HTML parsing on older articles'
   },
   {
     date: '2024-11-13',
-    description: 'November date - different HTML structure',
+    description: 'HTML structure parsing - different seasonal layouts',
     expectedGroups: 4,
     expectedWords: 16,
-    notes: 'Tests different seasonal HTML layouts'
+    notes: 'Tests HTML parsing on different seasonal HTML layouts and structures'
   },
   {
     date: '2025-08-22',
-    description: 'Current date with compound names (CHEVY CHASE parsing bug)',
+    description: 'HTML structure parsing - compound proper names (CHEVY CHASE)',
     expectedGroups: 4,
     expectedWords: 16,
-    notes: 'Tests parsing of compound proper names like CHEVY CHASE'
+    notes: 'Tests HTML parsing correctly handles compound proper names like CHEVY CHASE'
   },
   {
     date: '2025-03-06',
-    description: 'Future date with hint vs category name separation',
+    description: 'HTML structure parsing - hint vs category separation',
     expectedGroups: 4,
     expectedWords: 16,
-    notes: 'Tests proper separation of vague hints from full category names'
+    notes: 'Tests HTML parsing properly separates vague hints from full category names'
+  },
+  {
+    date: '2025-08-23',
+    description: 'HTML structure parsing - compound word separation (BRAKE FLUID)',
+    expectedGroups: 4,
+    expectedWords: 16,
+    notes: 'Tests HTML parsing correctly separates "LIQUIDS YOU PUT INTO CARS" from "BRAKE FLUID"'
   }
 ];
 
@@ -120,6 +127,34 @@ function validatePuzzleData(data, expected) {
     if (group.words.length !== 4) {
       issues.push(`Group ${index} (${group.name}) has ${group.words.length} words, expected 4`);
     }
+  });
+  
+  // HTML-based parsing specific validations
+  puzzle.groups.forEach((group, index) => {
+    // Check that category names are clean (no concatenated words)
+    const categoryWords = group.name.split(' ').filter(word => word.length > 0);
+    const lastCategoryWord = categoryWords[categoryWords.length - 1];
+    
+    // Check that the first word in the group doesn't start with the last word of the category
+    // This catches the old parsing issue where "LIQUIDS YOU PUT INTO CARS BRAKE" would have "FLUID" as first word
+    if (group.words.length > 0 && lastCategoryWord && lastCategoryWord.length > 2) {
+      const firstWord = group.words[0];
+      if (firstWord.startsWith(lastCategoryWord + ' ')) {
+        issues.push(`Group ${index} (${group.name}): First word "${firstWord}" starts with last category word "${lastCategoryWord}" - possible old parsing issue`);
+      }
+    }
+    
+    // Check that category names are reasonable length (not extremely long concatenated strings)
+    if (group.name.length > 50) {
+      issues.push(`Group ${index} category name is very long (${group.name.length} chars): "${group.name}" - possible concatenation issue`);
+    }
+    
+    // Check that words don't contain obvious category fragments
+    group.words.forEach((word, wordIndex) => {
+      if (word.length > 30) {
+        issues.push(`Group ${index} word ${wordIndex} is very long (${word.length} chars): "${word}" - possible parsing issue`);
+      }
+    });
   });
   
   return issues;

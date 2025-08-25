@@ -28,7 +28,7 @@
     "test": "react-scripts test",
     "test:ci": "react-scripts test --watchAll=false --coverage --passWithNoTests",
     "test:parser": "scripts/test-parser-regression.sh",
-    "test:parser:baseline": "cd test-data/parser-samples && node capture-baseline.js",
+    "test:parser:baseline": "cd tests/integration && node capture-baseline.js",
     "test:all": "npm run test:ci && npm run test:parser",
     "eject": "react-scripts eject"
   },

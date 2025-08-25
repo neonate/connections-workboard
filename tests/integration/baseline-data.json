@@ -1,14 +1,14 @@
 {
-  "capturedAt": "2025-08-22T18:35:06.110Z",
+  "capturedAt": "2025-08-25T03:31:01.603Z",
   "nodeVersion": "v23.11.0",
   "testResults": [
     {
       "date": "2024-06-12",
-      "description": "Edge case with complex movie titles - Hedwig and the Angry Inch",
+      "description": "HTML structure parsing - complex movie titles correctly separated",
       "expectedGroups": 4,
       "expectedWords": 16,
-      "notes": "Contains multi-word movie titles that can confuse parser",
-      "timestamp": "2025-08-22T18:35:06.111Z",
+      "notes": "Tests HTML-based parsing of complex titles like \"HEDWIG AND THE ANGRY INCH\" - should separate category from words",
+      "timestamp": "2025-08-25T03:31:01.604Z",
       "success": true,
       "issues": [],
       "data": {
@@ -21,11 +21,11 @@
             "DUMBO",
             "MANHATTAN",
             "WALL STREET",
-            "REWIND",
+            "BE KIND REWIND",
             "E.T.",
             "FRIGHT NIGHT",
             "KILL BILL",
-            "INCH",
+            "HEDWIG AND THE ANGRY INCH",
             "MY LEFT FOOT",
             "THE GREEN MILE",
             "THE LONGEST YARD",
@@ -47,10 +47,10 @@
               "hint": "PLACES IN NEW YORK CITY"
             },
             {
-              "name": "RHYMING TITLES BE KIND",
+              "name": "RHYMING TITLES",
               "level": 1,
               "words": [
-                "REWIND",
+                "BE KIND REWIND",
                 "E.T.",
                 "FRIGHT NIGHT",
                 "KILL BILL"
@@ -58,10 +58,10 @@
               "hint": "RHYMING TITLES"
             },
             {
-              "name": "ENDING IN UNITS OF MEASUREMENT HEDWIG AND THE ANGRY",
+              "name": "ENDING IN UNITS OF MEASUREMENT",
               "level": 2,
               "words": [
-                "INCH",
+                "HEDWIG AND THE ANGRY INCH",
                 "MY LEFT FOOT",
                 "THE GREEN MILE",
                 "THE LONGEST YARD"
@@ -81,17 +81,17 @@
             }
           ],
           "source": "TechRadar",
-          "fetchedAt": "2025-08-22T18:35:06.371Z"
+          "fetchedAt": "2025-08-25T03:31:01.815Z"
         }
       }
     },
     {
       "date": "2024-07-18",
-      "description": "Standard format, simple group names",
+      "description": "HTML structure parsing - standard format validation",
       "expectedGroups": 4,
       "expectedWords": 16,
-      "notes": "Clean format, good baseline example",
-      "timestamp": "2025-08-22T18:35:07.376Z",
+      "notes": "Clean HTML format, validates basic HTML structure parsing works",
+      "timestamp": "2025-08-25T03:31:02.821Z",
       "success": true,
       "issues": [],
       "data": {
@@ -164,17 +164,17 @@
             }
           ],
           "source": "TechRadar",
-          "fetchedAt": "2025-08-22T18:35:07.452Z"
+          "fetchedAt": "2025-08-25T03:31:02.902Z"
         }
       }
     },
     {
       "date": "2024-08-21",
-      "description": "Has duplicate HTML elements (regression test)",
+      "description": "HTML structure parsing - duplicate HTML elements handling",
       "expectedGroups": 4,
       "expectedWords": 16,
-      "notes": "TechRadar HTML contains duplicate sections, tests deduplication",
-      "timestamp": "2025-08-22T18:35:08.455Z",
+      "notes": "TechRadar HTML contains duplicate sections, tests HTML selector robustness",
+      "timestamp": "2025-08-25T03:31:03.904Z",
       "success": true,
       "issues": [],
       "data": {
@@ -183,46 +183,24 @@
           "date": "2024-08-21",
           "gameId": 437,
           "words": [
-            "BALLOON",
-            "BASKETBALL",
-            "FLOATIE",
-            "TIRE",
-            "FIZZ",
-            "PUNCH",
-            "SLING",
-            "SOUR",
             "CAKE",
             "COAT",
             "PLASTER",
             "SMEAR",
+            "BALLOON",
+            "BASKETBALL",
+            "FLOATIE",
+            "TIRE",
             "BAR",
             "BUBBLE",
             "LINE",
-            "PIE"
+            "PIE",
+            "FIZZ",
+            "PUNCH",
+            "SLING",
+            "SOUR"
           ],
           "groups": [
-            {
-              "name": "THINGS THAT ARE INFLATED",
-              "level": 1,
-              "words": [
-                "BALLOON",
-                "BASKETBALL",
-                "FLOATIE",
-                "TIRE"
-              ],
-              "hint": "THINGS THAT ARE INFLATED"
-            },
-            {
-              "name": "CLASSIC COCKTAIL TYPES",
-              "level": 3,
-              "words": [
-                "FIZZ",
-                "PUNCH",
-                "SLING",
-                "SOUR"
-              ],
-              "hint": "CLASSIC COCKTAIL TYPES"
-            },
             {
               "name": "COVER WITH A THICK LAYER",
               "level": 0,
@@ -235,6 +213,17 @@
               "hint": "COVER WITH A THICK LAYER"
             },
             {
+              "name": "THINGS THAT ARE INFLATED",
+              "level": 1,
+              "words": [
+                "BALLOON",
+                "BASKETBALL",
+                "FLOATIE",
+                "TIRE"
+              ],
+              "hint": "THINGS THAT ARE INFLATED"
+            },
+            {
               "name": "KINDS OF CHARTS",
               "level": 2,
               "words": [
@@ -244,20 +233,31 @@
                 "PIE"
               ],
               "hint": "KINDS OF CHARTS"
+            },
+            {
+              "name": "CLASSIC COCKTAIL TYPES",
+              "level": 3,
+              "words": [
+                "FIZZ",
+                "PUNCH",
+                "SLING",
+                "SOUR"
+              ],
+              "hint": "CLASSIC COCKTAIL TYPES"
             }
           ],
           "source": "TechRadar",
-          "fetchedAt": "2025-08-22T18:35:08.528Z"
+          "fetchedAt": "2025-08-25T03:31:03.975Z"
         }
       }
     },
     {
       "date": "2024-06-01",
-      "description": "Early June 2024 - boundary of TechRadar coverage",
+      "description": "HTML structure parsing - early coverage boundary",
       "expectedGroups": 4,
       "expectedWords": 16,
-      "notes": "First reliable date in TechRadar coverage",
-      "timestamp": "2025-08-22T18:35:09.531Z",
+      "notes": "First reliable date in TechRadar coverage, tests HTML parsing on older articles",
+      "timestamp": "2025-08-25T03:31:04.979Z",
       "success": true,
       "issues": [],
       "data": {
@@ -330,17 +330,17 @@
             }
           ],
           "source": "TechRadar",
-          "fetchedAt": "2025-08-22T18:35:09.637Z"
+          "fetchedAt": "2025-08-25T03:31:05.046Z"
         }
       }
     },
     {
       "date": "2024-11-13",
-      "description": "November date - different HTML structure",
+      "description": "HTML structure parsing - different seasonal layouts",
       "expectedGroups": 4,
       "expectedWords": 16,
-      "notes": "Tests different seasonal HTML layouts",
-      "timestamp": "2025-08-22T18:35:10.639Z",
+      "notes": "Tests HTML parsing on different seasonal HTML layouts and structures",
+      "timestamp": "2025-08-25T03:31:06.048Z",
       "success": true,
       "issues": [],
       "data": {
@@ -413,17 +413,17 @@
             }
           ],
           "source": "TechRadar",
-          "fetchedAt": "2025-08-22T18:35:10.705Z"
+          "fetchedAt": "2025-08-25T03:31:06.139Z"
         }
       }
     },
     {
       "date": "2025-08-22",
-      "description": "Current date with compound names (CHEVY CHASE parsing bug)",
+      "description": "HTML structure parsing - compound proper names (CHEVY CHASE)",
       "expectedGroups": 4,
       "expectedWords": 16,
-      "notes": "Tests parsing of compound proper names like CHEVY CHASE",
-      "timestamp": "2025-08-22T18:35:11.707Z",
+      "notes": "Tests HTML parsing correctly handles compound proper names like CHEVY CHASE",
+      "timestamp": "2025-08-25T03:31:07.142Z",
       "success": true,
       "issues": [],
       "data": {
@@ -496,17 +496,17 @@
             }
           ],
           "source": "TechRadar",
-          "fetchedAt": "2025-08-22T18:35:11.775Z"
+          "fetchedAt": "2025-08-25T03:31:07.206Z"
         }
       }
     },
     {
       "date": "2025-03-06",
-      "description": "Future date with hint vs category name separation",
+      "description": "HTML structure parsing - hint vs category separation",
       "expectedGroups": 4,
       "expectedWords": 16,
-      "notes": "Tests proper separation of vague hints from full category names",
-      "timestamp": "2025-08-22T18:35:12.777Z",
+      "notes": "Tests HTML parsing properly separates vague hints from full category names",
+      "timestamp": "2025-08-25T03:31:08.208Z",
       "success": true,
       "issues": [],
       "data": {
@@ -579,7 +579,90 @@
             }
           ],
           "source": "TechRadar",
-          "fetchedAt": "2025-08-22T18:35:12.846Z"
+          "fetchedAt": "2025-08-25T03:31:08.273Z"
+        }
+      }
+    },
+    {
+      "date": "2025-08-23",
+      "description": "HTML structure parsing - compound word separation (BRAKE FLUID)",
+      "expectedGroups": 4,
+      "expectedWords": 16,
+      "notes": "Tests HTML parsing correctly separates \"LIQUIDS YOU PUT INTO CARS\" from \"BRAKE FLUID\"",
+      "timestamp": "2025-08-25T03:31:09.275Z",
+      "success": true,
+      "issues": [],
+      "data": {
+        "success": true,
+        "data": {
+          "date": "2025-08-23",
+          "gameId": 804,
+          "words": [
+            "BRAKE FLUID",
+            "COOLANT",
+            "FUEL",
+            "OIL",
+            "BOWL",
+            "COLISEUM",
+            "HIPPODROME",
+            "STADIUM",
+            "CHICANERY",
+            "DECEIT",
+            "LEGERDEMAIN",
+            "SUBTERFUGE",
+            "CRYPTO",
+            "PODCAST",
+            "SMARTWATCH",
+            "VAPE"
+          ],
+          "groups": [
+            {
+              "name": "LIQUIDS YOU PUT INTO CARS",
+              "level": 0,
+              "words": [
+                "BRAKE FLUID",
+                "COOLANT",
+                "FUEL",
+                "OIL"
+              ],
+              "hint": "Open up the hood to add"
+            },
+            {
+              "name": "ARENA",
+              "level": 1,
+              "words": [
+                "BOWL",
+                "COLISEUM",
+                "HIPPODROME",
+                "STADIUM"
+              ],
+              "hint": "Large venues"
+            },
+            {
+              "name": "SKULDUGGERY",
+              "level": 2,
+              "words": [
+                "CHICANERY",
+                "DECEIT",
+                "LEGERDEMAIN",
+                "SUBTERFUGE"
+              ],
+              "hint": "Shenanigans"
+            },
+            {
+              "name": "MODERN INVENTIONS",
+              "level": 3,
+              "words": [
+                "CRYPTO",
+                "PODCAST",
+                "SMARTWATCH",
+                "VAPE"
+              ],
+              "hint": "21st century stuff"
+            }
+          ],
+          "source": "TechRadar",
+          "fetchedAt": "2025-08-25T03:31:09.354Z"
         }
       }
     }

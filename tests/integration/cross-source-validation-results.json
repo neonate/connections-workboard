@@ -1,0 +1,423 @@
+{
+  "testRun": "2025-08-23T20:36:51.079Z",
+  "overlappingDates": [
+    "2025-08-22",
+    "2025-08-23"
+  ],
+  "testResults": [
+    {
+      "date": "2025-08-22",
+      "success": true,
+      "validationResult": {
+        "bestSource": "TechRadar",
+        "discrepancies": [
+          {
+            "source": "TimesOfIndia",
+            "issue": "Word list differs from best source",
+            "details": {
+              "bestWords": [
+                "ADAMS",
+                "AMY",
+                "CHEVY CHASE",
+                "CHRISTOPH WALTZ",
+                "DRAW",
+                "FORD",
+                "GEOFFREY RUSH",
+                "GRANT",
+                "JOHN MALKOVICH",
+                "LAS VEGAS",
+                "OMAHA",
+                "PRIVATE RYAN",
+                "STRIP",
+                "STUD",
+                "TOM CRUISE",
+                "WASHINGTON"
+              ],
+              "currentWords": [
+                "BIRCH",
+                "COOK",
+                "FOOD",
+                "FORK",
+                "GUARD",
+                "HOST",
+                "KNIFE",
+                "MAPLE",
+                "METAL",
+                "OAK",
+                "PILOT",
+                "PINE",
+                "PLATE",
+                "SPOON",
+                "STONE",
+                "WATER"
+              ]
+            }
+          }
+        ],
+        "confidence": "cross_validated",
+        "sourceScores": {
+          "TechRadar": {
+            "score": 100,
+            "issues": []
+          },
+          "TimesOfIndia": {
+            "score": 90,
+            "issues": []
+          }
+        }
+      },
+      "sourceResults": {
+        "TechRadar": {
+          "date": "2025-08-22",
+          "gameId": 803,
+          "words": [
+            "ADAMS",
+            "AMY",
+            "CHEVY CHASE",
+            "CHRISTOPH WALTZ",
+            "DRAW",
+            "FORD",
+            "GEOFFREY RUSH",
+            "GRANT",
+            "JOHN MALKOVICH",
+            "LAS VEGAS",
+            "OMAHA",
+            "PRIVATE RYAN",
+            "STRIP",
+            "STUD",
+            "TOM CRUISE",
+            "WASHINGTON"
+          ],
+          "groups": [
+            {
+              "name": "U.S. PRESIDENTS",
+              "level": 0,
+              "words": [
+                "ADAMS",
+                "FORD",
+                "GRANT",
+                "WASHINGTON"
+              ],
+              "hint": "Four of the 45"
+            },
+            {
+              "name": "ACTORS WHOSE LAST NAMES ARE ALSO VERBS",
+              "level": 1,
+              "words": [
+                "CHEVY CHASE",
+                "CHRISTOPH WALTZ",
+                "GEOFFREY RUSH",
+                "TOM CRUISE"
+              ],
+              "hint": "Action surnames"
+            },
+            {
+              "name": "KINDS OF POKER",
+              "level": 2,
+              "words": [
+                "DRAW",
+                "OMAHA",
+                "STRIP",
+                "STUD"
+              ],
+              "hint": "Place your bets"
+            },
+            {
+              "name": "PROPER NOUNS AFTER GERUNDS IN '90S MOVIE TITLES",
+              "level": 3,
+              "words": [
+                "AMY",
+                "JOHN MALKOVICH",
+                "LAS VEGAS",
+                "PRIVATE RYAN"
+              ],
+              "hint": "Film names featuring verbs as nouns"
+            }
+          ],
+          "source": "TechRadar",
+          "fetchedAt": "2025-08-23T15:13:44.522Z"
+        },
+        "TimesOfIndia": {
+          "date": "2025-08-22",
+          "gameId": 20250822,
+          "groups": [
+            {
+              "name": "Yellow",
+              "level": 0,
+              "words": [
+                "SPOON",
+                "FORK",
+                "KNIFE",
+                "PLATE"
+              ],
+              "hint": "Something you might find in a kitchen"
+            },
+            {
+              "name": "Green",
+              "level": 1,
+              "words": [
+                "OAK",
+                "MAPLE",
+                "PINE",
+                "BIRCH"
+              ],
+              "hint": "Types of trees"
+            },
+            {
+              "name": "Blue",
+              "level": 2,
+              "words": [
+                "COOK",
+                "GUARD",
+                "HOST",
+                "PILOT"
+              ],
+              "hint": "Words that can mean both a person and an object"
+            },
+            {
+              "name": "Purple",
+              "level": 3,
+              "words": [
+                "WATER",
+                "FOOD",
+                "METAL",
+                "STONE"
+              ],
+              "hint": "Things that can be both hot and cold"
+            }
+          ],
+          "source": "Times of India (Mock)",
+          "words": [
+            "BIRCH",
+            "COOK",
+            "FOOD",
+            "FORK",
+            "GUARD",
+            "HOST",
+            "KNIFE",
+            "MAPLE",
+            "METAL",
+            "OAK",
+            "PILOT",
+            "PINE",
+            "PLATE",
+            "SPOON",
+            "STONE",
+            "WATER"
+          ]
+        }
+      },
+      "sourceErrors": {}
+    },
+    {
+      "date": "2025-08-23",
+      "success": true,
+      "validationResult": {
+        "bestSource": "TimesOfIndia",
+        "discrepancies": [
+          {
+            "source": "TechRadar",
+            "issue": "Word list differs from best source",
+            "details": {
+              "bestWords": [
+                "BOWL",
+                "BRAKE FLUID",
+                "CHICANERY",
+                "COLISEUM",
+                "COOLANT",
+                "CRYPTO",
+                "DECEIT",
+                "FUEL",
+                "HIPPODROME",
+                "LEGERDEMAIN",
+                "OIL",
+                "PODCAST",
+                "SMARTWATCH",
+                "STADIUM",
+                "SUBTERFUGE",
+                "VAPE"
+              ],
+              "currentWords": [
+                "BOWL",
+                "CHICANERY",
+                "COLISEUM",
+                "COOLANT",
+                "CRYPTO",
+                "DECEIT",
+                "FLUID",
+                "FUEL",
+                "HIPPODROME",
+                "LEGERDEMAIN",
+                "OIL",
+                "PODCAST",
+                "SMARTWATCH",
+                "STADIUM",
+                "SUBTERFUGE",
+                "VAPE"
+              ]
+            }
+          }
+        ],
+        "confidence": "cross_validated",
+        "sourceScores": {
+          "TechRadar": {
+            "score": 90,
+            "issues": []
+          },
+          "TimesOfIndia": {
+            "score": 95,
+            "issues": []
+          }
+        }
+      },
+      "sourceResults": {
+        "TechRadar": {
+          "date": "2025-08-23",
+          "gameId": 804,
+          "words": [
+            "BOWL",
+            "CHICANERY",
+            "COLISEUM",
+            "COOLANT",
+            "CRYPTO",
+            "DECEIT",
+            "FLUID",
+            "FUEL",
+            "HIPPODROME",
+            "LEGERDEMAIN",
+            "OIL",
+            "PODCAST",
+            "SMARTWATCH",
+            "STADIUM",
+            "SUBTERFUGE",
+            "VAPE"
+          ],
+          "groups": [
+            {
+              "name": "LIQUIDS YOU PUT INTO CARS BRAKE",
+              "level": 0,
+              "words": [
+                "FLUID",
+                "COOLANT",
+                "FUEL",
+                "OIL"
+              ],
+              "hint": "Open up the hood to add"
+            },
+            {
+              "name": "ARENA",
+              "level": 1,
+              "words": [
+                "BOWL",
+                "COLISEUM",
+                "HIPPODROME",
+                "STADIUM"
+              ],
+              "hint": "Large venues"
+            },
+            {
+              "name": "SKULDUGGERY",
+              "level": 2,
+              "words": [
+                "CHICANERY",
+                "DECEIT",
+                "LEGERDEMAIN",
+                "SUBTERFUGE"
+              ],
+              "hint": "Shenanigans"
+            },
+            {
+              "name": "MODERN INVENTIONS",
+              "level": 3,
+              "words": [
+                "CRYPTO",
+                "PODCAST",
+                "SMARTWATCH",
+                "VAPE"
+              ],
+              "hint": "21st century stuff"
+            }
+          ],
+          "source": "TechRadar",
+          "fetchedAt": "2025-08-23T15:13:46.644Z"
+        },
+        "TimesOfIndia": {
+          "date": "2025-08-23",
+          "gameId": 20250823,
+          "groups": [
+            {
+              "name": "Yellow",
+              "level": 0,
+              "words": [
+                "BRAKE FLUID",
+                "COOLANT",
+                "FUEL",
+                "OIL"
+              ],
+              "hint": "Car liquids"
+            },
+            {
+              "name": "Green",
+              "level": 1,
+              "words": [
+                "BOWL",
+                "COLISEUM",
+                "HIPPODROME",
+                "STADIUM"
+              ],
+              "hint": "Place for hosting events"
+            },
+            {
+              "name": "Blue",
+              "level": 2,
+              "words": [
+                "CHICANERY",
+                "DECEIT",
+                "LEGERDEMAIN",
+                "SUBTERFUGE"
+              ],
+              "hint": "Deceptive behavior"
+            },
+            {
+              "name": "Purple",
+              "level": 3,
+              "words": [
+                "CRYPTO",
+                "PODCAST",
+                "SMARTWATCH",
+                "VAPE"
+              ],
+              "hint": "New inventions"
+            }
+          ],
+          "source": "Times of India (Mock)",
+          "words": [
+            "BOWL",
+            "BRAKE FLUID",
+            "CHICANERY",
+            "COLISEUM",
+            "COOLANT",
+            "CRYPTO",
+            "DECEIT",
+            "FUEL",
+            "HIPPODROME",
+            "LEGERDEMAIN",
+            "OIL",
+            "PODCAST",
+            "SMARTWATCH",
+            "STADIUM",
+            "SUBTERFUGE",
+            "VAPE"
+          ]
+        }
+      },
+      "sourceErrors": {}
+    }
+  ],
+  "summary": {
+    "totalTests": 2,
+    "successfulValidations": 2,
+    "failedValidations": 0,
+    "totalDiscrepancies": 2
+  }
+}

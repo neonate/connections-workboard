@@ -443,11 +443,137 @@ async function fetchFromTechRadar(date) {
       timeout: 15000
     });
 
-            const $ = cheerio.load(response.data);
+            const html = response.data;
 
-        // Find the answers section - TechRadar has them in HTML list items
+        // Parse the HTML to extract categories and words using the structural clues
+        // The HTML structure is: <strong>YELLOW: CATEGORY_NAME </strong>WORD1, WORD2, WORD3, WORD4
+        const $ = cheerio.load(html);
+        
+        // Find the main answers list (usually the first ul after the "the answers" heading)
+        let answersList = $('ul').filter((i, el) => {
+          const prevHeading = $(el).prev('h2');
+          return prevHeading.text().toLowerCase().includes('the answers');
+        }).first();
+        
+        if (answersList.length === 0) {
+          // Try alternative selector - look for ul with li elements containing strong tags with color names
+          const alternativeList = $('ul').filter((i, el) => {
+            const $ul = $(el);
+            const hasColorItems = $ul.find('li strong').filter((j, strongEl) => {
+              const text = $(strongEl).text();
+              return text.match(/^(YELLOW|GREEN|BLUE|PURPLE):/);
+            }).length > 0;
+            return hasColorItems;
+          }).first();
+          
+          if (alternativeList.length === 0) {
+            throw new Error('Could not find answers list in HTML');
+          }
+          
+          console.log('🔍 Using alternative selector to find answers list');
+          answersList = alternativeList;
+        }
+        
+        // Now find the specific ul that contains the actual answers (not just hints)
+        // First, try to find the "the answers" heading and get the ul that follows it
+        let actualAnswersList = null;
+        
+        // Look for the "the answers" heading
+        const answersHeading = $('h2').filter((i, el) => {
+          const text = $(el).text().toLowerCase();
+          return text.includes('the answers');
+        }).first();
+        
+        console.log(`🔍 Debug: Found ${answersHeading.length} headings with "the answers"`);
+        
+        if (answersHeading.length > 0) {
+          // Look for the ul that comes after this heading
+          const answersListAfterHeading = answersHeading.nextAll('ul').first();
+          if (answersListAfterHeading.length > 0) {
+            console.log('🔍 Found answers list after "the answers" heading');
+            actualAnswersList = answersListAfterHeading;
+          }
+        }
+        
+        // If no heading found, try to find any element containing "the answers" text
+        if (!actualAnswersList) {
+          const answersTextElement = $('*:contains("the answers")').filter((i, el) => {
+            const text = $(el).text().toLowerCase();
+            return text.includes('the answers') && text.length < 100; // Avoid body text
+          }).first();
+          
+          console.log(`🔍 Debug: Found ${answersTextElement.length} elements with "the answers" text`);
+          
+          if (answersTextElement.length > 0) {
+            // Find the ul that comes after this element
+            const answersListAfterText = answersTextElement.nextAll('ul').first();
+            if (answersListAfterText.length > 0) {
+              console.log('🔍 Found answers list after "the answers" text');
+              actualAnswersList = answersListAfterText;
+            }
+          }
+        }
+        
+        // If still no answers list, try to find the ul with the most words
+        if (!actualAnswersList) {
+          let maxWords = 0;
+          let bestList = null;
+          
+          $('ul').each((i, el) => {
+            const $ul = $(el);
+            const totalWords = $ul.find('li').toArray().reduce((count, liEl) => {
+              const text = $(liEl).text();
+              const wordCount = (text.match(/,/g) || []).length + 1; // Count commas + 1 for words
+              return count + wordCount;
+            }, 0);
+            
+            if (totalWords > maxWords) {
+              maxWords = totalWords;
+              bestList = $ul;
+            }
+          });
+          
+          console.log(`🔍 Debug: Best list has ${maxWords} total words`);
+          
+          if (bestList && maxWords >= 16) { // Should have at least 16 words total
+            console.log(`🔍 Found answers list with ${maxWords} total words`);
+            actualAnswersList = bestList;
+          }
+        }
+        
+        // If still no answers list, try to find the one that comes after "the answers" text
+        if (!actualAnswersList) {
+          // Look for any element containing "the answers" text
+          const answersTextElement = $('*:contains("the answers")').filter((i, el) => {
+            const text = $(el).text().toLowerCase();
+            return text.includes('the answers') && text.length < 100; // Avoid body text
+          }).first();
+          
+          console.log(`🔍 Debug: Found ${answersTextElement.length} elements with "the answers" text`);
+          
+          if (answersTextElement.length > 0) {
+            // Find the ul that comes after this element
+            const answersListAfterText = answersTextElement.nextAll('ul').first();
+            if (answersListAfterText.length > 0) {
+              console.log('🔍 Found answers list after "the answers" text');
+              actualAnswersList = answersListAfterText;
+            }
+          }
+        }
+        
+        if (!actualAnswersList) {
+          throw new Error('Could not find answers list with actual puzzle words');
+        }
+        
+        console.log('🔍 Found answers list with actual puzzle words');
+        answersList = actualAnswersList;
+        
         const groups = [];
         const words = [];
+        const seenGroups = new Map();
+        
+        // Define color levels for difficulty
+        const colorLevels = { 'YELLOW': 0, 'GREEN': 1, 'BLUE': 2, 'PURPLE': 3 };
         
         // First, extract the hints from the "group hints" section
         const hints = {};
@@ -479,162 +605,81 @@ async function fetchFromTechRadar(date) {
             }
           }
         });
-
-    // Look for list items with color patterns that contain the actual words (have commas)
-    const listItems = $('li').filter((i, el) => {
-      const text = $(el).text();
-      return text.match(/^(YELLOW|GREEN|BLUE|PURPLE):/) && text.includes(',');
-    });
-
-    console.log(`🔍 Found ${listItems.length} list items with color pattern and commas`);
-    if (listItems.length > 0) {
-      listItems.each((i, el) => {
-        console.log(`   ${i}: ${$(el).text().substring(0, 100)}...`);
-      });
-    }
-
-    if (listItems.length < 4) {
-      // Enhanced error reporting for debugging
-      const allListItems = $('li');
-      console.log(`🔍 Debug: Total <li> elements found: ${allListItems.length}`);
-      
-      const colorPatternItems = $('li').filter((i, el) => {
-        const text = $(el).text();
-        return text.match(/^(YELLOW|GREEN|BLUE|PURPLE):/);
-      });
-      console.log(`🔍 Debug: Items with color patterns: ${colorPatternItems.length}`);
-      
-      if (colorPatternItems.length > 0) {
-        colorPatternItems.each((i, el) => {
-          const text = $(el).text().trim();
-          const hasCommas = text.includes(',');
-          console.log(`   ${i}: [${hasCommas ? 'HAS_COMMAS' : 'NO_COMMAS'}] ${text.substring(0, 100)}...`);
-        });
-      }
-      
-      throw new Error(`Expected 4 answer list items with words, found ${listItems.length}. Check console for debugging details.`);
-    }
-
-            const colorLevels = { 'YELLOW': 0, 'GREEN': 1, 'BLUE': 2, 'PURPLE': 3 };
-
-    // Deduplicate list items based on the words (since words are unique per group)
-    const seenGroups = new Map(); // Map from color to group data
-    
-    listItems.each((i, el) => {
-      const $li = $(el);
-      const fullText = $li.text().trim();
-      
-      // Format: "YELLOW: BLUNDER BOO-BOO, FLUB, GAFFE, NO-NO"
-      const match = fullText.match(/^(YELLOW|GREEN|BLUE|PURPLE):\s*(.+)$/);
-      
-      if (!match) {
-        throw new Error(`Could not parse list item: ${fullText}`);
-      }
-
-      const color = match[1];
-      const content = match[2].trim();
-      
-      // Skip if we already have this color (deduplication)
-      if (seenGroups.has(color)) {
-        console.log(`⏭️  Skipping duplicate ${color} group`);
-        return;
-      }
-      
-      // Split the content to find the last 4 comma-separated items (the puzzle words)
-      const commaParts = content.split(',').map(part => part.trim());
-      
-      if (commaParts.length < 4) {
-        throw new Error(`Expected at least 4 comma-separated parts, found ${commaParts.length} in: ${content}`);
-      }
-      
-      // Take the last 4 parts as the words
-      const puzzleWords = commaParts.slice(-4);
-      
-      // Everything else is part of the group name
-      const beforeWords = commaParts.slice(0, -4);
-      
-      // The group name includes everything before the words, plus any prefix from the first word
-      const firstWordParts = puzzleWords[0].split(' ');
-      let groupNameParts = beforeWords.slice();
-      
-      if (firstWordParts.length > 1) {
-        // Use hint-driven parsing: check if this category likely contains compound names
-        const currentHint = hints[color] || '';
-        const isCompoundNameCategory = currentHint.toLowerCase().includes('actor') || 
-                                      currentHint.toLowerCase().includes('surname') || 
-                                      currentHint.toLowerCase().includes('name') ||
-                                      currentHint.toLowerCase().includes('director') ||
-                                      currentHint.toLowerCase().includes('musician');
         
-        // Debug: uncomment for parser debugging
-        // console.log(`🔍 Checking hint for ${color}: "${currentHint}" -> isCompoundNameCategory: ${isCompoundNameCategory}`);
-        // console.log(`🔍 firstWordParts for ${color}: [${firstWordParts.join(', ')}] (length: ${firstWordParts.length})`);
-        
-        if (isCompoundNameCategory && firstWordParts.length >= 2) {
-          // For compound name categories, look for compound names at the END of the firstWordParts
-          // This handles cases like: "ACTORS WHOSE LAST NAMES ARE ALSO VERBS CHEVY CHASE"
-          const lastTwoParts = firstWordParts.slice(-2); // ["CHEVY", "CHASE"]
-          const firstWord = lastTwoParts[0];
-          const secondWord = lastTwoParts[1];
+        // Parse each list item
+        answersList.find('li').each((index, element) => {
+          const $li = $(element);
+          const text = $li.html(); // Get HTML content to preserve <strong> tags
           
-          // Check if the last two parts look like a compound proper name
-          const looksLikeCompoundName = firstWord && secondWord &&
-                                       firstWord.length > 1 && secondWord.length > 1 &&
-                                       firstWord[0] === firstWord[0].toUpperCase() &&
-                                       secondWord[0] === secondWord[0].toUpperCase();
+          // Extract category name from <strong> tags
+          const strongMatch = text.match(/<strong>([^<]+)<\/strong>/);
+          if (!strongMatch) {
+            console.log(`⚠️ Skipping list item without strong tags: ${text}`);
+            return;
+          }
           
-          // Additional check: avoid compound names if the first word is a common category descriptor
-          const categoryWords = ['MOVIE', 'MOVIES', 'FILM', 'FILMS', 'TITLES', 'TITLE', 'SONG', 'SONGS', 'BOOK', 'BOOKS'];
-          const isLikelyCategoryWord = categoryWords.includes(firstWord.toUpperCase());
+          const categoryText = strongMatch[1].trim(); // e.g., "YELLOW: LIQUIDS YOU PUT INTO CARS"
           
-          if (looksLikeCompoundName && !isLikelyCategoryWord) {
-            // Extract the compound name and adjust the group name
-            const compoundName = `${firstWord} ${secondWord}`;
-            groupNameParts.push(...firstWordParts.slice(0, -2)); // Everything except the last 2 words
-            puzzleWords[0] = compoundName;
-            // Debug: uncomment for parser debugging
-            // console.log(`🎯 Hint-driven compound name extracted: "${compoundName}" (hint: "${currentHint}")`);
-          } else {
-            // Use original logic if it doesn't look like a compound name or has category words
-            groupNameParts.push(...firstWordParts.slice(0, -1));
-            puzzleWords[0] = firstWordParts[firstWordParts.length - 1];
-            // Debug: uncomment for parser debugging
-            if (isLikelyCategoryWord) {
-              // console.log(`🚫 Skipped compound name "${firstWord} ${secondWord}" - contains category word "${firstWord}"`);
+          // Extract color and category name
+          const colorMatch = categoryText.match(/^([A-Z]+):\s*(.+)$/);
+          if (!colorMatch) {
+            console.log(`⚠️ Skipping list item with invalid format: ${categoryText}`);
+            return;
+          }
+          
+          const color = colorMatch[1];
+          const categoryName = colorMatch[2].trim();
+          
+          // Extract words from after the </strong> tag
+          let wordsText = text.replace(/<strong>[^<]+<\/strong>/, '').trim();
+          
+          // If no words found after </strong>, check if words are inside the <strong> tag
+          if (!wordsText || wordsText.length === 0) {
+            // Extract content from inside <strong> tags
+            const strongContent = text.match(/<strong>([^<]+)<\/strong>/);
+            if (strongContent) {
+              const fullContent = strongContent[1];
+              // Look for comma-separated words in the strong content
+              if (fullContent.includes(',')) {
+                // Extract the part after the color and category
+                const afterColor = fullContent.replace(/^(YELLOW|GREEN|BLUE|PURPLE):\s*/, '');
+                if (afterColor.includes(',')) {
+                  wordsText = afterColor;
+                  console.log(`🔍 Found words inside <strong> tag: "${wordsText}"`);
+                }
+              }
             }
           }
-        } else {
-          // Use original logic for all other categories or longer phrases
-          groupNameParts.push(...firstWordParts.slice(0, -1));
-          puzzleWords[0] = firstWordParts[firstWordParts.length - 1];
-        }
-      }
-      
-      const groupName = groupNameParts.join(' ').trim();
-      const wordsString = puzzleWords.join(', ');
-      
-      // Clean up words
-      const groupWords = wordsString.split(',')
-        .map(word => word.trim().toUpperCase())
-        .filter(word => word.length > 0);
-
-      if (groupWords.length !== 4) {
-        throw new Error(`Expected 4 words for ${color} group, got ${groupWords.length}: ${groupWords.join(', ')}`);
-      }
-
-      console.log(`✅ Parsed ${color}: ${groupName} - [${groupWords.join(', ')}]`);
-
-      const groupData = {
-        name: groupName, // Full descriptive category name (e.g., "ACTORS WHOSE LAST NAMES ARE ALSO VERBS")
-        level: colorLevels[color],
-        words: groupWords,
-        hint: hints[color] || groupName // Vague hint (e.g., "Action surnames")
-      };
-
-      seenGroups.set(color, groupData);
-      groups.push(groupData);
-      words.push(...groupWords);
-    });
+          
+          const wordList = wordsText.split(',').map(word => word.trim().toUpperCase()).filter(word => word.length > 0);
+          
+          // Debug logging to see what's happening
+          console.log(`🔍 Debug ${color}: text="${text}", wordsText="${wordsText}", wordList=[${wordList.join(', ')}]`);
+          
+          if (wordList.length !== 4) {
+            console.log(`⚠️ Expected 4 words for ${color}, got ${wordList.length}: ${wordList.join(', ')}`);
+            return;
+          }
+          
+          // Skip if we already have this color (deduplication)
+          if (seenGroups.has(color)) {
+            console.log(`⏭️ Skipping duplicate ${color} group`);
+            return;
+          }
+          
+          console.log(`✅ Parsed ${color}: ${categoryName} - [${wordList.join(', ')}]`);
+          
+          const groupData = {
+            name: categoryName,
+            level: colorLevels[color],
+            words: wordList,
+            hint: hints[color] || categoryName
+          };
+          
+          seenGroups.set(color, groupData);
+          groups.push(groupData);
+          words.push(...wordList);
+        });
 
     // Ensure we have exactly 4 groups
     if (groups.length !== 4) {

@@ -69,6 +69,7 @@ Follow the following rules:
 - Write thorough tests for all major functionality
 - Consider different environments (dev, test, prod) when writing code
 - Unless explicitly instructed, instead of trying to gracefully handle an error or failure, make sure to fix the underlying issue.
+- **COMPREHENSIVE BUG FIXES**: When fixing a bug with an example condition that triggers it, don't only make that single scenario work. Create a more comprehensive fix that handles the general scenario with different but similar data or conditions. Don't hack a simple fix - identify the root cause and implement a robust solution that prevents similar issues.
 
 ## Refactoring Rules:
 - When being asked to refactor, make sure to look for duplicate code, duplicate files, and similar existing functionality. Also do not copy files and rename them so that we have two files, instead just edit the file that already exists.

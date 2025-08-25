@@ -54,7 +54,7 @@ npm run test:parser
 npm run test:parser:baseline
 
 # Manual baseline operations
-cd test-data/parser-samples
+cd tests/integration
 node capture-baseline.js           # Capture baseline
 node capture-baseline.js compare   # Compare to baseline
 ```
@@ -204,7 +204,7 @@ When encountering new edge cases:
 
 3. **Commit Updated Baseline**
    ```bash
-   git add test-data/parser-samples/baseline-data.json
+   git add tests/integration/baseline-data.json
    git commit -m "Add new parser test case: YYYY-MM-DD"
    ```
 

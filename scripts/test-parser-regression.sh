@@ -48,7 +48,7 @@ while [ $RETRY_COUNT -lt $MAX_RETRIES ]; do
 done
 
 # Run baseline comparison
-cd test-data/parser-samples
+cd tests/integration
 
 if [ ! -f baseline-data.json ]; then
     echo "📸 No baseline found, capturing current state..."

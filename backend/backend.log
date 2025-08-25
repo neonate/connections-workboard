@@ -1,7 +1,0 @@
-
-> backend@1.0.0 start
-> node server.js
-
-🚀 Server running on port 3001
-📁 CSV file: /Users/ncampi/src/connections-workboard/data/puzzles.csv
-🌐 Health check: http://localhost:3001/api/health
