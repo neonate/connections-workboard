@@ -1,5 +1,5 @@
 {
-  "capturedAt": "2025-08-25T03:31:01.603Z",
+  "capturedAt": "2025-08-25T03:37:15.999Z",
   "nodeVersion": "v23.11.0",
   "testResults": [
     {
@@ -8,7 +8,7 @@
       "expectedGroups": 4,
       "expectedWords": 16,
       "notes": "Tests HTML-based parsing of complex titles like \"HEDWIG AND THE ANGRY INCH\" - should separate category from words",
-      "timestamp": "2025-08-25T03:31:01.604Z",
+      "timestamp": "2025-08-25T03:37:15.999Z",
       "success": true,
       "issues": [],
       "data": {
@@ -81,7 +81,7 @@
             }
           ],
           "source": "TechRadar",
-          "fetchedAt": "2025-08-25T03:31:01.815Z"
+          "fetchedAt": "2025-08-25T03:37:16.227Z"
         }
       }
     },
@@ -91,7 +91,7 @@
       "expectedGroups": 4,
       "expectedWords": 16,
       "notes": "Clean HTML format, validates basic HTML structure parsing works",
-      "timestamp": "2025-08-25T03:31:02.821Z",
+      "timestamp": "2025-08-25T03:37:17.232Z",
       "success": true,
       "issues": [],
       "data": {
@@ -164,7 +164,7 @@
             }
           ],
           "source": "TechRadar",
-          "fetchedAt": "2025-08-25T03:31:02.902Z"
+          "fetchedAt": "2025-08-25T03:37:17.308Z"
         }
       }
     },
@@ -174,7 +174,7 @@
       "expectedGroups": 4,
       "expectedWords": 16,
       "notes": "TechRadar HTML contains duplicate sections, tests HTML selector robustness",
-      "timestamp": "2025-08-25T03:31:03.904Z",
+      "timestamp": "2025-08-25T03:37:18.311Z",
       "success": true,
       "issues": [],
       "data": {
@@ -247,7 +247,7 @@
             }
           ],
           "source": "TechRadar",
-          "fetchedAt": "2025-08-25T03:31:03.975Z"
+          "fetchedAt": "2025-08-25T03:37:18.377Z"
         }
       }
     },
@@ -257,7 +257,7 @@
       "expectedGroups": 4,
       "expectedWords": 16,
       "notes": "First reliable date in TechRadar coverage, tests HTML parsing on older articles",
-      "timestamp": "2025-08-25T03:31:04.979Z",
+      "timestamp": "2025-08-25T03:37:19.379Z",
       "success": true,
       "issues": [],
       "data": {
@@ -330,7 +330,7 @@
             }
           ],
           "source": "TechRadar",
-          "fetchedAt": "2025-08-25T03:31:05.046Z"
+          "fetchedAt": "2025-08-25T03:37:19.446Z"
         }
       }
     },
@@ -340,7 +340,7 @@
       "expectedGroups": 4,
       "expectedWords": 16,
       "notes": "Tests HTML parsing on different seasonal HTML layouts and structures",
-      "timestamp": "2025-08-25T03:31:06.048Z",
+      "timestamp": "2025-08-25T03:37:20.447Z",
       "success": true,
       "issues": [],
       "data": {
@@ -413,7 +413,7 @@
             }
           ],
           "source": "TechRadar",
-          "fetchedAt": "2025-08-25T03:31:06.139Z"
+          "fetchedAt": "2025-08-25T03:37:20.514Z"
         }
       }
     },
@@ -423,7 +423,7 @@
       "expectedGroups": 4,
       "expectedWords": 16,
       "notes": "Tests HTML parsing correctly handles compound proper names like CHEVY CHASE",
-      "timestamp": "2025-08-25T03:31:07.142Z",
+      "timestamp": "2025-08-25T03:37:21.517Z",
       "success": true,
       "issues": [],
       "data": {
@@ -496,7 +496,7 @@
             }
           ],
           "source": "TechRadar",
-          "fetchedAt": "2025-08-25T03:31:07.206Z"
+          "fetchedAt": "2025-08-25T03:37:21.580Z"
         }
       }
     },
@@ -506,7 +506,7 @@
       "expectedGroups": 4,
       "expectedWords": 16,
       "notes": "Tests HTML parsing properly separates vague hints from full category names",
-      "timestamp": "2025-08-25T03:31:08.208Z",
+      "timestamp": "2025-08-25T03:37:22.583Z",
       "success": true,
       "issues": [],
       "data": {
@@ -579,7 +579,7 @@
             }
           ],
           "source": "TechRadar",
-          "fetchedAt": "2025-08-25T03:31:08.273Z"
+          "fetchedAt": "2025-08-25T03:37:22.671Z"
         }
       }
     },
@@ -589,7 +589,7 @@
       "expectedGroups": 4,
       "expectedWords": 16,
       "notes": "Tests HTML parsing correctly separates \"LIQUIDS YOU PUT INTO CARS\" from \"BRAKE FLUID\"",
-      "timestamp": "2025-08-25T03:31:09.275Z",
+      "timestamp": "2025-08-25T03:37:23.673Z",
       "success": true,
       "issues": [],
       "data": {
@@ -662,7 +662,7 @@
             }
           ],
           "source": "TechRadar",
-          "fetchedAt": "2025-08-25T03:31:09.354Z"
+          "fetchedAt": "2025-08-25T03:37:23.736Z"
         }
       }
     }
