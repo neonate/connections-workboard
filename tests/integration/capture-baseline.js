@@ -167,18 +167,37 @@ async function captureBaseline() {
   console.log('🧪 TechRadar Parser Baseline Capture');
   console.log('=====================================\n');
   
+  // Check if baseline already exists
+  const baselinePath = path.join(__dirname, 'baseline-data.json');
+  let existingBaseline = null;
+  
+  if (fs.existsSync(baselinePath)) {
+    try {
+      existingBaseline = JSON.parse(fs.readFileSync(baselinePath, 'utf8'));
+      console.log('📁 Found existing baseline - preserving timestamps unless data changes');
+    } catch (error) {
+      console.log('⚠️  Could not read existing baseline, will create new one');
+    }
+  }
+  
   const baselineData = {
-    capturedAt: new Date().toISOString(),
+    capturedAt: new Date().toISOString(), // Will be updated if data changes
     nodeVersion: process.version,
     testResults: []
   };
   
+  // Check if any data has actually changed
+  let anyDataChanged = false;
+  
   for (const testCase of KNOWN_WORKING_DATES) {
     console.log(`📅 Testing ${testCase.date}: ${testCase.description}`);
     
+    // Check if we have existing data for this date
+    const existingTest = existingBaseline?.testResults?.find(r => r.date === testCase.date);
+    
     const result = {
       ...testCase,
-      timestamp: new Date().toISOString(),
+      timestamp: new Date().toISOString(), // Will be updated if data changes
       success: false,
       issues: [],
       data: null
@@ -192,10 +211,26 @@ async function captureBaseline() {
         result.issues = validatePuzzleData(puzzleData, testCase);
         result.success = result.issues.length === 0;
         
-        if (result.success) {
-          console.log(`   ✅ PASSED`);
+        // Check if data has actually changed from existing baseline
+        if (existingTest && existingTest.success && result.success) {
+          const dataChanged = hasDataChanged(existingTest.data, result.data);
+          if (!dataChanged) {
+            // Data hasn't changed, preserve existing timestamps by using existing data
+            result.timestamp = existingTest.timestamp;
+            result.data = existingTest.data; // Use the entire existing data object
+            console.log(`   ✅ PASSED (data unchanged, timestamp preserved)`);
+          } else {
+            // Data has changed, update timestamp
+            anyDataChanged = true;
+            console.log(`   ✅ PASSED (data changed, timestamp updated)`);
+          }
         } else {
-          console.log(`   ❌ FAILED:`);
+          // No existing data or test failed, use new timestamp
+          anyDataChanged = true;
+          console.log(`   ✅ PASSED`);
+        }
+        
+        if (!result.success) {
           result.issues.forEach(issue => console.log(`      - ${issue}`));
         }
       } else {
@@ -214,9 +249,14 @@ async function captureBaseline() {
     await new Promise(resolve => setTimeout(resolve, 1000));
   }
   
+  // Only update main timestamp if data has changed
+  if (existingBaseline && !anyDataChanged) {
+    baselineData.capturedAt = existingBaseline.capturedAt;
+    console.log('📁 All data unchanged - preserving main timestamp');
+  }
+  
   // Save baseline data
-  const outputPath = path.join(__dirname, 'baseline-data.json');
-  fs.writeFileSync(outputPath, JSON.stringify(baselineData, null, 2));
+  fs.writeFileSync(baselinePath, JSON.stringify(baselineData, null, 2));
   
   // Create summary
   const passed = baselineData.testResults.filter(r => r.success).length;
@@ -225,7 +265,7 @@ async function captureBaseline() {
   console.log('📊 SUMMARY');
   console.log('===========');
   console.log(`Passed: ${passed}/${total}`);
-  console.log(`Baseline saved to: ${outputPath}`);
+  console.log(`Baseline saved to: ${baselinePath}`);
   
   if (passed === total) {
     console.log('🎉 All tests passed! Baseline is solid.');
@@ -234,6 +274,33 @@ async function captureBaseline() {
     console.log('⚠️  Some tests failed. Review issues before making parser changes.');
     process.exit(1);
   }
+}
+
+/**
+ * Check if puzzle data has actually changed (ignoring timestamps)
+ */
+function hasDataChanged(oldData, newData) {
+  if (!oldData || !newData) return true;
+  
+  // Compare the actual puzzle content, not metadata
+  const oldGroups = oldData.data?.groups || [];
+  const newGroups = newData.data?.groups || [];
+  
+  if (oldGroups.length !== newGroups.length) return true;
+  
+  for (let i = 0; i < oldGroups.length; i++) {
+    const oldGroup = oldGroups[i];
+    const newGroup = newGroups[i];
+    
+    if (oldGroup.name !== newGroup.name) return true;
+    if (oldGroup.words.length !== newGroup.words.length) return true;
+    
+    for (let j = 0; j < oldGroup.words.length; j++) {
+      if (oldGroup.words[j] !== newGroup.words[j]) return true;
+    }
+  }
+  
+  return false;
 }
 
 /**
@@ -287,6 +354,59 @@ const mode = process.argv[2];
 
 if (mode === 'compare') {
   compareToBaseline();
+} else if (mode === 'update-timestamps') {
+  console.log('🔄 Updating all timestamps in baseline...');
+  updateAllTimestamps();
+} else if (mode === 'help' || mode === '--help' || mode === '-h') {
+  showHelp();
 } else {
   captureBaseline();
+}
+
+/**
+ * Update all timestamps in existing baseline (useful for maintenance)
+ */
+async function updateAllTimestamps() {
+  const baselinePath = path.join(__dirname, 'baseline-data.json');
+  
+  if (!fs.existsSync(baselinePath)) {
+    console.log('❌ No baseline found. Run capture mode first.');
+    process.exit(1);
+  }
+  
+  console.log('📁 Reading existing baseline...');
+  const baseline = JSON.parse(fs.readFileSync(baselinePath, 'utf8'));
+  
+  // Update main timestamp
+  baseline.capturedAt = new Date().toISOString();
+  
+  // Update all test timestamps
+  baseline.testResults.forEach(result => {
+    result.timestamp = new Date().toISOString();
+    if (result.data) {
+      result.data.fetchedAt = new Date().toISOString();
+    }
+  });
+  
+  // Save updated baseline
+  fs.writeFileSync(baselinePath, JSON.stringify(baseline, null, 2));
+  console.log('✅ All timestamps updated in baseline');
+}
+
+/**
+ * Show usage information
+ */
+function showHelp() {
+  console.log('🧪 TechRadar Parser Baseline Tool');
+  console.log('==================================\n');
+  console.log('Usage: node capture-baseline.js [mode]\n');
+  console.log('Modes:');
+  console.log('  (none)     - Capture new baseline or update existing one');
+  console.log('  compare    - Compare current results against existing baseline');
+  console.log('  update-timestamps - Force update all timestamps in baseline');
+  console.log('  help       - Show this help message\n');
+  console.log('Examples:');
+  console.log('  node capture-baseline.js              # Capture/update baseline');
+  console.log('  node capture-baseline.js compare      # Run regression tests');
+  console.log('  node capture-baseline.js update-timestamps # Update all timestamps');
 }
